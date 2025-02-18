@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('https://github.com/github/mona-sans/raw/main/fonts/web/MonaSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Unbounded","Mona Sans", "ubuntu";
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  background-color: #0a2355;
+  background-image: url('/public/b.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply; 
+  overflow-x: hidden; 
+
+}
+
+/* ===============================  Navbar ========================================== */
+.navbar-custom {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #e6e9f0;
+  padding: 10px 20px;
+  font-family: "Mona Sans", "Ubuntu", sans-serif;
+}
+
+.navbar-custom .navbar-brand {
+  color: black !important;
+  font-weight: bold;
+}
+
+.navbar-custom .navbar-nav {
+  display: flex;
+  justify-content: flex-end; 
+  width: 100%;
+}
+
+.navbar-custom .nav-link {
+  color: black !important;
+  margin-left: 20px; 
+}
+
+.navbar-custom .nav-link:hover {
+  color: #ffcc00 !important;
+}
+
+.language-toggle {
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.language-toggle:hover {
+  opacity: 0.8;
+}
+/* ======================================================================== */
+/* ========================== Hero Section =============================== */
+.hero-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 20px;
+  overflow-x: hidden;
+  background-color: #e6e9f0;
+  background-size: cover;
+}
+
+.Main-title {
+  color: #000824;
+  font-size: 50px;
+  line-height: 60px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-family: "Unbounded";
+}
+
+.section-subtitle{
+  color: var(--main-color);
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 25px;
+  font-family: "Unbounded";
+}
+
+.banner-description {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  color: #787878;
+  font-weight: 400;
+  font-family: "Mona Sans";
+}
+
+@media (min-width: 768px) {
+  .banner-image {
+    max-width: 400px;
+    margin-right: 2rem;
+  }
+
+  .banner-title {
+    font-size: 3rem;
+  }
+
+  .banner-description {
+    font-size: 1.5rem;
+  }
+
+  .btn-start {
+    font-size: 1.2rem;
+  }
+}
+
+span {
+  color: #0024A8;
+}
+
+.btn {
+  padding: 2rem 2rem;
+  box-shadow: rgba(2, 39, 88, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  width: 280px;
+  height: 50px;
+}
+
+.btn-fdroid:hover {
+  transform: scale(1.05);
+}
+
+.btn-playstore:hover {
+  transform: scale(1.05);
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  .btn {
+    width: 100%;
+  }
+
+  .hero-image {
+    text-align: center;
+   padding-top: 30px;
+  }
+  .hero-image img {
+    max-width: 90%;
+  }
+}
+
+/* ============================================================== */
+/* ===================== gratitude ============================= */
+.deku-gratitude-section {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #040d1f;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply; 
+}
+
+.deku-gratitude-text {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.deku-gratitude-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #b1b7bd;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .deku-gratitude-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .deku-gratitude-text {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .deku-gratitude-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #b1b7bd;
+    line-height: 1.8;
+  }
+}
+
+/*=============================== AboutSection.css================================= */
+.about-section {
+  padding: 80px 0;
+  background-color: #f1f3f5;
+  text-align: center;
+}
+
+.about-text-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #006f7f;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #006f7f;
+  margin: 10px auto 0;
+}
+
+.section-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.features-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.features-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features-card .icon {
+  font-size: 1.5rem;
+  color: #006f7f;
+}
+
+
+.features-card .title {
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #050447;
+}
+
+.features-column img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .features-column {
+    align-items: center;
+  }
+
+
+
+  .image-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+
+/* ============================== Download Section =============================*/
+
+
+
+/* ================================== FOOTER ======================================================*/
+.footer {
+  background-color: #010120; 
+  color: rgb(105, 107, 109);
+}
+
+.footer .footer-link {
+  text-decoration: none; 
+  font-size: 14px; 
+  transition: color 0.3s ease; 
+}
+
+.footer .footer-link:hover {
+  color: #4CAF50; 
+}
+
+.footer .footer-logo img {
+  height: 30px; 
+}
+
+.footer-social-icons .social-icon {
+  color: white; 
+  transition: color 0.3s ease; 
+}
+
+.footer-social-icons .social-icon:hover {
+  color: #4CAF50; 
+}
+
+.footer hr.border-light {
+  border-top: 1px solid #444; 
+}
+
+.footer .footer-copyright {
+  font-size: 12px;
+  color: #aaa; 
+}
+
+@media (max-width: 768px) {
+  .footer .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+}

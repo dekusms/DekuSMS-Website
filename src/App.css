@@ -14,12 +14,12 @@
 }
 
 body {
-  font-family: "Unbounded","Mona Sans", "ubuntu";
+  font-family: "Unbounded","Mona Sans";
   transition: background-color 0.3s, color 0.3s;
   margin: 0;
   padding: 0;
   background-color: #0a2355;
-  background-image: url('/public/b.jpg');
+  /* background-image: url('/public/b.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -70,7 +70,7 @@ body {
 .language-toggle:hover {
   opacity: 0.8;
 }
-
+/* ======================================================================== */
 /* ========================== Hero Section =============================== */
 .hero-container {
   min-height: 100vh;
@@ -83,154 +83,94 @@ body {
   background-size: cover;
 }
 
-h2 {
-  color: var(--main-color);
+.Main-title {
+  color: #000824;
   font-size: 50px;
   line-height: 60px;
   margin-bottom: 15px;
   font-weight: bold;
-  font-family: "Mona Sans", "ubuntu";
+  font-family: "Unbounded";
 }
 
-h3 {
+.section-subtitle{
   color: var(--main-color);
   font-size: 40px;
   line-height: 50px;
   margin-bottom: 25px;
+  font-family: "Unbounded";
+}
+
+.banner-description {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  color: #787878;
+  font-weight: 400;
+  font-family: "Mona Sans";
+}
+
+@media (min-width: 768px) {
+  .banner-image {
+    max-width: 400px;
+    margin-right: 2rem;
+  }
+
+  .banner-title {
+    font-size: 3rem;
+  }
+
+  .banner-description {
+    font-size: 1.5rem;
+  }
+
+  .btn-start {
+    font-size: 1.2rem;
+  }
 }
 
 span {
   color: #0024A8;
 }
-
-p {
-  color: #787878;
-  font-weight: 400;
-  margin-bottom: 15px;
-  font-family: "Mona Sans", "Ubuntu";
-  font-size: 18px;
-}
-
-.dekusms-buttons {
-  margin-top: 30px;
-}
-
-.dekusms-button {
-  padding: 14px 35px;
-  font-size: 18px;
-  border-radius: 8px;
+.btn-fdroid {
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+}
+.btn-fdroid:hover {
+  transform: scale(1.05);
 }
 
-.primary {
-  background-color: #125D56;
-  color: #fff;
-  border: none;
-  margin-right: 20px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-
+.btn-playstore {
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-
-.primary:hover {
-  background-color: #001871;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+.btn-playstore:hover {
+  transform: scale(1.05);
 }
-
-.btn-dekusmsd {
-  background-color: #fff;
-  color: #0c4c91;
-  width: 180px;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 1rem;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-
-.btn-dekusmsd:hover {
-  background: #404140;
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  transform: translateY(10px);
-}
-
-@media screen and (min-width: 750px) and (max-width: 1000px) {
-  h2 {
-    font-size: 30px;
-    line-height: 40px;
-  }
-
-  h3 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  .dekusms-buttons {
-    flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 250px) and (max-width: 750px) {
-  h2 {
-    font-size: 35px;
-    line-height: 35px;
-  }
-
-  h3 {
-    font-size: 25px;
-    line-height: 30px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-
-  .dekusms-buttons {
-    flex-direction: column;
-  }
-}
-
-.btn-dekusmsd {
-  background-color: #fff;
-  color: #0c4c91;
-  width: 180px;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 1rem;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-
-.dekusmsd-info .btn-dekusmsd:hover {
-  background: #404140;
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  transform: translateY(10px);
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
-
-  .dekusmsd-info h2 {
-    font-size: 2rem;
+  .button-container {
+    flex-direction: column;
+    gap: 0.75rem;
   }
-
-  .dekusmsd-info p {
-    font-size: 0.9rem;
-  }
-
-  .dekusmsd-info .btn-dekusmsd {
+  .btn {
     width: 100%;
-    font-size: 1rem;
   }
 
-  .about-section .image-column .inner-column .image img {
-    width: 90%;
+  .hero-image {
+    text-align: center;
+   padding-top: 30px;
+  }
+  .hero-image img {
+    max-width: 90%;
   }
 }
 
+/* ============================================================== */
 /* ===================== gratitude ============================= */
 .deku-gratitude-section {
   padding: 80px 0;
@@ -240,6 +180,8 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: multiply; 
+  color: rgb(206, 220, 231);
+  font-family: "Unbounded";
 }
 
 .deku-gratitude-text {
@@ -288,7 +230,7 @@ p {
 }
 
 .section-title {
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #006f7f;
   margin-bottom: 20px;
@@ -307,7 +249,7 @@ p {
 .section-subtitle {
   font-size: 2rem;
   font-weight: 600;
-  color: #333;
+  color:  #006f7f;
   margin-top: 30px;
   margin-bottom: 15px;
   text-align: center;
@@ -383,103 +325,109 @@ p {
 
 
 /* ============================== Download Section =============================*/
-.deku-download-section {
-  background-color: #010922;
-  padding: 2em;
-  text-align: center;
-  
+#download {
+  background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+  color: #fff;
 }
 
-.deku-download-text {
-  color: #91ddeb;
-  min-width: 277px;
-  padding: 1em;
-  width: 50%;
-  margin: 1em auto;
-  display: block;
-  font-family: 
-  "Mona Sans", "ubuntu";
+#download h2 {
+  font-size: 2.5rem;
 }
 
-.deku-download-text__tagline {
-  font-size: 1.2em;
-  font-weight: 500;
+#download p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
 }
 
-.deku-download-text__cta {
-  font-size: 2.5em;
-  font-weight: 700;
-}
-
-.deku-download-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.deku-download-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.deku-download__play-store,
-.deku-download__fdroid {
-  width: 161px;
+.download-img {
+  max-width: 100%;
   height: auto;
-  margin-bottom: 8px;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
-.deku-download__play-store:hover,
-.deku-download__fdroid:hover {
+.download-img:hover {
   transform: scale(1.05);
+}
+
+.download-link {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.download-link:hover {
+  opacity: 0.8; 
+}
+
+@media (max-width: 576px) {
+  #download h2 {
+    font-size: 2rem;
+  }
+
+  #download p {
+    font-size: 1rem; 
+  }
+}
+
+@media (max-width: 768px) {
+  .download-img {
+    width: 80%; 
+  }
 }
 
 /* ================================== FOOTER ======================================================*/
 .footer {
-  background-color: #010120; 
-  color: rgb(109, 118, 129);
+  background-color: rgb(217, 217, 219);
+  color: rgb(6, 35, 114);
+  padding: 2rem 0;
 }
 
-.footer .footer-link {
-  text-decoration: none; 
-  font-size: 14px; 
-  transition: color 0.3s ease; 
+.footer-logo {
+  height: 30px;
 }
 
-.footer .footer-link:hover {
-  color: #4CAF50; 
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  color: rgb(6, 35, 114);
 }
 
-.footer .footer-logo img {
-  height: 30px; 
+.footer-links a {
+  color: rgb(6, 35, 114);
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.footer-social-icons .social-icon {
-  color: white; 
-  transition: color 0.3s ease; 
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
-.footer-social-icons .social-icon:hover {
-  color: #4CAF50; 
+.footer-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.footer hr.border-light {
-  border-top: 1px solid #444; 
+.footer-social-icons a {
+  color: rgb(6, 35, 114);
+  font-size: 1.5rem;
+  transition: color 0.3s ease-in-out;
 }
 
-.footer .footer-copyright {
-  font-size: 12px;
-  color: #aaa; 
+.footer-social-icons a:hover {
+  color: #048d92;
 }
 
-@media (max-width: 768px) {
-  .footer .d-flex {
-    flex-direction: column;
-    align-items: center;
-  }
+.footer-copyright {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: rgb(2, 28, 99);
+}
+
+.footer-divider {
+  border-top: 1px solid #031a81;
+  margin: 1rem 0;
 }
