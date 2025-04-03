@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../App.css";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="container-fluid navbar navbar-expand-lg navbar-dark">
+    <nav className={`container-fluid navbar navbar-expand-lg navbar-dark navbar-custom ${scrolled ? "scrolled" : ""}`}>
         <a className="navbar-brand" href="#">
           <img src="/DekuSMS-White.png" alt="DekuSMS Logo" className="navbar-logo" />
         </a>
