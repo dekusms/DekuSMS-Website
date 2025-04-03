@@ -1,18 +1,32 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from './components/Navbar';
-import LandingPage from './components/LandingPage';
-import About from './components/About';
-import Download from './components/Download';
+import Home from './pages/Home';
 import Footer from './components/Footer';
+import Enterprise from './pages/Enterprise';
 
 function App() {
   return (
+    <Router>
+      <MainLayout />
+    </Router>
+  );
+}
+
+function MainLayout() {
+  const location = useLocation();
+  const isEnterprisePage = location.pathname.startsWith("/enterprise"); 
+
+  return (
     <div className="App">
-      <Navbar />
-      <LandingPage />
-      <About />
-      <Download />
-      <Footer />
+      {!isEnterprisePage && <Navbar />}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/enterprise/*" element={<Enterprise />} /> 
+      </Routes>
+
+      {!isEnterprisePage && <Footer />}
     </div>
   );
 }

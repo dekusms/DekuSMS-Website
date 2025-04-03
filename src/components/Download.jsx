@@ -5,7 +5,7 @@ import "../App.css";
 
 const Download = () => {
   return (
-    <section className="download-section">
+    <section id="download" className="download-section">
       <div className="download-container">
         {/* Left Side - Title & Description */}
         <div className="download-text">
