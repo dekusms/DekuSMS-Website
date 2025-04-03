@@ -1,47 +1,34 @@
 {
   "name": "dekusms-website",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
-    "font-awesome": "^4.7.0",
-    "i18next": "^24.2.2",
     "react": "^19.0.0",
-    "react-bootstrap": "^2.10.9",
-    "react-dom": "^19.0.0",
-    "react-i18next": "^15.4.0",
-    "react-icons": "^5.4.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.0"
+    "react-dom": "^19.0.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "vite": "^6.2.5"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "packageManager": "yarn@4.8.1+sha512.bc946f2a022d7a1a38adfc15b36a66a3807a67629789496c3714dd1703d2e6c6b1c69ff9ec3b43141ac7a1dd853b7685638eb0074300386a59c18df351ef8ff6"
 }

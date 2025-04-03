@@ -1,433 +1,625 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Ubuntu:wght@300;400;500;700&display=swap');
-
-@font-face {
-  font-family: 'Mona Sans';
-  src: url('https://github.com/github/mona-sans/raw/main/fonts/web/MonaSans-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+* {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* ============== navbar ============= */
+.navbar {
+    background-color: #010E3D;
+    padding: 10px 30px;
 }
 
-body {
-  font-family: "Unbounded","Mona Sans";
-  transition: background-color 0.3s, color 0.3s;
-  margin: 0;
-  padding: 0;
-  background-color: #0a2355;
-  /* background-image: url('/public/b.jpg'); */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply; 
-  overflow-x: hidden; 
-
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px; 
 }
 
-/* ===============================  Navbar ========================================== */
-.navbar-custom {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #e6e9f0;
-  padding: 10px 20px;
-  font-family: "Mona Sans", "Ubuntu", sans-serif;
+.navbar-logo {
+    height: 40px; 
+    width: auto; 
 }
 
-.navbar-custom .navbar-brand {
-  color: black !important;
-  font-weight: bold;
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-.navbar-custom .navbar-nav {
-  display: flex;
-  justify-content: flex-end; 
-  width: 100%;
+.navbar-links li {
+    margin-left: 15px; 
 }
 
-.navbar-custom .nav-link {
-  color: black !important;
-  margin-left: 20px; 
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-.navbar-custom .nav-link:hover {
-  color: #ffcc00 !important;
+.navbar-links a:hover {
+    text-decoration: underline;
 }
 
-.language-toggle {
-  background: transparent;
-  border: none;
-  color: black;
-  font-size: 1rem;
-  cursor: pointer;
+
+/* =================Landing & Gratitude Section Background====================== */
+.landing, .gratitude {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 60px 10%;
+    background: linear-gradient(135deg, #010e3d 100%, #022984 10%);
+    min-height: 50vh;
 }
 
-.language-toggle:hover {
-  opacity: 0.8;
-}
-/* ======================================================================== */
-/* ========================== Hero Section =============================== */
-.hero-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 100px 20px 20px;
-  overflow-x: hidden;
-  background-color: #e6e9f0;
-  background-size: cover;
+.landing-content {
+    flex: 1;
+    max-width: 50%;
 }
 
-.Main-title {
-  color: #000824;
-  font-size: 50px;
-  line-height: 60px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  font-family: "Unbounded";
-}
-
-.section-subtitle{
-  color: var(--main-color);
-  font-size: 40px;
-  line-height: 50px;
-  margin-bottom: 25px;
-  font-family: "Unbounded";
-}
-
-.banner-description {
-  font-size: 1rem;
-  margin-bottom: 3rem;
-  margin-top: 2rem;
-  color: #787878;
-  font-weight: 400;
-  font-family: "Mona Sans";
-}
-
-@media (min-width: 768px) {
-  .banner-image {
-    max-width: 400px;
-    margin-right: 2rem;
-  }
-
-  .banner-title {
+.landing-content h1 {
     font-size: 3rem;
-  }
+    color: white;
+    margin-bottom: 15px;
+}
 
-  .banner-description {
-    font-size: 1.5rem;
-  }
-
-  .btn-start {
+.landing-content p {
     font-size: 1.2rem;
-  }
+    color: white;
+    margin-bottom: 20px;
 }
 
-span {
-  color: #0024A8;
-}
-.btn-fdroid {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.btn-fdroid:hover {
-  transform: scale(1.05);
+.landing-buttons {
+    display: flex;
+    gap: 15px;
 }
 
-.btn-playstore {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.btn-playstore:hover {
-  transform: scale(1.05);
-}
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .button-container {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .btn {
+.btn-primary {
+    background-color: white;
+    color: #001871;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-primary:hover {
+    background-color: #f1f1f1;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #001871;
+}
+
+.landing-image {
+    flex: 1;
+    max-width: 50%;
+    text-align: right;
+}
+
+.landing-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ==========Gratitude Card ===============*/
+.gratitude {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 3%;
+}
+
+.gratitude-card {
+    background: white;
+    padding: 95px; 
+    max-width: 1900px;
     width: 100%;
-  }
-
-  .hero-image {
+    border-radius: 25px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
     text-align: center;
-   padding-top: 30px;
-  }
-  .hero-image img {
-    max-width: 90%;
-  }
+    transition: 0.3s ease-in-out;
 }
 
-/* ============================================================== */
-/* ===================== gratitude ============================= */
-.deku-gratitude-section {
-  padding: 80px 0;
-  text-align: center;
-  background-color: #040d1f;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply; 
-  color: rgb(206, 220, 231);
-  font-family: "Unbounded";
+.gratitude-card:hover {
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-.deku-gratitude-text {
-  max-width: 90%;
-  margin: 0 auto;
+.gratitude-card h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #001871;
 }
 
-.deku-gratitude-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #b1b7bd;
-  line-height: 1.6;
-  margin-bottom: 40px;
+.gratitude-card p {
+    font-size: 1.5rem; 
+    line-height: 2.2;
+    color: #333;
 }
+
+@media (max-width: 1280px) {
+    .gratitude {
+        padding: 100px 5%;
+    }
+
+    .gratitude-card {
+        padding: 80px;
+        width: 97%;
+        max-width: 1400px;
+    }
+
+    .gratitude-card h1 {
+        font-size: 3.5rem;
+    }
+
+    .gratitude-card p {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .gratitude {
+        padding: 80px 5%;
+    }
+
+    .gratitude-card {
+        padding: 70px;
+        width: 96%;
+        max-width: 1200px;
+    }
+
+    .gratitude-card h1 {
+        font-size: 3rem;
+    }
+
+    .gratitude-card p {
+        font-size: 1.6rem;
+    }
+}
+
 @media (max-width: 768px) {
-  .deku-gratitude-grid {
-    grid-template-columns: 1fr;
-  }
+    .gratitude {
+        padding: 60px 5%;
+    }
 
-  .deku-gratitude-text {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  
-  .deku-gratitude-title {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 10px;
-    color: #b1b7bd;
-    line-height: 1.8;
-  }
+    .gratitude-card {
+        padding: 60px;
+        width: 98%;
+        max-width: 1000px;
+    }
+
+    .gratitude-card h1 {
+        font-size: 2.8rem;
+    }
+
+    .gratitude-card p {
+        font-size: 1.4rem;
+    }
 }
 
-/*=============================== AboutSection.css================================= */
-.about-section {
-  padding: 80px 0;
-  background-color: #f1f3f5;
-  text-align: center;
+@media (max-width: 480px) {
+    .gratitude {
+        padding: 50px 5%;
+    }
+
+    .gratitude-card {
+        padding: 50px;
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .gratitude-card h1 {
+        font-size: 2.5rem;
+    }
+
+    .gratitude-card p {
+        font-size: 1.3rem;
+    }
 }
 
-.about-text-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
+
+@media (max-width: 768px) {
+    .landing {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .landing-content, .landing-image {
+        max-width: 100%;
+    }
+
+    .landing-image {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .landing-buttons {
+        justify-content: center;
+    }
+}
+
+/* =============   About section============= */
+.about-page {
+    background: linear-gradient(135deg, #010e3d 100%, #022984 10%);
+    padding: 100px 10%;
+    color: white;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(1, 25, 147, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+/*================ About Content============================= */
+.about-content {
+    flex: 1;
+    max-width: 600px;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #006f7f;
-  margin-bottom: 20px;
-  position: relative;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background-color: #006f7f;
-  margin: 10px auto 0;
+.about-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
 }
 
-.section-subtitle {
-  font-size: 2rem;
-  font-weight: 600;
-  color:  #006f7f;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  text-align: center;
+/* ======================Features cards ============================*/
+.about-features {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.about-text {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  justify-content: space-between;
-}
-
-.features-column {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.features-card {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.features-card .icon {
-  font-size: 1.5rem;
-  color: #006f7f;
-}
-
-
-.features-card .title {
-  margin-bottom: 5px;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #050447;
-}
-
-.features-column img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .features-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .features-column {
+.feature-card {
+    display: flex;
     align-items: center;
-  }
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease-in-out;
+}
 
-
-
-  .image-container {
-    margin-top: 20px;
-    text-align: center;
-  }
+.feature-card:not(:last-child) {
+    margin-bottom: 20px;
 }
 
 
-/* ============================== Download Section =============================*/
-#download {
-  background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-  color: #fff;
+.feature-card:hover {
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
 }
 
-#download h2 {
-  font-size: 2.5rem;
-}
-
-#download p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
-
-.download-img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-}
-
-.download-img:hover {
-  transform: scale(1.05);
-}
-
-.download-link {
-  display: block;
-  transition: opacity 0.3s ease;
-}
-
-.download-link:hover {
-  opacity: 0.8; 
-}
-
-@media (max-width: 576px) {
-  #download h2 {
+.feature-icon {
     font-size: 2rem;
-  }
+    color: #00ffcc;
+}
 
-  #download p {
-    font-size: 1rem; 
-  }
+.feature-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.feature-desc {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.about-btn {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background: #00ffcc;
+    color: #010e3d;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.about-btn:hover {
+    background: #009688;
+    color: white;
+}
+
+/* ========== Responsive======================== */
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content, .about-image {
+        max-width: 100%;
+    }
+
+    .feature-card {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
-  .download-img {
-    width: 80%; 
-  }
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+    }
+
+    .feature-title {
+        font-size: 1.4rem;
+    }
+
+    .feature-desc {
+        font-size: 1rem;
+    }
 }
 
-/* ================================== FOOTER ======================================================*/
+
+/* ============================ download ============================= */
+.download-section {
+    background: #ffffff; 
+    padding: 80px 20px;
+    color: #010e3d; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.download-container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.download-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #010e3d;
+}
+
+.download-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.download-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f5f5f5;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: #010e3d; 
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-icon {
+    font-size: 2rem;
+    color: #010e3d; 
+}
+
+.google-play {
+    border: 1px solid #1db954;
+}
+
+.fdroid {
+    border: 1px solid #1976d2;
+}
+
+.github {
+    border: 1px solid #333;
+}
+/* ============================ footer ============================= */
 .footer {
-  background-color: rgb(217, 217, 219);
-  color: rgb(6, 35, 114);
-  padding: 2rem 0;
+    background-color: #010e3d;
+    color: white;
+    padding: 50px 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-logo {
-  height: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.footer-links {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 1.5rem;
-  color: rgb(6, 35, 114);
+.footer-tagline {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
 }
 
-.footer-links a {
-  color: rgb(6, 35, 114);
-  text-decoration: none;
-  font-weight: 500;
+.footer-title {
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
-.footer-links a:hover {
-  text-decoration: underline;
+.footer-column ul {
+    list-style: none;
+    padding: 0;
 }
 
-.footer-social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+.footer-column ul li {
+    margin-bottom: 8px;
 }
 
-.footer-social-icons a {
-  color: rgb(6, 35, 114);
-  font-size: 1.5rem;
-  transition: color 0.3s ease-in-out;
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.3s;
 }
 
-.footer-social-icons a:hover {
-  color: #048d92;
+.footer-column ul li a:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
 
-.footer-copyright {
-  text-align: center;
-  font-size: 1rem;
-  margin-top: 1rem;
-  color: rgb(2, 28, 99);
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
 }
 
-.footer-divider {
-  border-top: 1px solid #031a81;
-  margin: 1rem 0;
+.social-icon {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s;
+    align-items: center;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-input {
+    padding: 10px;
+    width: 80%;
+    max-width: 250px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.footer-btn {
+    background-color: white;
+    color: #010e3d;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-btn:hover {
+    background-color: #ffcc00;
+    color: #010e3d;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+
+.social-icon {
+    align-items: center !important;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icon {
+        align-items: center !important;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
 }
