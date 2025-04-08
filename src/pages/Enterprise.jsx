@@ -146,15 +146,72 @@ const Enterprise = () => {
       </div>
     </div>
 
-      {/* ============= ⚡ Footer ================== */}
-      <footer className="footer">
-        <p>© 2025 DekuSMS. All rights reserved.</p>
-        <div>
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms of Service</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </footer>
+    {/* ================== contect ================================== */}
+<section className="contact-support">
+  <div className="contact-container">
+    <h2>Contact and Support</h2>
+    <p className="contact-description">
+      Find out what <strong>DekuSMS</strong> can do for you by talking to our support team. We're here to help you stay connected, securely and reliably.
+    </p>
+    <ul className="contact-links">
+      <li><a href="mailto:support@dekusms.com">📧 Send us an Email</a></li>
+      <li><a href="/support-center">🛠 Contact our Support Center</a></li>
+      <li><a href="/community">💬 Join our Community</a></li>
+      <li><a href="https://github.com/dekusms">📂 View our Repos</a></li>
+      <li><a href="https://bsky.app/profile/dekusms">🌐 Follow us on Bluesky</a></li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+{/* ============= ⚡Footer ================== */}
+<footer className="footer">
+  <div className="footer-container">
+    {/* Brand & Description */}
+    <div className="footer-brand">
+      <h3>DekuSMS</h3>
+      <p>
+        DekuSMS is a secure and private messaging platform offering offline-to-online SMS bridging. Stay connected anywhere, anytime.
+      </p>
+    </div>
+
+    {/* Quick Links */}
+    <div className="footer-links-group">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+    </div>
+
+    {/* Contact Info */}
+    <div className="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:support@dekusms.com">support@dekusms.com</a></p>
+      <p>Phone: +1 (800) 123-4567</p>
+      <div className="footer-socials">
+        <a href="#"><i className="fab fa-twitter"></i></a>
+        <a href="#"><i className="fab fa-facebook"></i></a>
+        <a href="#"><i className="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom Strip */}
+  <div className="footer-bottom">
+    <p>© 2025 DekuSMS. All rights reserved.</p>
+    <div className="footer-policy-links">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+
     </section>
   );
 };

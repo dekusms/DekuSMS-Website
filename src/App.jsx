@@ -6,7 +6,6 @@ import {
   useLocation,
   Navigate,
 } from "react-router-dom";
-
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -15,7 +14,6 @@ import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
-import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -50,7 +48,6 @@ function MainLayout() {
         <Route path="/pricing/*" element={<Pricing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/profile" element={<Profile />} />
         <Route
           path="/dashboard"
           element={isAuthenticated() ? <Dashboard /> : <Navigate to="/login" />}
