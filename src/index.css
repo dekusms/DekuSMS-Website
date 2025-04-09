@@ -2,13 +2,24 @@
   font-family: 'Mona Sans', 'Ubuntu';
 }
 
-/* ------------ navbar---------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ================================ navbar ====================================== */
 .Navbar {
   background: #f2f3f7 !important;
-  position: relative;
   position: fixed;
+  width: 100%;
   z-index: 10;
+  top: 0;
+  left: 0;
   box-shadow: 0 2px 8px #f4f4f8;
+}
+
+.nav-offset {
+  padding-top: 5rem;
 }
 
 .nav-link-custom {
@@ -43,36 +54,32 @@
     padding: 0.5rem 1.5rem;
   }
 }
-/* ===================================================================================== */
 
-/* ============= Hero Section ==================*/
+/* ======================================== Hero Section ================================*/
 .hero-content {
-  background-color: #f2f3f7;
-  background-size: cover;
-  background-position: center center;
-  height: 100vh;
   color: #010e3d;
+  padding: 7rem 1rem 4rem;
   text-align: center;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #010e3d;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
 .hero-desc {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 1.5rem auto;
-  opacity: 0.9;
-  color: #010e3d;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: #333;
+  padding: 0 1rem;
 }
 
 .hero-buttons {
@@ -85,72 +92,137 @@
 
 .hero-btn,
 .btn-secondary {
-  background-color: #f4a261;
-  color: #010e3d;
-  padding: 12px 20px;
+  padding: 1rem 2rem;
   font-size: 1rem;
-  border-radius: 5px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 200px; 
   transition: background 0.3s ease-in-out;
-  text-transform: uppercase;
 }
 
-.hero-btn:hover,
-.btn-secondary:hover {
-  background-color: #e76f51;
+.hero-btn {
+  background-color: #010e3d;
+  color: #fff;
+}
+.hero-btn:hover {
+  background-color: #022984;
 }
 
 .btn-secondary {
-  background-color: #010e3d;
-  color: #f4a261;
-  border: 1px solid #f4a261;
+  background-color: #f4a261;
+  color: #010e3d;
 }
 
 .btn-secondary:hover {
-  background-color: #022984;
-  color: #fff;
+  background-color: #e76f51; 
 }
 
-@media screen and (max-width: 768px) {
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 200px;
+}
+
+.hero-btn-primary {
+  background-color: #010e3d;
+  color: white;
+}
+.hero-btn-primary:hover {
+  background-color: #022984;
+}
+
+.hero-btn-secondary {
+  background-color: #f4a261;
+  color: #010e3d;
+}
+.hero-btn-secondary:hover {
+  background-color: #e76f51;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: 10rem;
+    min-height: auto;
+    margin: 80px auto;
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   .hero-desc {
     font-size: 1rem;
-    margin: 1rem auto;
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
   }
 
   .hero-buttons {
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 
-  .hero-btn,
-  .btn-secondary {
-    padding: 10px 15px;
-    font-size: 0.9rem;
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 50%;
+    max-width: 300px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (min-width: 768px) and (max-width: 1280px) {
+  .hero-content {
+    padding: 3rem 1.5rem 2rem;
+    margin: 0 auto;
+    min-height: auto;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   .hero-desc {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
   }
 
   .hero-buttons {
-    gap: 10px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 
-  .hero-btn,
-  .btn-secondary {
-    padding: 8px 12px;
-    font-size: 0.85rem;
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 45%;
+    max-width: 280px;
   }
 }
 
@@ -159,7 +231,7 @@
   padding: 4rem 2rem;
   text-align: center;
   background-color: #000824;
-  border-radius: 30px;
+  border-radius: 5px;
   margin-bottom: 2rem;
   color: #fff;
 }
@@ -168,21 +240,19 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-top: 10px;
-  gap: 30px;
+  gap: 40px;
 }
 
 .steps-cards {
-
   display: flex;
   justify-content: center; 
-  gap: 30px; 
+  gap: 50px; 
   margin-top: 30px;
   flex-wrap: wrap; 
 }
 
 .step-card {
   background: linear-gradient(135deg, #011f67, #011f67);
-
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
@@ -302,18 +372,18 @@
   gap: 20px; 
   width: 300px;
   transition: transform 0.3s ease-in-out;
- font-size: 0.5rem;
+  font-size: 0.5rem;
   font-weight: bold;
-  color: #010e3d;}
+  color: #010e3d;
+}
 
 .feature-card:hover {
   transform: translateY(-5px);
 }
 
-.feature-span{
+.feature-span {
   font-size: 10px;
   color: #FF8614;
-
 }
 
 .text-container {
@@ -335,28 +405,43 @@
   margin-top: 5px;
   color: #010e3d;
   text-align: start;
+  line-height: 1.6;
 }
 
+/* Two-column image + text section */
+.features-image-text-section {
+  padding: 4rem 1rem 2rem; /* reduced bottom padding */
+  background-color: #fff;
+}
 
-.two-column-section {
+.feature-row {
   display: flex;
-  gap: 2rem;
-  padding: 4rem 2rem;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0; /* fix for mobile spacing */
+}
+
+.feature-column {
+  flex: 1 1 400px;
+  max-width: 500px;
+  margin-bottom: 0;
 }
 
 .image-column {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.responsive-img {
+.feature-img {
   width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  object-fit: cover;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+  margin-bottom: 1rem;
 }
 
 .text-column {
@@ -364,31 +449,42 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex:1;
 }
 
-.feature-title {
-  font-size: 20px;
+.feature-image-span {
+  font-size: 10px;
+  color: #FF8614;
   font-weight: bold;
-  color: #010e3d;
-  text-align: start;
 }
 
-.section-description {
+.feature-image-title {
+  font-size: 1.25rem;
+  color: #001849;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.text-column .desc {
+  line-height: 1.6;
   font-size: 15px;
   opacity: 0.8;
-  margin-top: 5px;
   color: #010e3d;
   text-align: start;
 }
 
 @media screen and (max-width: 768px) {
-  .two-column-section {
+  .two-column-section,
+  .feature-row {
     flex-direction: column;
     text-align: center;
   }
 
-  .text-column {
+  .feature-column {
+    margin-bottom: 1rem;
+  }
+
+  .text-column,
+  .image-column {
     max-width: 100%;
   }
 
@@ -396,187 +492,172 @@
     font-size: 2rem;
   }
 
-  .section-description {
+  .section-description,
+  .text-column .desc {
     font-size: 1rem;
+  }
+
+  .features-image-text-section {
+    padding-bottom: 1rem !important;
   }
 }
 
+
 /* =================== Main pricing section ========================================== */
 /* =================================================================================== */
+/* =========== Pricing Section Styles ============ */
 .pricing-section {
-  padding: 3rem 2rem;
-  background: #f2f3f7;
-  color: #010e3d;
-  border-radius: 12px;
-  max-width: 100%;
+  padding: 4rem 1rem;
+  background: #f7f9fc;
+  text-align: center;
 }
 
 .pricing-content {
-  color: #010e3d;
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 0 2rem;
-}
-
-.pricing-span,
-.pricing-title,
-.pricing-link,
-.pricing-term-span,
-.pricing-description,
-.pricing-readmore {
-  padding-left: 0;
-  padding-right: 0;
+  max-width: 900px;
+  margin: 0 auto 3rem;
 }
 
 .pricing-span {
-  font-size: 1rem;
-  text-transform: uppercase;
+  font-size: 12px;
   color: #FF8614;
+  text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 1px;
-  text-align: left;
-  margin-bottom: 0.5rem;
 }
 
 .pricing-title {
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  font-weight: 700;
-  margin: 1rem 0;
-  text-align: left;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #001849;
+  margin-top: 0.5rem;
 }
 
 .pricing-link {
   display: inline-block;
   margin-top: 1rem;
-  margin-bottom: 1rem;
-  color: #FF8614;
-  font-weight: 600;
+  color: #022984;
   text-decoration: none;
-  transition: color 0.3s ease;
-  text-align: right;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .pricing-link:hover {
-  color: #e76f51;
-}
-
-.pricing-term-span {
-  display: block;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #022984;
-  margin-bottom: 1rem;
+  border-bottom: 2px solid #022984;
 }
 
 .pricing-description {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1rem;
   color: #333;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
+  line-height: 1.6;
 }
 
 .pricing-readmore {
   display: inline-block;
   margin-top: 1rem;
   color: #FF8614;
-  font-weight: 600;
+  font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
-  text-align: right;
 }
 
 .pricing-readmore:hover {
-  color: #e76f51;
+  color: #e06b00;
 }
 
-@media screen and (max-width: 768px) {
-  .pricing-section {
-    padding: 2rem 1rem;
-  }
-
-  .pricing-content {
-    padding: 0 1rem;
-  }
-
-  .pricing-span,
-  .pricing-title,
-  .pricing-description,
-  .pricing-link,
-  .pricing-readmore {
-    text-align: center;
-  }
-
-  .pricing-link,
-  .pricing-readmore {
-    margin-top: 1.5rem;
-  }
-}
-
-
-/* ========================💰 Pricing2 Section============================ */
+/* =========== Pricing Cards ============ */
 .pricing2-section {
-  padding: 3rem 1rem;
-}
-
-.pricing-title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  padding: 2rem 0;
 }
 
 .pricing-cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .pricing-card {
-  background: #022984;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 280px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  width: 300px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .plan {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: #011f67;
 }
 
 .price {
-  font-size: 1.8rem;
-  color: #f4a261;
-  margin: 10px 0;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #333;
 }
 
-ul {
-  list-style: none;
+.pricing-card ul {
+  list-style-type: none;
   padding: 0;
-  color: white;
+  margin: 1rem 0;
 }
 
-ul li {
-  font-size: 1rem;
-  margin: 5px 0;
+.pricing-card li {
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  color: #444;
 }
 
 .cta-btn {
-  background-color: #f4a261;
-  color: #37332f;
-  padding: 10px 16px;
-  font-size: 1rem;
-  border-radius: 5px;
+  margin-top: 1rem;
+  background-color: #FF8614;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
-  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .cta-btn:hover {
-  background-color: #e76f51;
+  background-color: #e06b00;
 }
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .pricing-title {
+    font-size: 2rem;
+  }
+
+  .pricing-description {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .pricing-readmore {
+    margin-bottom: 2rem;
+  }
+}
+
 
 /* ============================= contact section =============================== */
 .contact-support {
@@ -591,9 +672,6 @@ ul li {
 }
 
 .contact-support h2 {
-  /* font-size: 2rem;
-  color: #010e3d;
-  margin-bottom: 1rem; */
   font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 700;
   margin: 1rem 0;

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button, Container, Alert } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -12,9 +13,11 @@ const SignUp = () => {
     agree: false,
     subscribed: false,
   });
+
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
+  const { setIsLoggedIn } = useContext(AuthContext);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -27,29 +30,33 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.email || !form.password || !form.confirmPassword) {
-      setError("Email and password fields are required.");
+    const { email, password, confirmPassword, agree } = form;
+
+    if (!email.trim() || !password.trim() || !confirmPassword.trim()) {
+      setError('Email and password fields are required.');
       return;
     }
 
-    if (form.password !== form.confirmPassword) {
-      setError("Passwords do not match.");
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
       return;
     }
 
-    if (!form.agree) {
-      setError("You must agree to the terms and conditions.");
+    if (!agree) {
+      setError('You must agree to the terms and conditions.');
       return;
     }
 
     setError('');
     setSuccess(true);
 
-    localStorage.setItem('user', JSON.stringify(form));
+    const { confirmPassword: _, ...userData } = form;
+    localStorage.setItem('user', JSON.stringify(userData));
 
-    console.log('Sign up success', form);
-
-    navigate('/profile');
+    setTimeout(() => {
+      setIsLoggedIn(true);
+      navigate('/dashboard');
+    }, 1500);
   };
 
   return (

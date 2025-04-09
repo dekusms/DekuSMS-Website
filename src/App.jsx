@@ -6,14 +6,12 @@ import {
   useLocation,
   Navigate,
 } from "react-router-dom";
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import Enterprise from './pages/Enterprise';
-import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
@@ -28,11 +26,17 @@ function isAuthenticated() {
   return !!user;
 }
 
+function getUser() {
+  const user = localStorage.getItem("user");
+  return user ? JSON.parse(user) : null;
+}
+
 function MainLayout() {
   const location = useLocation();
   const path = location.pathname;
 
-  // Hide global Navbar and Footer on these paths
+  const user = getUser();
+
   const hideGlobalNavbar = 
     path.startsWith("/enterprise") ||
     path === "/login" ||
@@ -40,21 +44,22 @@ function MainLayout() {
 
   return (
     <div className="App">
-      {!hideGlobalNavbar && <Navbar />}
-
+ <AuthProvider>   
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/enterprise/*" element={<Enterprise />} />
-        <Route path="/pricing/*" element={<Pricing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route
           path="/dashboard"
-          element={isAuthenticated() ? <Dashboard /> : <Navigate to="/login" />}
+          element={
+            isAuthenticated()
+              ? <Dashboard user={user} />
+              : <Navigate to="/login" replace />
+          }
         />
       </Routes>
-
-      {!hideGlobalNavbar && <Footer />}
+      </AuthProvider>
     </div>
   );
 }
