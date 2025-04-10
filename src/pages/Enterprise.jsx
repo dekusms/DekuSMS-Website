@@ -1,20 +1,15 @@
-import React, { useContext } from 'react';
-import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartLine, faShieldAlt, faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
-import { AuthContext } from '../context/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
+
 import '../index.css';
 
 const Enterprise = () => {
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    setIsLoggedIn(false);
-    navigate('/enterprise');
-  };
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { t } = useTranslation();
 
 
   const enterpriseFeatures = [
@@ -24,76 +19,70 @@ const Enterprise = () => {
   ];
 
   const steps = [
-    { icon: faChartLine, title: "Advanced Analytics", desc: "Gain valuable insights with real-time data analytics." },
-    { icon: faShieldAlt, title: "Enhanced Security", desc: "Multi-factor authentication, IP whitelisting, and more." },
-    { icon: faPhoneVolume, title: "Priority Support", desc: "Get 24/7 live chat support and direct communication." }
+    { icon: faChartLine, title: t('features.analyticsTitle'), desc: t('features.analyticsDesc') },
+    { icon: faShieldAlt, title: t('features.securityTitle'), desc: t('features.securityDesc') },
+    { icon: faPhoneVolume, title: t('features.supportTitle'), desc: t('features.supportDesc') }
   ];
+  
 
   return (
     <section className="enterprise-page">
   {/* ============================ Navbar ========================== */}
-  <Navbar expand="lg" className="custom-navbar" fixed="top" bg="light">
+  <Navbar expand="lg" className="custom-navbar" fixed="top">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand href="/">
           <img src="/DekuSMS-Blue.png" alt="DekuSMS Logo" height="30" />
         </Navbar.Brand>
-
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-          <Nav.Link href="/" className="nav-link-custom">Home</Nav.Link>
-<Nav.Link href="#features" className="nav-link-custom">Features</Nav.Link>
-<Nav.Link href="#pricing" className="nav-link-custom">Pricing</Nav.Link>
-<Nav.Link href="#contact" className="nav-link-custom">Contact</Nav.Link>
+            <Nav.Link href="#home" className="nav-link-custom">{t('navbar.home')}</Nav.Link>
+            <Nav.Link href="#features" className="nav-link-custom">{t('navbar.features')}</Nav.Link>
+            <Nav.Link href="#pricing" className="nav-link-custom">{t('navbar.pricing')}</Nav.Link>
+            <Nav.Link href="#contact" className="nav-link-custom">{t('navbar.contact')}</Nav.Link>
 
+            <NavDropdown
+              title={`🌐 ${t('navbar.language')}`}
+              id="language-dropdown"
+              className="nav-link-custom"
+            >
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('en')}>English</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('fr')}>Français</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('es')}>Español</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('fa')}>فارسی</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('de')}>Deutsch</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('ar')}>العربية</NavDropdown.Item>
+            </NavDropdown>
 
-            {!isLoggedIn ? (
-              <>
-                <Button as={Link} to="/login" variant="outline-primary" size="sm" className="mx-2">
-                  Login
-                </Button>
-                <Button as={Link} to="/signup" variant="primary" size="sm">
-                  Sign Up
-                </Button>
-              </>
-            ) : (
-              <NavDropdown
-                align="end"
-                title={
-                  <img
-                    src="/profile.jpg"
-                    alt="Profile"
-                    className="rounded-circle"
-                    width="30"
-                    height="30"
-                  />
-                }
-                id="user-dropdown"
-              >
-                <NavDropdown.Item as={Link} to="/dashboard">Dashboard</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/settings">Account Settings</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/billing">Billing</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+            {isLoggedIn ? (
+              <NavDropdown title={t('navbar.profile')} id="profile-dropdown" className="nav-link-custom">
+                <NavDropdown.Item href="#profile">{t('navbar.profile')}</NavDropdown.Item>
+                <NavDropdown.Item href="#logout">{t('navbar.logout')}</NavDropdown.Item>
               </NavDropdown>
+            ) : (
+              <>
+                <Nav.Link href="/login" className="nav-link-custom btn btn-outline-primary btn-sm">
+                  {t('navbar.login')}
+                </Nav.Link>
+                <Nav.Link href="/signup" className="nav-link-custom btn btn-primary btn-sm">
+                  {t('navbar.signup')}
+                </Nav.Link>
+              </>
             )}
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    
       {/*========================== Hero Section ===========================*/}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">DekuSMS Enterprise</h1>
-        <p className="hero-desc">
-          Unlock the full potential of SMS with our premium, enterprise-grade features. Powerful messaging solutions tailored for businesses. Seamless Messaging with DekuSMS. Fast, secure, and reliable messaging for your business.
-        </p>
+        <h1 className="hero-title">{t('enterprise.heroTitle')}</h1>
+<p className="hero-desc">{t('enterprise.heroDesc')}</p>
 
           <div className="hero-buttons">
-            <button className="hero-btn-primary">Request a Demo</button>
-            <button className="hero-btn-secondary">Learn More</button>
-            
+          <button className="hero-btn-primary">{t('buttons.requestDemo')}</button>
+          <button className="hero-btn-secondary">{t('buttons.learnMore')}</button>
           </div>
         </div>
       </section>
@@ -133,6 +122,7 @@ const Enterprise = () => {
     ))}
   </div>
 
+  {/* =============== Image Section ================= */}
   <div className="features-image-text-section">
     <div className="feature-row">
       <div className="feature-column image-column">
@@ -161,16 +151,19 @@ const Enterprise = () => {
   <div className="pricing-content">
     <span className="pricing-span">Pricing and Plans</span>
     <h2 className="pricing-title">About DekuSMS</h2>
+
     <p className="pricing-description">
       <strong>DekuSMS</strong> is a next-generation SMS solution designed for privacy, security, and seamless integration.
     </p>
     <p className="pricing-description">
       Whether you need encrypted messaging, real-time cloud synchronization, or customizable settings, DekuSMS is built to empower you. Say goodbye to outdated SMS limitations and hello to the future of messaging.
     </p>
+
+    <a href="#" className="pricing-readmore">Read More</a>
   </div>
 
   {/* -================= Pricing Cards ==================-- */}
-  <section className="enterprise-page" id="pricing">
+  <section className="enterprise-page">
     <div className="pricing2-section">
       <h2 className="pricing-title">Choose Your Plan</h2>
       <div className="pricing-cards">
@@ -197,7 +190,7 @@ const Enterprise = () => {
 
 
     {/* ================== contect ================================== */}
-<section className="contact-support" id="contact">
+<section className="contact-support">
   <div className="contact-container">
     <h2>Contact and Support</h2>
     <p className="contact-description">
@@ -215,7 +208,8 @@ const Enterprise = () => {
 
 
 
-{/* ============= footer ===================== */}
+
+{/* ============= ⚡Footer ================== */}
 <footer className="footer">
   <div className="footer-container">
     {/* Brand & Description */}
@@ -232,50 +226,34 @@ const Enterprise = () => {
       <ul>
         <li><a href="#features">Features</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="https://blog.smswithoutborders.com/">Blog</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#download">Download</a></li>
       </ul>
     </div>
-
 
     {/* Contact Info */}
     <div className="footer-contact">
       <h4>Contact Us</h4>
       <p>Email: <a href="mailto:support@dekusms.com">support@dekusms.com</a></p>
-      <p>Phone: +237 612-345-678</p>
+      <p>Phone: +1 (800) 123-4567</p>
       <div className="footer-socials">
-        <a href="#" className="footer-social-icon"><i className="fab fa-twitter"></i></a>
-        <a href="#" className="footer-social-icon"><i className="fab fa-facebook"></i></a>
-        <a href="#" className="footer-social-icon"><i className="fab fa-github"></i></a>
+        <a href="#"><i className="fab fa-twitter"></i></a>
+        <a href="#"><i className="fab fa-facebook"></i></a>
+        <a href="#"><i className="fab fa-github"></i></a>
       </div>
-    </div>
-
-    {/* Subscription Section */}
-    <div className="footer-contact">
-    <h4>Subscribe for Updates</h4>
-    <p>Get the latest news and updates from DekuSMS directly to your inbox.</p>
-    <form className="subscription-form" onSubmit={(e) => e.preventDefault()}>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          required
-          className="subscription-input"
-        />
-        <button type="submit" className="subscription-button">Subscribe</button>
-      </form>
     </div>
   </div>
 
-      
-{/* Bottom Strip */}
+  {/* Bottom Strip */}
   <div className="footer-bottom">
-  <div className="footer-policy-links">
+    <p>© 2025 DekuSMS. All rights reserved.</p>
+    <div className="footer-policy-links">
       <a href="#privacy">Privacy Policy</a>
       <a href="#terms">Terms of Service</a>
     </div>
-    <p>© 2025 DekuSMS. All rights reserved.</p>
   </div>
 </footer>
+
 
     </section>
   );

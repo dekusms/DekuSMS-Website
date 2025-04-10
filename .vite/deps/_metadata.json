@@ -1,0 +1,70 @@
+{
+  "hash": "73ba695e",
+  "configHash": "49e564d9",
+  "lockfileHash": "fe02e0d2",
+  "browserHash": "bdc58cf7",
+  "optimized": {
+    "@fortawesome/free-brands-svg-icons": {
+      "src": "../../../../../snap/code/189/.local/share/yarn/berry/cache/@fortawesome-free-brands-svg-icons-npm-6.7.2-efb785a9d7-10c0.zip/node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
+      "file": "@fortawesome_free-brands-svg-icons.js",
+      "fileHash": "b601d233",
+      "needsInterop": false
+    },
+    "@fortawesome/free-solid-svg-icons": {
+      "src": "../../../../../snap/code/189/.local/share/yarn/berry/cache/@fortawesome-free-solid-svg-icons-npm-6.7.2-35f32a3213-10c0.zip/node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+      "file": "@fortawesome_free-solid-svg-icons.js",
+      "fileHash": "6b2f40b0",
+      "needsInterop": false
+    },
+    "@fortawesome/react-fontawesome": {
+      "src": "../../.yarn/__virtual__/@fortawesome-react-fontawesome-virtual-65b99c6f5d/4/snap/code/189/.local/share/yarn/berry/cache/@fortawesome-react-fontawesome-npm-0.2.2-e1863961b2-10c0.zip/node_modules/@fortawesome/react-fontawesome/index.es.js",
+      "file": "@fortawesome_react-fontawesome.js",
+      "fileHash": "78dd1326",
+      "needsInterop": false
+    },
+    "bootstrap/dist/js/bootstrap.bundle.min.js": {
+      "src": "../../.yarn/__virtual__/bootstrap-virtual-8837719043/4/snap/code/189/.local/share/yarn/berry/cache/bootstrap-npm-5.3.5-63d2ce0f25-10c0.zip/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "file": "bootstrap_dist_js_bootstrap__bundle__min__js.js",
+      "fileHash": "b3e624e8",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../../../../snap/code/189/.local/share/yarn/berry/cache/react-npm-19.1.0-9804a7da5b-10c0.zip/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "be5839a4",
+      "needsInterop": true
+    },
+    "react-bootstrap": {
+      "src": "../../.yarn/__virtual__/react-bootstrap-virtual-9855f65746/4/snap/code/189/.local/share/yarn/berry/cache/react-bootstrap-npm-2.10.9-a8ae37498e-10c0.zip/node_modules/react-bootstrap/esm/index.js",
+      "file": "react-bootstrap.js",
+      "fileHash": "6c72d3d1",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../.yarn/__virtual__/react-dom-virtual-068fa42db3/4/snap/code/189/.local/share/yarn/berry/cache/react-dom-npm-19.1.0-773f826e46-10c0.zip/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "cafe6ad8",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../.yarn/__virtual__/react-router-dom-virtual-3047adc2db/4/snap/code/189/.local/share/yarn/berry/cache/react-router-dom-npm-7.5.0-21471efcbf-10c0.zip/node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "9afa8967",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-P5GZQBV2": {
+      "file": "chunk-P5GZQBV2.js"
+    },
+    "chunk-ZFFOSCMK": {
+      "file": "chunk-ZFFOSCMK.js"
+    },
+    "chunk-D4HA2WJA": {
+      "file": "chunk-D4HA2WJA.js"
+    },
+    "chunk-EQCVQC35": {
+      "file": "chunk-EQCVQC35.js"
+    }
+  }
+}

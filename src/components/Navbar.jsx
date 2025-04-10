@@ -42,8 +42,8 @@ const Navbar = () => {
             <Link className="nav-link" to="/" onClick={() => setIsOpen(false)}>Home</Link>
           </li>
           <li className="nav-item">
-              <Link className="nav-link" to="/enterprise-coming-soon">Enterprise</Link>
-            </li>
+            <Link className="nav-link" to="/enterprise" onClick={() => setIsOpen(false)}>Enterprise</Link>
+          </li>
           <li className="nav-item">
             <a className="nav-link" href="#download" onClick={() => setIsOpen(false)}>Download</a>
           </li>

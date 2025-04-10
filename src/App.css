@@ -17,7 +17,7 @@
     left: 0;
     width: 100%;
     z-index: 1050;
-    box-shadow: 0px 4px 10px rgba(249, 216, 1, 0.063);
+    box-shadow: 0px 4px 10px rgba(22, 22, 22, 0.2);
     transition: all 0.3s ease-in-out;
   }
   
@@ -144,7 +144,7 @@
     margin-top: 35px;
 }
 
-.Hero-btn-secondary, .Hero-btn-primary {
+.btn-primary, .btn-secondary {
     padding: 12px 24px;
     font-size: 18px;
     border: none;
@@ -153,23 +153,24 @@
     transition: 0.3s ease;
 }
 
-.Hero-btn-primary {
+.btn-primary {
     color: #010e3d;
     background-color: white;
     border: 2px solid white;
 }
-.Hero-btn-primary:hover {
-    background-color: #010e3d;
-    color: white;
-}
 
-.Hero-btn-secondary {
+.btn-secondary {
     background-color:#010e3d;
     color: white;
     border: 2px solid white;
 }
 
-.Hero-btn-secondary:hover {
+.btn-primary:hover {
+    background-color: #010e3d;
+    color: white;
+}
+
+.btn-secondary:hover {
     background-color: white;
     color: #010e3d;
 }
@@ -198,7 +199,7 @@
     .landing {
         padding: 50px 5%; 
     }
-    .Hero-btn-primary, .Hero-btn-secondary {
+    .btn-primary, .btn-secondary {
         width: 100%;
         text-align: center;
     }
@@ -226,7 +227,7 @@
         margin-bottom: 20px;
     }
 
-    .Hero-btn-primary, .Hero-btn-secondary {
+    .btn-primary, .btn-secondary {
         width: 100%;
         text-align: center;
     }
