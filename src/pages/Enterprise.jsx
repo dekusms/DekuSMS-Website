@@ -9,7 +9,7 @@ import '../index.css';
 
 const Enterprise = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTranslation('enterprise');
 
 
   const enterpriseFeatures = [

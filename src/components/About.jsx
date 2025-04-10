@@ -1,32 +1,33 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShieldAlt, faCloud, faLock } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 import "../App.css";
 
 const About = () => {
+  const { t } = useTranslation('dekusms'); 
+
   const features = [
-    { icon: faShieldAlt, title: "End-to-End Encryption", desc: "Secure SMS messaging with complete privacy protection." },
-    { icon: faCloud, title: "Cloud Forwarding", desc: "Sync messages to your personal cloud server." },
-    { icon: faLock, title: "Use as SMS Gateway", desc: "Send SMS via your Android phone with ease." },
-    { icon: faShieldAlt, title: "Open Source & Community-Driven", desc: "Built by the community for complete transparency and control." },
+    { icon: faShieldAlt, title: t("about.features.endToEnd.title"), desc: t("about.features.endToEnd.desc") },
+    { icon: faCloud, title: t("about.features.cloudForwarding.title"), desc: t("about.features.cloudForwarding.desc") },
+    { icon: faLock, title: t("about.features.smsGateway.title"), desc: t("about.features.smsGateway.desc") },
+    { icon: faShieldAlt, title: t("about.features.openSource.title"), desc: t("about.features.openSource.desc") },
   ];
 
   return (
     <section className="about-page">
       <div className="about-container">
         <div className="about-description">
-          <h2 className="about-title">what you need to know about DekuSMS</h2>
+          <h2 className="about-title">{t('about.title')}</h2>
           <p className="about-p">
-            <strong>DekuSMS</strong> is a next-generation SMS solution designed for privacy, security, and seamless integration.
-            We believe in giving users full control over their communication without compromise.
+            <strong>{t('about.appName')}</strong> {t('about.description1')}
           </p>
           <p className="about-p">
-            Whether you need encrypted messaging, real-time cloud synchronization, or customizable settings, 
-            DekuSMS is built to empower you. Say goodbye to outdated SMS limitations and hello to the future of messaging.
+            {t('about.description2')}
           </p>
         </div>
 
-          {/* Features Section */}
+        {/* Features Section */}
         <div className="about-content">
           <div className="about-features">
             {features.map((feature, index) => (
@@ -39,7 +40,7 @@ const About = () => {
               </div>
             ))}
           </div>
-          <button className="about-btn">Learn More</button>
+          <button className="about-btn">{t('about.learnMore')}</button>
         </div>
         <div className="about-image">
           <img src="landing 2.png" alt="DekuSMS Security" />

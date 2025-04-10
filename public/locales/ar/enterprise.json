@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "signup": "Registrieren",
+    "profile": "Mein Profil",
+    "logout": "Abmelden",
+    "language": "Sprache"
+  },
+  "enterprise": {
+    "heroTitle": "DekuSMS Enterprise",
+    "heroDesc": "Nutzen Sie das volle Potenzial von SMS mit unseren erstklassigen Enterprise-Funktionen..."
+  },
+  "buttons": {
+    "requestDemo": "Demo anfordern",
+    "learnMore": "Mehr erfahren"
+  },
+  "features": {
+    "analyticsTitle": "Erweiterte Analytik",
+    "analyticsDesc": "Erhalten Sie wertvolle Einblicke mit Echtzeitdatenanalyse.",
+    "securityTitle": "Erhöhte Sicherheit",
+    "securityDesc": "Mehrfaktor-Authentifizierung, IP-Whitelist und mehr.",
+    "supportTitle": "Vorrangiger Support",
+    "supportDesc": "24/7 Live-Chat-Support und direkte Kommunikation."
+  }
+}

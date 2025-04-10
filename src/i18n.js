@@ -11,10 +11,15 @@ i18n
     fallbackLng: 'en',
     debug: true,
     interpolation: {
-      escapeValue: false,
+      escapeValue: false, 
     },
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json',
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+    ns: ['common', 'dekusms', 'enterprise'],
+    defaultNS: 'common',
+    react: {
+      useSuspense: false,
     },
   });
 

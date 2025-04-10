@@ -1,0 +1,90 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "enterprise": "Unternehmen",
+    "download": "Herunterladen",
+    "documentation": "Dokumentation",
+    "support": "Unterstützung",
+    "language": "Sprache"
+  },
+"landing": {
+    "title": "DekuSMS",
+    "title2": "Bleib Immer Verbunden",
+    "description": "Stärken Sie Ihre Kommunikation mit End-to-End-Verschlüsselung und vollständiger Cloud-Integration. Bleiben Sie sicher verbunden.",
+    "getStarted": "Loslegen",
+    "learnMore": "Mehr Erfahren"
+  },
+    "gratitude": {
+      "title": "Sicher, Intelligent und Unaufhaltsam",
+      "description": "DekuSMS ist nicht nur eine SMS-App—es ist ein Game-Changer. Entwickelt für Privatsphäre und Leistung, bietet es End-to-End-Verschlüsselung, SMS-zu-Cloud-Weiterleitung und vollständige Kontrolle über deine Nachrichten. Sag Adieu zu Einschränkungen und Hallo zu sicherer, anpassbarer und intelligenter Kommunikation. Deine Privatsphäre. Deine Regeln. Deine SMS, weiterentwickelt. 🚀"
+  },
+  "about": {
+    "title": "Was Sie über DekuSMS wissen müssen",
+    "appName": "DekuSMS",
+    "description1": "ist eine SMS-Lösung der nächsten Generation, die für Privatsphäre, Sicherheit und nahtlose Integration entwickelt wurde. Wir glauben daran, den Nutzern die volle Kontrolle über ihre Kommunikation ohne Kompromisse zu geben.",
+    "description2": "Ob Sie verschlüsselte Nachrichten, Echtzeit-Cloud-Synchronisierung oder anpassbare Einstellungen benötigen, DekuSMS wurde entwickelt, um Ihnen die Kontrolle zu geben. Verabschieden Sie sich von veralteten SMS-Einschränkungen und begrüßen Sie die Zukunft des Nachrichtenaustauschs.",
+    "features": {
+      "endToEnd": {
+        "title": "Ende-zu-Ende-Verschlüsselung",
+        "desc": "Sichere SMS-Nachrichten mit vollständigem Datenschutz."
+      },
+      "cloudForwarding": {
+        "title": "Cloud-Weiterleitung",
+        "desc": "Synchronisieren Sie Nachrichten mit Ihrem persönlichen Cloud-Server."
+      },
+      "smsGateway": {
+        "title": "Verwendung als SMS-Gateway",
+        "desc": "Senden Sie SMS einfach über Ihr Android-Telefon."
+      },
+      "openSource": {
+        "title": "Open Source & Community-gesteuert",
+        "desc": "Von der Community entwickelt, um vollständige Transparenz und Kontrolle zu gewährleisten."
+      }
+    },
+    "learnMore": "Mehr erfahren"
+  },
+  "download": {
+    "title": "DekuSMS herunterladen",
+    "subtitle": "Sichere, private und Open-Source-Messaging direkt in Ihrer Hand. Holen Sie sich DekuSMS noch heute auf Ihrer bevorzugten Plattform.",
+    "googlePlay": {
+      "title": "Google Play",
+      "desc": "Aus dem Play Store herunterladen"
+    },
+    "fdroid": {
+      "title": "F-Droid",
+      "desc": "Holen Sie sich die Open-Source-Version"
+    },
+    "github": {
+      "title": "GitHub",
+      "desc": "Quellcode ansehen und mitwirken"
+    }
+  },
+  "footer": {
+    "branding": {
+      "logo": "DekuSMS",
+      "tagline": "Sicher. Privat. Nahtlos."
+    },
+    "navigation": {
+      "title": "Navigation",
+      "about": "Über uns",
+      "features": "Merkmale",
+      "download": "Herunterladen",
+      "contact": "Kontakt"
+    },
+    "resources": {
+      "title": "Ressourcen",
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Nutzungsbedingungen",
+      "support": "Unterstützung",
+      "faq": "Häufig gestellte Fragen"
+    },
+    "stayConnected": {
+      "title": "Bleiben Sie verbunden",
+      "subscribeText": "Abonnieren Sie, um die neuesten Updates und Angebote zu erhalten.",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+      "subscribeButton": "Abonnieren"
+    },
+    "copyright": "© {{year}} DekuSMS. Alle Rechte vorbehalten."
+  }
+  
+}

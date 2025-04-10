@@ -1,15 +1,19 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
 import "../App.css";
 
 const LandingPage = () => {
+    const { t } = useTranslation('dekusms');
+  
   return (
       <section className="landing">
         <div className="landing-content">
-          <h1>DekuSMS <br /> Stay Connected, Anytime</h1>
-          <p>Empower your communication with end-to-end encryption and complete cloud integration. Stay connected, securely.</p>
+          <h1>{t('landing.title')} </h1> <br />
+          <h1>{t('landing.title2')}</h1>
+          <p>{t('landing.description')}</p>
           <div className="landing-buttons">
-            <button className="btn-primary">Get Started</button>
-            <button className="btn-secondary">Learn More</button>
+          <button className="btn-primary">{t('landing.getStarted')}</button>
+          <button className="btn-secondary">{t('landing.learnMore')}</button>
           </div>
         </div>
         <div className="landing-image">

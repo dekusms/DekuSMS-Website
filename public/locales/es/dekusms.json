@@ -1,0 +1,90 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "enterprise": "Empresa",
+    "download": "Descargar",
+    "documentation": "Documentación",
+    "support": "Soporte",
+    "language": "Idioma"
+  },
+  "landing": {
+    "title": "DekuSMS",
+    "title2": "Mantente Conectado, En Cualquier Momento",
+    "description": "Potencia tu comunicación con encriptación de extremo a extremo e integración completa en la nube. Mantente conectado, de manera segura.",
+    "getStarted": "Comenzar",
+    "learnMore": "Aprender Más"
+  },
+    "gratitude": {
+      "title": "Seguro, Inteligente e Imparable",
+      "description": "DekuSMS no es solo una aplicación de SMS, es un cambio radical. Diseñada para la privacidad y el poder, ofrece cifrado de extremo a extremo, reenvío de SMS a la nube y control total sobre tus mensajes. Di adiós a las limitaciones y hola a una mensajería segura, personalizable e inteligente. Tu privacidad. Tus reglas. Tus SMS, evolucionados. 🚀"
+  },
+  "about": {
+    "title": "Lo que necesitas saber sobre DekuSMS",
+    "appName": "DekuSMS",
+    "description1": "es una solución SMS de nueva generación diseñada para la privacidad, seguridad e integración sin problemas. Creemos en dar a los usuarios control total sobre su comunicación sin compromisos.",
+    "description2": "Ya sea que necesites mensajería cifrada, sincronización en la nube en tiempo real o configuraciones personalizables, DekuSMS está diseñado para empoderarte. Di adiós a las limitaciones SMS anticuadas y hola al futuro de la mensajería.",
+    "features": {
+      "endToEnd": {
+        "title": "Cifrado de extremo a extremo",
+        "desc": "Mensajería SMS segura con completa protección de la privacidad."
+      },
+      "cloudForwarding": {
+        "title": "Reenvío a la nube",
+        "desc": "Sincroniza tus mensajes con tu servidor en la nube personal."
+      },
+      "smsGateway": {
+        "title": "Uso como puerta de enlace SMS",
+        "desc": "Envía SMS a través de tu teléfono Android con facilidad."
+      },
+      "openSource": {
+        "title": "Código abierto y impulsado por la comunidad",
+        "desc": "Creado por la comunidad para total transparencia y control."
+      }
+    },
+    "learnMore": "Saber más"
+  },
+  "download": {
+    "title": "Descargar DekuSMS",
+    "subtitle": "Mensajería segura, privada y de código abierto al alcance de tu mano. Obtén DekuSMS hoy en tu plataforma favorita.",
+    "googlePlay": {
+      "title": "Google Play",
+      "desc": "Descargar desde la Play Store"
+    },
+    "fdroid": {
+      "title": "F-Droid",
+      "desc": "Obtén la versión de código abierto"
+    },
+    "github": {
+      "title": "GitHub",
+      "desc": "Ver el código fuente y contribuir"
+    }
+  },
+  "footer": {
+    "branding": {
+      "logo": "DekuSMS",
+      "tagline": "Seguro. Privado. Sin interrupciones."
+    },
+    "navigation": {
+      "title": "Navegación",
+      "about": "Acerca de",
+      "features": "Características",
+      "download": "Descargar",
+      "contact": "Contacto"
+    },
+    "resources": {
+      "title": "Recursos",
+      "privacy": "Política de privacidad",
+      "terms": "Términos de servicio",
+      "support": "Soporte",
+      "faq": "Preguntas frecuentes"
+    },
+    "stayConnected": {
+      "title": "Mantente Conectado",
+      "subscribeText": "Suscríbete para recibir las últimas actualizaciones y ofertas.",
+      "emailPlaceholder": "Ingresa tu correo electrónico",
+      "subscribeButton": "Suscribirse"
+    },
+    "copyright": "© {{year}} DekuSMS. Todos los derechos reservados."
+  }
+  
+}
