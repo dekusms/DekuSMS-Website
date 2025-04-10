@@ -11,6 +11,7 @@ import Enterprise from './pages/Enterprise';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import ComingSoon from './pages/ComingSoon';
 import { AuthProvider } from './context/AuthContext';
 
 function App() {
@@ -40,25 +41,27 @@ function MainLayout() {
   const hideGlobalNavbar = 
     path.startsWith("/enterprise") ||
     path === "/login" ||
-    path === "/signup";
+    path === "/signup" ||
+    path === "/enterprise-coming-soon";
 
   return (
     <div className="App">
- <AuthProvider>   
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/enterprise/*" element={<Enterprise />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route
-          path="/dashboard"
-          element={
-            isAuthenticated()
-              ? <Dashboard user={user} />
-              : <Navigate to="/login" replace />
-          }
-        />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/enterprise/*" element={<Enterprise />} />
+          <Route path="/enterprise-coming-soon" element={<ComingSoon />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/dashboard"
+            element={
+              isAuthenticated()
+                ? <Dashboard user={user} />
+                : <Navigate to="/login" replace />
+            }
+          />
+        </Routes>
       </AuthProvider>
     </div>
   );

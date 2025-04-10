@@ -43,7 +43,6 @@ const Enterprise = () => {
           <Nav>
           <Nav.Link href="/" className="nav-link-custom">Home</Nav.Link>
 <Nav.Link href="#features" className="nav-link-custom">Features</Nav.Link>
-
 <Nav.Link href="#pricing" className="nav-link-custom">Pricing</Nav.Link>
 <Nav.Link href="#contact" className="nav-link-custom">Contact</Nav.Link>
 
@@ -162,15 +161,12 @@ const Enterprise = () => {
   <div className="pricing-content">
     <span className="pricing-span">Pricing and Plans</span>
     <h2 className="pricing-title">About DekuSMS</h2>
-
     <p className="pricing-description">
       <strong>DekuSMS</strong> is a next-generation SMS solution designed for privacy, security, and seamless integration.
     </p>
     <p className="pricing-description">
       Whether you need encrypted messaging, real-time cloud synchronization, or customizable settings, DekuSMS is built to empower you. Say goodbye to outdated SMS limitations and hello to the future of messaging.
     </p>
-
-    <a href="#" className="pricing-readmore">Read More</a>
   </div>
 
   {/* -================= Pricing Cards ==================-- */}
@@ -219,8 +215,7 @@ const Enterprise = () => {
 
 
 
-
-{/* ============= ⚡Footer ================== */}
+{/* ============= footer ===================== */}
 <footer className="footer">
   <div className="footer-container">
     {/* Brand & Description */}
@@ -237,34 +232,50 @@ const Enterprise = () => {
       <ul>
         <li><a href="#features">Features</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#blog">Blog</a></li>
+        <li><a href="https://blog.smswithoutborders.com/">Blog</a></li>
         <li><a href="#download">Download</a></li>
       </ul>
     </div>
+
 
     {/* Contact Info */}
     <div className="footer-contact">
       <h4>Contact Us</h4>
       <p>Email: <a href="mailto:support@dekusms.com">support@dekusms.com</a></p>
-      <p>Phone: +1 (800) 123-4567</p>
+      <p>Phone: +237 612-345-678</p>
       <div className="footer-socials">
-        <a href="#"><i className="fab fa-twitter"></i></a>
-        <a href="#"><i className="fab fa-facebook"></i></a>
-        <a href="#"><i className="fab fa-github"></i></a>
+        <a href="#" className="footer-social-icon"><i className="fab fa-twitter"></i></a>
+        <a href="#" className="footer-social-icon"><i className="fab fa-facebook"></i></a>
+        <a href="#" className="footer-social-icon"><i className="fab fa-github"></i></a>
       </div>
+    </div>
+
+    {/* Subscription Section */}
+    <div className="footer-contact">
+    <h4>Subscribe for Updates</h4>
+    <p>Get the latest news and updates from DekuSMS directly to your inbox.</p>
+    <form className="subscription-form" onSubmit={(e) => e.preventDefault()}>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          required
+          className="subscription-input"
+        />
+        <button type="submit" className="subscription-button">Subscribe</button>
+      </form>
     </div>
   </div>
 
-  {/* Bottom Strip */}
+      
+{/* Bottom Strip */}
   <div className="footer-bottom">
-    <p>© 2025 DekuSMS. All rights reserved.</p>
-    <div className="footer-policy-links">
+  <div className="footer-policy-links">
       <a href="#privacy">Privacy Policy</a>
       <a href="#terms">Terms of Service</a>
     </div>
+    <p>© 2025 DekuSMS. All rights reserved.</p>
   </div>
 </footer>
-
 
     </section>
   );
