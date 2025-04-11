@@ -22,26 +22,25 @@
   "about": {
     "title": "What You Need to Know About DekuSMS",
     "appName": "DekuSMS",
-    "description1": "is a next-generation SMS solution designed for privacy, security, and seamless integration. We believe in giving users full control over their communication without compromise.",
-    "description2": "Whether you need encrypted messaging, real-time cloud synchronization, or customizable settings, DekuSMS is built to empower you. Say goodbye to outdated SMS limitations and hello to the future of messaging.",
-    "features": {
-      "endToEnd": {
-        "title": "End-to-End Encryption",
-        "desc": "Secure SMS messaging with complete privacy protection."
-      },
-      "cloudForwarding": {
-        "title": "Cloud Forwarding",
-        "desc": "Sync messages to your personal cloud server."
-      },
-      "smsGateway": {
-        "title": "Use as SMS Gateway",
-        "desc": "Send SMS via your Android phone with ease."
-      },
-      "openSource": {
-        "title": "Open Source & Community-Driven",
-        "desc": "Built by the community for complete transparency and control."
-      }
+    "description1": "is a secure, end-to-end encrypted, open-source SMS messaging application designed to keep your communication private and accessible.",
+    "description2": "DekuSMS is built for privacy-conscious users and those supporting communication freedom worldwide.",
+"features": {
+    "endToEnd": {
+      "title": "End-to-End Encryption",
+      "desc": "Your messages stay secure and private.",
+      "more": "We ensure encryption at every layer—device, transmission, and server. No one sees your messages except you."
     },
+    "cloudForwarding": {
+      "title": "Cloud Forwarding",
+      "desc": "Access SMS from anywhere in real-time.",
+      "more": "Our system syncs your SMS messages securely with the cloud and gives instant API access for app integration."
+    },
+    "smsGateway": {
+      "title": "Custom SMS Gateway",
+      "desc": "Integrate SMS into your apps easily.",
+      "more": "DekuSMS offers a flexible API and SDK toolkit, letting developers send and receive SMS through their own logic."
+    }
+  },
     "learnMore": "Learn More"
   },
   "download": {

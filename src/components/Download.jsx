@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import "../App.css"; 
+import "../App.css";
 
 const Download = () => {
   const { t } = useTranslation('dekusms');
@@ -38,7 +38,7 @@ const Download = () => {
   return (
     <section
       id="download"
-      className="py-5 bg-white text-center"
+      className="py-5 bg-white text-center d-flex align-items-center justify-content-center"
       style={{ minHeight: '50vh' }}
     >
       <div className="container">
@@ -54,7 +54,7 @@ const Download = () => {
                 href={option.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`d-flex align-items-center text-start p-4 rounded-4 border ${option.border} shadow-sm text-decoration-none text-dark bg-light h-100 transition hover-lift`}
+                className={`d-flex align-items-center text-start p-4 rounded-4 border ${option.border} shadow-sm text-decoration-none text-dark bg-light h-100 hover-lift`}
                 style={{
                   gap: "15px",
                   transition: "all 0.3s ease-in-out",

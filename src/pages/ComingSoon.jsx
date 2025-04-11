@@ -14,11 +14,11 @@ const ComingSoon = () => {
         Seconds: Math.floor((difference / 1000) % 60),
       };
     }
-
     return timeLeft;
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
   useEffect(() => {
     const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
     return () => clearInterval(timer);
@@ -36,9 +36,10 @@ const ComingSoon = () => {
       fontFamily: 'Arial, sans-serif',
       position: 'relative',
       overflow: 'hidden',
+      padding: '20px',
     }}>
 
-     <div style={{
+      <div style={{
         position: 'absolute',
         top: '-20%',
         left: '-20%',
@@ -50,23 +51,25 @@ const ComingSoon = () => {
         zIndex: -1,
       }}></div>
 
-       <div style={{ textAlign: 'center', padding: '30px' }}>
-        <h1 style={{
-          fontSize: '8rem',
-          fontWeight: '900',
-          letterSpacing: '5px',
-          textTransform: 'uppercase',
-          color: 'transparent',
-          background: 'linear-gradient(to right, #577BFF,rgb(1, 39, 174))',
-          backgroundClip: 'text',
-          WebkitBackgroundClip: 'text',
-          animation: 'glowingText 2s ease-in-out infinite alternate',
-          marginBottom: '20px',
-        }}>
+      <div style={{ textAlign: 'center', padding: '30px' }}>
+        <h1
+          style={{
+            fontSize: 'clamp(2.5rem, 8vw, 8rem)',
+            fontWeight: '900',
+            letterSpacing: '5px',
+            textTransform: 'uppercase',
+            color: 'transparent',
+            background: 'linear-gradient(to right, #ffffff, #dcdcdc)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            marginBottom: '20px',
+          }}
+        >
           Coming Soon
         </h1>
+
         <p style={{
-          fontSize: '1.4rem',
+          fontSize: 'clamp(1rem, 2vw, 1.4rem)',
           fontWeight: '400',
           color: '#D1D1D6',
           marginBottom: '50px',
@@ -74,132 +77,138 @@ const ComingSoon = () => {
           Something amazing is launching soon. Stay tuned for the release of DekuSMS Enterprise.
         </p>
       </div>
+
       <div style={{
         display: 'flex',
+        flexWrap: 'wrap',
         justifyContent: 'center',
-        gap: '30px',
+        gap: '20px',
         marginBottom: '50px',
       }}>
-
         {Object.entries(timeLeft).map(([unit, value]) => (
           <div key={unit} style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            flex: '1 1 80px',
+            maxWidth: '100px',
+            minWidth: '70px',
             padding: '20px',
             borderRadius: '10px',
-            boxShadow: '0 4px 20px rgba(255, 255, 255, 0.3)',
+            backgroundColor: 'rgba(109, 171, 216, 0.1)',
+            boxShadow: '0 4px 20px rgba(71, 78, 83, 0.3)',
+            textAlign: 'center',
             transition: 'all 0.3s ease-in-out',
             cursor: 'pointer',
-            width: '100px',
-            textAlign: 'center',
-            textTransform: 'uppercase',
             color: '#15B79E',
-          }} 
-          onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-          onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>
-
-            <div style={{
-              fontSize: '3rem',
-              fontWeight: '700',
-              color: '#fff',
-            }}>
+          }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+            <div style={{ fontSize: '2.5rem', fontWeight: '700', color: '#fff' }}>
               {String(value).padStart(2, '0')}
             </div>
-            <div style={{
-              fontSize: '1rem',
-              color: '#A0A0AB',
-            }}>
+            <div style={{ fontSize: '0.8rem', color: '#A0A0AB', textTransform: 'uppercase' }}>
               {unit}
             </div>
           </div>
         ))}
       </div>
 
+      <div style={{
+        width: '100%',
+        maxWidth: '700px',
+        margin: '0 auto 30px auto',
+        padding: '30px',
+        borderRadius: '20px',
+        backdropFilter: 'blur(10px)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '10px',
+      }}>
+        <h3 style={{ color: 'white', fontSize: 'clamp(1rem, 2vw, 1.5rem)', textAlign: 'center' }}>
+          Join Our Mailing List
+        </h3>
 
+        <div style={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '15px',
+          width: '100%',
+        }}>
+          <input
+            type="email"
+            placeholder="Your email address"
+            style={{
+              flex: '1 1 60px',
+              minWidth: '100px',
+              padding: '14px 20px',
+              fontSize: '1rem',
+              borderRadius: '12px',
+              border: 'none',
+              outline: 'none',
+              backgroundColor: 'white',
+              color: '#010e3d',
+              transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+            }}
+            onFocus={(e) => {
+              e.target.style.borderColor = '#577BFF';
+              e.target.style.boxShadow = '0 0 5px #577BFF';
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = 'transparent';
+              e.target.style.boxShadow = 'none';
+            }}
+          />
 
-<div style={{
-  maxWidth: '800px',
-  marginBottom: '60px',
-  padding: '0 20px',
-  borderRadius: '15px',
-  display: 'flex',
-  justifyContent: 'space-between',
-  padding: '30px',
-  alignItems: 'center',
-}}>
-  <input
-    type="email"
-    placeholder="Enter your email"
-    style={{
-      padding: '14px 20px',
-      fontSize: '1.1rem',
-      borderRadius: '30px', 
-      border: '2px solidrgb(176, 227, 219)',
-      marginRight: '20px',
-      width: '60%',
-      backgroundColor: '#131316',
-      color: '#fff',
-      outline: 'none',
-      transition: 'all 0.3s ease-in-out',
-      boxSizing: 'border-box',
-    }}
-    onFocus={(e) => e.target.style.borderColor = '#577BFF'} 
-    onBlur={(e) => e.target.style.borderColor = '#15B79E'} 
-  />
-  <button
-    style={{
-      backgroundColor: 'white',
-      color: '#010e3d',
-      padding: '14px 30px',
-      borderRadius: '30px',
-      border: 'none',
-      fontSize: '1.2rem',
-      width: '35%', 
-      cursor: 'pointer',
-      transition: 'background-color 0.3s ease-in-out, transform 0.2s ease',
-      boxSizing: 'border-box',
-    }}
-    onMouseEnter={(e) => {
-      e.target.style.backgroundColor = '#0E9384';
-      e.target.style.transform = 'scale(1.05)';
-    }}
-    onMouseLeave={(e) => {
-      e.target.style.backgroundColor = '#15B79E';
-      e.target.style.transform = 'scale(1)';
-    }}
-  >
-    Notify Me
-  </button>
-</div>
-
+          <button
+            style={{
+              padding: '14px 25px',
+              fontSize: '16px',
+              borderRadius: '12px',
+              border: 'none',
+              backgroundColor: '#E66F00',
+              color: 'white',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease-in-out',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = '#010e3d';
+              e.target.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = '#E66F00';
+              e.target.style.transform = 'translateY(0)';
+            }}
+          >
+            Notify Me
+          </button>
+        </div>
+      </div>
 
       <footer style={{
-        position: 'absolute',
-        bottom: '20px',
-        fontSize: '1rem',
-        color: '#A0AEC0',
+        marginTop: 'auto',
         width: '100%',
-        padding: '0 20px',
+        color: '#A0AEC0',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 'clamp(0.8rem, 2vw, 1rem)',
         textAlign: 'center',
+        padding: '20px',
       }}>
-        <div>
-          <p style={{ margin: '0' }}>Follow us for updates:</p>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '25px',
-            marginTop: '10px',
-          }}>
-            <a href="https://twitter.com/dekusms" target="_blank" rel="noopener noreferrer" style={{
-              color: '#fff',
-              textDecoration: 'none',
-              fontSize: '1.5rem',
-            }}>Twitter</a>
-            <a href="https://github.com/dekusms" target="_blank" rel="noopener noreferrer" style={{
-              color: '#fff',
-              textDecoration: 'none',
-              fontSize: '1.5rem',
-            }}>GitHub</a>
-          </div>
+        <p style={{ margin: 0 }}>Follow us for updates:</p>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '15px',
+          marginTop: '10px',
+          flexWrap: 'wrap',
+        }}>
+          <a href="https://twitter.com/dekusms" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>Twitter</a>
+          <a href="https://github.com/dekusms" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>GitHub</a>
         </div>
         <p style={{ marginTop: '10px' }}>© {new Date().getFullYear()} DekuSMS Enterprise</p>
       </footer>
@@ -215,7 +224,6 @@ const ComingSoon = () => {
           100% { text-shadow: 0 0 30px #15B79E, 0 0 45px #15B79E; }
         }
       `}</style>
-
     </div>
   );
 };
