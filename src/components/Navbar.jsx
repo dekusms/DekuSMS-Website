@@ -22,25 +22,28 @@ const Navbar = () => {
     <nav
       className="navbar navbar-expand-lg navbar-dark fixed-top px-3"
       style={{
-        backgroundColor: "#010e3d",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+        background: "#001871",
+        boxShadow:" 0px 0px 15px rgba(255, 255, 255, 0.2)",
       }}
     >
       <Link className="navbar-brand d-flex align-items-center" to="/" style={linkStyle}>
         <img
           src="/DekuSMS-Dark Theme.png"
           alt="Logo"
-          style={{ height: "28px", marginRight: "8px" }}
+          style={{ height: "22px", marginRight: "8px" }}
         />
       </Link>
 
       <button
-        className="navbar-toggler"
-        type="button"
-        onClick={() => setExpanded(!expanded)}
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
+  className="navbar-toggler"
+  type="button"
+  aria-label="Toggle navigation"
+  aria-expanded={expanded}
+  onClick={() => setExpanded(!expanded)}
+>
+  <span className="navbar-toggler-icon"></span>
+</button>
+
 
       <div className={`collapse navbar-collapse ${expanded ? "show" : ""}`}>
         <ul className="navbar-nav ms-auto">

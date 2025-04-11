@@ -920,7 +920,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@react-aria-ssr-virtual-bf4e84b71a/4/snap/code/189/.local/share/yarn/berry/cache/@react-aria-ssr-npm-3.9.7-2aae0f6172-10c0.zip/node_modules/@react-aria/ssr/",\
         "packageDependencies": [\
           ["@react-aria/ssr", "virtual:27b6d187ae43df6c8765a6320672ba038d4436ddbc79128d5795f5825a8d9135cfebfc13dcf8b23541979f6e18a47f983d5fe25cdd37221e52487b12ebf391c6#npm:3.9.7"],\
-          ["@swc/helpers", "npm:0.5.15"],\
+          ["@swc/helpers", "npm:0.5.17"],\
           ["@types/react", "npm:19.1.0"],\
           ["react", "npm:19.1.0"]\
         ],\
@@ -1191,10 +1191,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@swc/helpers", [\
-      ["npm:0.5.15", {\
-        "packageLocation": "../../../snap/code/189/.local/share/yarn/berry/cache/@swc-helpers-npm-0.5.15-a7a06a73bc-10c0.zip/node_modules/@swc/helpers/",\
+      ["npm:0.5.17", {\
+        "packageLocation": "../../../snap/code/189/.local/share/yarn/berry/cache/@swc-helpers-npm-0.5.17-53974f71e8-10c0.zip/node_modules/@swc/helpers/",\
         "packageDependencies": [\
-          ["@swc/helpers", "npm:0.5.15"],\
+          ["@swc/helpers", "npm:0.5.17"],\
           ["tslib", "npm:2.8.1"]\
         ],\
         "linkType": "HARD"\

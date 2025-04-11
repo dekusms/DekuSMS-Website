@@ -52,7 +52,7 @@ const ComingSoon = () => {
       alignItems: 'center',
       flexDirection: 'column',
       minHeight: '100vh',
-      background: 'radial-gradient(circle, #0024A8, #000158, #010e3d)',
+      background: 'radial-gradient(circle, #0024A8, #000158)',
       color: '#ffffff',
       fontFamily: 'Arial, sans-serif',
       position: 'relative',
@@ -63,8 +63,8 @@ const ComingSoon = () => {
  <nav
       className="navbar navbar-expand-lg navbar-dark fixed-top px-3"
       style={{
-        backgroundColor: "#010e3d",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+        background: "#001871",
+        boxShadow: "0px 4px 10px rgba(45, 43, 43, 0.2)",
       }}
     >
       <Link className="navbar-brand d-flex align-items-center" to="/" style={linkStyle}>

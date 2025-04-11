@@ -29,7 +29,7 @@ cd dekusms-website
 yarn install
 
 # Start the development server
-yarn start
+yarn dev
 ```
 
 ## 🌍 Deployment
