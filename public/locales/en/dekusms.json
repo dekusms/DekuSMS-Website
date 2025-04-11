@@ -2,6 +2,7 @@
   "navbar": {
     "home": "Home",
     "enterprise": "Enterprise",
+    "blog": "Blog",
     "download": "Download",
     "documentation": "Documentation",
     "support": "Support",

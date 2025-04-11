@@ -1,6 +1,7 @@
 {
   "navbar": {
     "home": "Startseite",
+    "blog": "Blog",
     "enterprise": "Unternehmen",
     "download": "Herunterladen",
     "documentation": "Dokumentation",

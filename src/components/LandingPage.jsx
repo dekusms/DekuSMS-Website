@@ -12,8 +12,8 @@ const LandingPage = () => {
           <h1>{t('landing.title2')}</h1>
           <p>{t('landing.description')}</p>
           <div className="landing-buttons">
-          <button className="btn-primary">{t('landing.getStarted')}</button>
-          <button className="btn-secondary">{t('landing.learnMore')}</button>
+          <button className="landing-btn-primary">{t('landing.getStarted')}</button>
+          <button className="landing-btn-secondary">{t('landing.learnMore')}</button>
           </div>
         </div>
         <div className="landing-image">

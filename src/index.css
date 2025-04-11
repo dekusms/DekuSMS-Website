@@ -1,6 +1,10 @@
 .enterprise-page {
-  font-family: 'Mona Sans', 'Ubuntu';
+  font-family: 'Unbounded', 'Mona Sans' !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 
 /* ================================ navbar ====================================== */
 .Navbar {
@@ -727,7 +731,7 @@
   background: #010e3d;
   color: #fff;
   padding: 3rem 1rem 2rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Unbounded', 'Mona Sans' !important;
 }
 
 .footer-container {
