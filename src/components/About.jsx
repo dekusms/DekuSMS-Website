@@ -40,8 +40,8 @@ const About = () => {
               </div>
             ))}
           </div>
-          <button className="about-btn">{t('about.learnMore')}</button>
         </div>
+
         <div className="about-image">
           <img src="landing 2.png" alt="DekuSMS Security" />
         </div>

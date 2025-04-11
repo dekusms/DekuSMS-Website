@@ -1,48 +1,81 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGooglePlay, faGithub, faAndroid } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
-import "../App.css";
+import "../App.css"; 
 
 const Download = () => {
-  const { t } = useTranslation('dekusms');  // Specify 'dekusms' as the namespace
+  const { t } = useTranslation('dekusms');
+
+  const downloadOptions = [
+    {
+      href: "https://play.google.com/store/apps/details?id=com.dekusms",
+      img: "/playstore.webp",
+      alt: "Google Play Store icon",
+      title: t('download.googlePlay.title'),
+      desc: t('download.googlePlay.desc'),
+      iconColor: "#3bcc5e",
+      border: "border-success",
+    },
+    {
+      href: "https://f-droid.org/packages/com.dekusms",
+      img: "/fdroid.png",
+      alt: "F-Droid icon",
+      title: t('download.fdroid.title'),
+      desc: t('download.fdroid.desc'),
+      iconColor: "#1976d2",
+      border: "border-primary",
+    },
+    {
+      href: "https://github.com/dekusms",
+      img: "/github.png",
+      alt: "GitHub icon",
+      title: t('download.github.title'),
+      desc: t('download.github.desc'),
+      iconColor: "#333",
+      border: "border-dark",
+    }
+  ];
 
   return (
-    <section id="download" className="download-section">
-      <div className="download-container">
-        {/* Left Side - Title & Description */}
-        <div className="download-text">
-          <h2 className="download-title">{t('download.title')}</h2>
-          <p className="download-subtitle">
-            {t('download.subtitle')}
-          </p>
-        </div>
+    <section
+      id="download"
+      className="py-5 bg-white text-center"
+      style={{ minHeight: '50vh' }}
+    >
+      <div className="container">
+        <h2 className="fw-bold mb-3" style={{ color: "#010e3d" }}>
+          {t('download.title')}
+        </h2>
+        <p className="text-muted mb-5">{t('download.subtitle')}</p>
 
-        {/* Right Side - Download Options */}
-        <div className="download-grid">
-          <a href="https://play.google.com/store/apps/details?id=com.dekusms" target="_blank" rel="noopener noreferrer" className="download-card google-play">
-            <FontAwesomeIcon icon={faGooglePlay} className="download-icon" />
-            <div>
-              <h3>{t('download.googlePlay.title')}</h3>
-              <p>{t('download.googlePlay.desc')}</p>
+        <div className="row g-4 align-items-stretch">
+          {downloadOptions.map((option, index) => (
+            <div className="col-md-4" key={index}>
+              <a
+                href={option.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`d-flex align-items-center text-start p-4 rounded-4 border ${option.border} shadow-sm text-decoration-none text-dark bg-light h-100 transition hover-lift`}
+                style={{
+                  gap: "15px",
+                  transition: "all 0.3s ease-in-out",
+                }}
+              >
+                <img
+                  src={option.img}
+                  alt={option.alt}
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    objectFit: "contain",
+                  }}
+                />
+                <div>
+                  <h5 className="fw-bold mb-1">{option.title}</h5>
+                  <p className="small text-muted mb-0">{option.desc}</p>
+                </div>
+              </a>
             </div>
-          </a>
-
-          <a href="https://f-droid.org/packages/com.dekusms" target="_blank" rel="noopener noreferrer" className="download-card fdroid">
-            <FontAwesomeIcon icon={faAndroid} className="download-icon" />
-            <div>
-              <h3>{t('download.fdroid.title')}</h3>
-              <p>{t('download.fdroid.desc')}</p>
-            </div>
-          </a>
-
-          <a href="https://github.com/dekusms" target="_blank" rel="noopener noreferrer" className="download-card github">
-            <FontAwesomeIcon icon={faGithub} className="download-icon" />
-            <div>
-              <h3>{t('download.github.title')}</h3>
-              <p>{t('download.github.desc')}</p>
-            </div>
-          </a>
+          ))}
         </div>
       </div>
     </section>

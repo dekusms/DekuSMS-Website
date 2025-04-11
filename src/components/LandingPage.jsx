@@ -8,9 +8,11 @@ const LandingPage = () => {
   return (
       <section className="landing">
         <div className="landing-content">
-          <h1>{t('landing.title')} </h1> <br />
+        <div className="landing-section">
+          <h1>{t('landing.title')} </h1>
           <h1>{t('landing.title2')}</h1>
           <p>{t('landing.description')}</p>
+          </div>
           <div className="landing-buttons">
           <button className="landing-btn-primary">{t('landing.getStarted')}</button>
           <button className="landing-btn-secondary">{t('landing.learnMore')}</button>
