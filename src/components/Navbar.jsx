@@ -28,7 +28,7 @@ const Navbar = () => {
     >
       <Link className="navbar-brand d-flex align-items-center" to="/" style={linkStyle}>
         <img
-          src="/DekuSMS-White.png"
+          src="/DekuSMS-Dark Theme.png"
           alt="Logo"
           style={{ height: "28px", marginRight: "8px" }}
         />

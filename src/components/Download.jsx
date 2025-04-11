@@ -42,10 +42,10 @@ const Download = () => {
       style={{ minHeight: '50vh' }}
     >
       <div className="container">
-        <h2 className="fw-bold mb-3" style={{ color: "#010e3d" }}>
+        <h2 className="fw-bold mb-3" style={{ color: "#001871" }}>
           {t('download.title')}
         </h2>
-        <p className="text-muted mb-5">{t('download.subtitle')}</p>
+        <p className="text-muted mb-5" style={{ color: "#001871" }}>{t('download.subtitle')}</p>
 
         <div className="row g-4 align-items-stretch">
           {downloadOptions.map((option, index) => (

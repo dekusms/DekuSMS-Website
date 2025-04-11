@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #010e3d 100%, #022984 10%);
+    background: #001871;
     min-height: 50vh;
 }
 
@@ -168,7 +168,7 @@
 
 /* ================= Gratitude Section ====================== */
 .gratitude {
-    background: linear-gradient(135deg, #010e3d 100%, #022984 10%);
+    background: #001871;
     padding: 50px 10px;
     text-align: center;
     display: flex;
@@ -260,7 +260,7 @@
   
 /* =============   About section============= */
 .about-page {
-    background: linear-gradient(135deg, #010e3d 100%, #022984 10%);
+    background: #001871;
     padding: 100px 10%;
     color: white;
 }
@@ -433,7 +433,7 @@
 
 /* ============================ footer ============================= */
 .footer{
-    background: linear-gradient(135deg, #010e3d 100%, #022984 10%);
+    background: #001871;
 }
 
 footer .list-unstyled a {
@@ -447,7 +447,7 @@ footer .list-unstyled a {
   }
   
   footer .list-unstyled a:hover {
-    color: #E66F00 !important;
+    color: #2ED3B7 !important;
     transform: translateX(4px);
   }
   
@@ -458,7 +458,7 @@ footer .list-unstyled a {
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.1rem;
-    color: #E66F00;
+    color: #2ED3B7;
     opacity: 0.7;
     padding-right: 8px;
     transition: color 0.3s ease-in-out;
@@ -493,7 +493,7 @@ footer .list-unstyled a {
     font-size: 15px;
     padding: 0.55rem;
     border-radius: 10px;
-    background-color: #E66F00;
+    background-color: #2ED3B7;
     color: white;
     transition: background-color 0.3s;
   }

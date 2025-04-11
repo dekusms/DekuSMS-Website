@@ -8,7 +8,10 @@ const Footer = () => {
   const { t } = useTranslation('dekusms');
 
   return (
-    <footer className="footer bg-dark text-white py-5">
+    <footer className="footertext-white py-5" style={{
+      background: '#001871',
+      color: '#ffffff'
+    }}>
       <div className="container">
         <div className="row">
           <div className="col-md-3 mb-4">
