@@ -16,7 +16,7 @@ const ComingSoon = () => {
 
   const linkStyle = {
     color: "#ffffff",
-    fontFamily: "'Unbounded', 'Mona Sans', sans-serif",
+    fontFamily: "'Mona Sans'",
     fontSize: "1rem",
     padding: "0.5rem 1rem",
   };
@@ -54,90 +54,94 @@ const ComingSoon = () => {
       minHeight: '100vh',
       background: 'radial-gradient(circle, #0024A8, #000158)',
       color: '#ffffff',
-      fontFamily: 'Arial, sans-serif',
+      fontFamily: "'Unbounded'",
       position: 'relative',
       overflow: 'hidden',
       padding: '20px',
     }}>
 {/* ============== Navbar ======================== */}
- <nav
-      className="navbar navbar-expand-lg navbar-dark fixed-top px-3"
-      style={{
-        background: "#001871",
-        boxShadow: "0px 4px 10px rgba(45, 43, 43, 0.2)",
-      }}
-    >
-      <Link className="navbar-brand d-flex align-items-center" to="/" style={linkStyle}>
-        <img
-          src="/DekuSMS-Dark Theme.png"
-          alt="Logo"
-          style={{ height: "28px", marginRight: "8px" }}
-        />
-      </Link>
-
-      <button
-        className="navbar-toggler"
-        type="button"
-        onClick={() => setExpanded(!expanded)}
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-
-      <div className={`collapse navbar-collapse ${expanded ? "show" : ""}`}>
-        <ul className="navbar-nav ms-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="/" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.home")}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="https://blog.smswithoutborders.com" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.blog")}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#download" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.download")}
-            </a>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="https://docs.smswithoutborders.com" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.documentation")}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/support" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.support")}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setExpanded(false)}
-              style={linkStyle}
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </li>
-          <li className="nav-item">
-          <NavDropdown
-  title={<FontAwesomeIcon icon={faGlobe} style={{ color: 'white' }} />}
-  id="language-dropdown"
+<nav
+  className="navbar navbar-expand-lg navbar-dark fixed-top px-3"
+  style={{
+    background: "#001871",
+    boxShadow: "0px 4px 10px rgba(45, 43, 43, 0.2)",
+  }}
 >
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("en")}>English</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("fr")}>Français</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("es")}>Español</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("fa")}>فارسی</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("de")}>Deutsch</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("ar")}>العربية</NavDropdown.Item>
-            </NavDropdown>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <Link className="navbar-brand d-flex align-items-center" to="/" style={linkStyle}>
+    <img
+      src="/DekuSMS-Dark Theme.png"
+      alt="Logo"
+      style={{ height: "28px", marginRight: "8px" }}
+    />
+  </Link>
+
+  <button
+    className="navbar-toggler"
+    type="button"
+    aria-controls="navbarNav"
+    aria-expanded={expanded}
+    aria-label="Toggle navigation"
+    onClick={() => setExpanded(!expanded)}
+  >
+    <span className="navbar-toggler-icon"></span>
+  </button>
+
+  <div className={`collapse navbar-collapse ${expanded ? "show" : ""}`} id="navbarNav">
+    <ul className="navbar-nav ms-auto">
+      <li className="nav-item">
+        <Link className="nav-link" to="/" onClick={() => setExpanded(false)} style={linkStyle}>
+          {t("navbar.home")}
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="https://blog.smswithoutborders.com" onClick={() => setExpanded(false)} style={linkStyle}>
+          {t("navbar.blog")}
+        </Link>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="#download" onClick={() => setExpanded(false)} style={linkStyle}>
+          {t("navbar.download")}
+        </a>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="https://docs.smswithoutborders.com" onClick={() => setExpanded(false)} style={linkStyle}>
+          {t("navbar.documentation")}
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/support" onClick={() => setExpanded(false)} style={linkStyle}>
+          {t("navbar.support")}
+        </Link>
+      </li>
+      <li className="nav-item">
+        <a
+          className="nav-link"
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setExpanded(false)}
+          style={linkStyle}
+        >
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
+      </li>
+      <li className="nav-item">
+        <NavDropdown
+          title={<FontAwesomeIcon icon={faGlobe} style={{ color: 'white' }} />}
+          id="language-dropdown"
+        >
+          <NavDropdown.Item onClick={() => i18n.changeLanguage("en")}>English</NavDropdown.Item>
+          <NavDropdown.Item onClick={() => i18n.changeLanguage("fr")}>Français</NavDropdown.Item>
+          <NavDropdown.Item onClick={() => i18n.changeLanguage("es")}>Español</NavDropdown.Item>
+          <NavDropdown.Item onClick={() => i18n.changeLanguage("fa")}>فارسی</NavDropdown.Item>
+          <NavDropdown.Item onClick={() => i18n.changeLanguage("de")}>Deutsch</NavDropdown.Item>
+          <NavDropdown.Item onClick={() => i18n.changeLanguage("ar")}>العربية</NavDropdown.Item>
+        </NavDropdown>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 
 
       <div style={{

@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const linkStyle = {
     color: "#ffffff",
-    fontFamily: "'Unbounded', 'Mona Sans', sans-serif",
+    fontFamily: "'Mona Sans'",
     fontSize: "1rem",
     padding: "0.5rem 1rem",
   };
@@ -35,14 +35,14 @@ const Navbar = () => {
       </Link>
 
       <button
-  className="navbar-toggler"
-  type="button"
-  aria-label="Toggle navigation"
-  aria-expanded={expanded}
-  onClick={() => setExpanded(!expanded)}
->
-  <span className="navbar-toggler-icon"></span>
-</button>
+      className="navbar-toggler"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded={expanded}
+      onClick={() => setExpanded(!expanded)}
+    >
+      <span className="navbar-toggler-icon"></span>
+    </button>
 
 
       <div className={`collapse navbar-collapse ${expanded ? "show" : ""}`}>

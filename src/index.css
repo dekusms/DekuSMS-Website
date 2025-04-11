@@ -1,10 +1,9 @@
 .enterprise-page {
-  font-family: 'Unbounded', 'Mona Sans' !important;
+  font-family: 'Unbounded', 'Mona Sans';
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 
 /* ================================ navbar ====================================== */
 .Navbar {
@@ -407,9 +406,8 @@
   line-height: 1.6;
 }
 
-/* Two-column image + text section */
 .features-image-text-section {
-  padding: 4rem 1rem 2rem; /* reduced bottom padding */
+  padding: 4rem 1rem 2rem; 
   background-color: #fff;
 }
 
@@ -419,7 +417,7 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 0; /* fix for mobile spacing */
+  margin-bottom: 0;
 }
 
 .feature-column {
@@ -501,10 +499,7 @@
   }
 }
 
-
-/* =================== Main pricing section ========================================== */
-/* =================================================================================== */
-/* =========== Pricing Section Styles ============ */
+/* =============================== Pricing Section Styles ============================== */
 .pricing-section {
   padding: 4rem 1rem;
   background: #f7f9fc;
@@ -564,7 +559,6 @@
   color: #e06b00;
 }
 
-/* =========== Pricing Cards ============ */
 .pricing2-section {
   padding: 2rem 0;
 }
@@ -631,7 +625,6 @@
   background-color: #e06b00;
 }
 
-/* ========== Responsive ========== */
 @media (max-width: 768px) {
   .pricing-title {
     font-size: 2rem;
@@ -731,7 +724,7 @@
   background: #010e3d;
   color: #fff;
   padding: 3rem 1rem 2rem;
-  font-family: 'Unbounded', 'Mona Sans' !important;
+  font-family: 'Unbounded', 'Mona Sans';
 }
 
 .footer-container {
@@ -829,7 +822,6 @@
   text-decoration: underline;
 }
 
-/* Responsive Styling */
 @media screen and (max-width: 768px) {
   .footer-container {
     flex-direction: column;

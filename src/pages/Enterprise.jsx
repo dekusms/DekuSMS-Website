@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartLine, faShieldAlt, faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
-
 import '../index.css';
 
 const Enterprise = () => {
