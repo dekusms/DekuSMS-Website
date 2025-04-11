@@ -18,14 +18,11 @@ const Footer = () => {
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-light me-3">
                 <FontAwesomeIcon icon={faTwitter} className="social-icon" />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-light me-3">
+              <a href="https://github.com/dekusms/DekuSMS-Android" target="_blank" rel="noopener noreferrer" className="text-light me-3">
                 <FontAwesomeIcon icon={faGithub} className="social-icon" />
               </a>
-              <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="text-light me-3">
+              <a href=" https://t.me/deku_sms" target="_blank" rel="noopener noreferrer" className="text-light me-3">
                 <FontAwesomeIcon icon={faTelegram} className="social-icon" />
-              </a>
-              <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-light me-3">
-                <FontAwesomeIcon icon={faDiscord} className="social-icon" />
               </a>
             </div>
           </div>

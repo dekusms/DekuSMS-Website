@@ -11,21 +11,41 @@
         "language": "Language"
 },
       
-    "enterprise": {
-      "heroTitle": "DekuSMS Enterprise",
-      "heroDesc": "Unlock the full potential of SMS with our premium, enterprise-grade features..."
+"landing": {
+  "title": "DekuSMS",
+  "title2": "Rimani connesso, sempre",
+  "description": "Potenzia la tua comunicazione con crittografia end-to-end e completa integrazione cloud. Resta connesso in modo sicuro.",
+  "getStarted": "Inizia",
+  "learnMore": "Scopri di più"
+},
+"gratitude": {
+  "title": "Sicuro, Intelligente e Inarrestabile",
+  "description": "DekuSMS non è solo un'app di SMS—è una rivoluzione. Progettata per la privacy e la potenza, offre crittografia end-to-end, inoltro SMS su cloud e controllo completo dei tuoi messaggi. Dì addio ai limiti e dai il benvenuto a una messaggistica sicura, personalizzabile e intelligente. La tua privacy. Le tue regole. I tuoi SMS, evoluti. 🚀"
+},
+"about": {
+  "title": "Cosa sapere su DekuSMS",
+  "appName": "DekuSMS",
+  "description1": "è un'app di messaggistica SMS open-source, sicura e con crittografia end-to-end progettata per mantenere la tua comunicazione privata e accessibile.",
+  "description2": "DekuSMS è costruita per utenti attenti alla privacy e per coloro che supportano la libertà di comunicazione nel mondo.",
+  "features": {
+    "endToEnd": {
+      "title": "Crittografia End-to-End",
+      "desc": "I tuoi messaggi restano sicuri e privati.",
+      "more": "Garantiamo la crittografia a ogni livello—dispositivo, trasmissione e server. Nessuno vede i tuoi messaggi tranne te."
     },
-    "buttons": {
-      "requestDemo": "Request a Demo",
-      "learnMore": "Learn More"
+    "cloudForwarding": {
+      "title": "Inoltro su Cloud",
+      "desc": "Accedi agli SMS ovunque in tempo reale.",
+      "more": "Il nostro sistema sincronizza in sicurezza i tuoi SMS con il cloud e offre accesso API immediato per l'integrazione con le app."
     },
-    "features": {
-      "analyticsTitle": "Advanced Analytics",
-      "analyticsDesc": "Gain valuable insights with real-time data analytics.",
-      "securityTitle": "Enhanced Security",
-      "securityDesc": "Multi-factor authentication, IP whitelisting, and more.",
-      "supportTitle": "Priority Support",
-      "supportDesc": "Get 24/7 live chat support and direct communication."
+    "smsGateway": {
+      "title": "Gateway SMS Personalizzato",
+      "desc": "Integra facilmente gli SMS nelle tue app.",
+      "more": "DekuSMS offre un'API flessibile e un kit SDK che consente agli sviluppatori di inviare e ricevere SMS secondo la propria logica."
     }
+  },
+  "learnMore": "Scopri di più"
+}
+
   }
   

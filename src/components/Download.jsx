@@ -7,7 +7,7 @@ const Download = () => {
 
   const downloadOptions = [
     {
-      href: "https://play.google.com/store/apps/details?id=com.dekusms",
+      href: "https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share",
       img: "/playstore.webp",
       alt: "Google Play Store icon",
       title: t('download.googlePlay.title'),
@@ -16,7 +16,7 @@ const Download = () => {
       border: "border-success",
     },
     {
-      href: "https://f-droid.org/packages/com.dekusms",
+      href: "https://f-droid.org/docs/Reproducible_Builds/",
       img: "/fdroid.png",
       alt: "F-Droid icon",
       title: t('download.fdroid.title'),
@@ -25,7 +25,7 @@ const Download = () => {
       border: "border-primary",
     },
     {
-      href: "https://github.com/dekusms",
+      href: "https://github.com/dekusms/DekuSMS-Android?tab=readme-ov-file",
       img: "/github.png",
       alt: "GitHub icon",
       title: t('download.github.title'),

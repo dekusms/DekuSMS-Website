@@ -7,42 +7,41 @@
     "support": "Support",
     "language": "Langue"
   },
-  "landing": {
-    "title": "DekuSMS",
-    "title2": "Restez Connecté, À Tout Moment",
-    "description": "Optimisez votre communication avec un cryptage de bout en bout et une intégration complète au cloud. Restez connecté, en toute sécurité.",
-    "getStarted": "Commencer",
-    "learnMore": "En savoir plus"
-  },
-  "gratitude": {
-    "title": "Sécurisé, Intelligent et Inarrêtable",
-    "description": "DekuSMS n'est pas juste une application SMS—c'est un véritable changeur de jeu. Conçu pour la confidentialité et la puissance, il offre un chiffrement de bout en bout, un transfert SMS vers le cloud et un contrôle total sur vos messages. Dites adieu aux limitations et bonjour à une messagerie sécurisée, personnalisable et intelligente. Votre vie privée. Vos règles. Vos SMS, évolués. 🚀"
-  },
-    "about": {
-      "title": "Ce que vous devez savoir sur DekuSMS",
-      "appName": "DekuSMS",
-      "description1": "est une solution SMS de nouvelle génération conçue pour la confidentialité, la sécurité et une intégration transparente. Nous croyons en offrant aux utilisateurs un contrôle total de leur communication sans compromis.",
-      "description2": "Que vous ayez besoin de messages cryptés, de synchronisation en temps réel avec le cloud ou de paramètres personnalisables, DekuSMS est conçu pour vous permettre de prendre le contrôle. Dites adieu aux limitations SMS obsolètes et bonjour à l'avenir de la messagerie.",
-      "features": {
-        "endToEnd": {
-          "title": "Chiffrement de bout en bout",
-          "desc": "Messagerie SMS sécurisée avec une protection complète de la confidentialité."
-        },
-        "cloudForwarding": {
-          "title": "Transfert vers le cloud",
-          "desc": "Synchronisez vos messages avec votre serveur cloud personnel."
-        },
-        "smsGateway": {
-          "title": "Utilisation en tant que passerelle SMS",
-          "desc": "Envoyez des SMS via votre téléphone Android facilement."
-        },
-        "openSource": {
-          "title": "Open Source & Piloté par la communauté",
-          "desc": "Construit par la communauté pour une transparence et un contrôle total."
-        }
-      },
-      "learnMore": "En savoir plus"
+"landing": {
+  "title": "DekuSMS",
+  "title2": "Restez connecté, à tout moment",
+  "description": "Renforcez votre communication avec un chiffrement de bout en bout et une intégration cloud complète. Restez connecté, en toute sécurité.",
+  "getStarted": "Commencer",
+  "learnMore": "En savoir plus"
+},
+"gratitude": {
+  "title": "Sécurisé, Intelligent et Inarrêtable",
+  "description": "DekuSMS n’est pas juste une application SMS—c’est une révolution. Conçu pour la confidentialité et la performance, il offre un chiffrement de bout en bout, un transfert SMS vers le cloud, et un contrôle total sur vos messages. Dites adieu aux limites et bonjour à la messagerie sécurisée, personnalisable et intelligente. Votre vie privée. Vos règles. Votre SMS, réinventé. 🚀"
+},
+"about": {
+  "title": "Ce que vous devez savoir sur DekuSMS",
+  "appName": "DekuSMS",
+  "description1": "est une application de messagerie SMS sécurisée, chiffrée de bout en bout et open-source, conçue pour garder vos communications privées et accessibles.",
+  "description2": "DekuSMS est conçu pour les utilisateurs soucieux de leur vie privée et pour ceux qui soutiennent la liberté de communication dans le monde.",
+  "features": {
+    "endToEnd": {
+      "title": "Chiffrement de bout en bout",
+      "desc": "Vos messages restent sécurisés et privés.",
+      "more": "Nous assurons le chiffrement à tous les niveaux—appareil, transmission et serveur. Personne ne voit vos messages sauf vous."
     },
+    "cloudForwarding": {
+      "title": "Transfert vers le cloud",
+      "desc": "Accédez à vos SMS en temps réel, de partout.",
+      "more": "Notre système synchronise vos SMS de manière sécurisée avec le cloud et offre un accès API instantané pour l'intégration aux applications."
+    },
+    "smsGateway": {
+      "title": "Passerelle SMS personnalisée",
+      "desc": "Intégrez les SMS facilement dans vos apps.",
+      "more": "DekuSMS propose une API flexible et une boîte à outils SDK permettant aux développeurs d’envoyer et de recevoir des SMS selon leur logique."
+    }
+  },
+  "learnMore": "En savoir plus"
+},
     "download": {
       "title": "Télécharger DekuSMS",
       "subtitle": "Messagerie sécurisée, privée et open-source à portée de main. Obtenez DekuSMS dès aujourd'hui sur votre plateforme préférée.",

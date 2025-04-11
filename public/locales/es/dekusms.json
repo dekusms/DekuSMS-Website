@@ -7,42 +7,41 @@
     "support": "Soporte",
     "language": "Idioma"
   },
-  "landing": {
-    "title": "DekuSMS",
-    "title2": "Mantente Conectado, En Cualquier Momento",
-    "description": "Potencia tu comunicación con encriptación de extremo a extremo e integración completa en la nube. Mantente conectado, de manera segura.",
-    "getStarted": "Comenzar",
-    "learnMore": "Aprender Más"
-  },
-    "gratitude": {
-      "title": "Seguro, Inteligente e Imparable",
-      "description": "DekuSMS no es solo una aplicación de SMS, es un cambio radical. Diseñada para la privacidad y el poder, ofrece cifrado de extremo a extremo, reenvío de SMS a la nube y control total sobre tus mensajes. Di adiós a las limitaciones y hola a una mensajería segura, personalizable e inteligente. Tu privacidad. Tus reglas. Tus SMS, evolucionados. 🚀"
-  },
-  "about": {
-    "title": "Lo que necesitas saber sobre DekuSMS",
-    "appName": "DekuSMS",
-    "description1": "es una solución SMS de nueva generación diseñada para la privacidad, seguridad e integración sin problemas. Creemos en dar a los usuarios control total sobre su comunicación sin compromisos.",
-    "description2": "Ya sea que necesites mensajería cifrada, sincronización en la nube en tiempo real o configuraciones personalizables, DekuSMS está diseñado para empoderarte. Di adiós a las limitaciones SMS anticuadas y hola al futuro de la mensajería.",
-    "features": {
-      "endToEnd": {
-        "title": "Cifrado de extremo a extremo",
-        "desc": "Mensajería SMS segura con completa protección de la privacidad."
-      },
-      "cloudForwarding": {
-        "title": "Reenvío a la nube",
-        "desc": "Sincroniza tus mensajes con tu servidor en la nube personal."
-      },
-      "smsGateway": {
-        "title": "Uso como puerta de enlace SMS",
-        "desc": "Envía SMS a través de tu teléfono Android con facilidad."
-      },
-      "openSource": {
-        "title": "Código abierto y impulsado por la comunidad",
-        "desc": "Creado por la comunidad para total transparencia y control."
-      }
+"landing": {
+  "title": "DekuSMS",
+  "title2": "Mantente conectado, en cualquier momento",
+  "description": "Potencia tu comunicación con cifrado de extremo a extremo e integración completa en la nube. Conéctate de forma segura.",
+  "getStarted": "Comenzar",
+  "learnMore": "Saber más"
+},
+"gratitude": {
+  "title": "Seguro, Inteligente e Imparable",
+  "description": "DekuSMS no es solo una aplicación de SMS—es un cambio de juego. Diseñado para la privacidad y el poder, ofrece cifrado de extremo a extremo, reenvío de SMS a la nube y control total sobre tus mensajes. Di adiós a las limitaciones y hola a una mensajería segura, personalizable e inteligente. Tu privacidad. Tus reglas. Tu SMS, evolucionado. 🚀"
+},
+"about": {
+  "title": "Lo que necesitas saber sobre DekuSMS",
+  "appName": "DekuSMS",
+  "description1": "es una aplicación de mensajería SMS de código abierto, segura y cifrada de extremo a extremo diseñada para mantener tus comunicaciones privadas y accesibles.",
+  "description2": "DekuSMS está diseñada para usuarios preocupados por la privacidad y aquellos que apoyan la libertad de comunicación en todo el mundo.",
+  "features": {
+    "endToEnd": {
+      "title": "Cifrado de Extremo a Extremo",
+      "desc": "Tus mensajes permanecen seguros y privados.",
+      "more": "Aseguramos el cifrado en cada capa—dispositivo, transmisión y servidor. Nadie ve tus mensajes excepto tú."
     },
-    "learnMore": "Saber más"
+    "cloudForwarding": {
+      "title": "Reenvío en la Nube",
+      "desc": "Accede a los SMS desde cualquier lugar en tiempo real.",
+      "more": "Nuestro sistema sincroniza tus mensajes SMS de forma segura con la nube y proporciona acceso instantáneo a la API para la integración con apps."
+    },
+    "smsGateway": {
+      "title": "Pasarela de SMS Personalizada",
+      "desc": "Integra SMS fácilmente en tus aplicaciones.",
+      "more": "DekuSMS ofrece una API flexible y un kit de herramientas SDK que permite a los desarrolladores enviar y recibir SMS según su lógica."
+    }
   },
+  "learnMore": "Saber más"
+},
   "download": {
     "title": "Descargar DekuSMS",
     "subtitle": "Mensajería segura, privada y de código abierto al alcance de tu mano. Obtén DekuSMS hoy en tu plataforma favorita.",

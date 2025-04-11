@@ -9,41 +9,40 @@
     "language": "Sprache"
   },
 "landing": {
-    "title": "DekuSMS",
-    "title2": "Bleib Immer Verbunden",
-    "description": "Stärken Sie Ihre Kommunikation mit End-to-End-Verschlüsselung und vollständiger Cloud-Integration. Bleiben Sie sicher verbunden.",
-    "getStarted": "Loslegen",
-    "learnMore": "Mehr Erfahren"
-  },
-    "gratitude": {
-      "title": "Sicher, Intelligent und Unaufhaltsam",
-      "description": "DekuSMS ist nicht nur eine SMS-App—es ist ein Game-Changer. Entwickelt für Privatsphäre und Leistung, bietet es End-to-End-Verschlüsselung, SMS-zu-Cloud-Weiterleitung und vollständige Kontrolle über deine Nachrichten. Sag Adieu zu Einschränkungen und Hallo zu sicherer, anpassbarer und intelligenter Kommunikation. Deine Privatsphäre. Deine Regeln. Deine SMS, weiterentwickelt. 🚀"
-  },
-  "about": {
-    "title": "Was Sie über DekuSMS wissen müssen",
-    "appName": "DekuSMS",
-    "description1": "ist eine SMS-Lösung der nächsten Generation, die für Privatsphäre, Sicherheit und nahtlose Integration entwickelt wurde. Wir glauben daran, den Nutzern die volle Kontrolle über ihre Kommunikation ohne Kompromisse zu geben.",
-    "description2": "Ob Sie verschlüsselte Nachrichten, Echtzeit-Cloud-Synchronisierung oder anpassbare Einstellungen benötigen, DekuSMS wurde entwickelt, um Ihnen die Kontrolle zu geben. Verabschieden Sie sich von veralteten SMS-Einschränkungen und begrüßen Sie die Zukunft des Nachrichtenaustauschs.",
-    "features": {
-      "endToEnd": {
-        "title": "Ende-zu-Ende-Verschlüsselung",
-        "desc": "Sichere SMS-Nachrichten mit vollständigem Datenschutz."
-      },
-      "cloudForwarding": {
-        "title": "Cloud-Weiterleitung",
-        "desc": "Synchronisieren Sie Nachrichten mit Ihrem persönlichen Cloud-Server."
-      },
-      "smsGateway": {
-        "title": "Verwendung als SMS-Gateway",
-        "desc": "Senden Sie SMS einfach über Ihr Android-Telefon."
-      },
-      "openSource": {
-        "title": "Open Source & Community-gesteuert",
-        "desc": "Von der Community entwickelt, um vollständige Transparenz und Kontrolle zu gewährleisten."
-      }
+  "title": "DekuSMS",
+  "title2": "Immer verbunden bleiben",
+  "description": "Stärken Sie Ihre Kommunikation mit End-to-End-Verschlüsselung und vollständiger Cloud-Integration. Bleiben Sie sicher verbunden.",
+  "getStarted": "Loslegen",
+  "learnMore": "Mehr erfahren"
+},
+"gratitude": {
+  "title": "Sicher, intelligent und unaufhaltsam",
+  "description": "DekuSMS ist nicht nur eine SMS-App—es ist ein Game-Changer. Entwickelt für Datenschutz und Leistung, bietet es End-to-End-Verschlüsselung, SMS-Cloud-Weiterleitung und vollständige Kontrolle über Ihre Nachrichten. Verabschieden Sie sich von Einschränkungen und begrüßen Sie sichere, anpassbare und intelligente Nachrichtenübermittlung. Ihre Privatsphäre. Ihre Regeln. Ihre SMS, neu definiert. 🚀"
+},
+"about": {
+  "title": "Was Sie über DekuSMS wissen sollten",
+  "appName": "DekuSMS",
+  "description1": "ist eine sichere, quelloffene SMS-App mit End-to-End-Verschlüsselung, die entwickelt wurde, um Ihre Kommunikation privat und zugänglich zu halten.",
+  "description2": "DekuSMS richtet sich an datenschutzbewusste Nutzer und Unterstützer der Kommunikationsfreiheit weltweit.",
+  "features": {
+    "endToEnd": {
+      "title": "Ende-zu-Ende-Verschlüsselung",
+      "desc": "Ihre Nachrichten bleiben sicher und privat.",
+      "more": "Wir gewährleisten Verschlüsselung auf jeder Ebene—Gerät, Übertragung und Server. Nur Sie sehen Ihre Nachrichten."
     },
-    "learnMore": "Mehr erfahren"
+    "cloudForwarding": {
+      "title": "Cloud-Weiterleitung",
+      "desc": "Greifen Sie in Echtzeit von überall auf SMS zu.",
+      "more": "Unser System synchronisiert Ihre SMS sicher mit der Cloud und bietet sofortigen API-Zugriff für App-Integration."
+    },
+    "smsGateway": {
+      "title": "Benutzerdefinierte SMS-Gateway",
+      "desc": "Integrieren Sie SMS ganz einfach in Ihre Apps.",
+      "more": "DekuSMS bietet eine flexible API und ein SDK-Toolkit, das Entwicklern ermöglicht, SMS nach eigenen Vorgaben zu senden und zu empfangen."
+    }
   },
+  "learnMore": "Mehr erfahren"
+},
   "download": {
     "title": "DekuSMS herunterladen",
     "subtitle": "Sichere, private und Open-Source-Messaging direkt in Ihrer Hand. Holen Sie sich DekuSMS noch heute auf Ihrer bevorzugten Plattform.",
