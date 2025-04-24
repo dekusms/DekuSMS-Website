@@ -1,0 +1,18 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "download": "Descargar",
+    "documentation": "Documentación",
+    "support": "Soporte"
+  },
+  "footer": {
+    "followUs": "Síguenos"
+  },
+  "comingSoon": {
+    "headline": "Próximamente",
+    "description": "Algo increíble está por llegar. Mantente atento al lanzamiento de DekuSMS Enterprise.",
+    "notifyTitle": "Únete a nuestra lista de correo",
+    "notifyButton": "Notifícame"
+  }
+}

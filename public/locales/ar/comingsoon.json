@@ -1,0 +1,18 @@
+{
+  "navbar": {
+    "home": "الرئيسية",
+    "blog": "مدونة",
+    "download": "تحميل",
+    "documentation": "التوثيق",
+    "support": "الدعم"
+  },
+  "footer": {
+    "followUs": "تابعنا"
+  },
+  "comingSoon": {
+    "headline": "قريباً",
+    "description": "شيء مذهل سيتم إطلاقه قريباً. تابعوا إصدار DekuSMS Enterprise.",
+    "notifyTitle": "انضم إلى قائمتنا البريدية",
+    "notifyButton": "أعلمني"
+  }
+}

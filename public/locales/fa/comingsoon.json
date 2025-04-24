@@ -1,0 +1,18 @@
+{
+  "navbar": {
+    "home": "خانه",
+    "blog": "وبلاگ",
+    "download": "دانلود",
+    "documentation": "مستندات",
+    "support": "پشتیبانی"
+  },
+  "footer": {
+    "followUs": "ما را دنبال کنید"
+  },
+  "comingSoon": {
+    "headline": "به زودی",
+    "description": "چیزی شگفت‌انگیز در راه است. منتظر عرضه دکو اس‌ام‌اس اینترپرایز باشید.",
+    "notifyTitle": "به لیست ایمیل ما بپیوندید",
+    "notifyButton": "مرا مطلع کن"
+  }
+}

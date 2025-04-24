@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "features": "Características",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse",
+    "profile": "Mi Perfil",
+    "logout": "Cerrar sesión",
+    "language": "Idioma"
+  },
+  "enterprise": {
+    "heroTitle": "DekuSMS Empresarial",
+    "heroDesc": "Desbloquea todo el potencial de los SMS con nuestras funciones premium empresariales..."
+  },
+  "buttons": {
+    "requestDemo": "Solicitar una demostración",
+    "learnMore": "Aprender más"
+  },
+  "features": {
+    "analyticsTitle": "Analítica Avanzada",
+    "analyticsDesc": "Obtén información valiosa con análisis de datos en tiempo real.",
+    "securityTitle": "Seguridad Mejorada",
+    "securityDesc": "Autenticación multifactor, lista blanca de IP, y más.",
+    "supportTitle": "Soporte Prioritario",
+    "supportDesc": "Soporte por chat en vivo 24/7 y comunicación directa."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "blog": "Blog",
+    "download": "Download",
+    "documentation": "Dokumentation",
+    "support": "Support"
+  },
+  "footer": {
+    "followUs": "Folgen Sie uns"
+  },
+  "comingSoon": {
+    "headline": "Kommt bald",
+    "description": "Etwas Großartiges wird bald veröffentlicht. Bleiben Sie dran für den Start von DekuSMS Enterprise.",
+    "notifyTitle": "Treten Sie unserer Mailingliste bei",
+    "notifyButton": "Benachrichtige mich"
+  }
+}
