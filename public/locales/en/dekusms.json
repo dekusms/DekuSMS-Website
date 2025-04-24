@@ -9,37 +9,33 @@
     "language": "Language"
   },
   "landing": {
-    "title": "DekuSMS",
-    "title2": "Stay Connected, Anytime",
-    "description": "Empower your communication with end-to-end encryption and complete cloud integration. Stay connected, securely.",
+    "title": "Stay Connected,",
+    "title2": "Stay Private and Secure",
+    "description": "encrypted SMS messaging that supports freedom of communication, even during internet shutdowns.",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
   "gratitude": {
     "title": "Secure, Smart, and Unstoppable",
-    "description": "DekuSMS isn’t just an SMS app—it’s a game-changer. Built for privacy and power, it delivers end-to-end encryption, SMS-to-cloud forwarding, and full control over your messages. Say goodbye to limitations and hello to secure, customizable, and intelligent messaging. Your privacy. Your rules. Your SMS, evolved. 🚀"
+    "description": "DekuSMS isn’t just an SMS app—it’s a game-changer. Built for privacy and power, it delivers end-to-end encryption, SMS-to-cloud forwarding, and full control over your messages. Say goodbye to limitations and hello to secure, customizable, and intelligent messaging. Your privacy. Your rules. Your SMS, evolved. 🚀",
+    "description1": "Thank you to our incredible community, contributors, and partners for believing in open communication. Your support makes DekuSMS possible. 🚀"
+
   },
   "about": {
     "title": "What You Need to Know About DekuSMS",
     "appName": "DekuSMS",
     "description1": "is a secure, end-to-end encrypted, open-source SMS messaging application designed to keep your communication private and accessible.",
-    "description2": "DekuSMS is built for privacy-conscious users and those supporting communication freedom worldwide.",
+    "description2": "Built with privacy-conscious users and advocates of free communication in mind, DekuSMS ensures that no matter the circumstance, be it surveillance, censorship, or internet disruptions, you can still send and receive secure messages.",
 "features": {
     "endToEnd": {
-      "title": "End-to-End Encryption",
-      "desc": "Your messages stay secure and private.",
-      "more": "We ensure encryption at every layer—device, transmission, and server. No one sees your messages except you."
-    },
-    "cloudForwarding": {
-      "title": "Cloud Forwarding",
-      "desc": "Access SMS from anywhere in real-time.",
-      "more": "Our system syncs your SMS messages securely with the cloud and gives instant API access for app integration."
-    },
+      "title": "End-to-End Encrypted SMS Messaging",
+      "desc": " DekuSMS ensures your SMS conversations remain private with robust end-to-end encryption, protecting your communication from interception or tampering."    },
+      "cloudForwarding": {
+      "title": "Message Routing (Gateway Clients)",
+      "desc": " Enable connectivity for others by acting as a gateway client. DekuSMS allows devices with internet access to securely route offline users' messages to online platforms, bridging the communication gap during internet shutdowns."    },
     "smsGateway": {
-      "title": "Custom SMS Gateway",
-      "desc": "Integrate SMS into your apps easily.",
-      "more": "DekuSMS offers a flexible API and SDK toolkit, letting developers send and receive SMS through their own logic."
-    }
+      "title": "Message Forwarding to the Cloud",
+      "desc": "Easily set up message forwarding from your Android device to your cloud infrastructure using specific server URLs. This ensures your messages are accessible and can be processed however you choose."    }
   },
     "learnMore": "Learn More"
   },

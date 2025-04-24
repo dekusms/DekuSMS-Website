@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 * {
     font-family: 'Mona Sans', 'Unbounded';
     margin: 0;
@@ -37,7 +39,7 @@
 }
 
 .landing-content p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: white;
     margin-bottom: 15px;
     margin-top: 35px;
@@ -57,22 +59,23 @@
     cursor: pointer;
     border-radius: 8px;
     transition: 0.3s ease;
+    font-weight: 400;
 }
 
 .landing-btn-primary {
-    color: #010e3d;
+    color: #1bb8a0;
     background-color: white;
     border: 2px solid white;
 }
 
 .landing-btn-secondary {
-    background-color:#010e3d;
+    background-color:#1bb8a0;
     color: white;
-    border: 2px solid white;
+    border: 2px solid #1bb8a0;
 }
 
 .landing-btn-primary:hover {
-    background-color: #010e3d;
+    background-color: #1bb8a0;
     color: white;
 }
 
@@ -167,8 +170,6 @@
 }
 
 
-
-
 /* ================= Gratitude Section ====================== */
 .gratitude {
     background: #001871;
@@ -194,9 +195,9 @@
   }
   
   .gratitude-card h1 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: #010e3d;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #011457;
     position: relative;
     display: inline-block;
     padding: 0.75rem 1.25rem;
@@ -204,7 +205,7 @@
     letter-spacing: 2px;
     font-family: 'Unbounded', 'Mona Sans';
     z-index: 1;
-    line-height: 1.3;
+    line-height: 1;
   }
   
   .gratitude-card p {
@@ -260,170 +261,148 @@
       padding: 40px;
     }
   }
-  
-/* =============   About section============= */
-.about-page {
-    background: #001871;
-    padding: 100px 10%;
-    color: white;
+/* =================== About ======================== */
+.about-dekusms-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #060633;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.2;
 }
 
-.about-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 50px;
+.about-dekusms-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #4b556b;
+  max-width: 90%;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  line-height: 1.6;
 }
 
-.about-description .about-title{
-    text-align:center;
-    font-size: 20x;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.about-dekusms-text strong {
+  color: #38a5a2;
 }
 
-.about-description .about-p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 15px;
+.about-dekusms-section {
+  padding: 3rem 0;
 }
 
-.about-image {
-    flex: 1;
-    max-width: 400px;
+.about-dekusms-grid {
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
 }
 
-.about-image img {
-    width: 90%;
-    max-width: 400px;
-    border-radius: 15px;
-    transition: transform 0.3s ease-in-out;
+.about-dekusms-card {
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  color: #060633;
+  box-shadow: 0 20px 30px -10px rgb(16 16 39 / 7%);
+  position: relative;
+  text-wrap: balance;
 }
 
-.about-image img:hover {
-    transform: scale(1.05);
+.about-cloud {
+  grid-area: 1 / 1 / 3 / 2;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-content {
-    flex: 1;
-    max-width: 600px;
+.about-cloud img {
+  width: 60%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.about-features {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.about-cloud:hover img {
+  transform: scale(1.03);
 }
 
-.feature-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px 25px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-    transition: 0.3s ease-in-out;
-    width: 100%;             
-    max-width: 800px;      
-    margin: 0 auto;
+.about-logo {
+  grid-area: 1 / 2 / 2 / 4 ;
+  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+}
+
+.about-logo h2 {
+  color: #2c7e7b;
+}
+
+.about-device {
+  background-color: #f8f9fb;
+}
+
+.about-inbox {
+  background-image: linear-gradient(-225deg, #ffffff 0%, #dacceb 100%);
+}
+
+.about-inbox h3 {
+  color: #8b5cca;
+}
+
+.about-card-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-dekusms-card h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.about-dekusms-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.about-dekusms-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #687286;
+}
+
+.about-credit {
+  margin-top: 4rem;
+}
+
+.about-credit a {
+  background-color: #4dd9d6;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  .about-dekusms-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
 
-.feature-card:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-
-.feature-card:hover {
-    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
-}
-
-.feature-icon {
-    font-size: 2rem;
-    color: #2ED3B7;
-}
-
-.feature-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-
-}
-
-.feature-desc {
-    opacity: 0.9;
-    color: rgb(199, 205, 213);
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-@media (max-width: 1024px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-description .about-title{
-        text-align: center; }
-
-    .about-content, .about-image {
-        max-width: 100%;
-    }
-
-    .feature-card {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .about-description {
-        font-size: 1.1rem;
-    }
-
-    .feature-title {
-        font-size: 1.4rem;
-    }
-
-    .feature-desc {
-        font-size: 1rem;
-    }
-}
-
-
-.feature-more {
-    color: #d3d7e0;
-    font-size: 15px;
-    margin-top: 10px;
-    line-height: 1.7;
+  .about-cloud,
+  .about-logo {
+    grid-area: auto;
   }
-  
-  .read-more-btn {
-    margin-top: 12px;
-    padding: 6px 14px;
-    font-size: 14px;
-    background-color: #2ED3B7;
-    color: #010e3d;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 576px) {
+  .about-dekusms-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .read-more-btn:hover {
-    background-color: #1bb8a0;
-  }
-  
+}
+
 
 /* ============== download =====================_*/
 .hover-lift {
