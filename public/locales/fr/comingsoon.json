@@ -4,15 +4,22 @@
     "blog": "Blog",
     "download": "Télécharger",
     "documentation": "Documentation",
-    "support": "Support"
-  },
-  "footer": {
-    "followUs": "Suivez-nous"
+    "support": "Assistance"
   },
   "comingSoon": {
-    "headline": "Bientôt disponible",
-    "description": "Quelque chose d'incroyable arrive bientôt. Restez à l'écoute pour le lancement de DekuSMS Enterprise.",
-    "notifyTitle": "Rejoignez notre liste de diffusion",
-    "notifyButton": "Prévenez-moi"
+    "title": "Bientôt disponible",
+    "subtitle": "Nous lançons bientôt !",
+    "joinMailingList": "Rejoignez notre liste de diffusion",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "notifyMeButton": "Prévenez-moi"
+  },"countdown": {
+  "days": "Jours",
+  "hours": "Heures",
+  "minutes": "Minutes",
+  "seconds": "Secondes"
+},
+  "footer": {
+    "followUs": "Suivez-nous",
+    "companyName": "Votre entreprise"
   }
 }

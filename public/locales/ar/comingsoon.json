@@ -3,16 +3,24 @@
     "home": "الرئيسية",
     "blog": "مدونة",
     "download": "تحميل",
-    "documentation": "التوثيق",
+    "documentation": "توثيق",
     "support": "الدعم"
   },
-  "footer": {
-    "followUs": "تابعنا"
-  },
   "comingSoon": {
-    "headline": "قريباً",
-    "description": "شيء مذهل سيتم إطلاقه قريباً. تابعوا إصدار DekuSMS Enterprise.",
-    "notifyTitle": "انضم إلى قائمتنا البريدية",
-    "notifyButton": "أعلمني"
+    "title": "قريباً",
+    "subtitle": "سنطلق الموقع قريباً!",
+    "joinMailingList": "انضم إلى قائمة البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "notifyMeButton": "أبلغني"
+  },
+  "countdown": {
+  "days": "أيام",
+  "hours": "ساعات",
+  "minutes": "دقائق",
+  "seconds": "ثواني"
+},
+  "footer": {
+    "followUs": "تابعنا",
+    "companyName": "شركتك"
   }
 }

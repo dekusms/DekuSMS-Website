@@ -8,7 +8,7 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import i18n from "../i18n"
 
 const ComingSoon = () => {
-  const { t } = useTranslation("dekusms");
+  const { t } = useTranslation("comingsoon");
   const [expanded, setExpanded] = useState(false);
 
   const linkStyle = {
@@ -41,11 +41,10 @@ const ComingSoon = () => {
     return () => clearInterval(timer);
   }, []);
 
-
   return (
     <div style={{
       display: 'flex',
-      flexDirection: 'column', 
+      flexDirection: 'column',
       justifyContent: 'flex-start',
       minHeight: '100vh',
       background: 'radial-gradient(circle, #0024A8, #000158)',
@@ -56,8 +55,8 @@ const ComingSoon = () => {
       padding: '20px',
     }}>
     
-{/* ============== Navbar ======================== */}
-   <nav className="navbar navbar-expand-lg navbar-dark fixed-top px-3" style={{
+    {/* ============== Navbar ======================== */}
+    <nav className="navbar navbar-expand-lg navbar-dark fixed-top px-3" style={{
         background: "#001871",
         boxShadow: "0px 4px 10px rgba(45, 43, 43, 0.2)",
       }}>
@@ -91,7 +90,6 @@ const ComingSoon = () => {
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </li>
-
             <li className="nav-item">
               <NavDropdown title={<FontAwesomeIcon icon={faGlobe} style={{ color: 'white' }} />} id="language-dropdown">
                 <NavDropdown.Item onClick={() => i18n.changeLanguage("en")}>English</NavDropdown.Item>
@@ -105,7 +103,7 @@ const ComingSoon = () => {
           </ul>
         </div>
       </nav>
-    
+
       <div style={{
         position: 'absolute',
         top: '-20%',
@@ -118,23 +116,35 @@ const ComingSoon = () => {
         zIndex: -1
       }}></div>
 
-      <div style={{ textAlign: 'center', padding: '100px' }}>
-        <h1 style={{
-          fontSize: 'clamp(2.5rem, 8vw, 8rem)',
-          fontWeight: '900',
-          letterSpacing: '5px',
-          textTransform: 'uppercase',
-          background: 'linear-gradient(to right, #ffffff, #dcdcdc)',
-          backgroundClip: 'text',
-          WebkitBackgroundClip: 'text',
-          color: 'transparent'
-                  }}>
-         {t("comingSoon.title")}
-        </h1>
-        <p style={{ fontSize: 'clamp(1rem, 2vw, 1.4rem)', color: '#D1D1D6' }}>
-        {t("comingSoon.subtitle")}
-        </p>
-      </div>
+ 
+<div
+  className="animated-bg"
+  style={{
+    padding: '100px 0',
+    textAlign: 'center',
+    backgroundImage: 'url(/bg.jpg)',
+    backgroundSize: 'cover',
+  }}
+>
+  <h1
+    className="animated-text"
+    style={{
+      fontSize: 'clamp(2.5rem, 8vw, 8rem)',
+      fontWeight: '900',
+      letterSpacing: '5px',
+      textTransform: 'uppercase',
+      background: 'linear-gradient(to right, #ffffff, #dcdcdc)',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text',
+      color: 'transparent',
+    }}
+  >
+    {t("comingSoon.title")}
+  </h1>
+  <p style={{ fontSize: 'clamp(1rem, 2vw, 1.4rem)', color: '#D1D1D6' }}>
+    {t("comingSoon.subtitle")}
+  </p>
+</div>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
         {Object.entries(timeLeft).map(([unit, value]) => (
@@ -146,6 +156,7 @@ const ComingSoon = () => {
             textAlign: 'center',
             color: '#15B79E',
             cursor: 'pointer',
+            transition: 'transform 0.2s ease'
           }}
             onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
@@ -153,7 +164,7 @@ const ComingSoon = () => {
               {String(value).padStart(2, '0')}
             </div>
             <div style={{ fontSize: '0.8rem', color: '#A0A0AB', textTransform: 'uppercase' }}>
-              {unit}
+              {t(`countdown.${unit}`)}
             </div>
           </div>
         ))}
@@ -171,7 +182,7 @@ const ComingSoon = () => {
         gap: '10px',
       }}>
         <h3 style={{ color: 'white', fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}>
-        {t("comingSoon.joinMailingList")}
+          {t("comingSoon.joinMailingList")}
         </h3>
         <div style={{
           display: 'flex',
@@ -205,25 +216,24 @@ const ComingSoon = () => {
               cursor: 'pointer',
             }}
           >
-           {t("comingSoon.notifyMeButton")}
+            {t("comingSoon.notifyMeButton")}
           </button>
         </div>
       </div>
 
       <footer style={{
-  marginTop: 'auto',
-  width: '100%',
-  color: '#A0AEC0',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  fontSize: 'clamp(0.8rem, 2vw, 1rem)',
-  textAlign: 'center',
-  padding: '20px',
-}}>
-
-      <p style={{ margin: 0 }}>{t("footer.followUs")}</p>
+        marginTop: 'auto',
+        width: '100%',
+        color: '#A0AEC0',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 'clamp(0.8rem, 2vw, 1rem)',
+        textAlign: 'center',
+        padding: '20px',
+      }}>
+        <p style={{ margin: 0 }}>{t("footer.followUs")}</p>
         <div style={{ display: 'flex', gap: '15px', marginTop: '10px' }}>
           <a href="https://twitter.com/dekusms" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>Twitter</a>
           <a href="https://github.com/dekusms" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>GitHub</a>
@@ -232,18 +242,38 @@ const ComingSoon = () => {
       </footer>
 
       <style>{`
-        @keyframes moveBackground {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(30%, 30%); }
-        }
+  @keyframes smoothAppear {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
-        @keyframes glowingText {
-          0% { text-shadow: 0 0 15px #15B79E, 0 0 30px #15B79E; }
-          100% { text-shadow: 0 0 30px #15B79E, 0 0 45px #15B79E; }
-        }
-      `}</style>
+  @keyframes moveBackground {
+    0% { transform: translate(0%, 0%); }
+    50% { transform: translate(2%, 2%); }
+    100% { transform: translate(0%, 0%); }
+  }
+
+  .animated-text {
+    animation: smoothAppear 1.8s ease-in-out forwards;
+  }
+
+  .animated-bg {
+    animation: moveBackground 18s ease-in-out infinite;
+  }
+`}</style>
+
+
     </div>
   );
 };
 
 export default ComingSoon;
+
+
+

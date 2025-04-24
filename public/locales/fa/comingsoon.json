@@ -6,13 +6,20 @@
     "documentation": "مستندات",
     "support": "پشتیبانی"
   },
-  "footer": {
-    "followUs": "ما را دنبال کنید"
-  },
   "comingSoon": {
-    "headline": "به زودی",
-    "description": "چیزی شگفت‌انگیز در راه است. منتظر عرضه دکو اس‌ام‌اس اینترپرایز باشید.",
-    "notifyTitle": "به لیست ایمیل ما بپیوندید",
-    "notifyButton": "مرا مطلع کن"
+    "title": "به‌زودی",
+    "subtitle": "ما به‌زودی راه‌اندازی می‌شویم!",
+    "joinMailingList": "به لیست ایمیل ما بپیوندید",
+    "emailPlaceholder": "ایمیل خود را وارد کنید",
+    "notifyMeButton": "مرا مطلع کن"
+  },"countdown": {
+  "days": "روز",
+  "hours": "ساعت",
+  "minutes": "دقیقه",
+  "seconds": "ثانیه"
+},
+  "footer": {
+    "followUs": "ما را دنبال کنید",
+    "companyName": "شرکت شما"
   }
 }

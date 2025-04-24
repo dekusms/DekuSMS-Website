@@ -16,7 +16,7 @@ i18n
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
-    ns: ['common', 'dekusms', 'enterprise'],
+    ns: ['common', 'dekusms', 'enterprise', 'comingsoon'],
     defaultNS: 'common',
     react: {
       useSuspense: false,

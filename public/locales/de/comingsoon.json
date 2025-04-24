@@ -2,17 +2,25 @@
   "navbar": {
     "home": "Startseite",
     "blog": "Blog",
-    "download": "Download",
+    "download": "Herunterladen",
     "documentation": "Dokumentation",
     "support": "Support"
   },
-  "footer": {
-    "followUs": "Folgen Sie uns"
-  },
   "comingSoon": {
-    "headline": "Kommt bald",
-    "description": "Etwas Großartiges wird bald veröffentlicht. Bleiben Sie dran für den Start von DekuSMS Enterprise.",
-    "notifyTitle": "Treten Sie unserer Mailingliste bei",
-    "notifyButton": "Benachrichtige mich"
+    "title": "Kommt bald",
+    "subtitle": "Wir starten bald!",
+    "joinMailingList": "Treten Sie unserer Mailingliste bei",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+    "notifyMeButton": "Benachrichtige mich"
+  },
+  "countdown": {
+  "days": "Tage",
+  "hours": "Stunden",
+  "minutes": "Minuten",
+  "seconds": "Sekunden"
+},
+  "footer": {
+    "followUs": "Folge uns",
+    "companyName": "Ihr Unternehmen"
   }
 }

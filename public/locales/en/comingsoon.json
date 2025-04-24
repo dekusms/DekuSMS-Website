@@ -1,23 +1,26 @@
 {
-    "comingSoon": {
-      "title": "Coming Soon",
-      "subtitle": "Something amazing is launching soon. Stay tuned for the release of DekuSMS Enterprise.",
-      "joinMailingList": "Join Our Mailing List",
-      "emailPlaceholder": "Your email address",
-      "notifyMeButton": "Notify Me"
-    },
-    "footer": {
-      "followUs": "Follow Us",
-      "twitter": "Twitter",
-      "github": "GitHub",
-      "companyName": "DekuSMS Enterprise"
-    },
-    "navbar": {
-      "home": "Home",
-      "blog": "Blog",
-      "download": "Download",
-      "documentation": "Documentation",
-      "support": "Support"
-    }
+  "navbar": {
+    "home": "Home",
+    "blog": "Blog",
+    "download": "Download",
+    "documentation": "Documentation",
+    "support": "Support"
+  },
+  "comingSoon": {
+    "title": "Coming Soon",
+    "subtitle": "We are launching soon!",
+    "joinMailingList": "Join our mailing list",
+    "emailPlaceholder": "Enter your email",
+    "notifyMeButton": "Notify Me"
+  },
+  "countdown": {
+  "days": "Days",
+  "hours": "Hours",
+  "minutes": "Minutes",
+  "seconds": "Seconds"
+},
+  "footer": {
+    "followUs": "Follow us",
+    "companyName": "Your Company"
   }
-  
+}
