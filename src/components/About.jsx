@@ -9,7 +9,7 @@ const AboutDekuSMS = () => {
   return (
     <section className="about-dekusms-section">
       <Container>
-        <div>
+        <div className="about-section-1">
           <h2 className="about-dekusms-title">{t("about.title")}</h2>
           <p className="about-dekusms-text">
             <strong>{t("about.appName")}</strong> {t("about.description1")}
@@ -46,11 +46,11 @@ const AboutDekuSMS = () => {
 
         <div className="about-credit text-center">
           <a
-            href="https://emilandersson.com/blog/how-to-design-bento-grids"
+            href="https://blog.smswithoutborders.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Created for this blog post
+            Read More
           </a>
         </div>
       </Container>

@@ -10,6 +10,21 @@
   font-style: normal;
   }
 
+  html[dir="rtl"] body {
+    font-family: 'Vazirmatn', sans-serif;
+  }
+  
+  html.rtl .some-class {
+    text-align: right;
+    direction: rtl;
+  }
+  
+  html.ltr .some-class {
+    text-align: left;
+    direction: ltr;
+  }
+  
+
 
 /* ================= Landing Section ====================== */
 .landing {
@@ -17,7 +32,7 @@
     align-items: center;
     justify-content: center;
     background: #001871;
-    min-height: 50vh;
+    min-height: 100vh;
 }
 
 .landing-content {
@@ -106,7 +121,8 @@
 
 @media (max-width: 1024px) {
     .landing {
-        padding: 50px 5%; 
+        padding: 60px 10%; 
+        min-height: 80vh;
     }
     .landing-btn-primary, .landing-btn-secondary {
         width: 60%;
@@ -119,7 +135,8 @@
     .landing {
         flex-direction: column;
         text-align: center;
-        padding: 40px 5%;
+        padding: 60px 10%;
+        min-height: 50vh;
     }
 
     .landing-content, .landing-image {
@@ -168,106 +185,96 @@
         font-size: 3rem; 
     }
 }
-
-
 /* ================= Gratitude Section ====================== */
-.gratitude {
-    background: #001871;
-    padding: 50px 10px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.gratitude-section {
+  position: relative;
+  z-index: 2;
+  margin-top: -5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gratitude-card {
+  background: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  width: 90%;
+  text-align: center;
+  z-index: 3;
+  position: relative;
+}
+
+.gratitude-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #38a5a2;
+  margin-bottom: 1rem;
+}
+
+.gratitude-description {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #4b556b;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .gratitude-section {
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
   }
-  
+
   .gratitude-card {
-    background: #e9edf4;
-    padding: 50px;
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
+    padding: 1.5rem 1.2rem;
+    border-radius: 1.2rem;
   }
-  
-  .gratitude-card:hover {
-    transform: translateY(-5px);
+
+  .gratitude-title {
+    font-size: 1.5rem;
   }
-  
-  .gratitude-card h1 {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #011457;
-    position: relative;
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    text-transform: capitalize;
-    letter-spacing: 2px;
-    font-family: 'Unbounded', 'Mona Sans';
-    z-index: 1;
-    line-height: 1;
+
+  .gratitude-description {
+    font-size: 1rem;
   }
-  
-  .gratitude-card p {
-    font-size: 1.125rem;
-    line-height: 2;
-    color: #2a2a2a;
-    margin-top: 30px;
-    font-weight: 500;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Unbounded', 'Mona Sans';
-    letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+  .gratitude-card {
+    padding: 1.2rem 1rem;
+    border-radius: 1rem;
   }
-  
-  @media screen and (max-width: 1024px) {
-    .gratitude-title {
-      font-size: 2.5rem;
-    }
-    .gratitude-card {
-      padding: 60px;
-    }
+
+  .gratitude-title {
+    font-size: 1.3rem;
   }
-  
-  @media screen and (max-width: 768px) {
-    .gratitude-card h1 {
-      font-size: 2rem;
-    }
-    .gratitude-card h1::before {
-      height: 1.4em;
-    }
-    .gratitude-card p{
-      font-size: 1rem;
-    }
-    .gratitude-card {
-      padding: 50px;
-    }
+
+  .gratitude-description {
+    font-size: 0.95rem;
   }
-  
-  @media screen and (max-width: 480px) {
-    .gratitude-card h1 {
-      font-size: 1.5rem;
-      padding: 0.5rem 1rem;
-    }
-    .gratitude-card h1::before {
-      height: 1.3em;
-    }
-    .gratitude-card p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-    .gratitude-card {
-      padding: 40px;
-    }
-  }
+}
+
+
 /* =================== About ======================== */
+.about-section-1 {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  text-align: center;
+}
+
 .about-dekusms-title {
   font-size: 2.5rem;
   font-weight: 600;
   color: #060633;
   margin-bottom: 1rem;
-  text-align: center;
   line-height: 1.2;
 }
 
@@ -275,14 +282,42 @@
   font-size: 1.25rem;
   font-weight: 500;
   color: #4b556b;
-  max-width: 90%;
+  max-width: 100%;
   margin: 0 auto 1rem auto;
-  text-align: center;
   line-height: 1.6;
 }
 
 .about-dekusms-text strong {
   color: #38a5a2;
+}
+
+@media (max-width: 768px) {
+  .about-dekusms-title {
+    font-size: 2rem;
+  }
+
+  .about-dekusms-text {
+    font-size: 1.1rem;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section-1 {
+    padding: 3rem 1rem;
+  }
+
+  .about-dekusms-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-dekusms-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
 }
 
 .about-dekusms-section {
@@ -377,7 +412,7 @@
 }
 
 .about-credit a {
-  background-color: #4dd9d6;
+  background-color: #2fa5a3;
   color: #fff;
   padding: 0.6rem 1rem;
   border-radius: 8px;
@@ -414,78 +449,107 @@
   }
 
 /* ============================ footer ============================= */
-.footer{
-    background: #001871;
+.footer {
+  background: #001871;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.footer-tagline {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #E66F00;
+}
+
+.footer-socials .social-icon {
+  font-size: 1.5rem;
+}
+
+.footer-form .form-control {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.footer-form .footer-btn {
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: #2ED3B7;
+  color: white;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.footer-form .footer-btn:hover {
+  background-color: #1565c0;
 }
 
 footer .list-unstyled a {
-    position: relative;
-    padding-left: 28px;
-    font-size: 15px;
-    text-decoration: none;
-    color: #ffffff;
-    display: inline-block;
-    transition: all 0.3s ease-in-out;
+  position: relative;
+  padding-left: 28px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .list-unstyled a:hover {
+  color: #2ED3B7 !important;
+  transform: translateX(4px);
+}
+
+footer .list-unstyled a::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: #2ED3B7;
+  opacity: 0.7;
+  padding-right: 8px;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 576px) {
+  .footer-logo {
+    font-size: 1.6rem;
   }
-  
-  footer .list-unstyled a:hover {
-    color: #2ED3B7 !important;
-    transform: translateX(4px);
-  }
-  
-  footer .list-unstyled a::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.1rem;
-    color: #2ED3B7;
-    opacity: 0.7;
-    padding-right: 8px;
-    transition: color 0.3s ease-in-out;
-  }
-  
-.footer-logo {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .footer-tagline {
-    font-size: 1rem;
-    color: #ccc;
-  }
-  
+
   .footer-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #E66F00;
+    font-size: 1rem;
   }
-  
+
   .footer-socials .social-icon {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
-  
-  .footer-form .footer-input {
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-  }
-  
-  .footer-form .footer-btn {
-    font-size: 15px;
-    padding: 0.55rem;
-    border-radius: 10px;
-    background-color: #2ED3B7;
-    color: white;
-    transition: background-color 0.3s;
-  }
-  
-  .footer-form .footer-btn:hover {
-    background-color: #1565c0;
-  }
-  
-  .footer-bottom p {
+
+  .footer-form .form-control {
     font-size: 0.9rem;
-    color: #bbb;
   }
-  
+
+  .footer-form .footer-btn {
+    font-size: 0.9rem;
+  }
+
+  footer .list-unstyled a {
+    font-size: 0.95rem;
+    padding-left: 24px;
+  }
+}
