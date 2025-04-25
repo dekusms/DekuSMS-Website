@@ -24,8 +24,6 @@
     direction: ltr;
   }
   
-
-
 /* ================= Landing Section ====================== */
 .landing {
     display: flex;
@@ -185,6 +183,7 @@
         font-size: 3rem; 
     }
 }
+
 /* ================= Gratitude Section ====================== */
 .gratitude-section {
   position: relative;
@@ -258,7 +257,6 @@
     font-size: 0.95rem;
   }
 }
-
 
 /* =================== About ======================== */
 .about-section-1 {
@@ -438,16 +436,29 @@
   }
 }
 
-
 /* ============== download =====================_*/
-.hover-lift {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-6px);
-  }
 
+.download-section {
+  background: linear-gradient(to bottom, #f9fbfe, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 767px) {
+  .download-section {
+    min-height: auto;
+    display: block;
+  }
+}
+
+.download-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
 /* ============================ footer ============================= */
 .footer {
   background: #001871;
@@ -526,7 +537,6 @@ footer .list-unstyled a::before {
   color: #bbb;
 }
 
-/* Mobile Tweaks */
 @media (max-width: 576px) {
   .footer-logo {
     font-size: 1.6rem;

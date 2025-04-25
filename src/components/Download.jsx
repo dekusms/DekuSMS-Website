@@ -3,82 +3,88 @@ import { useTranslation } from "react-i18next";
 import "../App.css";
 
 const Download = () => {
-  const { t } = useTranslation('dekusms');
+  const { t, i18n } = useTranslation("dekusms");
+  const isRTL = i18n.dir() === "rtl";
 
   const downloadOptions = [
     {
       href: "https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share",
       img: "/playstore.webp",
-      alt: "Google Play Store icon",
-      title: t('download.googlePlay.title'),
-      desc: t('download.googlePlay.desc'),
-      iconColor: "#3bcc5e",
-      border: "border-success",
+      alt: "Google Play Store",
+      title: t("download.googlePlay.title"),
+      desc: t("download.googlePlay.desc"),
+      bg: "#e9f8f0",
     },
     {
       href: "https://f-droid.org/docs/Reproducible_Builds/",
       img: "/fdroid.png",
-      alt: "F-Droid icon",
-      title: t('download.fdroid.title'),
-      desc: t('download.fdroid.desc'),
-      iconColor: "#1976d2",
-      border: "border-primary",
+      alt: "F-Droid",
+      title: t("download.fdroid.title"),
+      desc: t("download.fdroid.desc"),
+      bg: "#ecf2fd",
     },
     {
       href: "https://github.com/dekusms/DekuSMS-Android?tab=readme-ov-file",
       img: "/github.png",
-      alt: "GitHub icon",
-      title: t('download.github.title'),
-      desc: t('download.github.desc'),
-      iconColor: "#333",
-      border: "border-dark",
-    }
+      alt: "GitHub",
+      title: t("download.github.title"),
+      desc: t("download.github.desc"),
+      bg: "#f4f4f4",
+    },
   ];
 
   return (
     <section
-      id="download"
-      className="py-5 bg-white text-center d-flex align-items-center justify-content-center"
-      style={{ minHeight: '50vh' }}
-    >
-      <div className="container">
-        <h2 className="fw-bold mb-3" style={{ color: "#001871" }}>
-          {t('download.title')}
-        </h2>
-        <p className="text-muted mb-5" style={{ color: "#001871" }}>{t('download.subtitle')}</p>
-
-        <div className="row g-4 align-items-stretch">
-          {downloadOptions.map((option, index) => (
-            <div className="col-md-4" key={index}>
-              <a
-                href={option.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`d-flex align-items-center text-start p-4 rounded-4 border ${option.border} shadow-sm text-decoration-none text-dark bg-light h-100 hover-lift`}
+    id="download"
+    dir={i18n.dir()}
+    className="download-section"
+  >
+    <div className="container text-center">
+      <h2 className="fw-bold mb-3 display-6 text-primary">{t("download.title")}</h2>
+      <p className="text-muted mb-5">{t("download.subtitle")}</p>
+  
+      <div className="row justify-content-center g-4">
+        {downloadOptions.map((opt, index) => (
+          <div className="col-md-6 col-lg-4" key={index}>
+            <a
+              href={opt.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`download-card d-flex ${
+                isRTL ? "flex-row-reverse text-end" : "text-start"
+              } align-items-center h-100 shadow-sm`}
+              style={{
+                background: opt.bg,
+                borderRadius: "1.5rem",
+                padding: "1.5rem",
+                gap: "1rem",
+                height: "100%",
+                textDecoration: "none",
+                color: "#111",
+                transition: "all 0.3s ease-in-out",
+              }}
+            >
+              <img
+                src={opt.img}
+                alt={opt.alt}
                 style={{
-                  gap: "15px",
-                  transition: "all 0.3s ease-in-out",
+                  width: "50px",
+                  height: "50px",
+                  objectFit: "contain",
+                  borderRadius: "12px",
+                  flexShrink: 0,
                 }}
-              >
-                <img
-                  src={option.img}
-                  alt={option.alt}
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    objectFit: "contain",
-                  }}
-                />
-                <div>
-                  <h5 className="fw-bold mb-1">{option.title}</h5>
-                  <p className="small text-muted mb-0">{option.desc}</p>
-                </div>
-              </a>
-            </div>
-          ))}
-        </div>
+              />
+              <div className="flex-grow-1">
+                <h5 className="fw-semibold mb-1">{opt.title}</h5>
+                <p className="text-muted small mb-0">{opt.desc}</p>
+              </div>
+            </a>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
+  </section>  
   );
 };
 
