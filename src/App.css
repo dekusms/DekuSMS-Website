@@ -1,17 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 * {
-    font-family: 'Mona Sans', 'Unbounded';
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
+  font-family: 'Mona Sans', 'Unbounded';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   }
 
   html[dir="rtl"] body {
-    font-family: 'Vazirmatn', sans-serif;
+    font-family: 'Mona Sans', 'Unbounded';
   }
   
   html.rtl .some-class {
@@ -437,7 +432,6 @@
 }
 
 /* ============== download =====================_*/
-
 .download-section {
   background: linear-gradient(to bottom, #f9fbfe, #ffffff);
   display: flex;
@@ -446,6 +440,9 @@
   min-height: 50vh;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+.download-title{
+  color: #001871;
 }
 
 @media (max-width: 767px) {
@@ -459,6 +456,7 @@
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
 }
+
 /* ============================ footer ============================= */
 .footer {
   background: #001871;

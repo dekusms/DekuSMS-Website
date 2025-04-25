@@ -40,7 +40,7 @@ const Download = () => {
     className="download-section"
   >
     <div className="container text-center">
-      <h2 className="fw-bold mb-3 display-6 text-primary">{t("download.title")}</h2>
+      <h2 className="fw-bold mb-3 display-6 download-title">{t("download.title")}</h2>
       <p className="text-muted mb-5">{t("download.subtitle")}</p>
   
       <div className="row justify-content-center g-4">
