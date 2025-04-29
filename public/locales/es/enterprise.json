@@ -1,29 +1,105 @@
 {
   "navbar": {
     "home": "Inicio",
-    "features": "Características",
-    "pricing": "Precios",
     "contact": "Contacto",
-    "login": "Iniciar sesión",
     "signup": "Registrarse",
-    "profile": "Mi Perfil",
+    "profile": "Mi perfil",
     "logout": "Cerrar sesión",
-    "language": "Idioma"
-  },
-  "enterprise": {
-    "heroTitle": "DekuSMS Empresarial",
-    "heroDesc": "Desbloquea todo el potencial de los SMS con nuestras funciones premium empresariales..."
+    "language": "Idioma",
+    "features": "Funciones",
+    "offers": "Ofertas",
+    "pricing": "Precios",
+    "login": "Iniciar sesión"
   },
   "buttons": {
-    "requestDemo": "Solicitar una demostración",
+    "requestDemo": "Solicitar demostración",
     "learnMore": "Aprender más"
   },
   "features": {
-    "analyticsTitle": "Analítica Avanzada",
+    "analyticsTitle": "Análisis avanzados",
     "analyticsDesc": "Obtén información valiosa con análisis de datos en tiempo real.",
-    "securityTitle": "Seguridad Mejorada",
-    "securityDesc": "Autenticación multifactor, lista blanca de IP, y más.",
-    "supportTitle": "Soporte Prioritario",
-    "supportDesc": "Soporte por chat en vivo 24/7 y comunicación directa."
+    "securityTitle": "Seguridad mejorada",
+    "securityDesc": "Autenticación multifactor, listas blancas de IP y más.",
+    "supportTitle": "Soporte prioritario",
+    "supportDesc": "Soporte 24/7 por chat en vivo y comunicación directa."
+  },
+  "enterprise": {
+    "heroTitle": "Mensajería empresarial para equipos modernos",
+    "heroDesc": "Soluciones de mensajería rápidas, seguras y escalables para tu empresa.",
+    "whyTitle": "¿Por qué DekuSMS para empresas?",
+    "features": {
+      "analyticsTitle": "Análisis en tiempo real",
+      "analyticsDesc": "Monitorea y optimiza la entrega de mensajes con datos en vivo.",
+      "securityTitle": "Cifrado de extremo a extremo",
+      "securityDesc": "Tus comunicaciones están completamente seguras con protocolos modernos.",
+      "supportTitle": "Soporte 24/7",
+      "supportDesc": "Nuestros expertos están disponibles para ayudarte en todo momento."
+    },
+    "featureList": [
+      {
+        "span": "Función 1",
+        "title": "Entrega segura",
+        "desc": "Entrega garantizada de mensajes a nivel mundial con sistemas de respaldo."
+      },
+      {
+        "span": "Función 2",
+        "title": "Alcance global",
+        "desc": "Llega a cualquier cliente del mundo con nuestra plataforma multilingüe."
+      },
+      {
+        "span": "Función 3",
+        "title": "Informes en tiempo real",
+        "desc": "Sigue la entrega y apertura de mensajes desde tu panel."
+      }
+    ],
+    "dashboard": {
+      "span": "Función destacada",
+      "title": "Mensajería poderosa",
+      "desc": "Soluciones de mensajería empresariales personalizadas. Rápidas, seguras y confiables con DekuSMS."
+    },
+    "pricing": {
+      "title": "Sobre DekuSMS",
+      "subtitle": "Planes y precios",
+      "plans": [
+        {
+          "name": "Gratis",
+          "description": "Ideal para empezar",
+          "price": "0 $/mes",
+          "features": [
+            "Enviar y recibir SMS",
+            "Mensajes ilimitados",
+            "Mensajes grupales",
+            "Notificaciones de entrega",
+            "Soporte básico"
+          ],
+          "buttonText": "Comenzar"
+        },
+        {
+          "name": "Pro",
+          "description": "Para la mayoría de los usuarios",
+          "price": "6.99 $/mes",
+          "features": [
+            "Todo lo de Gratis",
+            "Mensajes ilimitados",
+            "Mensajes grupales",
+            "Notificaciones de entrega",
+            "Soporte prioritario"
+          ],
+          "buttonText": "Actualizar a Pro"
+        },
+        {
+          "name": "Personalizado",
+          "description": "Para necesidades avanzadas",
+          "price": "Precios personalizados",
+          "features": [
+            "Límites de mensajes personalizados",
+            "Integraciones personalizadas",
+            "SLA",
+            "Soporte dedicado"
+          ],
+          "buttonText": "Contactar ventas"
+        }
+      ]
+    }
   }
 }

@@ -1,9 +1,105 @@
 {
   "navbar": {
-    "home": "خانه",
-    "enterprise": "شرکت",
-    "download": "دانلود",
-    "documentation": "مستندات",
-    "support": "پشتیبانی"
+    "home": "Home",
+    "contact": "Contatto",
+    "signup": "Registrati",
+    "profile": "Il mio profilo",
+    "logout": "Disconnetti",
+    "language": "Lingua",
+    "features": "Funzionalità",
+    "offers": "Offerte",
+    "pricing": "Prezzi",
+    "login": "Accedi"
+  },
+  "buttons": {
+    "requestDemo": "Richiedi una demo",
+    "learnMore": "Scopri di più"
+  },
+  "features": {
+    "analyticsTitle": "Analisi avanzata",
+    "analyticsDesc": "Ottieni preziose informazioni con analisi dei dati in tempo reale.",
+    "securityTitle": "Sicurezza avanzata",
+    "securityDesc": "Autenticazione a più fattori, whitelist IP e altro.",
+    "supportTitle": "Supporto prioritario",
+    "supportDesc": "Supporto live chat 24/7 e comunicazione diretta."
+  },
+  "enterprise": {
+    "heroTitle": "Messaggistica aziendale per team moderni",
+    "heroDesc": "Soluzioni di messaggistica veloci, sicure e scalabili per la tua azienda.",
+    "whyTitle": "Perché DekuSMS per le aziende?",
+    "features": {
+      "analyticsTitle": "Analisi in tempo reale",
+      "analyticsDesc": "Monitora e ottimizza la consegna dei messaggi con dati in tempo reale.",
+      "securityTitle": "Crittografia end-to-end",
+      "securityDesc": "Le tue comunicazioni sono completamente sicure con protocolli moderni.",
+      "supportTitle": "Supporto 24/7",
+      "supportDesc": "I nostri esperti sono sempre disponibili per aiutare il tuo team a prosperare."
+    },
+    "featureList": [
+      {
+        "span": "Funzione 1",
+        "title": "Consegna sicura",
+        "desc": "Consegna garantita dei messaggi a livello globale con sistemi di failover."
+      },
+      {
+        "span": "Funzione 2",
+        "title": "Portata globale",
+        "desc": "Raggiungi qualsiasi cliente nel mondo con la nostra piattaforma multilingue."
+      },
+      {
+        "span": "Funzione 3",
+        "title": "Report in tempo reale",
+        "desc": "Traccia la consegna e l'apertura dei messaggi direttamente dal dashboard."
+      }
+    ],
+    "dashboard": {
+      "span": "Funzione principale",
+      "title": "Messaggistica potente",
+      "desc": "Soluzioni di messaggistica aziendale personalizzate. Veloci, sicure e affidabili con DekuSMS."
+    },
+    "pricing": {
+      "title": "Informazioni su DekuSMS",
+      "subtitle": "Prezzi e piani",
+      "plans": [
+        {
+          "name": "Gratuito",
+          "description": "Perfetto per iniziare",
+          "price": "0 €/mese",
+          "features": [
+            "Invia e ricevi SMS",
+            "Messaggi illimitati",
+            "Messaggi di gruppo",
+            "Notifiche di consegna",
+            "Supporto base"
+          ],
+          "buttonText": "Inizia"
+        },
+        {
+          "name": "Pro",
+          "description": "Per uso professionale",
+          "price": "6.99 €/mese",
+          "features": [
+            "Tutto incluso in Gratuito",
+            "Messaggi illimitati",
+            "Messaggi di gruppo",
+            "Notifiche di consegna",
+            "Supporto prioritario"
+          ],
+          "buttonText": "Passa a Pro"
+        },
+        {
+          "name": "Personalizzato",
+          "description": "Per esigenze particolari",
+          "price": "Prezzo personalizzato",
+          "features": [
+            "Limiti di messaggi personalizzati",
+            "Integrazioni personalizzate",
+            "Accordo SLA",
+            "Supporto dedicato"
+          ],
+          "buttonText": "Contatta vendite"
+        }
+      ]
+    }
   }
 }

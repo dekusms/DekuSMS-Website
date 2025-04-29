@@ -1,29 +1,107 @@
 {
   "navbar": {
     "home": "Accueil",
-    "features": "Fonctionnalités",
-    "pricing": "Tarifs",
     "contact": "Contact",
-    "login": "Connexion",
     "signup": "S'inscrire",
-    "profile": "Mon Profil",
-    "logout": "Déconnexion",
-    "language": "Langue"
-  },
-  "enterprise": {
-    "heroTitle": "DekuSMS Entreprise",
-    "heroDesc": "Libérez tout le potentiel des SMS avec nos fonctionnalités premium de niveau entreprise..."
+    "profile": "Mon profil",
+    "logout": "Se déconnecter",
+    "language": "Langue",
+    "features": "Fonctionnalités",
+    "offers": "Offres",
+    "pricing": "Tarification",
+    "login": "Connexion"
   },
   "buttons": {
     "requestDemo": "Demander une démo",
     "learnMore": "En savoir plus"
   },
   "features": {
-    "analyticsTitle": "Analytique Avancée",
-    "analyticsDesc": "Obtenez des informations précieuses avec l'analyse de données en temps réel.",
-    "securityTitle": "Sécurité Renforcée",
-    "securityDesc": "Authentification multi-facteurs, liste blanche IP, et plus encore.",
-    "supportTitle": "Support Prioritaire",
-    "supportDesc": "Assistance par chat en direct 24h/24 et communication directe."
+    "analyticsTitle": "Analytique avancée",
+    "analyticsDesc": "Obtenez des informations précieuses grâce à l'analyse de données en temps réel.",
+    "securityTitle": "Sécurité renforcée",
+    "securityDesc": "Authentification multi-facteurs, liste blanche IP et plus encore.",
+    "supportTitle": "Support prioritaire",
+    "supportDesc": "Obtenez une assistance par chat en direct 24/7 et une communication directe."
+  },
+  "enterprise": {
+    "heroTitle": "Messagerie d'entreprise pour les équipes modernes",
+    "heroDesc": "Solutions de messagerie rapides, sécurisées et évolutives adaptées à votre entreprise.",
+    "whyTitle": "Pourquoi DekuSMS Entreprise ?",
+    "features": {
+      "analyticsTitle": "Analytique en temps réel",
+      "analyticsDesc": "Surveillez et optimisez la livraison de vos messages avec des données en direct.",
+      "securityTitle": "Chiffrement de bout en bout",
+      "securityDesc": "Vos communications sont entièrement sécurisées avec des protocoles modernes.",
+      "supportTitle": "Support 24/7",
+      "supportDesc": "Nos experts sont toujours là pour aider votre équipe à réussir."
+    },
+    "featureList": [
+      {
+        "span": "Fonctionnalité 1",
+        "title": "Livraison sécurisée",
+        "desc": "Livraison garantie des messages dans le monde entier avec des systèmes de basculement."
+      },
+      {
+        "span": "Fonctionnalité 2",
+        "title": "Portée mondiale",
+        "desc": "Atteignez n'importe quel client dans le monde avec notre plateforme SMS multilingue."
+      },
+      {
+        "span": "Fonctionnalité 3",
+        "title": "Rapports en temps réel",
+        "desc": "Suivez instantanément la livraison des messages et les taux d'ouverture depuis votre tableau de bord."
+      }
+    ],
+    "dashboard": {
+      "span": "Mise en avant de la fonctionnalité",
+      "title": "Messagerie puissante",
+      "desc": "Solutions de messagerie puissantes adaptées aux entreprises. Messagerie transparente avec DekuSMS. Messagerie rapide, sécurisée et fiable pour votre entreprise."
+    },
+    "pricing": {
+      "title": "À propos de DekuSMS",
+      "subtitle": "Tarification et plans",
+      "plans": [
+        {
+          "name": "Gratuit",
+          "description": "Parfait pour commencer",
+          "price": "0 $/mois",
+          "features": [
+            "Envoyer et recevoir des messages SMS",
+            "Messages illimités",
+            "Messages en masse",
+            "Recevoir des notifications de livraison",
+            "Support de base"
+          ],
+          "buttonText": "Commencer"
+        },
+        {
+          "name": "Pro",
+          "description": "Idéal pour la plupart des cas d'utilisation",
+          "price": "6,99 $/mois",
+          "features": [
+            "Tout dans Gratuit",
+            "Envoyer et recevoir des messages SMS",
+            "Messages illimités",
+            "Messages en masse",
+            "Recevoir des notifications de livraison",
+            "Support prioritaire"
+          ],
+          "buttonText": "Passer à Pro"
+        },
+        {
+          "name": "Personnalisé",
+          "description": "Pour des besoins plus spécifiques ou des intégrations personnalisées",
+          "price": "Tarification personnalisée",
+          "features": [
+            "Limites de messages personnalisées",
+            "Limites de masse personnalisées",
+            "Intégrations personnalisées",
+            "Accord SLA",
+            "Support dédié"
+          ],
+          "buttonText": "Contacter les ventes"
+        }
+      ]
+    }
   }
 }

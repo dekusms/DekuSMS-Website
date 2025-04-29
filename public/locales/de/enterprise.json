@@ -1,31 +1,107 @@
 {
-  "navbar":{  
-        "home": "Home",
-        "features": "Features",
-        "pricing": "Pricing",
-        "contact": "Contact",
-        "login": "Login",
-        "signup": "Sign Up",
-        "profile": "My Profile",
-        "logout": "Logout",
-        "language": "Language"
-},
-      
-    "enterprise": {
-      "heroTitle": "DekuSMS Enterprise",
-      "heroDesc": "Unlock the full potential of SMS with our premium, enterprise-grade features..."
-    },
-    "buttons": {
-      "requestDemo": "Request a Demo",
-      "learnMore": "Learn More"
-    },
+  "navbar": {
+    "home": "Startseite",
+    "contact": "Kontakt",
+    "signup": "Anmelden",
+    "profile": "Mein Profil",
+    "logout": "Abmelden",
+    "language": "Sprache",
+    "features": "Funktionen",
+    "offers": "Angebote",
+    "pricing": "Preise",
+    "login": "Einloggen"
+  },
+  "buttons": {
+    "requestDemo": "Demo anfordern",
+    "learnMore": "Mehr erfahren"
+  },
+  "features": {
+    "analyticsTitle": "Erweiterte Analysen",
+    "analyticsDesc": "Gewinnen Sie wertvolle Einblicke mit Echtzeit-Datenanalysen.",
+    "securityTitle": "Erhöhte Sicherheit",
+    "securityDesc": "Mehrfaktor-Authentifizierung, IP-Whitelisting und mehr.",
+    "supportTitle": "Prioritäts-Support",
+    "supportDesc": "Erhalten Sie rund um die Uhr Support über den Live-Chat und direkten Kontakt."
+  },
+  "enterprise": {
+    "heroTitle": "Unternehmenskommunikation für moderne Teams",
+    "heroDesc": "Schnelle, sichere und skalierbare Nachrichtenlösungen, die auf Ihr Geschäft zugeschnitten sind.",
+    "whyTitle": "Warum DekuSMS für Unternehmen?",
     "features": {
-      "analyticsTitle": "Advanced Analytics",
-      "analyticsDesc": "Gain valuable insights with real-time data analytics.",
-      "securityTitle": "Enhanced Security",
-      "securityDesc": "Multi-factor authentication, IP whitelisting, and more.",
-      "supportTitle": "Priority Support",
-      "supportDesc": "Get 24/7 live chat support and direct communication."
+      "analyticsTitle": "Echtzeit-Analysen",
+      "analyticsDesc": "Überwachen und optimieren Sie die Nachrichtenübermittlung mit Live-Daten.",
+      "securityTitle": "Ende-zu-Ende-Verschlüsselung",
+      "securityDesc": "Ihre Kommunikation ist mit modernen Protokollen vollständig gesichert.",
+      "supportTitle": "Support rund um die Uhr",
+      "supportDesc": "Unsere Experten sind jederzeit für den Erfolg Ihres Teams da."
+    },
+    "featureList": [
+      {
+        "span": "Feature 1",
+        "title": "Sichere Lieferung",
+        "desc": "Garantierte Lieferung von Nachrichten weltweit mit Failover-Systemen."
+      },
+      {
+        "span": "Feature 2",
+        "title": "Globale Reichweite",
+        "desc": "Erreichen Sie jeden Kunden weltweit mit unserer mehrsprachigen SMS-Plattform."
+      },
+      {
+        "span": "Feature 3",
+        "title": "Echtzeit-Berichte",
+        "desc": "Verfolgen Sie die Nachrichtenlieferung und Öffnungsraten sofort von Ihrem Dashboard aus."
+      }
+    ],
+    "dashboard": {
+      "span": "Feature Highlight",
+      "title": "Leistungsstarke Nachrichtenübermittlung",
+      "desc": "Leistungsstarke Nachrichtenlösungen für Unternehmen. Schnelle, sichere und zuverlässige Nachrichtenübermittlung mit DekuSMS."
+    },
+    "pricing": {
+      "title": "Über DekuSMS",
+      "subtitle": "Preise und Pläne",
+      "plans": [
+        {
+          "name": "Kostenlos",
+          "description": "Ideal für den Einstieg",
+          "price": "0 $/Monat",
+          "features": [
+            "SMS senden und empfangen",
+            "Unbegrenzte Nachrichten",
+            "Massen-Nachrichten",
+            "Benachrichtigungen bei Lieferung",
+            "Grundlegender Support"
+          ],
+          "buttonText": "Jetzt starten"
+        },
+        {
+          "name": "Pro",
+          "description": "Ideal für die meisten Anwendungsfälle",
+          "price": "6,99 $/Monat",
+          "features": [
+            "Alles in Kostenlos",
+            "SMS senden und empfangen",
+            "Unbegrenzte Nachrichten",
+            "Massen-Nachrichten",
+            "Benachrichtigungen bei Lieferung",
+            "Prioritäts-Support"
+          ],
+          "buttonText": "Zu Pro upgraden"
+        },
+        {
+          "name": "Benutzerdefiniert",
+          "description": "Für spezifischere Bedürfnisse oder benutzerdefinierte Integrationen",
+          "price": "Benutzerdefinierte Preise",
+          "features": [
+            "Benutzerdefinierte Nachrichtenlimits",
+            "Benutzerdefinierte Massenlimits",
+            "Benutzerdefinierte Integrationen",
+            "SLA-Vereinbarung",
+            "Dedizierter Support"
+          ],
+          "buttonText": "Vertrieb kontaktieren"
+        }
+      ]
     }
   }
-  
+}

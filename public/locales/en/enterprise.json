@@ -1,31 +1,165 @@
 {
   "navbar":{  
         "home": "Home",
-        "features": "Features",
-        "pricing": "Pricing",
         "contact": "Contact",
-        "login": "Login",
         "signup": "Sign Up",
         "profile": "My Profile",
         "logout": "Logout",
-        "language": "Language"
+        "language": "Language",
+        "features": "Features",
+        "offers": "Offers",
+        "pricing": "Pricing",
+        "login": "Login"
 },
-      
-    "enterprise": {
-      "heroTitle": "DekuSMS Enterprise",
-      "heroDesc": "Unlock the full potential of SMS with our premium, enterprise-grade features..."
-    },
     "buttons": {
       "requestDemo": "Request a Demo",
       "learnMore": "Learn More"
     },
-    "features": {
-      "analyticsTitle": "Advanced Analytics",
-      "analyticsDesc": "Gain valuable insights with real-time data analytics.",
-      "securityTitle": "Enhanced Security",
-      "securityDesc": "Multi-factor authentication, IP whitelisting, and more.",
-      "supportTitle": "Priority Support",
-      "supportDesc": "Get 24/7 live chat support and direct communication."
+  "enterprise": {
+    "heroTitle": "Messagerie d'entreprise pour les équipes modernes",
+    "heroDesc": "Solutions de messagerie rapides, sécurisées et évolutives adaptées à votre entreprise.",
+  "title": "Why DekuSMS Enterprise?",
+  "features": {
+    "feature1": {
+      "span": "Efficiency",
+      "title": "Fast Delivery",
+      "desc": "Messages are delivered instantly to your recipients."
+    },
+    "feature2": {
+      "span": "Security",
+      "title": "Secure Transmission",
+      "desc": "Your data is encrypted and secure."
+    },
+    "feature3": {
+      "span": "Reach",
+      "title": "Global Coverage",
+      "desc": "Reach users worldwide with ease."
     }
+  },
+  "imageAlt": "Feature",
+  "featureHighlight": {
+    "span": "Business Messaging",
+    "title": "Powerful Messaging",
+    "desc": "Powerful messaging solutions tailored for businesses. Seamless Messaging with DekuSMS. Fast, secure, and reliable messaging for your business."
   }
+},
+
+"pricing": {
+  "header": "Pricing and Plans",
+  "aboutTitle": "About DekuSMS",
+  "aboutLine1": "is a next-generation SMS solution designed for privacy, security, and seamless integration.",
+  "aboutLine2": "Whether you need encrypted messaging, real-time cloud synchronization, or customizable settings, DekuSMS is built to empower you. Say goodbye to outdated SMS limitations and hello to the future of messaging.",
+  "pricingTitle": "Pricing",
+  "pricingSubTitle": "Choose the perfect plan for your messaging needs",
+  "mostPopular": "MOST POPULAR",
+  "monthly": "Monthly",
+  "yearly": "Yearly",
+  
+  "free": {
+    "name": "Free",
+    "description": "Ideal for individuals and small use.",
+    "price": "$0",
+    "features": [
+      "Send up to 100 messages/month",
+      "Basic analytics",
+      "1 SMS channel",
+      "Email support",
+      "Community access"
+    ],
+    "buttonText": "Start Free"
+  },
+
+  "pro": {
+    "name": "Pro",
+    "description": "Perfect for small to medium teams.",
+    "price": "$49/month",
+    "features": [
+      "Unlimited messages",
+      "Advanced analytics",
+      "5 SMS channels",
+      "Priority support",
+      "Automation tools",
+      "Team collaboration"
+    ],
+    "buttonText": "Go Pro"
+  },
+
+  "custom": {
+    "name": "Custom",
+    "description": "Tailored solutions for enterprises.",
+    "price": "Contact Us",
+    "features": [
+      "Custom message limits",
+      "Dedicated account manager",
+      "Unlimited channels",
+      "White-labeling",
+      "24/7 support"
+    ],
+    "buttonText": "Get in Touch"
+  }
+},
+
+  "features": {
+    "sectionTitle": "DekuSMS Enterprise Features",
+    "analyticsTitle": "Advanced Analytics",
+    "analyticsDesc": "Gain real-time insights into your message traffic.",
+    "securityTitle": "Enterprise-Grade Security",
+    "securityDesc": "Data encrypted in-transit and at-rest.",
+    "supportTitle": "24/7 Global Support",
+    "supportDesc": "We’ve got your back any time, any day.",
+    "featureList": [
+      {
+        "span": "Feature 1",
+        "title": "Secure Delivery",
+        "desc": "Guaranteed delivery of messages worldwide with failover systems."
+      },
+      {
+        "span": "Feature 2",
+        "title": "Global Reach",
+        "desc": "Reach any customer globally with our multilingual SMS platform."
+      },
+      {
+        "span": "Feature 3",
+        "title": "Real-time Reports",
+        "desc": "Track message delivery and open rates instantly from your dashboard."
+      }
+    ],
+    "dashboard": {
+      "span": "Feature Highlight",
+      "title": "Powerful Messaging",
+      "desc": "Powerful messaging solutions tailored for businesses. Seamless Messaging with DekuSMS. Fast, secure, and reliable messaging for your business."
+    }
+  },
+
+      "footer": {
+        "branding": {
+          "logo": "DekuSMS",
+          "tagline": "Secure. Private. Seamless."
+        },
+        "navigation": {
+          "title": "Navigation",
+          "about": "About",
+          "features": "Features",
+          "download": "Download",
+          "contact": "Contact"
+        },
+        "resources": {
+          "title": "Resources",
+          "privacy": "Privacy Policy",
+          "terms": "Terms of Service",
+          "support": "Support",
+          "faq": "FAQ"
+        },
+        "stayConnected": {
+          "title": "Stay Connected",
+          "subscribeText": "Subscribe to get the latest updates and offers.",
+          "emailPlaceholder": "Enter your email",
+          "subscribeButton": "Subscribe",
+          "Privacy": "Privacy"
+        },
+        "copyright": "© {{year}} DekuSMS. All rights reserved."
+      }
+    }
+  
+  
   
