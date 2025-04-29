@@ -21,206 +21,264 @@
   
 /* ================= Landing Section ====================== */
 .landing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #001871;
-    min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 24, 113, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  min-height: 100vh;
 }
 
 .landing-content {
-    margin-top: 40px;
-    padding-top: 40px;
-    flex: 1;
-    max-width: 50%;
+  margin-top: 40px;
+  padding-top: 40px;
+  flex: 1;
+  max-width: 50%;
 }
-.landing-section{
-    margin-top: 40px;
-    padding-top: 40px;
+
+.landing-section {
+  margin-top: 40px;
+  padding-top: 40px;
 }
 
 .landing-content h1 {
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 8px;
-    font-family: 'Mona Sans', 'Unbounded';
+  font-size: 4rem;
+  color: rgb(234, 235, 244);
+  margin-bottom: 8px;
+  font-family: 'Mona Sans', 'Unbounded';
+  line-height: 1;
 }
 
 .landing-content p {
-    font-size: 1.4rem;
-    color: white;
-    margin-bottom: 15px;
-    margin-top: 35px;
-    font-family: 'Mona Sans', 'Unbounded';
+  font-size: 1.4rem;
+  color: rgb(191, 199, 208);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.7;
+  font-family: 'Mona Sans', 'Unbounded';
 }
 
 .landing-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 35px;
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
 }
 
-.landing-btn-primary, .landing-btn-secondary {
-    padding: 12px 24px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: 0.3s ease;
-    font-weight: 400;
+.landing-btn-primary,
+.landing-btn-secondary {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  font-weight: 400;
 }
 
 .landing-btn-primary {
-    color: #1bb8a0;
-    background-color: white;
-    border: 2px solid white;
+  color: #1bb8a0;
+  background-color: white;
+  border: 2px solid white;
 }
 
 .landing-btn-secondary {
-    background-color:#1bb8a0;
-    color: white;
-    border: 2px solid #1bb8a0;
+  background-color: #1bb8a0;
+  color: white;
+  border: 2px solid #1bb8a0;
 }
 
 .landing-btn-primary:hover {
-    background-color: #1bb8a0;
-    color: white;
+  background-color: #1bb8a0;
+  color: white;
 }
 
 .landing-btn-secondary:hover {
-    background-color: white;
-    color: #010e3d;
+  background-color: white;
+  color: #010e3d;
 }
 
 .landing-image {
-    flex: 1;
-    max-width: 400px;
-    text-align: right;
-    padding-top: 10%;
+  flex: 1;
+  max-width: 400px;
+  text-align: right;
+  padding-top: 10%;
 }
 
 .landing-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.landing-image img {
-    width: 80%;
-    max-width: 350px;
-    border-radius: 15px;
-    box-shadow: 0px 2px 8px rgba(1, 25, 147, 0.2);
+  width: 80%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 2px 8px rgba(1, 25, 147, 0.2);
 }
 
 @media (max-width: 1024px) {
-    .landing {
-        padding: 60px 10%; 
-        min-height: 80vh;
-    }
-    .landing-btn-primary, .landing-btn-secondary {
-        width: 60%;
-        text-align: center;
-    }
+  .landing {
+    padding: 60px 10%;
+    min-height: 80vh;
+  }
 
+  .landing-btn-primary,
+  .landing-btn-secondary {
+    width: 60%;
+    text-align: center;
+  }
+
+  .landing-content h1 {
+    font-size: 3rem;
+  }
+
+  .landing-content p {
+    font-size: 1.25rem;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
 }
 
 @media (max-width: 768px) {
-    .landing {
-        flex-direction: column;
-        text-align: center;
-        padding: 60px 10%;
-        min-height: 50vh;
-    }
+  .landing {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 8%;
+    min-height: 50vh;
+  }
 
-    .landing-content, .landing-image {
-        max-width: 100%;
-    }
+  .landing-content,
+  .landing-image {
+    max-width: 100%;
+  }
 
-    .landing-image {
-        margin-top: 15px;
-    }
+  .landing-image {
+    margin-top: 20px;
+  }
 
-    .landing-buttons {
-        align-items: center;
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
+  .landing-buttons {
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
 
-    .landing-btn-primary, .landing-btn-secondary {
-        width: 60%;
-        text-align: center;
-        font-size: 16px;
-    }
+  .landing-btn-primary,
+  .landing-btn-secondary {
+    width: 70%;
+    text-align: center;
+    font-size: 15px;
+  }
 
+  .landing-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing-content p {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing {
+    padding: 40px 6%;
+  }
+
+  .landing-btn-primary,
+  .landing-btn-secondary {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .landing-content h1 {
+    font-size: 2rem;
+  }
+
+  .landing-content p {
+    font-size: 1rem;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
 }
 
 @media (max-width: 480px) {
-    .landing {
-        padding: 30px 5%;
-    }
+  .landing {
+    padding: 30px 5%;
+  }
+
+  .landing-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .landing-content p {
+    font-size: 0.95rem;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .landing-btn-primary,
+  .landing-btn-secondary {
+    width: 100%;
+    font-size: 13px;
+  }
 }
 
 
-@media (max-width: 576px) {
-    .landing-content h1 {
-        font-size: 1.8rem;
-    }
-}
-
-@media (min-width: 577px) and (max-width: 768px) {
-    .landing-content h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (min-width: 769px) {
-    .landing-content h1 {
-        font-size: 3rem; 
-    }
-}
 
 /* ================= Gratitude Section ====================== */
 .gratitude-section {
-  position: relative;
-  z-index: 2;
-  margin-top: -5rem;
-  margin-bottom: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 0.5rem;
 }
-
 .gratitude-card {
-  background: #ffffff;
-  padding: 2rem 3rem;
+  background: #ebeef7;
   border-radius: 1.5rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   max-width: 100%;
-  width: 90%;
   text-align: center;
   z-index: 3;
   position: relative;
+  margin: 0 auto;
+  margin-top: -3.9rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 10px 0 24px rgba(0, 0, 0, 0.1);
 }
 
 .gratitude-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #38a5a2;
+  color: #309f9b;
   margin-bottom: 1rem;
+  font-size: 2.2rem;
+  font-weight: 600;
 }
 
 .gratitude-description {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #4b556b;
-  line-height: 1.6;
+  line-height: 1.7;
+  color: #63707b;
+}
+
+
+@media (max-width: 1024px) {
+  .gratitude-card {
+    width: 85%;
+    padding: 2rem 1.5rem;
+  }
+
+  .gratitude-title {
+    font-size: 2rem;
+  }
+
+  .gratitude-description {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 768px) {
   .gratitude-section {
-    margin-top: -3rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
-    padding: 0 1rem;
+    padding: 0 1.2rem;
   }
 
   .gratitude-card {
@@ -230,7 +288,7 @@
   }
 
   .gratitude-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .gratitude-description {
@@ -238,9 +296,36 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+  .gratitude-section {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
   .gratitude-card {
-    padding: 1.2rem 1rem;
+    padding: 1.3rem 1rem;
+    border-radius: 1.1rem;
+  }
+
+  .gratitude-title {
+    font-size: 1.4rem;
+  }
+
+  .gratitude-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gratitude-section {
+    margin-top: -5rem;
+    margin-bottom: 2.2rem;
+    padding: 0 0.8rem;
+  }
+
+  .gratitude-card {
+    padding: 1.2rem 0.9rem;
     border-radius: 1rem;
   }
 
@@ -249,9 +334,10 @@
   }
 
   .gratitude-description {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
   }
 }
+
 
 /* =================== About ======================== */
 .about-section-1 {
@@ -313,6 +399,22 @@
   }
 }
 
+
+.about-dekusms-badge {
+  background-color: #085857;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+
 .about-dekusms-section {
   padding: 3rem 0;
 }
@@ -322,6 +424,16 @@
   grid-template-columns: 4fr 3fr 3fr;
   grid-auto-rows: 1fr;
   gap: 2rem;
+}
+
+.about-dekusms-card-1 {
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  color: #060633;
+  box-shadow: 0 20px 30px -10px rgb(16 16 39 / 7%);
+  position: relative;
 }
 
 .about-dekusms-card {
@@ -358,7 +470,7 @@
 
 .about-logo {
   grid-area: 1 / 2 / 2 / 4 ;
-  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+  background-image: linear-gradient(-225deg, #fffeff 0%, #cff1f1 100%);
 }
 
 .about-logo h2 {
@@ -366,11 +478,11 @@
 }
 
 .about-device {
-  background-color: #f8f9fb;
+  background-image: linear-gradient(-225deg, #ffffff 0%, #fde0c4 100%);
 }
 
 .about-inbox {
-  background-image: linear-gradient(-225deg, #ffffff 0%, #dacceb 100%);
+  background-image: linear-gradient(-225deg, #ffffff 0%, #c0ccf6 100%);
 }
 
 .about-inbox h3 {
@@ -395,10 +507,16 @@
 }
 
 .about-dekusms-card p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #687286;
 }
+.about-dekusms-card-1 p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #687286;
+}
+
 
 .about-credit {
   margin-top: 4rem;

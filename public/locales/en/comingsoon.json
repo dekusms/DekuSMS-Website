@@ -4,7 +4,9 @@
     "blog": "Blog",
     "download": "Download",
     "documentation": "Documentation",
-    "support": "Support"
+    "support": "Support",
+    "enterprise": "Enterprise",
+    "language": "Language"
   },
   "comingSoon": {
     "title": "Coming Soon",

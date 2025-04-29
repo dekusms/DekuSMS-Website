@@ -1,24 +1,26 @@
 {
   "navbar": {
     "home": "الرئيسية",
-    "blog": "مدونة",
+    "blog": "المدونة",
     "download": "تحميل",
-    "documentation": "توثيق",
-    "support": "الدعم"
+    "documentation": "التوثيق",
+    "support": "الدعم",
+    "enterprise": "المؤسسات",
+    "language": "اللغة"
   },
   "comingSoon": {
-    "title": "قريباً",
-    "subtitle": "سنطلق الموقع قريباً!",
-    "joinMailingList": "انضم إلى قائمة البريد الإلكتروني",
+    "title": "قريبًا",
+    "subtitle": "سنطلق قريبًا!",
+    "joinMailingList": "انضم إلى قائمتنا البريدية",
     "emailPlaceholder": "أدخل بريدك الإلكتروني",
-    "notifyMeButton": "أبلغني"
+    "notifyMeButton": "أعلمني"
   },
   "countdown": {
-  "days": "أيام",
-  "hours": "ساعات",
-  "minutes": "دقائق",
-  "seconds": "ثواني"
-},
+    "days": "أيام",
+    "hours": "ساعات",
+    "minutes": "دقائق",
+    "seconds": "ثواني"
+  },
   "footer": {
     "followUs": "تابعنا",
     "companyName": "شركتك"

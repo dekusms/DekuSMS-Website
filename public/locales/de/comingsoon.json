@@ -2,25 +2,27 @@
   "navbar": {
     "home": "Startseite",
     "blog": "Blog",
-    "download": "Herunterladen",
+    "download": "Download",
     "documentation": "Dokumentation",
-    "support": "Support"
+    "support": "Support",
+    "enterprise": "Unternehmen",
+    "language": "Sprache"
   },
   "comingSoon": {
     "title": "Kommt bald",
     "subtitle": "Wir starten bald!",
-    "joinMailingList": "Treten Sie unserer Mailingliste bei",
+    "joinMailingList": "In unsere Mailingliste eintragen",
     "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
     "notifyMeButton": "Benachrichtige mich"
   },
   "countdown": {
-  "days": "Tage",
-  "hours": "Stunden",
-  "minutes": "Minuten",
-  "seconds": "Sekunden"
-},
+    "days": "Tage",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "seconds": "Sekunden"
+  },
   "footer": {
-    "followUs": "Folge uns",
+    "followUs": "Folgen Sie uns",
     "companyName": "Ihr Unternehmen"
   }
 }

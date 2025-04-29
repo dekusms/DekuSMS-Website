@@ -22,7 +22,11 @@ const AboutDekuSMS = () => {
             <img src="/landing 2.png" alt="DekuSMS Preview" />
           </div>
 
-          <div className="about-dekusms-card about-logo">
+          <div className="about-dekusms-card-1 about-logo">
+          <div className="about-dekusms-badge">
+                <i className="fas fa-cloud"></i>
+                Cloud Forwarding
+              </div>
             <div className="about-card-description">
               <h2>{t("about.features.cloudForwarding.title")}</h2>
               <p>{t("about.features.cloudForwarding.desc")}</p>
@@ -30,6 +34,10 @@ const AboutDekuSMS = () => {
           </div>
 
           <div className="about-dekusms-card about-device">
+          <div className="about-dekusms-badge">
+                <i className="fas fa-lock"></i>
+                End-to-End Encryption
+              </div>
             <div className="about-card-description">
               <h2>{t("about.features.endToEnd.title")}</h2>
               <p>{t("about.features.endToEnd.desc")}</p>
@@ -37,6 +45,10 @@ const AboutDekuSMS = () => {
           </div>
 
           <div className="about-dekusms-card about-inbox">
+          <div className="about-dekusms-badge">
+<i className="fas fa-sms"></i>
+SMS Gateway
+</div>
             <div className="about-card-description">
               <h2>{t("about.features.smsGateway.title")}</h2>
               <p>{t("about.features.smsGateway.desc")}</p>
@@ -59,3 +71,4 @@ const AboutDekuSMS = () => {
 };
 
 export default AboutDekuSMS;
+

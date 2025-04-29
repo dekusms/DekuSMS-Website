@@ -2,63 +2,62 @@
   "navbar": {
     "home": "Accueil",
     "enterprise": "Entreprise",
+    "blog": "Blog",
     "download": "Télécharger",
     "documentation": "Documentation",
     "support": "Support",
     "language": "Langue"
   },
-"landing": {
-  "title": "DekuSMS",
-  "title2": "Restez connecté, à tout moment",
-  "description": "Renforcez votre communication avec un chiffrement de bout en bout et une intégration cloud complète. Restez connecté, en toute sécurité.",
-  "getStarted": "Commencer",
-  "learnMore": "En savoir plus"
-},
-"gratitude": {
-  "title": "Sécurisé, Intelligent et Inarrêtable",
-  "description": "DekuSMS n’est pas juste une application SMS—c’est une révolution. Conçu pour la confidentialité et la performance, il offre un chiffrement de bout en bout, un transfert SMS vers le cloud, et un contrôle total sur vos messages. Dites adieu aux limites et bonjour à la messagerie sécurisée, personnalisable et intelligente. Votre vie privée. Vos règles. Votre SMS, réinventé. 🚀"
-},
-"about": {
-  "title": "Ce que vous devez savoir sur DekuSMS",
-  "appName": "DekuSMS",
-  "description1": "est une application de messagerie SMS sécurisée, chiffrée de bout en bout et open-source, conçue pour garder vos communications privées et accessibles.",
-  "description2": "DekuSMS est conçu pour les utilisateurs soucieux de leur vie privée et pour ceux qui soutiennent la liberté de communication dans le monde.",
-  "features": {
-    "endToEnd": {
-      "title": "Chiffrement de bout en bout",
-      "desc": "Vos messages restent sécurisés et privés.",
-      "more": "Nous assurons le chiffrement à tous les niveaux—appareil, transmission et serveur. Personne ne voit vos messages sauf vous."
-    },
-    "cloudForwarding": {
-      "title": "Transfert vers le cloud",
-      "desc": "Accédez à vos SMS en temps réel, de partout.",
-      "more": "Notre système synchronise vos SMS de manière sécurisée avec le cloud et offre un accès API instantané pour l'intégration aux applications."
-    },
-    "smsGateway": {
-      "title": "Passerelle SMS personnalisée",
-      "desc": "Intégrez les SMS facilement dans vos apps.",
-      "more": "DekuSMS propose une API flexible et une boîte à outils SDK permettant aux développeurs d’envoyer et de recevoir des SMS selon leur logique."
-    }
+  "landing": {
+    "title": "Restez connecté,",
+    "title2": "Restez privé et sécurisé",
+    "description": "messagerie SMS chiffrée qui soutient la liberté de communication, même lors des coupures Internet.",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus"
   },
-  "learnMore": "En savoir plus"
-},
-    "download": {
-      "title": "Télécharger DekuSMS",
-      "subtitle": "Messagerie sécurisée, privée et open-source à portée de main. Obtenez DekuSMS dès aujourd'hui sur votre plateforme préférée.",
-      "googlePlay": {
-        "title": "Google Play",
-        "desc": "Téléchargez depuis le Play Store"
+  "gratitude": {
+    "title": "Sécurisé, Intelligent et Inarrêtable",
+    "description": "DekuSMS n'est pas simplement une application SMS — c'est un changement radical. Conçue pour la confidentialité et la puissance, elle offre un chiffrement de bout en bout, un transfert SMS vers le cloud, et un contrôle total sur vos messages. Dites adieu aux limitations et bonjour à une messagerie sécurisée, personnalisable et intelligente. Votre vie privée. Vos règles. Vos SMS, évolués. 🚀",
+    "description1": "Merci à notre incroyable communauté, nos contributeurs et partenaires de croire en une communication ouverte. Votre soutien rend DekuSMS possible. 🚀"
+  },
+  "about": {
+    "title": "Ce que vous devez savoir sur DekuSMS",
+    "appName": "DekuSMS",
+    "description1": "est une application de messagerie SMS sécurisée, chiffrée de bout en bout et open-source, conçue pour garder votre communication privée et accessible.",
+    "description2": "Conçue pour les utilisateurs soucieux de leur vie privée et les défenseurs de la communication libre, DekuSMS garantit que, quelles que soient les circonstances — surveillance, censure ou perturbations Internet — vous pouvez toujours envoyer et recevoir des messages sécurisés.",
+    "features": {
+      "endToEnd": {
+        "title": "Messagerie SMS chiffrée de bout en bout",
+        "desc": "DekuSMS garantit que vos conversations SMS restent privées grâce à un chiffrement robuste de bout en bout, protégeant votre communication contre toute interception ou altération."
       },
-      "fdroid": {
-        "title": "F-Droid",
-        "desc": "Obtenez la version open-source"
+      "cloudForwarding": {
+        "title": "Routage des messages (Clients passerelle)",
+        "desc": "Activez la connectivité pour d'autres en agissant en tant que client passerelle. DekuSMS permet aux appareils disposant d'un accès Internet de router en toute sécurité les messages des utilisateurs hors ligne vers des plateformes en ligne, comblant ainsi le fossé de communication lors des coupures Internet."
       },
-      "github": {
-        "title": "GitHub",
-        "desc": "Voir le code source et contribuer"
+      "smsGateway": {
+        "title": "Transfert de messages vers le cloud",
+        "desc": "Configurez facilement le transfert de messages depuis votre appareil Android vers votre infrastructure cloud en utilisant des URL de serveur spécifiques. Cela garantit que vos messages sont accessibles et peuvent être traités comme vous le souhaitez."
       }
     },
-    "footer": {
+    "learnMore": "En savoir plus"
+  },
+  "download": {
+    "title": "Télécharger DekuSMS",
+    "subtitle": "Messagerie sécurisée, privée et open-source à portée de main. Obtenez DekuSMS aujourd'hui sur votre plateforme préférée.",
+    "googlePlay": {
+      "title": "Google Play",
+      "desc": "Télécharger depuis le Play Store"
+    },
+    "fdroid": {
+      "title": "F-Droid",
+      "desc": "Obtenez la version open-source"
+    },
+    "github": {
+      "title": "GitHub",
+      "desc": "Voir le code source & contribuer"
+    }
+  },
+  "footer": {
     "branding": {
       "logo": "DekuSMS",
       "tagline": "Sécurisé. Privé. Transparent."
@@ -66,7 +65,7 @@
     "navigation": {
       "title": "Navigation",
       "about": "À propos",
-      "features": "Caractéristiques",
+      "features": "Fonctionnalités",
       "download": "Télécharger",
       "contact": "Contact"
     },
@@ -78,11 +77,19 @@
       "faq": "FAQ"
     },
     "stayConnected": {
-      "title": "Restez Connecté",
+      "title": "Restez connecté",
       "subscribeText": "Abonnez-vous pour recevoir les dernières mises à jour et offres.",
-      "emailPlaceholder": "Entrez votre e-mail",
-      "subscribeButton": "S'abonner"
+      "emailPlaceholder": "Entrez votre email",
+      "subscribeButton": "S'abonner",
+      "Privacy": "Confidentialité"
     },
     "copyright": "© {{year}} DekuSMS. Tous droits réservés."
-  }  
+  },
+  "downloadpage": {
+    "title": "Télécharger DekuSMS",
+    "subtitle": "Obtenez DekuSMS depuis votre source préférée ci-dessous. Open-source, respectueux de la vie privée et facile à installer.",
+    "playstore_desc": "Téléchargez DekuSMS directement depuis le Google Play Store pour une installation et des mises à jour faciles.",
+    "fdroid_desc": "Préférez les plateformes open-source ? Installez DekuSMS depuis F-Droid, un référentiel de confiance pour les applications libres et open-source.",
+    "opensource": "Voir et télécharger DekuSMS directement depuis GitHub. Accédez aux dernières versions et au code source."
+  }
 }

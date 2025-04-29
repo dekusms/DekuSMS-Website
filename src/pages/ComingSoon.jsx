@@ -1,27 +1,37 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { NavDropdown } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import i18n from "../i18n"
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
 
 const ComingSoon = () => {
   const { t } = useTranslation("comingsoon");
   const [expanded, setExpanded] = useState(false);
+  const [hovered, setHovered] = useState(null);
+
+  const handleMouseEnter = (id) => setHovered(id);
+  const handleMouseLeave = () => setHovered(null);
 
   const linkStyle = {
-    color: "#ffffff",
+    color: "white",
     fontFamily: "'Mona Sans'",
     fontSize: "1rem",
-    padding: "0.5rem 1rem",
+    padding: "0.5rem 1rem"
+  };
+
+  const hoverStyle = {
+    color: "#ffffff",
+    textDecoration: "none",
+    transform: "scale(1.05)",
+    transition: "all 0.3s ease",
   };
 
   const calculateTimeLeft = () => {
     const launchDate = new Date("2025-04-30T00:00:00");
     const difference = launchDate - new Date();
-
     let timeLeft = {};
     if (difference > 0) {
       timeLeft = {
@@ -55,54 +65,99 @@ const ComingSoon = () => {
       padding: '20px',
     }}>
     
-    {/* ============== Navbar ======================== */}
-    <nav className="navbar navbar-expand-lg navbar-dark fixed-top px-3" style={{
-        background: "#001871",
-        boxShadow: "0px 4px 10px rgba(45, 43, 43, 0.2)",
-      }}>
-        <Link className="navbar-brand d-flex align-items-center" to="/" style={linkStyle}>
-          <img src="/DekuSMS-Dark Theme.png" alt="Logo" style={{ height: "28px", marginRight: "8px" }} />
-        </Link>
+      <Navbar
+        expand="lg"
+        fixed="top"
+        expanded={expanded}
+        onToggle={() => setExpanded(!expanded)}
+        style={{
+          backgroundColor: "#001871",
+          boxShadow: "5px 5px 15px rgba(52, 84, 102, 0.97)",
+          fontFamily: "'Unbounded', 'Mona Sans'",
+        }}
+      >  
+        <Container>
+          <Navbar.Brand href="/" className="fw-bold fs-4" style={{ color: "white" }}>
+            <img src="/DekuSMS-Dark Theme.png" alt="Logo" style={{ height: "22px" }} />
+          </Navbar.Brand>
 
-        <button className="navbar-toggler" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
-          <span className="navbar-toggler-icon"></span>
-        </button>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ borderColor: "#ffffff", backgroundColor: "transparent" }}>
+            <span className="navbar-toggler-icon" style={{ filter: "invert(1)", WebkitFilter: "invert(1)" }} />
+          </Navbar.Toggle>
 
-        <div className={`collapse navbar-collapse ${expanded ? "show" : ""}`} id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/" onClick={() => setExpanded(false)} style={linkStyle}>{t("navbar.home")}</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="https://blog.smswithoutborders.com" onClick={() => setExpanded(false)} style={linkStyle}>{t("navbar.blog")}</Link>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#download" onClick={() => setExpanded(false)} style={linkStyle}>{t("navbar.download")}</a>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="https://docs.smswithoutborders.com" onClick={() => setExpanded(false)} style={linkStyle}>{t("navbar.documentation")}</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/support" onClick={() => setExpanded(false)} style={linkStyle}>{t("navbar.support")}</Link>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="https://github.com" target="_blank" rel="noopener noreferrer" onClick={() => setExpanded(false)} style={linkStyle}>
+          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+            <Nav className="align-items-center gap-3">
+              {[
+                { to: "/", label: t("navbar.home") || "Home" },
+                { to: "/enterprise", label:t("navbar.enterprise")|| "Enterprise" },
+                { href: "https://blog.smswithoutborders.com", label: t("navbar.blog") || "Blog", external: true },
+                { href: "https://docs.smswithoutborders.com", label: t("navbar.documentation") || "Documentation", external: true },
+                { to: "/download", label: t("navbar.download") || "Download" },
+              ].map((item, index) => (
+                <Nav.Link
+                  key={index}
+                  as={item.to ? Link : "a"}
+                  to={item.to}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  onClick={() => setExpanded(false)}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                  style={{
+                    ...linkStyle,
+                    ...(hovered === index ? hoverStyle : {}),
+                  }}
+                >
+                  {item.label}
+                </Nav.Link>
+              ))}
+
+              <Nav.Link
+                href="https://github.com/dekusms"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setExpanded(false)}
+                onMouseEnter={() => handleMouseEnter("github")}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  ...linkStyle,
+                  ...(hovered === "github" ? hoverStyle : {}),
+                }}
+              >
                 <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </li>
-            <li className="nav-item">
-              <NavDropdown title={<FontAwesomeIcon icon={faGlobe} style={{ color: 'white' }} />} id="language-dropdown">
-                <NavDropdown.Item onClick={() => i18n.changeLanguage("en")}>English</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => i18n.changeLanguage("fr")}>Français</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => i18n.changeLanguage("es")}>Español</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => i18n.changeLanguage("fa")}>فارسی</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => i18n.changeLanguage("de")}>Deutsch</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => i18n.changeLanguage("ar")}>العربية</NavDropdown.Item>
+              </Nav.Link>
+
+              <NavDropdown
+                align="end"
+                title={
+                  <>
+                    <FontAwesomeIcon icon={faGlobe} style={{ color: 'white' }} className="me-2" />
+                    <span className="d-none d-md-inline" style={{ color: "white" }}>
+                      {t("navbar.language") || "Language"}
+                    </span>
+                  </>
+                }
+                id="language-dropdown"
+                menuVariant="light"
+              >
+                {[
+                  { code: "en", label: "English" },
+                  { code: "fr", label: "Français" },
+                  { code: "es", label: "Español" },
+                  { code: "fa", label: "فارسی" },
+                  { code: "de", label: "Deutsch" },
+                  { code: "ar", label: "العربية" },
+                ].map((lang) => (
+                  <NavDropdown.Item key={lang.code} onClick={() => i18n.changeLanguage(lang.code)}>
+                    {lang.label}
+                  </NavDropdown.Item>
+                ))}
               </NavDropdown>
-            </li>
-          </ul>
-        </div>
-      </nav>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
 
       <div style={{
         position: 'absolute',
@@ -116,35 +171,28 @@ const ComingSoon = () => {
         zIndex: -1
       }}></div>
 
- 
-<div
-  className="animated-bg"
-  style={{
-    padding: '100px 0',
-    textAlign: 'center',
-    backgroundImage: 'url(/bg.jpg)',
-    backgroundSize: 'cover',
-  }}
->
-  <h1
-    className="animated-text"
-    style={{
-      fontSize: 'clamp(2.5rem, 8vw, 8rem)',
-      fontWeight: '900',
-      letterSpacing: '5px',
-      textTransform: 'uppercase',
-      background: 'linear-gradient(to right, #ffffff, #dcdcdc)',
-      backgroundClip: 'text',
-      WebkitBackgroundClip: 'text',
-      color: 'transparent',
-    }}
-  >
-    {t("comingSoon.title")}
-  </h1>
-  <p style={{ fontSize: 'clamp(1rem, 2vw, 1.4rem)', color: '#D1D1D6' }}>
-    {t("comingSoon.subtitle")}
-  </p>
-</div>
+      <div className="animated-bg" style={{
+        padding: '100px 0',
+        textAlign: 'center',
+        backgroundImage: 'url(/bg.jpg)',
+        backgroundSize: 'cover',
+      }}>
+        <h1 className="animated-text" style={{
+          fontSize: 'clamp(2.5rem, 8vw, 8rem)',
+          fontWeight: '900',
+          letterSpacing: '5px',
+          textTransform: 'uppercase',
+          background: 'linear-gradient(to right, #ffffff, #dcdcdc)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          color: 'transparent',
+        }}>
+          {t("comingSoon.title")}
+        </h1>
+        <p style={{ fontSize: 'clamp(1rem, 2vw, 1.4rem)', color: '#D1D1D6' }}>
+          {t("comingSoon.subtitle")}
+        </p>
+      </div>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
         {Object.entries(timeLeft).map(([unit, value]) => (
@@ -156,7 +204,7 @@ const ComingSoon = () => {
             textAlign: 'center',
             color: '#15B79E',
             cursor: 'pointer',
-            transition: 'transform 0.2s ease'
+            transition: 'transform 0.2s ease',
           }}
             onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
@@ -193,7 +241,7 @@ const ComingSoon = () => {
         }}>
           <input
             type="email"
-            placeholder={t("comingSoon.emailPlaceholder")} 
+            placeholder={t("comingSoon.emailPlaceholder")}
             style={{
               flex: '1 1 60px',
               minWidth: '100px',
@@ -205,17 +253,15 @@ const ComingSoon = () => {
               color: '#010e3d',
             }}
           />
-          <button
-            style={{
-              padding: '14px 25px',
-              fontSize: '16px',
-              borderRadius: '12px',
-              border: 'none',
-              backgroundColor: '#E66F00',
-              color: 'white',
-              cursor: 'pointer',
-            }}
-          >
+          <button style={{
+            padding: '14px 25px',
+            fontSize: '16px',
+            borderRadius: '12px',
+            border: 'none',
+            backgroundColor: '#E66F00',
+            color: 'white',
+            cursor: 'pointer',
+          }}>
             {t("comingSoon.notifyMeButton")}
           </button>
         </div>
@@ -242,38 +288,21 @@ const ComingSoon = () => {
       </footer>
 
       <style>{`
-  @keyframes smoothAppear {
-    0% {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes moveBackground {
-    0% { transform: translate(0%, 0%); }
-    50% { transform: translate(2%, 2%); }
-    100% { transform: translate(0%, 0%); }
-  }
-
-  .animated-text {
-    animation: smoothAppear 1.8s ease-in-out forwards;
-  }
-
-  .animated-bg {
-    animation: moveBackground 18s ease-in-out infinite;
-  }
-`}</style>
-
+        @keyframes smoothAppear {
+          0% { opacity: 0; transform: scale(0.95); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes moveBackground {
+          0% { transform: translate(0%, 0%); }
+          50% { transform: translate(2%, 2%); }
+          100% { transform: translate(0%, 0%); }
+        }
+        .animated-text { animation: smoothAppear 1.8s ease-in-out forwards; }
+        .animated-bg { animation: moveBackground 18s ease-in-out infinite; }
+      `}</style>
 
     </div>
   );
 };
 
 export default ComingSoon;
-
-
-

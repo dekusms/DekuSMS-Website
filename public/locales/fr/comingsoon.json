@@ -4,7 +4,9 @@
     "blog": "Blog",
     "download": "Télécharger",
     "documentation": "Documentation",
-    "support": "Assistance"
+    "support": "Support",
+    "enterprise": "Entreprise",
+    "language": "Langue"
   },
   "comingSoon": {
     "title": "Bientôt disponible",
@@ -12,12 +14,13 @@
     "joinMailingList": "Rejoignez notre liste de diffusion",
     "emailPlaceholder": "Entrez votre e-mail",
     "notifyMeButton": "Prévenez-moi"
-  },"countdown": {
-  "days": "Jours",
-  "hours": "Heures",
-  "minutes": "Minutes",
-  "seconds": "Secondes"
-},
+  },
+  "countdown": {
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes"
+  },
   "footer": {
     "followUs": "Suivez-nous",
     "companyName": "Votre entreprise"

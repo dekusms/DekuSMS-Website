@@ -4,20 +4,23 @@
     "blog": "وبلاگ",
     "download": "دانلود",
     "documentation": "مستندات",
-    "support": "پشتیبانی"
+    "support": "پشتیبانی",
+    "enterprise": "شرکت‌ها",
+    "language": "زبان"
   },
   "comingSoon": {
     "title": "به‌زودی",
-    "subtitle": "ما به‌زودی راه‌اندازی می‌شویم!",
+    "subtitle": "به‌زودی راه‌اندازی می‌شویم!",
     "joinMailingList": "به لیست ایمیل ما بپیوندید",
     "emailPlaceholder": "ایمیل خود را وارد کنید",
     "notifyMeButton": "مرا مطلع کن"
-  },"countdown": {
-  "days": "روز",
-  "hours": "ساعت",
-  "minutes": "دقیقه",
-  "seconds": "ثانیه"
-},
+  },
+  "countdown": {
+    "days": "روز",
+    "hours": "ساعت",
+    "minutes": "دقیقه",
+    "seconds": "ثانیه"
+  },
   "footer": {
     "followUs": "ما را دنبال کنید",
     "companyName": "شرکت شما"

@@ -1,111 +1,140 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { NavDropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import i18n from "../i18n";
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const linkStyle = {
+  color: "#ffffff",
+  textDecoration: "none",
+};
+
+const hoverStyle = {
+  color: "#d1d1ff",
+};
+
+const Navigation = () => {
   const { t } = useTranslation("dekusms");
   const [expanded, setExpanded] = useState(false);
+  const [hovered, setHovered] = useState(null);
 
-  const linkStyle = {
-    color: "#ffffff",
-    fontFamily: "'Mona Sans'",
-    fontSize: "1rem",
-    padding: "0.5rem 1rem",
-  };
+  const handleMouseEnter = (id) => setHovered(id);
+  const handleMouseLeave = () => setHovered(null);
 
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-dark fixed-top px-3"
-      style={{
-        background: "#001871",
-        boxShadow:" 0px 0px 15px rgba(255, 255, 255, 0.2)",
-      }}
-    >
-      <Link className="navbar-brand d-flex align-items-center" to="/" style={linkStyle}>
-        <img
-          src="/DekuSMS-Dark Theme.png"
-          alt="Logo"
-          style={{ height: "22px", marginRight: "8px" }}
-        />
-      </Link>
+    <Navbar
+    expand="lg"
+    fixed="top"
+    className="shadow-sm py-3"
+    expanded={expanded}
+    onToggle={() => setExpanded(!expanded)}
+    style={{
+      backgroundColor: "#001871",
+      boxShadow: "5px 5px 15px rgba(52, 84, 102, 0.97)",
+      fontFamily: "'Unbounded', 'Mona Sans'"
+        }}
+  >  
+      <Container>
+        <Navbar.Brand href="/" className="fw-bold fs-4" style={{ color: "white" }}>
+          <img
+            src="/DekuSMS-Dark Theme.png"
+            alt="Logo"
+            style={{ height: "22px" }}
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle
+  aria-controls="basic-navbar-nav"
+  style={{
+    borderColor: "#ffffff",
+    backgroundColor: "transparent",
+  }}
+>
+  <span
+    className="navbar-toggler-icon"
+    style={{
+      filter: "invert(1)",
+      WebkitFilter: "invert(1)",
+    }}
+  />
+</Navbar.Toggle>
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav className="align-items-center gap-3">
+            {[
+              { href: "https://blog.smswithoutborders.com", label: t("navbar.blog") || "Blog", external: true },
+              { to: "/comingsoon", label: t("navbar.enterprise") || "Enterprise" },
+              { href: "https://docs.smswithoutborders.com", label: t("navbar.documentation") || "Documentation", external: true },
+              { href: "#offers", label: t("navbar.support") || "Support" },
+              { to: "/download", label: t("navbar.download") || "Download" },
+            ].map((item, index) => (
+              <Nav.Link
+                key={index}
+                as={item.to ? Link : "a"}
+                to={item.to}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                onClick={() => setExpanded(false)}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  ...linkStyle,
+                  ...(hovered === index ? hoverStyle : {}),
+                }}
+              >
+                {item.label}
+              </Nav.Link>
+            ))}
 
-      <button
-      className="navbar-toggler"
-      type="button"
-      aria-label="Toggle navigation"
-      aria-expanded={expanded}
-      onClick={() => setExpanded(!expanded)}
-    >
-      <span className="navbar-toggler-icon"></span>
-    </button>
-
-
-      <div className={`collapse navbar-collapse ${expanded ? "show" : ""}`}>
-        <ul className="navbar-nav ms-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to="/" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.home")}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="https://blog.smswithoutborders.com" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.blog")}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/comingsoon" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.enterprise")}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#download" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.download")}
-            </a>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="https://docs.smswithoutborders.com" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.documentation")}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/support" onClick={() => setExpanded(false)} style={linkStyle}>
-              {t("navbar.support")}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
+            <Nav.Link
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setExpanded(false)}
-              style={linkStyle}
+              onMouseEnter={() => handleMouseEnter("github")}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                ...linkStyle,
+                ...(hovered === "github" ? hoverStyle : {}),
+              }}
             >
               <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </li>
-          <li className="nav-item">
-          <NavDropdown
-  title={<FontAwesomeIcon icon={faGlobe} style={{ color: 'white' }} />}
-  id="language-dropdown"
->
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("en")}>English</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("fr")}>Français</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("es")}>Español</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("fa")}>فارسی</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("de")}>Deutsch</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage("ar")}>العربية</NavDropdown.Item>
+            </Nav.Link>
+
+            <NavDropdown
+              align="end"
+              title={
+                <>
+                <FontAwesomeIcon icon={faGlobe} style={{ color: 'white' }} className="me-2" />
+                  <span className="d-none d-md-inline" style={{ color: "white" }}>
+                    {t("navbar.language") || "Language"}
+                  </span>
+                </>
+              }
+              id="language-dropdown"
+              menuVariant="light"
+            >
+              {[
+                { code: "en", label: "English" },
+                { code: "fr", label: "Français" },
+                { code: "es", label: "Español" },
+                { code: "fa", label: "فارسی" },
+                { code: "de", label: "Deutsch" },
+                { code: "ar", label: "العربية" },
+              ].map((lang) => (
+                <NavDropdown.Item  key={lang.code} onClick={() => i18n.changeLanguage(lang.code)}>
+                  {lang.label}
+                </NavDropdown.Item>
+              ))}
             </NavDropdown>
-          </li>
-        </ul>
-      </div>
-    </nav>
+
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default Navigation;

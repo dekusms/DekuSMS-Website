@@ -78,8 +78,16 @@
       "title": "Stay Connected",
       "subscribeText": "Subscribe to get the latest updates and offers.",
       "emailPlaceholder": "Enter your email",
-      "subscribeButton": "Subscribe"
+      "subscribeButton": "Subscribe",
+      "Privacy": "Privacy"
     },
     "copyright": "© {{year}} DekuSMS. All rights reserved."
+  },
+  "downloadpage": {
+    "title": "Download DekuSMS",
+    "subtitle": "Get DekuSMS from your favorite source below. Open-source, privacy-respecting, and easy to install.",
+    "playstore_desc": "Download DekuSMS directly from the Google Play Store for the easiest installation and updates.",
+    "fdroid_desc": "Prefer open-source platforms? Install DekuSMS from F-Droid, a trusted repository of free and open-source apps.",
+    "opensource": "View and download DekuSMS directly from GitHub. Access the latest releases and source code."
   }
 }

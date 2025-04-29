@@ -2,22 +2,25 @@
   "navbar": {
     "home": "Home",
     "blog": "Blog",
-    "download": "Scarica",
+    "download": "Download",
     "documentation": "Documentazione",
-    "support": "Supporto"
+    "support": "Supporto",
+    "enterprise": "Enterprise",
+    "language": "Lingua"
   },
   "comingSoon": {
-    "title": "Prossimamente",
+    "title": "In arrivo",
     "subtitle": "Stiamo per lanciare!",
     "joinMailingList": "Iscriviti alla nostra mailing list",
     "emailPlaceholder": "Inserisci la tua email",
     "notifyMeButton": "Avvisami"
-  },"countdown": {
-  "days": "Giorni",
-  "hours": "Ore",
-  "minutes": "Minuti",
-  "seconds": "Secondi"
-},
+  },
+  "countdown": {
+    "days": "Giorni",
+    "hours": "Ore",
+    "minutes": "Minuti",
+    "seconds": "Secondi"
+  },
   "footer": {
     "followUs": "Seguici",
     "companyName": "La tua azienda"

@@ -9,6 +9,7 @@ import {
 import { useTranslation } from "react-i18next";
 import Loading from './components/Loading';
 import './i18n';
+import Download from "./pages/Download";
 
 const Home = lazy(() => import('./pages/Home'));
 const Enterprise = lazy(() => import('./pages/Enterprise'));
@@ -59,6 +60,7 @@ function MainLayout() {
           <Route path="/comingsoon" element={<ComingSoon />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/download" element={<Download />} />
           <Route
             path="/dashboard"
             element={isAuthenticated() ? <Dashboard /> : <Navigate to="/login" />}
