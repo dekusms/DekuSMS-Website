@@ -28,12 +28,12 @@ const Navigation = () => {
     <Navbar
     expand="lg"
     fixed="top"
-    className="shadow-sm py-3"
+    className="py-3"
     expanded={expanded}
     onToggle={() => setExpanded(!expanded)}
     style={{
-      backgroundColor: "#001871",
-      boxShadow: "5px 5px 15px rgba(52, 84, 102, 0.97)",
+      background: "radial-gradient(circle, #000824, #000244)",
+      boxShadow: "5px 5px 15px rgba(37, 63, 78, 0.97)",
       fontFamily: "'Unbounded', 'Mona Sans'"
         }}
   >  

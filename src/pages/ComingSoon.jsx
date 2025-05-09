@@ -57,7 +57,7 @@ const ComingSoon = () => {
       flexDirection: 'column',
       justifyContent: 'flex-start',
       minHeight: '100vh',
-      background: 'radial-gradient(circle, #0024A8, #000158)',
+      background: 'radial-gradient(circle, #000824, #000158)',
       color: '#ffffff',
       fontFamily: "'Unbounded'",
       position: 'relative',
@@ -71,7 +71,7 @@ const ComingSoon = () => {
         expanded={expanded}
         onToggle={() => setExpanded(!expanded)}
         style={{
-          backgroundColor: "#001871",
+  background: 'radial-gradient(circle, #000824, #000158)',
           boxShadow: "5px 5px 15px rgba(52, 84, 102, 0.97)",
           fontFamily: "'Unbounded', 'Mona Sans'",
         }}

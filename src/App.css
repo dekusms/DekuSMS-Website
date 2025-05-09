@@ -24,7 +24,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 24, 113, 1);
+  background: radial-gradient(circle, #000824, #00034e);
+  box-shadow: 5px 5px 15px rgba(45, 76, 94, 0.97);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   min-height: 100vh;
@@ -225,8 +226,6 @@
   }
 }
 
-
-
 /* ================= Gratitude Section ====================== */
 .gratitude-section {
   padding: 0 0.5rem;
@@ -241,7 +240,7 @@
   margin: 0 auto;
   margin-top: -3.9rem;
   padding: 2.5rem 2rem;
-  box-shadow: 10px 0 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 15px rgba(213, 227, 235, 0.97);
 }
 
 .gratitude-title {
@@ -270,7 +269,8 @@
   }
 
   .gratitude-description {
-    font-size: 1.1rem;
+    font-size: 1.1rem;      background: 'radial-gradient(circle, #000824, #000158)',
+
   }
 }
 

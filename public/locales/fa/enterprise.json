@@ -1,107 +1,156 @@
 {
   "navbar": {
-    "home": "Accueil",
-    "contact": "Contact",
-    "signup": "S'inscrire",
-    "profile": "Mon profil",
-    "logout": "Se déconnecter",
-    "language": "Langue",
-    "features": "Fonctionnalités",
-    "offers": "Offres",
-    "pricing": "Tarification",
-    "login": "Connexion"
+    "home": "خانه",
+    "contact": "تماس با ما",
+    "signup": "ثبت‌نام",
+    "profile": "پروفایل",
+    "logout": "خروج",
+    "language": "زبان",
+    "features": "ویژگی‌ها",
+    "offers": "پیشنهادها",
+    "pricing": "قیمت‌ها",
+    "login": "ورود"
   },
   "buttons": {
-    "requestDemo": "Demander une démo",
-    "learnMore": "En savoir plus"
-  },
-  "features": {
-    "analyticsTitle": "Analytique avancée",
-    "analyticsDesc": "Obtenez des informations précieuses grâce à l'analyse de données en temps réel.",
-    "securityTitle": "Sécurité renforcée",
-    "securityDesc": "Authentification multi-facteurs, liste blanche IP et plus encore.",
-    "supportTitle": "Support prioritaire",
-    "supportDesc": "Obtenez une assistance par chat en direct 24/7 et une communication directe."
+    "requestDemo": "درخواست نسخه نمایشی",
+    "learnMore": "بیشتر بدانید"
   },
   "enterprise": {
-    "heroTitle": "Messagerie d'entreprise pour les équipes modernes",
-    "heroDesc": "Solutions de messagerie rapides, sécurisées et évolutives adaptées à votre entreprise.",
-    "whyTitle": "Pourquoi DekuSMS Entreprise ?",
+    "heroTitle": "پیام‌رسانی سازمانی برای تیم‌های مدرن",
+    "heroDesc": "راه‌حل‌های پیام‌رسانی سریع، امن و مقیاس‌پذیر برای کسب‌وکار شما.",
+    "title": "چرا DekuSMS برای کسب‌وکارها؟",
     "features": {
-      "analyticsTitle": "Analytique en temps réel",
-      "analyticsDesc": "Surveillez et optimisez la livraison de vos messages avec des données en direct.",
-      "securityTitle": "Chiffrement de bout en bout",
-      "securityDesc": "Vos communications sont entièrement sécurisées avec des protocoles modernes.",
-      "supportTitle": "Support 24/7",
-      "supportDesc": "Nos experts sont toujours là pour aider votre équipe à réussir."
+      "feature1": {
+        "span": "کارایی",
+        "title": "تحویل آنی",
+        "desc": "پیام‌های شما به‌سرعت تحویل داده می‌شوند."
+      },
+      "feature2": {
+        "span": "امنیت",
+        "title": "ارسال امن",
+        "desc": "داده‌های شما رمزگذاری شده و محافظت می‌شوند."
+      },
+      "feature3": {
+        "span": "پوشش",
+        "title": "پوشش جهانی",
+        "desc": "به‌راحتی با مشتریان در سراسر جهان ارتباط برقرار کنید."
+      }
     },
+    "imageAlt": "ویژگی",
+    "featureHighlight": {
+      "span": "پیام‌رسانی تجاری",
+      "title": "راه‌حل‌های پیام‌رسانی قدرتمند",
+      "desc": "راه‌حل‌های پیام‌رسانی پیشرفته برای کسب‌وکارها. ارتباطی روان و مطمئن با DekuSMS. سریع، ایمن و قابل اعتماد."
+    }
+  },
+  "pricing": {
+    "header": "قیمت‌ها و پلن‌ها",
+    "aboutTitle": "درباره DekuSMS",
+    "aboutLine1": "نسل جدیدی از پیام‌رسانی است که با تمرکز بر حریم خصوصی، امنیت و ادغام آسان طراحی شده است.",
+    "aboutLine2": "چه به رمزنگاری سرتاسری نیاز داشته باشید یا همگام‌سازی سریع ابری، DekuSMS کنترل کامل را به شما می‌دهد. با پیام‌رسانی سنتی خداحافظی کنید و به آینده ارتباطات خوش‌آمد بگویید.",
+    "pricingTitle": "قیمت‌گذاری",
+    "pricingSubTitle": "پلنی را انتخاب کنید که با نیازهای شما همخوانی دارد",
+    "mostPopular": "محبوب‌ترین",
+    "monthly": "ماهانه",
+    "yearly": "سالانه",
+    "free": {
+      "name": "رایگان",
+      "description": "مناسب برای استفاده فردی و محدود.",
+      "price": "۰ تومان",
+      "features": [
+        "حداکثر ۱۰۰ پیام در ماه",
+        "تحلیل‌های پایه",
+        "۱ کانال پیامکی",
+        "پشتیبانی ایمیلی",
+        "دسترسی به انجمن"
+      ],
+      "buttonText": "شروع رایگان"
+    },
+    "pro": {
+      "name": "حرفه‌ای",
+      "description": "مناسب برای تیم‌های کوچک تا متوسط.",
+      "price": "۴۹ یورو در ماه",
+      "features": [
+        "پیام‌های نامحدود",
+        "تحلیل‌های پیشرفته",
+        "۵ کانال پیامکی",
+        "پشتیبانی اولویت‌دار",
+        "ابزارهای اتوماسیون",
+        "همکاری تیمی"
+      ],
+      "buttonText": "ارتقا به حرفه‌ای"
+    },
+    "custom": {
+      "name": "سفارشی",
+      "description": "راه‌حل‌های اختصاصی برای شرکت‌ها.",
+      "price": "تماس بگیرید",
+      "features": [
+        "سقف پیام سفارشی",
+        "مدیر حساب اختصاصی",
+        "کانال‌های نامحدود",
+        "برندسازی سفارشی",
+        "پشتیبانی ۲۴/۷"
+      ],
+      "buttonText": "تماس با ما"
+    }
+  },
+  "features": {
+    "sectionTitle": "ویژگی‌های DekuSMS برای کسب‌وکارها",
+    "analyticsTitle": "تحلیل‌های پیشرفته",
+    "analyticsDesc": "داده‌های زنده درباره ترافیک پیام‌ها را دریافت کنید.",
+    "securityTitle": "امنیت شرکتی",
+    "securityDesc": "رمزنگاری داده‌ها در حین انتقال و در حالت ذخیره.",
+    "supportTitle": "پشتیبانی ۲۴ ساعته جهانی",
+    "supportDesc": "همیشه در کنار شما هستیم.",
     "featureList": [
       {
-        "span": "Fonctionnalité 1",
-        "title": "Livraison sécurisée",
-        "desc": "Livraison garantie des messages dans le monde entier avec des systèmes de basculement."
+        "span": "ویژگی ۱",
+        "title": "تحویل امن",
+        "desc": "ارسال مطمئن جهانی با سیستم‌های پشتیبان."
       },
       {
-        "span": "Fonctionnalité 2",
-        "title": "Portée mondiale",
-        "desc": "Atteignez n'importe quel client dans le monde avec notre plateforme SMS multilingue."
+        "span": "ویژگی ۲",
+        "title": "دسترسی جهانی",
+        "desc": "با پلتفرم چندزبانه ما با مشتریان جهانی در تماس باشید."
       },
       {
-        "span": "Fonctionnalité 3",
-        "title": "Rapports en temps réel",
-        "desc": "Suivez instantanément la livraison des messages et les taux d'ouverture depuis votre tableau de bord."
+        "span": "ویژگی ۳",
+        "title": "گزارش‌گیری لحظه‌ای",
+        "desc": "تحویل و نرخ باز شدن پیام‌ها را در داشبورد خود ردیابی کنید."
       }
     ],
     "dashboard": {
-      "span": "Mise en avant de la fonctionnalité",
-      "title": "Messagerie puissante",
-      "desc": "Solutions de messagerie puissantes adaptées aux entreprises. Messagerie transparente avec DekuSMS. Messagerie rapide, sécurisée et fiable pour votre entreprise."
-    },
-    "pricing": {
-      "title": "À propos de DekuSMS",
-      "subtitle": "Tarification et plans",
-      "plans": [
-        {
-          "name": "Gratuit",
-          "description": "Parfait pour commencer",
-          "price": "0 $/mois",
-          "features": [
-            "Envoyer et recevoir des messages SMS",
-            "Messages illimités",
-            "Messages en masse",
-            "Recevoir des notifications de livraison",
-            "Support de base"
-          ],
-          "buttonText": "Commencer"
-        },
-        {
-          "name": "Pro",
-          "description": "Idéal pour la plupart des cas d'utilisation",
-          "price": "6,99 $/mois",
-          "features": [
-            "Tout dans Gratuit",
-            "Envoyer et recevoir des messages SMS",
-            "Messages illimités",
-            "Messages en masse",
-            "Recevoir des notifications de livraison",
-            "Support prioritaire"
-          ],
-          "buttonText": "Passer à Pro"
-        },
-        {
-          "name": "Personnalisé",
-          "description": "Pour des besoins plus spécifiques ou des intégrations personnalisées",
-          "price": "Tarification personnalisée",
-          "features": [
-            "Limites de messages personnalisées",
-            "Limites de masse personnalisées",
-            "Intégrations personnalisées",
-            "Accord SLA",
-            "Support dédié"
-          ],
-          "buttonText": "Contacter les ventes"
-        }
-      ]
+      "span": "ویژگی برجسته",
+      "title": "راه‌حل‌های پیام‌رسانی قدرتمند",
+      "desc": "راه‌حل‌های قدرتمند پیام‌رسانی برای شرکت‌ها. ارتباطی روان و ایمن با DekuSMS. سریع، مطمئن و قابل اعتماد برای کسب‌وکار شما."
     }
+  },
+  "footer": {
+    "branding": {
+      "logo": "DekuSMS",
+      "tagline": "ایمن. خصوصی. شفاف."
+    },
+    "navigation": {
+      "title": "ناوبری",
+      "about": "درباره ما",
+      "features": "ویژگی‌ها",
+      "download": "دانلود",
+      "contact": "تماس با ما"
+    },
+    "resources": {
+      "title": "منابع",
+      "privacy": "سیاست حفظ حریم خصوصی",
+      "terms": "شرایط استفاده",
+      "support": "پشتیبانی",
+      "faq": "سوالات متداول"
+    },
+    "stayConnected": {
+      "title": "در ارتباط بمانید",
+      "subscribeText": "برای دریافت آخرین اخبار و پیشنهادها ثبت‌نام کنید.",
+      "emailPlaceholder": "ایمیل خود را وارد کنید",
+      "subscribeButton": "اشتراک",
+      "Privacy": "حریم خصوصی"
+    },
+    "copyright": "© {{year}} DekuSMS. تمامی حقوق محفوظ است."
   }
 }

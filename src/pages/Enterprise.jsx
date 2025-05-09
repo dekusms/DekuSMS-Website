@@ -327,7 +327,7 @@ function App() {
     </div>
 
     {/* ?================================ */}
-    <section id="steps" className="py-5" style={{ backgroundColor: '#000824', color: '#fff' }}>
+    {/* <section id="steps" className="py-5" style={{ backgroundColor: '#000824', color: '#fff' }}>
       <Container>
         <h1 className="text-center fw-bold mb-4" style={{ fontSize: '2.5rem' }}>
           {t('features.sectionTitle')}
@@ -371,9 +371,10 @@ function App() {
           ))}
         </Row>
       </Container>
-    </section>
+    </section> */}
       {/* ======================Footer ========================= */}
-       <footer className="footer text-white py-5" style={{ background: "#000158" }}>
+       <footer className="footer text-white py-5" style={{ background: "#000824",
+      boxShadow: "5px 5px 15px rgba(37, 63, 78, 0.97)",}}>
             <div className="container">
               <div className="row">
                 <div className="col-md-3 mb-4">
