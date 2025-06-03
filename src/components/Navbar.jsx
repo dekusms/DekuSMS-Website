@@ -32,8 +32,8 @@ const Navigation = () => {
     expanded={expanded}
     onToggle={() => setExpanded(!expanded)}
     style={{
-      background: "radial-gradient(circle, #000824, #000244)",
-      boxShadow: "5px 5px 15px rgba(37, 63, 78, 0.97)",
+      background: "#000824" ,
+      boxShadow: "5px 5px 15px rgba(20, 37, 48, 0.97)",
       fontFamily: "'Unbounded', 'Mona Sans'"
         }}
   >  
@@ -64,9 +64,8 @@ const Navigation = () => {
           <Nav className="align-items-center gap-3">
             {[
               { href: "https://blog.smswithoutborders.com", label: t("navbar.blog") || "Blog", external: true },
-              { to: "/comingsoon", label: t("navbar.enterprise") || "Enterprise" },
               { href: "https://docs.smswithoutborders.com", label: t("navbar.documentation") || "Documentation", external: true },
-              { href: "#offers", label: t("navbar.support") || "Support" },
+              // { href: "#offers", label: t("navbar.support") || "Support" },
               { to: "/download", label: t("navbar.download") || "Download" },
             ].map((item, index) => (
               <Nav.Link

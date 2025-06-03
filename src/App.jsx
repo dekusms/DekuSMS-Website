@@ -16,7 +16,6 @@ const Enterprise = lazy(() => import('./pages/Enterprise'));
 const Login = lazy(() => import('./pages/Login'));
 const Signup = lazy(() => import('./pages/Signup'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
-const ComingSoon = lazy(() => import('./pages/ComingSoon'));
 
 function App() {
   const { i18n } = useTranslation();
@@ -57,7 +56,6 @@ function MainLayout() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/enterprise/*" element={<Enterprise />} />
-          <Route path="/comingsoon" element={<ComingSoon />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/download" element={<Download />} />

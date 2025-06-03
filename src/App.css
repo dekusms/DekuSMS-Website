@@ -18,7 +18,11 @@
     text-align: left;
     direction: ltr;
   }
-  
+  /* ------------------------------------------------------- */
+.text-secondary {
+  color: #a9b4c2 !important;
+}
+
 /* ================= Landing Section ====================== */
 .landing {
   display: flex;
@@ -226,329 +230,6 @@
   }
 }
 
-/* ================= Gratitude Section ====================== */
-.gratitude-section {
-  padding: 0 0.5rem;
-}
-.gratitude-card {
-  background: #ebeef7;
-  border-radius: 1.5rem;
-  max-width: 100%;
-  text-align: center;
-  z-index: 3;
-  position: relative;
-  margin: 0 auto;
-  margin-top: -3.9rem;
-  padding: 2.5rem 2rem;
-    box-shadow: 5px 5px 15px rgba(213, 227, 235, 0.97);
-}
-
-.gratitude-title {
-  color: #309f9b;
-  margin-bottom: 1rem;
-  font-size: 2.2rem;
-  font-weight: 600;
-}
-
-.gratitude-description {
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.7;
-  color: #63707b;
-}
-
-
-@media (max-width: 1024px) {
-  .gratitude-card {
-    width: 85%;
-    padding: 2rem 1.5rem;
-  }
-
-  .gratitude-title {
-    font-size: 2rem;
-  }
-
-  .gratitude-description {
-    font-size: 1.1rem;      background: 'radial-gradient(circle, #000824, #000158)',
-
-  }
-}
-
-@media (max-width: 768px) {
-  .gratitude-section {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    padding: 0 1.2rem;
-  }
-
-  .gratitude-card {
-    width: 100%;
-    padding: 1.5rem 1.2rem;
-    border-radius: 1.2rem;
-  }
-
-  .gratitude-title {
-    font-size: 1.6rem;
-  }
-
-  .gratitude-description {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .gratitude-section {
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-    padding: 0 1rem;
-  }
-
-  .gratitude-card {
-    padding: 1.3rem 1rem;
-    border-radius: 1.1rem;
-  }
-
-  .gratitude-title {
-    font-size: 1.4rem;
-  }
-
-  .gratitude-description {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .gratitude-section {
-    margin-top: -5rem;
-    margin-bottom: 2.2rem;
-    padding: 0 0.8rem;
-  }
-
-  .gratitude-card {
-    padding: 1.2rem 0.9rem;
-    border-radius: 1rem;
-  }
-
-  .gratitude-title {
-    font-size: 1.3rem;
-  }
-
-  .gratitude-description {
-    font-size: 0.92rem;
-  }
-}
-
-
-/* =================== About ======================== */
-.about-section-1 {
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.about-dekusms-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #060633;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.about-dekusms-text {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #4b556b;
-  max-width: 100%;
-  margin: 0 auto 1rem auto;
-  line-height: 1.6;
-}
-
-.about-dekusms-text strong {
-  color: #38a5a2;
-}
-
-@media (max-width: 768px) {
-  .about-dekusms-title {
-    font-size: 2rem;
-  }
-
-  .about-dekusms-text {
-    font-size: 1.1rem;
-    max-width: 95%;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-section-1 {
-    padding: 3rem 1rem;
-  }
-
-  .about-dekusms-title {
-    font-size: 1.75rem;
-    line-height: 1.3;
-    margin-bottom: 0.8rem;
-  }
-
-  .about-dekusms-text {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 0.8rem;
-  }
-}
-
-
-.about-dekusms-badge {
-  background-color: #085857;
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-
-.about-dekusms-section {
-  padding: 3rem 0;
-}
-
-.about-dekusms-grid {
-  display: grid;
-  grid-template-columns: 4fr 3fr 3fr;
-  grid-auto-rows: 1fr;
-  gap: 2rem;
-}
-
-.about-dekusms-card-1 {
-  border-radius: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  color: #060633;
-  box-shadow: 0 20px 30px -10px rgb(16 16 39 / 7%);
-  position: relative;
-}
-
-.about-dekusms-card {
-  border-radius: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  color: #060633;
-  box-shadow: 0 20px 30px -10px rgb(16 16 39 / 7%);
-  position: relative;
-  text-wrap: balance;
-}
-
-.about-cloud {
-  grid-area: 1 / 1 / 3 / 2;
-  padding: 0;
-  overflow: hidden;
-  border-radius: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-cloud img {
-  width: 60%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.about-cloud:hover img {
-  transform: scale(1.03);
-}
-
-.about-logo {
-  grid-area: 1 / 2 / 2 / 4 ;
-  background-image: linear-gradient(-225deg, #fffeff 0%, #cff1f1 100%);
-}
-
-.about-logo h2 {
-  color: #2c7e7b;
-}
-
-.about-device {
-  background-image: linear-gradient(-225deg, #ffffff 0%, #fde0c4 100%);
-}
-
-.about-inbox {
-  background-image: linear-gradient(-225deg, #ffffff 0%, #c0ccf6 100%);
-}
-
-.about-inbox h3 {
-  color: #8b5cca;
-}
-
-.about-card-description {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.about-dekusms-card h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 0.9;
-}
-
-.about-dekusms-card h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.about-dekusms-card p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #687286;
-}
-.about-dekusms-card-1 p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #687286;
-}
-
-
-.about-credit {
-  margin-top: 4rem;
-}
-
-.about-credit a {
-  background-color: #2fa5a3;
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-@media (max-width: 992px) {
-  .about-dekusms-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-cloud,
-  .about-logo {
-    grid-area: auto;
-  }
-}
-
-@media (max-width: 576px) {
-  .about-dekusms-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ============== download =====================_*/
 .download-section {
   background: linear-gradient(to bottom, #f9fbfe, #ffffff);
@@ -573,6 +254,12 @@
 .download-card:hover {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+/* ============= feature ============================== */
+.feature-clean {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 /* ============================ footer ============================= */
@@ -679,3 +366,7 @@ footer .list-unstyled a::before {
     padding-left: 24px;
   }
 }
+
+
+/* ----------------- DOWNLOAD =================== */
+

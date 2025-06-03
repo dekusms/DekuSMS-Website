@@ -43,6 +43,11 @@ const Download = () => {
       <h2 className="fw-bold mb-3 display-6 download-title">{t("download.title")}</h2>
       <p className="text-muted mb-5">{t("download.subtitle")}</p>
   
+ <div style={styles.header}>
+        <h1 style={styles.title}>{t("downloadpage.title")}</h1>
+        <p style={styles.subtitle}>{t("downloadpage.subtitle")}</p>
+      </div>
+
       <div className="row justify-content-center g-4">
         {downloadOptions.map((opt, index) => (
           <div className="col-md-6 col-lg-4" key={index}>
@@ -87,5 +92,23 @@ const Download = () => {
   </section>  
   );
 };
+
+
+
+const styles = {
+  title: {
+    fontSize: "clamp(2rem, 5vw, 3rem)",
+    fontWeight: "700",
+    marginBottom: "10px",
+     color: "#001871"
+  },
+  subtitle: {
+    fontSize: "clamp(0.9rem, 1.5vw, 1.2rem)",
+    color: "#f0f0f0",
+    maxWidth: "600px",
+    margin: "0 auto",
+  },
+};
+
 
 export default Download;
