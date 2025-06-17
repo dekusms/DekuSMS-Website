@@ -6,7 +6,7 @@
     "download": "Download",
     "documentation": "Documentation",
     "support": "Support",
-    "language": "Language"
+    "language": "English"
   },
   "landing": {
     "title": "SMS but Secure",
@@ -19,6 +19,7 @@
     "donate": "Donate",
 
      "features": {
+      "featuresTitle": "Features",
       "feature1": " Forward SMS to the Cloud – Even When Offline",
       "feature2": " Send SMS via RabbitMQ with Reliable Server Communication",
       "feature3": " End-to-End Encrypted SMS with Forward Secrecy",

@@ -128,7 +128,7 @@ const features = [
 
           <Col xs={12} md={3} className="pt-md-5 px-4">
             <h5 className="text-uppercase fw-semibold text-light mb-3">
-              {t('landing.featuresTitle')}
+              {t('landing.features.featuresTitle')}
             </h5>
 
       <ListGroup variant="flush" className="text-white">

@@ -30,15 +30,17 @@ const Navigation = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const languages = [
-    { code: "en", label: "English", flag: "🇬🇧" },
-    { code: "fr", label: "Français", flag: "🇫🇷" },
-    { code: "fa", label: "فارسی", flag: "🇮🇷" },
-    { code: "ar", label: "العربية", flag: "🇸🇦" },
-    { code: "es", label: "Español", flag: "🇪🇸" },
-    { code: "it", label: "Italiano", flag: "🇮🇹" },
-    { code: "nl", label: "Nederlands", flag: "🇳🇱" },
-  ];
+const languages = [
+  { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "fr", label: "Français", flag: "🇫🇷" },
+  { code: "fa", label: "فارسی", flag: "🇮🇷" },
+  { code: "ar", label: "العربية", flag: "🇸🇦" },
+  { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "it", label: "Italiano", flag: "🇮🇹" },
+  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
+];
+
+
 
   return (
     <Navbar
