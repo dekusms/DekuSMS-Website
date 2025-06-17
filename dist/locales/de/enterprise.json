@@ -1,31 +1,156 @@
 {
-  "navbar":{  
-        "home": "Home",
-        "features": "Features",
-        "pricing": "Pricing",
-        "contact": "Contact",
-        "login": "Login",
-        "signup": "Sign Up",
-        "profile": "My Profile",
-        "logout": "Logout",
-        "language": "Language"
-},
-      
-    "enterprise": {
-      "heroTitle": "DekuSMS Enterprise",
-      "heroDesc": "Unlock the full potential of SMS with our premium, enterprise-grade features..."
-    },
-    "buttons": {
-      "requestDemo": "Request a Demo",
-      "learnMore": "Learn More"
-    },
+  "navbar": {
+    "home": "Startseite",
+    "contact": "Kontakt",
+    "signup": "Registrieren",
+    "profile": "Mein Profil",
+    "logout": "Abmelden",
+    "language": "Sprache",
+    "features": "Funktionen",
+    "offers": "Angebote",
+    "pricing": "Preise",
+    "login": "Anmelden"
+  },
+  "buttons": {
+    "requestDemo": "Demo anfordern",
+    "learnMore": "Mehr erfahren"
+  },
+  "enterprise": {
+    "heroTitle": "Enterprise Messaging für moderne Teams",
+    "heroDesc": "Schnelle, sichere und skalierbare Messaging-Lösungen für dein Unternehmen.",
+    "title": "Warum DekuSMS Enterprise?",
     "features": {
-      "analyticsTitle": "Advanced Analytics",
-      "analyticsDesc": "Gain valuable insights with real-time data analytics.",
-      "securityTitle": "Enhanced Security",
-      "securityDesc": "Multi-factor authentication, IP whitelisting, and more.",
-      "supportTitle": "Priority Support",
-      "supportDesc": "Get 24/7 live chat support and direct communication."
+      "feature1": {
+        "span": "Effizienz",
+        "title": "Schnelle Zustellung",
+        "desc": "Nachrichten werden sofort an deine Empfänger zugestellt."
+      },
+      "feature2": {
+        "span": "Sicherheit",
+        "title": "Sichere Übertragung",
+        "desc": "Deine Daten sind verschlüsselt und geschützt."
+      },
+      "feature3": {
+        "span": "Reichweite",
+        "title": "Globale Abdeckung",
+        "desc": "Erreiche Nutzer weltweit ganz einfach."
+      }
+    },
+    "imageAlt": "Funktion",
+    "featureHighlight": {
+      "span": "Enterprise Messaging",
+      "title": "Leistungsstarkes Messaging",
+      "desc": "Leistungsstarke Messaging-Lösungen für Unternehmen. Nahtlose Kommunikation mit DekuSMS. Schnell, sicher und zuverlässig für dein Business."
     }
+  },
+  "pricing": {
+    "header": "Preise & Tarife",
+    "aboutTitle": "Über DekuSMS",
+    "aboutLine1": "ist eine SMS-Lösung der nächsten Generation, die auf Datenschutz, Sicherheit und nahtlose Integration ausgelegt ist.",
+    "aboutLine2": "Ob verschlüsselte Nachrichten, Echtzeit-Cloud-Synchronisierung oder anpassbare Einstellungen – DekuSMS wurde entwickelt, um dir maximale Kontrolle zu geben. Verabschiede dich von den Grenzen veralteter SMS und begrüße die Zukunft des Messagings.",
+    "pricingTitle": "Preise",
+    "pricingSubTitle": "Wähle den perfekten Tarif für deine Messaging-Bedürfnisse",
+    "mostPopular": "BELIEBTEST",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "free": {
+      "name": "Kostenlos",
+      "description": "Ideal für Einzelpersonen und geringen Gebrauch.",
+      "price": "0 $",
+      "features": [
+        "Bis zu 100 Nachrichten/Monat",
+        "Basis-Analytics",
+        "1 SMS-Kanal",
+        "E-Mail-Support",
+        "Community-Zugang"
+      ],
+      "buttonText": "Kostenlos starten"
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Perfekt für kleine bis mittlere Teams.",
+      "price": "49 $/Monat",
+      "features": [
+        "Unbegrenzte Nachrichten",
+        "Erweiterte Analytics",
+        "5 SMS-Kanäle",
+        "Priorisierter Support",
+        "Automatisierungstools",
+        "Team-Zusammenarbeit"
+      ],
+      "buttonText": "Upgrade auf Pro"
+    },
+    "custom": {
+      "name": "Individuell",
+      "description": "Maßgeschneiderte Lösungen für Unternehmen.",
+      "price": "Kontaktiere uns",
+      "features": [
+        "Individuelle Nachrichtenlimits",
+        "Persönlicher Account-Manager",
+        "Unbegrenzte Kanäle",
+        "White-Label-Lösung",
+        "24/7-Support"
+      ],
+      "buttonText": "Kontaktiere uns"
+    }
+  },
+  "features": {
+    "sectionTitle": "DekuSMS Enterprise-Funktionen",
+    "analyticsTitle": "Erweiterte Analytics",
+    "analyticsDesc": "Erhalte Echtzeit-Einblicke in deinen Nachrichtentraffic.",
+    "securityTitle": "Enterprise-Sicherheit",
+    "securityDesc": "Datenverschlüsselung beim Versand und im Speicher.",
+    "supportTitle": "Weltweiter 24/7-Support",
+    "supportDesc": "Wir sind jederzeit für dich da.",
+    "featureList": [
+      {
+        "span": "Funktion 1",
+        "title": "Sichere Zustellung",
+        "desc": "Garantierte Zustellung weltweit mit Backup-Systemen."
+      },
+      {
+        "span": "Funktion 2",
+        "title": "Globale Reichweite",
+        "desc": "Erreiche weltweit jeden Kunden mit unserer mehrsprachigen SMS-Plattform."
+      },
+      {
+        "span": "Funktion 3",
+        "title": "Echtzeitberichte",
+        "desc": "Verfolge Zustellung und Öffnungsraten sofort über dein Dashboard."
+      }
+    ],
+    "dashboard": {
+      "span": "Feature-Highlight",
+      "title": "Leistungsstarkes Messaging",
+      "desc": "Leistungsstarke Messaging-Lösungen für Unternehmen. Nahtlose Kommunikation mit DekuSMS. Schnell, sicher und zuverlässig für dein Business."
+    }
+  },
+  "footer": {
+    "branding": {
+      "logo": "DekuSMS",
+      "tagline": "Sicher. Privat. Transparent."
+    },
+    "navigation": {
+      "title": "Navigation",
+      "about": "Über uns",
+      "features": "Funktionen",
+      "download": "Download",
+      "contact": "Kontakt"
+    },
+    "resources": {
+      "title": "Ressourcen",
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Nutzungsbedingungen",
+      "support": "Support",
+      "faq": "FAQ"
+    },
+    "stayConnected": {
+      "title": "Bleib verbunden",
+      "subscribeText": "Abonniere, um die neuesten Updates und Angebote zu erhalten.",
+      "emailPlaceholder": "E-Mail eingeben",
+      "subscribeButton": "Abonnieren",
+      "Privacy": "Datenschutz"
+    },
+    "copyright": "© {{year}} DekuSMS. Alle Rechte vorbehalten."
   }
-  
+}

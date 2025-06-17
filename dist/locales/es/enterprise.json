@@ -1,29 +1,156 @@
 {
   "navbar": {
     "home": "Inicio",
-    "features": "Características",
-    "pricing": "Precios",
     "contact": "Contacto",
-    "login": "Iniciar sesión",
     "signup": "Registrarse",
     "profile": "Mi Perfil",
     "logout": "Cerrar sesión",
-    "language": "Idioma"
-  },
-  "enterprise": {
-    "heroTitle": "DekuSMS Empresarial",
-    "heroDesc": "Desbloquea todo el potencial de los SMS con nuestras funciones premium empresariales..."
+    "language": "Idioma",
+    "features": "Funciones",
+    "offers": "Ofertas",
+    "pricing": "Precios",
+    "login": "Iniciar sesión"
   },
   "buttons": {
-    "requestDemo": "Solicitar una demostración",
+    "requestDemo": "Solicitar demostración",
     "learnMore": "Aprender más"
   },
+  "enterprise": {
+    "heroTitle": "Mensajería empresarial para equipos modernos",
+    "heroDesc": "Soluciones de mensajería rápidas, seguras y escalables adaptadas a tu empresa.",
+    "title": "¿Por qué DekuSMS Enterprise?",
+    "features": {
+      "feature1": {
+        "span": "Eficiencia",
+        "title": "Entrega rápida",
+        "desc": "Los mensajes se entregan al instante a tus destinatarios."
+      },
+      "feature2": {
+        "span": "Seguridad",
+        "title": "Transmisión segura",
+        "desc": "Tus datos están encriptados y seguros."
+      },
+      "feature3": {
+        "span": "Alcance",
+        "title": "Cobertura global",
+        "desc": "Llega a usuarios en todo el mundo con facilidad."
+      }
+    },
+    "imageAlt": "Característica",
+    "featureHighlight": {
+      "span": "Mensajería Empresarial",
+      "title": "Mensajería Potente",
+      "desc": "Soluciones de mensajería potentes diseñadas para empresas. Mensajería fluida con DekuSMS. Rápido, seguro y confiable para tu negocio."
+    }
+  },
+  "pricing": {
+    "header": "Precios y Planes",
+    "aboutTitle": "Sobre DekuSMS",
+    "aboutLine1": "es una solución SMS de próxima generación diseñada para privacidad, seguridad e integración sin interrupciones.",
+    "aboutLine2": "Ya sea que necesites mensajería encriptada, sincronización en la nube en tiempo real o configuraciones personalizables, DekuSMS está hecho para empoderarte. Di adiós a las limitaciones de los SMS anticuados y da la bienvenida al futuro de la mensajería.",
+    "pricingTitle": "Precios",
+    "pricingSubTitle": "Elige el plan perfecto para tus necesidades de mensajería",
+    "mostPopular": "MÁS POPULAR",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "free": {
+      "name": "Gratis",
+      "description": "Ideal para individuos y bajo uso.",
+      "price": "$0",
+      "features": [
+        "Envía hasta 100 mensajes/mes",
+        "Análisis básico",
+        "1 canal SMS",
+        "Soporte por correo",
+        "Acceso a la comunidad"
+      ],
+      "buttonText": "Empezar Gratis"
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Perfecto para equipos pequeños a medianos.",
+      "price": "$49/mes",
+      "features": [
+        "Mensajes ilimitados",
+        "Análisis avanzado",
+        "5 canales SMS",
+        "Soporte prioritario",
+        "Herramientas de automatización",
+        "Colaboración en equipo"
+      ],
+      "buttonText": "Actualizar a Pro"
+    },
+    "custom": {
+      "name": "Personalizado",
+      "description": "Soluciones a medida para empresas.",
+      "price": "Contáctanos",
+      "features": [
+        "Límites personalizados de mensajes",
+        "Administrador de cuenta dedicado",
+        "Canales ilimitados",
+        "Marca blanca",
+        "Soporte 24/7"
+      ],
+      "buttonText": "Contáctanos"
+    }
+  },
   "features": {
-    "analyticsTitle": "Analítica Avanzada",
-    "analyticsDesc": "Obtén información valiosa con análisis de datos en tiempo real.",
-    "securityTitle": "Seguridad Mejorada",
-    "securityDesc": "Autenticación multifactor, lista blanca de IP, y más.",
-    "supportTitle": "Soporte Prioritario",
-    "supportDesc": "Soporte por chat en vivo 24/7 y comunicación directa."
+    "sectionTitle": "Funciones de DekuSMS Enterprise",
+    "analyticsTitle": "Análisis Avanzado",
+    "analyticsDesc": "Obtén información en tiempo real sobre tu tráfico de mensajes.",
+    "securityTitle": "Seguridad de Nivel Empresarial",
+    "securityDesc": "Datos encriptados en tránsito y en reposo.",
+    "supportTitle": "Soporte Global 24/7",
+    "supportDesc": "Estamos aquí para ayudarte en cualquier momento, cualquier día.",
+    "featureList": [
+      {
+        "span": "Función 1",
+        "title": "Entrega Segura",
+        "desc": "Entrega garantizada de mensajes a nivel mundial con sistemas de respaldo."
+      },
+      {
+        "span": "Función 2",
+        "title": "Alcance Global",
+        "desc": "Llega a cualquier cliente del mundo con nuestra plataforma SMS multilingüe."
+      },
+      {
+        "span": "Función 3",
+        "title": "Reportes en Tiempo Real",
+        "desc": "Rastrea al instante la entrega y tasas de apertura desde tu panel."
+      }
+    ],
+    "dashboard": {
+      "span": "Destacado de Funciones",
+      "title": "Mensajería Potente",
+      "desc": "Soluciones de mensajería potentes diseñadas para empresas. Mensajería fluida con DekuSMS. Rápido, seguro y confiable para tu negocio."
+    }
+  },
+  "footer": {
+    "branding": {
+      "logo": "DekuSMS",
+      "tagline": "Seguro. Privado. Transparente."
+    },
+    "navigation": {
+      "title": "Navegación",
+      "about": "Acerca de",
+      "features": "Funciones",
+      "download": "Descargar",
+      "contact": "Contacto"
+    },
+    "resources": {
+      "title": "Recursos",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Uso",
+      "support": "Soporte",
+      "faq": "FAQ"
+    },
+    "stayConnected": {
+      "title": "Mantente Conectado",
+      "subscribeText": "Suscríbete para recibir las últimas actualizaciones y ofertas.",
+      "emailPlaceholder": "Introduce tu correo",
+      "subscribeButton": "Suscribirse",
+      "Privacy": "Privacidad"
+    },
+    "copyright": "© {{year}} DekuSMS. Todos los derechos reservados."
   }
 }

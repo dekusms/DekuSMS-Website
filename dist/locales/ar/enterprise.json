@@ -1,29 +1,156 @@
 {
   "navbar": {
-    "home": "Startseite",
-    "features": "Funktionen",
-    "pricing": "Preise",
-    "contact": "Kontakt",
-    "login": "Anmelden",
-    "signup": "Registrieren",
-    "profile": "Mein Profil",
-    "logout": "Abmelden",
-    "language": "Sprache"
-  },
-  "enterprise": {
-    "heroTitle": "DekuSMS Enterprise",
-    "heroDesc": "Nutzen Sie das volle Potenzial von SMS mit unseren erstklassigen Enterprise-Funktionen..."
+    "home": "الرئيسية",
+    "contact": "تواصل معنا",
+    "signup": "إنشاء حساب",
+    "profile": "ملفي الشخصي",
+    "logout": "تسجيل الخروج",
+    "language": "اللغة",
+    "features": "الميزات",
+    "offers": "العروض",
+    "pricing": "الأسعار",
+    "login": "تسجيل الدخول"
   },
   "buttons": {
-    "requestDemo": "Demo anfordern",
-    "learnMore": "Mehr erfahren"
+    "requestDemo": "طلب عرض توضيحي",
+    "learnMore": "معرفة المزيد"
+  },
+  "enterprise": {
+    "heroTitle": "رسائل مؤسسية للفرق الحديثة",
+    "heroDesc": "حلول مراسلة سريعة وآمنة وقابلة للتوسع لمؤسستك.",
+    "title": "لماذا DekuSMS للشركات؟",
+    "features": {
+      "feature1": {
+        "span": "الكفاءة",
+        "title": "توصيل فوري",
+        "desc": "تصل رسائلك إلى المستلمين على الفور."
+      },
+      "feature2": {
+        "span": "الأمان",
+        "title": "نقل آمن",
+        "desc": "بياناتك مشفرة ومحفوظة بأمان."
+      },
+      "feature3": {
+        "span": "الوصول",
+        "title": "تغطية عالمية",
+        "desc": "تواصل مع العملاء في جميع أنحاء العالم بسهولة."
+      }
+    },
+    "imageAlt": "الميزة",
+    "featureHighlight": {
+      "span": "رسائل الشركات",
+      "title": "حلول مراسلة قوية",
+      "desc": "حلول مراسلة قوية للشركات. تواصل سلس مع DekuSMS. سريع وآمن وموثوق به لعملك."
+    }
+  },
+  "pricing": {
+    "header": "الأسعار والباقات",
+    "aboutTitle": "عن DekuSMS",
+    "aboutLine1": "هو حل رسائل الجيل القادم، مصمم مع التركيز على الخصوصية والأمان والتكامل السلس.",
+    "aboutLine2": "سواء كانت رسائل مشفرة، أو مزامنة سحابية فورية، أو إعدادات قابلة للتخصيص، فإن DekuSMS يمنحك التحكم الكامل. ودّع الحدود القديمة للرسائل النصية واستقبل مستقبل التواصل.",
+    "pricingTitle": "الأسعار",
+    "pricingSubTitle": "اختر الباقة التي تناسب احتياجاتك",
+    "mostPopular": "الأكثر شيوعًا",
+    "monthly": "شهريًا",
+    "yearly": "سنويًا",
+    "free": {
+      "name": "مجاني",
+      "description": "مثالي للأفراد والاستخدام المحدود.",
+      "price": "0 د.أ",
+      "features": [
+        "ما يصل إلى 100 رسالة/شهريًا",
+        "تحليلات أساسية",
+        "قناة SMS واحدة",
+        "دعم عبر البريد الإلكتروني",
+        "الوصول إلى المجتمع"
+      ],
+      "buttonText": "ابدأ مجانًا"
+    },
+    "pro": {
+      "name": "احترافي",
+      "description": "مثالي للفرق الصغيرة والمتوسطة.",
+      "price": "49 د.أ/شهر",
+      "features": [
+        "رسائل غير محدودة",
+        "تحليلات متقدمة",
+        "5 قنوات SMS",
+        "دعم أولوية",
+        "أدوات الأتمتة",
+        "تعاون الفريق"
+      ],
+      "buttonText": "الترقية إلى احترافي"
+    },
+    "custom": {
+      "name": "مخصص",
+      "description": "حلول مصممة خصيصًا للمؤسسات.",
+      "price": "تواصل معنا",
+      "features": [
+        "حدود رسائل مخصصة",
+        "مدير حساب مخصص",
+        "قنوات غير محدودة",
+        "حل باسم علامتك التجارية",
+        "دعم على مدار الساعة"
+      ],
+      "buttonText": "تواصل معنا"
+    }
   },
   "features": {
-    "analyticsTitle": "Erweiterte Analytik",
-    "analyticsDesc": "Erhalten Sie wertvolle Einblicke mit Echtzeitdatenanalyse.",
-    "securityTitle": "Erhöhte Sicherheit",
-    "securityDesc": "Mehrfaktor-Authentifizierung, IP-Whitelist und mehr.",
-    "supportTitle": "Vorrangiger Support",
-    "supportDesc": "24/7 Live-Chat-Support und direkte Kommunikation."
+    "sectionTitle": "ميزات DekuSMS للشركات",
+    "analyticsTitle": "تحليلات متقدمة",
+    "analyticsDesc": "احصل على رؤى فورية لحركة الرسائل الخاصة بك.",
+    "securityTitle": "أمان الشركات",
+    "securityDesc": "تشفير البيانات أثناء النقل والتخزين.",
+    "supportTitle": "دعم عالمي 24/7",
+    "supportDesc": "نحن هنا دائمًا لمساعدتك.",
+    "featureList": [
+      {
+        "span": "الميزة 1",
+        "title": "توصيل آمن",
+        "desc": "ضمان توصيل عالمي من خلال أنظمة احتياطية."
+      },
+      {
+        "span": "الميزة 2",
+        "title": "وصول عالمي",
+        "desc": "تواصل مع العملاء في جميع أنحاء العالم باستخدام منصتنا متعددة اللغات."
+      },
+      {
+        "span": "الميزة 3",
+        "title": "تقارير فورية",
+        "desc": "تابع التوصيل ومعدلات الفتح مباشرة من لوحة التحكم الخاصة بك."
+      }
+    ],
+    "dashboard": {
+      "span": "ميزة مميزة",
+      "title": "حلول مراسلة قوية",
+      "desc": "حلول مراسلة قوية للشركات. تواصل سلس مع DekuSMS. سريع وآمن وموثوق به لعملك."
+    }
+  },
+  "footer": {
+    "branding": {
+      "logo": "DekuSMS",
+      "tagline": "آمن. خاص. شفاف."
+    },
+    "navigation": {
+      "title": "التنقل",
+      "about": "من نحن",
+      "features": "الميزات",
+      "download": "تحميل",
+      "contact": "تواصل معنا"
+    },
+    "resources": {
+      "title": "الموارد",
+      "privacy": "سياسة الخصوصية",
+      "terms": "شروط الاستخدام",
+      "support": "الدعم",
+      "faq": "الأسئلة الشائعة"
+    },
+    "stayConnected": {
+      "title": "ابق على تواصل",
+      "subscribeText": "اشترك للحصول على آخر التحديثات والعروض.",
+      "emailPlaceholder": "أدخل بريدك الإلكتروني",
+      "subscribeButton": "اشترك",
+      "Privacy": "الخصوصية"
+    },
+    "copyright": "© {{year}} DekuSMS. جميع الحقوق محفوظة."
   }
 }

@@ -12,10 +12,6 @@ import Download from "./pages/Download";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
 
 const Home = lazy(() => import('./pages/Home'));
-const Enterprise = lazy(() => import('./pages/Enterprise'));
-const Login = lazy(() => import('./pages/Login'));
-const Signup = lazy(() => import('./pages/Signup'));
-const Dashboard = lazy(() => import('./pages/Dashboard'));
 
 function App() {
   const { i18n } = useTranslation();
@@ -36,11 +32,6 @@ function App() {
   );
 }
 
-function isAuthenticated() {
-  const user = localStorage.getItem("user");
-  return !!user;
-}
-
 function MainLayout() {
 
   return (
@@ -48,14 +39,7 @@ function MainLayout() {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/enterprise/*" element={<Enterprise />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="/download" element={<Download />} />
-          <Route
-            path="/dashboard"
-            element={isAuthenticated() ? <Dashboard /> : <Navigate to="/login" />}
-          />
         </Routes>
       </Suspense>
     </div>

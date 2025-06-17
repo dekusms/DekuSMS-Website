@@ -4,15 +4,25 @@
     "blog": "Blog",
     "download": "Download",
     "documentation": "Dokumentation",
-    "support": "Support"
-  },
-  "footer": {
-    "followUs": "Folgen Sie uns"
+    "support": "Support",
+    "enterprise": "Unternehmen",
+    "language": "Sprache"
   },
   "comingSoon": {
-    "headline": "Kommt bald",
-    "description": "Etwas Großartiges wird bald veröffentlicht. Bleiben Sie dran für den Start von DekuSMS Enterprise.",
-    "notifyTitle": "Treten Sie unserer Mailingliste bei",
-    "notifyButton": "Benachrichtige mich"
+    "title": "Kommt bald",
+    "subtitle": "Wir starten bald!",
+    "joinMailingList": "In unsere Mailingliste eintragen",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+    "notifyMeButton": "Benachrichtige mich"
+  },
+  "countdown": {
+    "days": "Tage",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "seconds": "Sekunden"
+  },
+  "footer": {
+    "followUs": "Folgen Sie uns",
+    "companyName": "Ihr Unternehmen"
   }
 }
