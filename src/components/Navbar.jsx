@@ -1,72 +1,84 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { useTranslation } from "react-i18next";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
-const linkStyle = {
-  color: "#ffffff",
-  textDecoration: "none",
-};
-
-const hoverStyle = {
-  color: "#d1d1ff",
-};
 
 const Navigation = () => {
   const { t } = useTranslation("dekusms");
   const [expanded, setExpanded] = useState(false);
   const [hovered, setHovered] = useState(null);
+  const [showLangMenu, setShowLangMenu] = useState(false);
+  const langRef = useRef(null);
 
   const handleMouseEnter = (id) => setHovered(id);
   const handleMouseLeave = () => setHovered(null);
 
+  const toggleLangMenu = () => setShowLangMenu(!showLangMenu);
+
+  const handleClickOutside = (event) => {
+    if (langRef.current && !langRef.current.contains(event.target)) {
+      setShowLangMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const languages = [
+    { code: "en", label: "English" },
+    { code: "fr", label: "Français" },
+    { code: "es", label: "Español" },
+    { code: "fa", label: "فارسی" },
+    { code: "de", label: "Deutsch" },
+    { code: "ar", label: "العربية" },
+  ];
+
   return (
     <Navbar
-    expand="lg"
-    fixed="top"
-    className="py-3"
-    expanded={expanded}
-    onToggle={() => setExpanded(!expanded)}
-    style={{
-      background: "#000824" ,
-      boxShadow: "5px 5px 15px rgba(20, 37, 48, 0.97)",
-      fontFamily: "'Unbounded', 'Mona Sans'"
-        }}
-  >  
+      expand="lg"
+      expanded={expanded}
+      onToggle={() => setExpanded(!expanded)}
+      fixed="top"
+      className="py-2"
+      style={{
+        backgroundColor: "transparent",
+        backgroundImage: "linear-gradient(135deg, #0f2027cc, #203a43cc, #0f2027cc)",
+        fontFamily: "'Unbounded', 'Mona Sans'",
+        zIndex: 1000,
+      }}
+    >
       <Container>
-        <Navbar.Brand href="/" className="fw-bold fs-4" style={{ color: "white" }}>
-          <img
-            src="/DekuSMS-Dark Theme.png"
-            alt="Logo"
-            style={{ height: "22px" }}
-          />
+        <Navbar.Brand href="/" className="fw-bold fs-5 text-white d-flex align-items-center gap-2">
+          <img src="logo/DekuSMS-Dark Theme.png" alt="Logo" style={{ height: "22px" }} />
         </Navbar.Brand>
+
         <Navbar.Toggle
-  aria-controls="basic-navbar-nav"
-  style={{
-    borderColor: "#ffffff",
-    backgroundColor: "transparent",
-  }}
->
-  <span
-    className="navbar-toggler-icon"
-    style={{
-      filter: "invert(1)",
-      WebkitFilter: "invert(1)",
-    }}
-  />
-</Navbar.Toggle>
+          aria-controls="basic-navbar-nav"
+          style={{
+            borderColor: "#ffffff",
+            borderRadius: "6px",
+            backgroundColor: "#2ED3B7",
+          }}
+        >
+          <span
+            className="navbar-toggler-icon"
+            style={{ filter: "invert(1)", WebkitFilter: "invert(1)" }}
+          />
+        </Navbar.Toggle>
+
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav className="align-items-center gap-3">
+          <Nav className="align-items-center gap-3 mt-3 mt-lg-0">
             {[
-              { href: "https://blog.smswithoutborders.com", label: t("navbar.blog") || "Blog", external: true },
-              { href: "https://docs.smswithoutborders.com", label: t("navbar.documentation") || "Documentation", external: true },
-              // { href: "#offers", label: t("navbar.support") || "Support" },
-              { to: "/download", label: t("navbar.download") || "Download" },
+              { href: "https://blog.smswithoutborders.com", label: t("navbar.blog"), external: true },
+              { href: "https://docs.smswithoutborders.com", label: t("navbar.documentation"), external: true },
+              { href: "https://opencollective.com/dekusms", label: t("navbar.support"), external: true },
+              { to: "/download", label: t("navbar.download"), external: false },
             ].map((item, index) => (
               <Nav.Link
                 key={index}
@@ -79,56 +91,84 @@ const Navigation = () => {
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
                 style={{
-                  ...linkStyle,
-                  ...(hovered === index ? hoverStyle : {}),
+                  color: "#ffffff",
+                  textDecoration: "none",
+                  transition: "color 0.3s ease",
+                  ...(hovered === index ? { color: "#2ED3B7" } : {}),
                 }}
               >
                 {item.label}
               </Nav.Link>
             ))}
 
+            {/* GitHub Icon */}
             <Nav.Link
-              href="https://github.com"
+              href="https://github.com/dekusms/DekuSMS-Android"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setExpanded(false)}
               onMouseEnter={() => handleMouseEnter("github")}
               onMouseLeave={handleMouseLeave}
               style={{
-                ...linkStyle,
-                ...(hovered === "github" ? hoverStyle : {}),
+                color: "#ffffff",
+                textDecoration: "none",
+                transition: "color 0.3s ease",
+                ...(hovered === "github" ? { color: "#2ED3B7" } : {}),
               }}
             >
               <FontAwesomeIcon icon={faGithub} />
             </Nav.Link>
 
-            <NavDropdown
-              align="end"
-              title={
-                <>
-                <FontAwesomeIcon icon={faGlobe} style={{ color: 'white' }} className="me-2" />
-                  <span className="d-none d-md-inline" style={{ color: "white" }}>
-                    {t("navbar.language") || "Language"}
-                  </span>
-                </>
-              }
-              id="language-dropdown"
-              menuVariant="light"
-            >
-              {[
-                { code: "en", label: "English" },
-                { code: "fr", label: "Français" },
-                { code: "es", label: "Español" },
-                { code: "fa", label: "فارسی" },
-                { code: "de", label: "Deutsch" },
-                { code: "ar", label: "العربية" },
-              ].map((lang) => (
-                <NavDropdown.Item  key={lang.code} onClick={() => i18n.changeLanguage(lang.code)}>
-                  {lang.label}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
+            {/* Language Selector */}
+            <div className="position-relative" ref={langRef}>
+              <button
+                onClick={toggleLangMenu}
+                className="btn btn-sm px-3 py-2"
+                style={{
+                  background: "transparent",
+                  color: "white",
+                  border: "1px solid white",
+                  borderRadius: "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  fontWeight: 500,
+                }}
+              >
+                <FontAwesomeIcon icon={faGlobe} className="me-2" />
+                <span className="d-none d-md-inline">{t("navbar.language")}</span>
+              </button>
 
+              {showLangMenu && (
+                <div
+                  className="position-absolute bg-white shadow rounded p-2 mt-2"
+                  style={{
+                    right: 0,
+                    minWidth: "160px",
+                    zIndex: 1050,
+                  }}
+                >
+                  {languages.map((lang) => (
+                    <div
+                      key={lang.code}
+                      onClick={() => {
+                        i18n.changeLanguage(lang.code);
+                        setShowLangMenu(false);
+                      }}
+                      style={{
+                        padding: "8px 12px",
+                        cursor: "pointer",
+                        borderRadius: "4px",
+                        fontSize: "14px",
+                      }}
+                      onMouseOver={(e) => (e.currentTarget.style.background = "#f0f0f0")}
+                      onMouseOut={(e) => (e.currentTarget.style.background = "transparent")}
+                    >
+                      {lang.label}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

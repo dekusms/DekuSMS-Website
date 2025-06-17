@@ -1,95 +1,79 @@
 {
   "navbar": {
-    "home": "Startseite",
-    "enterprise": "Enterprise",
+    "home": "Start",
+    "enterprise": "Onderneming",
     "blog": "Blog",
-    "download": "Download",
-    "documentation": "Dokumentation",
-    "support": "Support",
-    "language": "Sprache"
+    "download": "Downloaden",
+    "documentation": "Documentatie",
+    "support": "Ondersteuning",
+    "language": "Taal"
   },
   "landing": {
-    "title": "Bleiben Sie verbunden,",
-    "title2": "Bleiben Sie privat und sicher",
-    "description": "Verschlüsselte SMS-Nachrichten, die die Kommunikationsfreiheit selbst bei Internetausfällen unterstützen.",
-    "getStarted": "Jetzt loslegen",
-    "learnMore": "Mehr erfahren"
-  },
-  "gratitude": {
-    "title": "Sicher, intelligent und unaufhaltsam",
-    "description": "DekuSMS ist nicht einfach eine SMS-App – es ist ein Game-Changer. Entwickelt für Datenschutz und Leistung, bietet es Ende-zu-Ende-Verschlüsselung, SMS-Weiterleitung in die Cloud und volle Kontrolle über Ihre Nachrichten. Verabschieden Sie sich von Einschränkungen – hallo zu sicherem, anpassbarem und intelligentem Messaging. Ihre Privatsphäre. Ihre Regeln. Ihre SMS, neu definiert. 🚀",
-    "description1": "Danke an unsere unglaubliche Community, Mitwirkenden und Partner für den Glauben an offene Kommunikation. Ihre Unterstützung macht DekuSMS möglich. 🚀"
-  },
-  "about": {
-    "title": "Wissenswertes über DekuSMS",
-    "appName": "DekuSMS",
-    "description1": "ist eine sichere, Ende-zu-Ende verschlüsselte Open-Source-SMS-App, die Ihre Kommunikation privat und zugänglich hält.",
-    "description2": "DekuSMS wurde für datenschutzbewusste Nutzer und Verfechter freier Kommunikation entwickelt. Egal ob Überwachung, Zensur oder Internetausfall – Sie können weiterhin sicher Nachrichten senden und empfangen.",
+    "title": "SMS maar veilig",
+    "title2": "DekuSMS is een SMS-app. Je kunt het gebruiken als standalone app of als Gateway-client om inkomende berichten naar je cloudserver te sturen! Je kunt het ook instellen als listener voor je RabbitMQ-server en je apparaat omzetten in een SMS-verzendmachine.",
+    "description": "Jij en anderen die Deku gebruiken? Zet E2EE-messaging aan en verstuur SMS-berichten met het Signal-protocol.",
+    "learnMore": "Lees meer",
     "features": {
-      "endToEnd": {
-        "title": "Ende-zu-Ende-verschlüsselte SMS",
-        "desc": "DekuSMS schützt Ihre SMS-Gespräche mit starker Ende-zu-Ende-Verschlüsselung vor Abhören und Manipulation."
-      },
-      "cloudForwarding": {
-        "title": "Nachrichtenweiterleitung (Gateway-Clients)",
-        "desc": "Agieren Sie als Gateway-Client und helfen Sie anderen, verbunden zu bleiben. Geräte mit Internetzugang können Nachrichten sicher für Offline-Nutzer weiterleiten – ideal bei Internetausfällen."
-      },
-      "smsGateway": {
-        "title": "Nachrichtenweiterleitung in die Cloud",
-        "desc": "Richten Sie einfach die Weiterleitung von Nachrichten von Ihrem Android-Gerät an Ihre Cloud-Infrastruktur über spezifische Server-URLs ein."
-      }
+      "feature1": " Stuur SMS door naar de cloud – zelfs offline",
+      "feature2": " Verstuur SMS via RabbitMQ met betrouwbare servercommunicatie",
+      "feature3": " End-to-end versleutelde SMS met forward secrecy",
+      "feature4": " Vertrouwd Google Messages-ontwerp, naadloos geïntegreerd"
     },
-    "learnMore": "Mehr erfahren"
+    "featuresTitle": "Waarom kiezen voor DekuSMS?",
+    "featuresIntro": "Een krachtige set functies gebouwd voor betrouwbaarheid, privacy en eenvoud.",
+    "feature": {
+      "feature1Title": "Privé & versleuteld berichten",
+      "feature1Desc": "Je kunt E2EE-verborgen SMS-berichten verzenden en ontvangen via Deku SMS. De berichten ondersteunen forward secrecy en maken gebruik van SMS-compatibele technologieën voor versleutelde payloads.",
+      "feature2Title": "Cloud-SMS doorsturen",
+      "feature2Desc": "Inkomende SMS-berichten kunnen naar je cloudserver worden doorgestuurd! De protocollen omvatten HTTP(s), SMTP en sFTP. Berichten kunnen in wachtrij worden geplaatst op het apparaat totdat er internetverbinding is, dankzij geavanceerde Android Studio-functies.",
+      "feature3Title": "Externe SMS- verzending via RabbitMQ",
+      "feature3Desc": "Je kunt SMS-berichten versturen vanaf je telefoon via communicaties met een RabbitMQ-server. Android-specifieke functies zorgen voor langdurige en efficiënte servercommunicatie.",
+      "feature4Title": "Vertrouwd & naadloos UX‑ontwerp",
+      "feature4Desc": "Gebruik je Google Messages en vind je de look & feel fijn? Deku SMS werkt met exact dat ontwerp voor een vertrouwde ervaring."
+    }
   },
   "download": {
-    "title": "DekuSMS herunterladen",
-    "subtitle": "Sicheres, privates und Open-Source-Messaging. Jetzt für Ihre Plattform herunterladen.",
+    "title": "Download DekuSMS",
+    "subtitle": "Veilige, privé en open-source berichten binnen handbereik. Pak DekuSMS vandaag nog op je favoriete platform.",
     "googlePlay": {
       "title": "Google Play",
-      "desc": "Im Play Store herunterladen"
+      "desc": "Download via Play Store"
     },
     "fdroid": {
-      "title": "F-Droid",
-      "desc": "Open-Source-Version erhalten"
+      "title": "F‑Droid",
+      "desc": "Haal de open‑source versie"
     },
     "github": {
       "title": "GitHub",
-      "desc": "Quellcode ansehen & mitwirken"
+      "desc": "Bekijk de broncode & draag bij"
     }
   },
   "footer": {
     "branding": {
       "logo": "DekuSMS",
-      "tagline": "Sicher. Privat. Nahtlos."
+      "tagline": "Veilig. Privé. Naadloos."
     },
     "navigation": {
-      "title": "Navigation",
-      "about": "Über uns",
-      "features": "Funktionen",
-      "download": "Download",
-      "contact": "Kontakt"
+      "title": "Navigatie",
+      "about": "Over",
+      "features": "Functies",
+      "download": "Downloaden",
+      "contact": "Contact"
     },
     "resources": {
-      "title": "Ressourcen",
-      "privacy": "Datenschutz",
-      "terms": "Nutzungsbedingungen",
-      "support": "Support",
+      "title": "Bronnen",
+      "privacy": "Privacybeleid",
+      "terms": "Servicevoorwaarden",
+      "support": "Ondersteuning",
       "faq": "FAQ"
     },
-    "stayConnected": {
-      "title": "In Verbindung bleiben",
-      "subscribeText": "Abonnieren Sie die neuesten Updates und Angebote.",
-      "emailPlaceholder": "Ihre E-Mail-Adresse",
-      "subscribeButton": "Abonnieren",
-      "Privacy": "Datenschutz"
-    },
-    "copyright": "© {{year}} DekuSMS. Alle Rechte vorbehalten."
+    "copyright": "© {{year}} Afkanerd."
   },
   "downloadpage": {
-    "title": "DekuSMS herunterladen",
-    "subtitle": "Laden Sie DekuSMS aus Ihrer bevorzugten Quelle herunter. Open Source, datenschutzfreundlich, einfach zu installieren.",
-    "playstore_desc": "Laden Sie DekuSMS direkt aus dem Google Play Store für einfache Installation und Updates.",
-    "fdroid_desc": "Bevorzugen Sie Open-Source-Plattformen? Installieren Sie DekuSMS über F-Droid, ein vertrauenswürdiges Repository für freie Software.",
-    "opensource": "Sehen Sie sich den Code auf GitHub an und laden Sie die neueste Version herunter."
+    "title": "Download DekuSMS",
+    "subtitle": "Krijg DekuSMS van je favoriete bron hieronder. Open‑source, privacygericht en eenvoudig te installeren.",
+    "playstore_desc": "Download DekuSMS direct van Google Play voor de makkelijkste installatie en updates.",
+    "fdroid_desc": "Lievelingsplatform open-source? Installeer DekuSMS vanaf F‑Droid, een vertrouwde repository voor vrije apps.",
+    "opensource": "Bekijk en download DekuSMS rechtstreeks vanaf GitHub. Toegang tot de nieuwste releases en broncode."
   }
 }

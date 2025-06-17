@@ -18,8 +18,8 @@
     text-align: left;
     direction: ltr;
   }
-  /* ------------------------------------------------------- */
-.text-secondary {
+
+  .text-secondary {
   color: #a9b4c2 !important;
 }
 
@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: center;
   background: radial-gradient(circle, #000824, #00034e);
-  box-shadow: 5px 5px 15px rgba(45, 76, 94, 0.97);
+  box-shadow: 0 8px 24px rgba(206, 209, 211, 0.5) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   min-height: 100vh;
@@ -230,9 +230,24 @@
   }
 }
 
+/* ============= feature ============================== */
+.feature-clean {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 576px) {
+  .img-responsive {
+    max-width: 220px !important;
+    transform: rotate(-5deg);
+  }
+}
+
 /* ============== download =====================_*/
 .download-section {
-  background: linear-gradient(to bottom, #f9fbfe, #ffffff);
+  background: linear-gradient(135deg, #dcecf3, #bcdef1, #dcecf3);
+  box-shadow: 0 8px 24px rgba(235, 238, 237, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -255,17 +270,14 @@
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
 }
-/* ============= feature ============================== */
-.feature-clean {
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-}
 
 /* ============================ footer ============================= */
 .footer {
-  background: #001871;
+  background: linear-gradient(135deg, #0f2027, #203a43, #0f2027);
+  color: white;
+  padding: 2rem 1rem;
 }
+
 
 .footer-logo {
   font-size: 2rem;
@@ -366,7 +378,4 @@ footer .list-unstyled a::before {
     padding-left: 24px;
   }
 }
-
-
-/* ----------------- DOWNLOAD =================== */
 

@@ -19,7 +19,6 @@ const Download = () => {
 
   return (
     <div style={styles.page}>
-      {/* Back Button - Top Right */}
       <Button
         onClick={() => navigate("/")}
         style={styles.backButton}
@@ -29,7 +28,6 @@ const Download = () => {
         {t("downloadpage.backToHome") || "Back to Home"}
       </Button>
 
-      {/* Header */}
       <div style={styles.header}>
         <h1 style={styles.title}>{t("downloadpage.title")}</h1>
         <p style={styles.subtitle}>{t("downloadpage.subtitle")}</p>
@@ -208,29 +206,6 @@ const styles = {
     paddingTop: "100px",
     overflowX: "hidden",
   },
-  // header: {
-  //   textAlign: "center",
-  //   marginBottom: "40px",
-  //   padding: "0 20px",
-  // },
-  // title: {
-  //   fontSize: "clamp(2.5rem, 6vw, 5rem)",
-  //   fontWeight: "800",
-  //   marginBottom: "20px",
-  // },
-  // subtitle: {
-  //   fontSize: "clamp(1rem, 2vw, 1.5rem)",
-  //   color: "#B0B0B0",
-  //   maxWidth: "600px",
-  //   margin: "0 auto",
-  //   marginBottom: "20px",
-  // },
-  // backButton: {
-  //   marginTop: "10px",
-  //   borderColor: "#00D1FF",
-  //   color: "#00D1FF",
-  //   fontWeight: "600",
-  // },
   container: {
     paddingBottom: "80px",
   },
