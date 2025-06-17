@@ -8,11 +8,16 @@ const Footer = () => {
   const { t } = useTranslation("dekusms");
 
   return (
-    <footer className="footer text-white py-5" style={{ backgroundColor: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)",
-      boxShadow: "5px 5px 15px rgba(37, 63, 78, 0.97)",}}>
+    <footer
+      className="footer text-white py-5"
+      style={{
+        background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)",
+        boxShadow: "5px 5px 15px rgba(37, 63, 78, 0.97)",
+      }}
+    >
       <div className="container">
         <div className="row">
-          <div className="col-md-4 mb-4">
+          <div className="col-12 col-md-3 mb-4">
             <h2 className="footer-logo text-light">{t("footer.branding.logo")}</h2>
             <p className="footer-tagline">{t("footer.branding.tagline")}</p>
             <div className="footer-socials d-flex gap-3 mt-3">
@@ -28,22 +33,63 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-md-4 mb-4">
+          <div className="col-12 col-md-3 mb-4">
             <h3 className="footer-title text-light">{t("footer.navigation.title")}</h3>
             <ul className="list-unstyled">
-              <li><a href="https://github.com/dekusms/DekuSMS-Android/blob/master/README.md#-end-to-end-encryption">{t("footer.navigation.about")}</a></li>
-              <li><a href="https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share">{t("footer.navigation.download")}</a></li>
+              <li>
+                <a
+                  href="https://github.com/dekusms/DekuSMS-Android/blob/master/README.md#-end-to-end-encryption"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("footer.navigation.about")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("footer.navigation.download")}
+                </a>
+              </li>
             </ul>
           </div>
 
-          <div className="col-md-4 mb-4">
+          <div className="col-12 col-md-3 mb-4">
             <h3 className="footer-title text-light">{t("footer.resources.title")}</h3>
             <ul className="list-unstyled">
-              <li><a href="mailto:developers@smswithoutborders.com">{t("footer.navigation.contact")}</a></li>
-              <li><a href="https://opencollective.com/dekusms">{t("footer.resources.support")}</a></li>
+              <li>
+                <a href="mailto:developers@smswithoutborders.com">
+                  {t("footer.navigation.contact")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://docs.smswithoutborders.com/docs/Troubleshooting/DekuSMS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("footer.donate.documentation")}
+                </a>
+              </li>
             </ul>
           </div>
 
+          <div className="col-12 col-md-3 mb-4">
+            <h3 className="footer-title text-light">{t("footer.donate.title") || "Support Our Mission"}</h3>
+            <p className="text-light small">{t("footer.donate.message") || "Help us keep DekuSMS free, secure, and open source for everyone."}</p>
+            <a
+              href="https://www.buymeacoffee.com/dekusms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-light"
+              style={{ fontWeight: "600", padding: "6px 18px", borderRadius: "25px" }}
+            >
+              {t("footer.donate.donate") || "Donate"}
+            </a>
+          </div>
         </div>
 
         <div className="footer-bottom text-center mt-4">

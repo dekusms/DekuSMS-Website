@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState}from 'react';
 import { Container, Row, Col, Image, ListGroup } from 'react-bootstrap';
 import { FaCheckCircle } from "react-icons/fa";
 import { Trans, useTranslation } from "react-i18next";
 import { FaDownload, FaHeart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import "../App.css";
 
 const HeroSection = () => {
   const { t } = useTranslation('dekusms');
+  const [hover, setHover] = useState(false);
 
 const features = [
   t('landing.features.feature1'),
@@ -47,17 +49,25 @@ const features = [
               {t('landing.description')}
             </p>
 
-{/* Buttons */}
 <div className="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 mt-3 mb-5">
-  <a
-    href="https://play.google.com/store/apps/details?id=com.dekusms"
-    target="_blank"
-    rel="noreferrer"
-    className="btn px-4 py-2"
-    style={{ minWidth: '140px', fontWeight: '600', background: '#2ED3B7', color:'white' }}
-  >
-    <FaDownload className="me-2" /> {t('landing.download')}
-  </a>
+<Link
+  to="/download"
+  onMouseEnter={() => setHover(true)}
+  onMouseLeave={() => setHover(false)}
+  className="btn d-flex align-items-center justify-content-center px-4 py-2"
+  style={{
+    minWidth: '140px',
+    fontWeight: 600,
+    background: hover ? '#20b7a0' : '#2ED3B7',
+    color: hover ? '#ffffff' : '#203a43',
+    transition: 'all 0.3s ease',
+    boxShadow: hover ? '0 4px 12px rgba(0, 0, 0, 0.15)' : 'none',
+    transform: hover ? 'translateY(-2px)' : 'none',
+  }}
+>
+  <FaDownload className="me-2" /> {t('landing.download')}
+</Link>
+
 
   <a
     href="https://opencollective.com/dekusms"
@@ -69,9 +79,6 @@ const features = [
     {t('landing.donate')}
   </a>
 </div>
-
-
-
             <p className="mb-2">
               {t('landing.join')}{" "}
               <a
@@ -135,7 +142,6 @@ const features = [
     </ListGroup.Item>
   ))}
 </ListGroup>
-
           </Col>
 
         </Row>

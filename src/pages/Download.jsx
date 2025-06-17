@@ -7,7 +7,7 @@ import {
   faGithub,
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe,faHome } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import i18n from "../i18n";
@@ -19,14 +19,13 @@ const Download = () => {
 
   return (
     <div style={styles.page}>
-      <Button
-        onClick={() => navigate("/")}
-        style={styles.backButton}
-        variant="outline-dark"
-      >
-        <FontAwesomeIcon icons={faArrowLeft} className="me-2" />
-        {t("downloadpage.backToHome") || "Back to Home"}
-      </Button>
+    <Button
+  onClick={() => navigate("/")}
+  style={styles.backButton}
+  variant="outline-light"
+>
+  <FontAwesomeIcon icon={faHome} className="me-2" />
+</Button>
 
       <div style={styles.header}>
         <h1 style={styles.title}>{t("downloadpage.title")}</h1>
@@ -177,8 +176,7 @@ const styles = {
       position: "absolute",
       top: "1rem",
       left: "1rem",
-      zIndex: 10,
-      backgroundColor: "white"
+      zIndex: 5
     },
     header: {
       textAlign: "center",

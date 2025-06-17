@@ -1,11 +1,9 @@
 # DekuSMS Website
 
-This repository contains the source code for the official DekuSMS website, built using React.
-
 ## 📌 About
 DekuSMS is an Android SMS application focused on secure messaging, SMS image transmission, and SMS-to-cloud communication. The website serves as the main platform for information, updates, and downloads related to DekuSMS.
 
-## 🚀 Features
+## 🚀 website Features
 - Responsive design
 - Multilingual support
 - Information on DekuSMS features

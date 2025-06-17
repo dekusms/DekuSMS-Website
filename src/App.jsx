@@ -3,13 +3,13 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useLocation,
-  Navigate,
+  Navigate
 } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Loading from './components/Loading';
 import './i18n';
 import Download from "./pages/Download";
+import "bootstrap/dist/css/bootstrap.rtl.min.css";
 
 const Home = lazy(() => import('./pages/Home'));
 const Enterprise = lazy(() => import('./pages/Enterprise'));
@@ -42,13 +42,6 @@ function isAuthenticated() {
 }
 
 function MainLayout() {
-  const location = useLocation();
-  const path = location.pathname;
-
-  const hideGlobalNavbar =
-    path.startsWith("/enterprise") ||
-    path === "/login" ||
-    path === "/signup";
 
   return (
     <div className="App">

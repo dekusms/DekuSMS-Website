@@ -31,12 +31,13 @@ const Navigation = () => {
   }, []);
 
   const languages = [
-    { code: "en", label: "English" },
-    { code: "fr", label: "Français" },
-    { code: "es", label: "Español" },
-    { code: "fa", label: "فارسی" },
-    { code: "de", label: "Deutsch" },
-    { code: "ar", label: "العربية" },
+    { code: "en", label: "English", flag: "🇬🇧" },
+    { code: "fr", label: "Français", flag: "🇫🇷" },
+    { code: "fa", label: "فارسی", flag: "🇮🇷" },
+    { code: "ar", label: "العربية", flag: "🇸🇦" },
+    { code: "es", label: "Español", flag: "🇪🇸" },
+    { code: "it", label: "Italiano", flag: "🇮🇹" },
+    { code: "nl", label: "Nederlands", flag: "🇳🇱" },
   ];
 
   return (
@@ -54,7 +55,10 @@ const Navigation = () => {
       }}
     >
       <Container>
-        <Navbar.Brand href="/" className="fw-bold fs-5 text-white d-flex align-items-center gap-2">
+        <Navbar.Brand
+          href="/"
+          className="fw-bold fs-5 text-white d-flex align-items-center gap-2"
+        >
           <img src="logo/DekuSMS-Dark Theme.png" alt="Logo" style={{ height: "22px" }} />
         </Navbar.Brand>
 
@@ -75,10 +79,22 @@ const Navigation = () => {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="align-items-center gap-3 mt-3 mt-lg-0">
             {[
-              { href: "https://blog.smswithoutborders.com", label: t("navbar.blog"), external: true },
-              { href: "https://docs.smswithoutborders.com", label: t("navbar.documentation"), external: true },
-              { href: "https://opencollective.com/dekusms", label: t("navbar.support"), external: true },
-              { to: "/download", label: t("navbar.download"), external: false },
+              {
+                href: "https://blog.smswithoutborders.com",
+                labels: t("navbar.blog"),
+                external: true,
+              },
+              {
+                href: "https://docs.smswithoutborders.com",
+                labels: t("navbar.documentation"),
+                external: true,
+              },
+              {
+                href: "https://opencollective.com/dekusms",
+                labels: t("navbar.support"),
+                external: true,
+              },
+              { to: "/download", labels: t("navbar.download"), external: false },
             ].map((item, index) => (
               <Nav.Link
                 key={index}
@@ -97,11 +113,10 @@ const Navigation = () => {
                   ...(hovered === index ? { color: "#2ED3B7" } : {}),
                 }}
               >
-                {item.label}
+                {item.labels}
               </Nav.Link>
             ))}
 
-            {/* GitHub Icon */}
             <Nav.Link
               href="https://github.com/dekusms/DekuSMS-Android"
               target="_blank"
@@ -135,6 +150,9 @@ const Navigation = () => {
                 }}
               >
                 <FontAwesomeIcon icon={faGlobe} className="me-2" />
+                <span style={{ fontSize: "18px", marginRight: "8px" }}>
+                  {languages.find((l) => l.code === i18n.language)?.flag}
+                </span>
                 <span className="d-none d-md-inline">{t("navbar.language")}</span>
               </button>
 
@@ -159,11 +177,15 @@ const Navigation = () => {
                         cursor: "pointer",
                         borderRadius: "4px",
                         fontSize: "14px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
                       }}
                       onMouseOver={(e) => (e.currentTarget.style.background = "#f0f0f0")}
                       onMouseOut={(e) => (e.currentTarget.style.background = "transparent")}
                     >
-                      {lang.label}
+                      <span style={{ fontSize: "18px" }}>{lang.flag}</span>
+                      <span>{lang.label}</span>
                     </div>
                   ))}
                 </div>

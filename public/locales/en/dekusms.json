@@ -14,9 +14,8 @@
     "description": "You and anyone else using Deku? Turn on E2EE messaging and send SMS messages using the Signal protocol.",
     "credits": "Credits for the logo:",
     "join": "Join our",
-    "community": "Join our <telegram>Telegram</telegram> or <reddit>Reddit</reddit> community.",
     "forUpdates": "community for release announcements or discussions.",
-     "download": "Download App",
+    "download": "Download App",
     "donate": "Donate",
 
      "features": {
@@ -75,6 +74,12 @@
       "support": "Support",
       "faq": "FAQ"
     },
+    "donate": {
+    "title": "Support Our Mission",
+    "message": "Help us keep DekuSMS free, secure, and open source for everyone.",
+    "donate": "Donate",
+    "documentation": "Documentation"
+  },
     "copyright": "© {{year}} Afkanerd."
   },
   "downloadpage": {
@@ -85,3 +90,4 @@
     "opensource": "View and download DekuSMS directly from GitHub. Access the latest releases and source code."
   }
 }
+

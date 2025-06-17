@@ -5,6 +5,7 @@ import "../index.css";
 
 const FeaturesSection = () => {
   const { t, i18n } = useTranslation('dekusms');
+  const isRTL = ['fa', 'ar'].includes(i18n.language);
 
   const feature = [
     {
@@ -17,7 +18,7 @@ const FeaturesSection = () => {
       title: t("landing.feature.feature4Title"),
       desc: t("landing.feature.feature4Desc"),
     },
-     {
+    {
       image: "e2ee.png",
       title: t("landing.feature.feature1Title"),
       desc: t("landing.feature.feature1Desc"),
@@ -30,7 +31,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="features-section" dir={i18n.language === "fa" ? "rtl" : "ltr"}>
+    <section className="features-section" dir={isRTL ? "rtl" : "ltr"}>
       <Container>
         <div className="text-center mb-5">
           <h2 className="fw-bold">{t("landing.featuresTitle")}</h2>
@@ -38,20 +39,21 @@ const FeaturesSection = () => {
         </div>
 
         <div className="timeline">
-          {feature.map((feature, index) => (
-            <div
-              key={index}
-              className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
-            >
-              <div className={`content-box feature-bg-${(index % 4) + 1}`}>
-                <div className="icon">
-                  <img src={feature.image} alt={feature.title} className="card-icon" />
+          {feature.map((feature, index) => {
+            const isEven = index % 2 === 0;
+            const alignmentClass = (isEven === !isRTL) ? "left" : "right";
+            return (
+              <div key={index} className={`timeline-item ${alignmentClass}`}>
+                <div className={`content-box feature-bg-${(index % 4) + 1}`}>
+                  <div className="icon">
+                    <img src={feature.image} alt={feature.title} className="card-icon" />
+                  </div>
+                  <h5 className="fw-bold">{feature.title}</h5>
+                  <p>{feature.desc}</p>
                 </div>
-                <h5 className="fw-bold">{feature.title}</h5>
-                <p>{feature.desc}</p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Container>
 
@@ -130,6 +132,14 @@ const FeaturesSection = () => {
           padding: 30px;
           position: relative;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+          text-align: start;
+        }
+
+        [dir="rtl"] .content-box {
+          text-align: right;
+        }
+
+        [dir="ltr"] .content-box {
           text-align: left;
         }
 
@@ -169,9 +179,42 @@ const FeaturesSection = () => {
           margin-bottom: 10px;
         }
 
+        [dir="rtl"] .timeline::before {
+          left: auto;
+          right: 50%;
+          transform: translateX(50%);
+        }
+
+        [dir="rtl"] .timeline-item.left {
+          left: auto;
+          right: 0;
+          justify-content: flex-end;
+        }
+
+        [dir="rtl"] .timeline-item.right {
+          left: auto;
+          right: 50%;
+          justify-content: flex-start;
+        }
+
+        [dir="rtl"] .timeline-item.left .content-box::after {
+          left: -46px;
+          right: auto;
+        }
+
+        [dir="rtl"] .timeline-item.right .content-box::after {
+          right: -46px;
+          left: auto;
+        }
+
         @media (max-width: 768px) {
           .timeline::before {
             left: 8px;
+          }
+
+          [dir="rtl"] .timeline::before {
+            left: auto;
+            right: 8px;
           }
 
           .timeline-item,
@@ -179,20 +222,28 @@ const FeaturesSection = () => {
           .timeline-item.right {
             left: 0;
             width: 100%;
-            text-align: left;
+            text-align: start;
             padding-left: 40px;
             margin-bottom: 40px;
             display: block;
           }
 
-          .content-box {
-            margin-left: 20px;
-            padding: 24px;
+          [dir="rtl"] .timeline-item,
+          [dir="rtl"] .timeline-item.left,
+          [dir="rtl"] .timeline-item.right {
+            padding-left: 0;
+            padding-right: 40px;
+            text-align: right;
           }
 
           .timeline-item .content-box::after {
             left: -32px;
             right: auto;
+          }
+
+          [dir="rtl"] .timeline-item .content-box::after {
+            right: -32px;
+            left: auto;
           }
         }
       `}</style>
