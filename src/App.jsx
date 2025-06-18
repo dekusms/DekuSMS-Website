@@ -2,8 +2,7 @@ import React, { Suspense, lazy, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
-  Navigate
+  Routes
 } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Loading from './components/Loading';
