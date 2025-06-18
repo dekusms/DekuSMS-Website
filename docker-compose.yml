@@ -1,6 +1,6 @@
 services:
-  shortmesh-website:
-    container_name: shortmesh-website
+  dekusms-website:
+    container_name: dekusms-website
     build:
       context: .
       dockerfile: Dockerfile
