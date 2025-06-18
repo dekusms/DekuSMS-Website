@@ -9,7 +9,6 @@ const Loading = () => {
           100% { transform: rotate(360deg); }
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
           .loader-title {
             font-size: 5rem !important;

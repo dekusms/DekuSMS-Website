@@ -358,8 +358,8 @@ const Navigation = () => {
   position: fixed;
   top: 0;
   right: 0;
-  height: 50vh;
-  width: 280px;
+  height: 60vh;
+  width: 200px;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   background: rgba(15, 32, 39, 0.95);
@@ -371,7 +371,6 @@ const Navigation = () => {
   box-shadow: -2px 0 10px rgba(46, 211, 183, 0.3);
   z-index: 1200;
 }
-
             .navbar-menu.is-active {
               transform: translateX(0);
             }
@@ -384,7 +383,6 @@ const Navigation = () => {
             }
           }
 
-          /* Overlay to close menu on mobile */
           .navbar-overlay {
             position: fixed;
             top: 0;
