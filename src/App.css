@@ -245,9 +245,54 @@
 }
 
 /* ============== download =====================_*/
-.download-section {
-  background: linear-gradient(135deg, #dcecf3, #bcdef1, #dcecf3);
-  box-shadow: 0 8px 24px rgba(235, 238, 237, 0.5);
+
+
+.download-card {
+  text-decoration: none;
+  color: #111;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  height: 100%;
+}
+
+.download-card:hover,
+.download-card:focus-visible {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.download-card h5 {
+  position: relative;
+  padding-right: 20px;
+}
+
+.download-card h5::after {
+  content: "→";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00d1ff;
+  font-weight: bold;
+}
+
+.download-card img {
+  border-radius: 12px;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+ .download-section {
+  background: linear-gradient(135deg, #dcecf3, #cdfcf0, #dcecf3);
+  box-shadow: 0 8px 24px rgba(156, 245, 215, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +314,7 @@
 .download-card:hover {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-}
+} 
 
 /* ============================ footer ============================= */
 .footer {
@@ -379,5 +424,36 @@ footer .list-unstyled a::before {
   }
 }
 
+/* download footer */
 
+.footer-links a {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  padding-left: 24px; 
+}
 
+.footer-links a::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #2ED3B7;
+  opacity: 0.7;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: #2ED3B7;
+  transform: translateX(4px);
+}
+
+.footer-links a:hover::before,
+.footer-links a:focus::before {
+  color: #00FFC4;
+}

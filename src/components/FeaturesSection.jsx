@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import "../index.css";
 
 const FeaturesSection = () => {
-  const { t, i18n } = useTranslation('dekusms');
-  const isRTL = ['fa', 'ar'].includes(i18n.language);
+  const { t, i18n } = useTranslation("dekusms");
+  const isRTL = ["fa", "ar"].includes(i18n.language);
 
   const feature = [
     {
@@ -15,8 +15,8 @@ const FeaturesSection = () => {
     },
     {
       image: "Cloud-forwarding.png",
-      title: t("landing.feature.feature4Title"),
-      desc: t("landing.feature.feature4Desc"),
+       title: t("landing.feature.feature2Title"),
+      desc: t("landing.feature.feature2Desc")
     },
     {
       image: "e2ee.png",
@@ -25,10 +25,11 @@ const FeaturesSection = () => {
     },
     {
       image: "UX.png",
-      title: t("landing.feature.feature2Title"),
-      desc: t("landing.feature.feature2Desc"),
+      title: t("landing.feature.feature4Title"),
+      desc: t("landing.feature.feature4Desc")
     },
   ];
+
 
   return (
     <section className="features-section" dir={isRTL ? "rtl" : "ltr"}>
@@ -41,12 +42,16 @@ const FeaturesSection = () => {
         <div className="timeline">
           {feature.map((feature, index) => {
             const isEven = index % 2 === 0;
-            const alignmentClass = (isEven === !isRTL) ? "left" : "right";
+            const alignmentClass = isEven === !isRTL ? "left" : "right";
             return (
               <div key={index} className={`timeline-item ${alignmentClass}`}>
                 <div className={`content-box feature-bg-${(index % 4) + 1}`}>
                   <div className="icon">
-                    <img src={feature.image} alt={feature.title} className="card-icon" />
+                    <img
+                      src={feature.image}
+                      alt={`Feature icon: ${feature.title}`}
+                      className="card-icon"
+                    />
                   </div>
                   <h5 className="fw-bold">{feature.title}</h5>
                   <p>{feature.desc}</p>
@@ -63,9 +68,8 @@ const FeaturesSection = () => {
           box-shadow: 0 8px 24px rgba(26, 39, 49, 0.5);
           color: white;
           padding: 50px 0;
-          position: relative;
+          overflow-x: hidden;
         }
-
         .card-icon {
           width: 60px;
           height: 60px;
@@ -75,7 +79,6 @@ const FeaturesSection = () => {
         .feature-bg-1 {
           background-color: #26272b;
         }
-
         .feature-bg-2 {
           background-color: rgb(63, 68, 71);
         }
@@ -209,41 +212,34 @@ const FeaturesSection = () => {
 
         @media (max-width: 768px) {
           .timeline::before {
-            left: 8px;
-          }
-
-          [dir="rtl"] .timeline::before {
-            left: auto;
-            right: 8px;
+            display: none;
           }
 
           .timeline-item,
           .timeline-item.left,
           .timeline-item.right {
-            left: 0;
-            width: 100%;
-            text-align: start;
-            padding-left: 40px;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
             margin-bottom: 40px;
             display: block;
+            justify-content: center !important;
+            padding: 0;
           }
 
-          [dir="rtl"] .timeline-item,
-          [dir="rtl"] .timeline-item.left,
-          [dir="rtl"] .timeline-item.right {
-            padding-left: 0;
-            padding-right: 40px;
+          .timeline-item .content-box {
+            margin: 0 auto;
+            max-width: 90%;
+            padding: 20px;
+            text-align: start;
+          }
+
+          [dir="rtl"] .timeline-item .content-box {
             text-align: right;
           }
 
           .timeline-item .content-box::after {
-            left: -32px;
-            right: auto;
-          }
-
-          [dir="rtl"] .timeline-item .content-box::after {
-            right: -32px;
-            left: auto;
+            display: none;
           }
         }
       `}</style>

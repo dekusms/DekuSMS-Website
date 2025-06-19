@@ -5,7 +5,7 @@
     "blog": "Blog",
     "download": "Download",
     "documentation": "Documentation",
-    "support": "Support",
+    "support": "Donate",
     "language": "English"
   },
   "landing": {
@@ -91,4 +91,5 @@
     "opensource": "View and download DekuSMS directly from GitHub. Access the latest releases and source code."
   }
 }
+
 
