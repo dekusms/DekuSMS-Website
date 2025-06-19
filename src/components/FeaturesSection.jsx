@@ -69,7 +69,6 @@ const FeaturesSection = () => {
           padding: 50px 0;
           overflow-x: hidden;
         }
-
         .card-icon {
           width: 60px;
           height: 60px;
@@ -79,7 +78,6 @@ const FeaturesSection = () => {
         .feature-bg-1 {
           background-color: #26272b;
         }
-
         .feature-bg-2 {
           background-color: rgb(63, 68, 71);
         }
