@@ -116,7 +116,7 @@ const Download = () => {
         style={{
           border: "none",
           height: "1px",
-          background: "#00D1FF",
+          background: "#2ED3B7",
           width: "95%",
         }}
       />
@@ -257,7 +257,7 @@ const styles = {
   },
   cardHover: {
     transform: "scale(1.05)",
-    boxShadow: "0 10px 20px rgba(0, 209, 255, 0.4)",
+    boxShadow: "0 10px 20px rgba(88, 223, 194, 0.4)",
   },
   cardTitle: {
     fontSize: "1.5rem",
@@ -270,7 +270,7 @@ const styles = {
     marginBottom: "20px",
   },
   downloadButton: {
-    backgroundColor: "#00D1FF",
+    backgroundColor: "#2ED3B7",
     border: "none",
     padding: "10px 25px",
     fontWeight: "600",
