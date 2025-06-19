@@ -227,7 +227,7 @@ const styles = {
     color: "#ccc",
   },
   icon: {
-    color: "#00D1FF",
+    color: "#2ED3B7",
     marginBottom: "10px",
   },
   page: {
