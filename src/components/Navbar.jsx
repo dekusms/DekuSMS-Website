@@ -358,7 +358,7 @@ const Navigation = () => {
   position: fixed;
   top: 0;
   right: 0;
-  height: 60vh;
+  height: 70vh;
   width: 200px;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
