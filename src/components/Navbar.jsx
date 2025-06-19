@@ -130,7 +130,7 @@ const Navigation = () => {
                 >
                   <FontAwesomeIcon icon={faGlobe} />
                   <span className="lang-flag">
-                    {languages.find((l) => l.code === i18n.language)?.flag || "🌐"}
+                    {languages.find((l) => l.code === i18n.language)?.flag}
                   </span>
                   <span className="lang-label">{t("navbar.language")}</span>
                 </button>
