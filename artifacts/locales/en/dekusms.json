@@ -1,0 +1,95 @@
+{
+  "navbar": {
+    "home": "Home",
+    "enterprise": "Enterprise",
+    "blog": "Blog",
+    "download": "Download",
+    "documentation": "Documentation",
+    "support": "Donate",
+    "language": "English"
+  },
+  "landing": {
+    "title": "SMS but Secure",
+    "title2": "DekuSMS is an SMS app. You can use it as a standalone app or as a Gateway client to send your incoming messages to your cloud server! You can also configure it as a listener to your RabbitMQ server and transform your device into an SMS sending machine.",
+    "description": "You and anyone else using Deku? Turn on E2EE messaging and send SMS messages using the Signal protocol.",
+    "credits": "Credits for the logo:",
+    "join": "Join our",
+    "forUpdates": "community for release announcements or discussions.",
+    "download": "Download App",
+    "donate": "Donate",
+
+     "features": {
+      "featuresTitle": "Features",
+      "feature1": " Forward SMS to the Cloud – Even When Offline",
+      "feature2": " Send SMS via RabbitMQ with Reliable Server Communication",
+      "feature3": " End-to-End Encrypted SMS with Forward Secrecy",
+      "feature4": " Familiar Google Messages Design, Seamlessly Integrated"
+    },
+
+ "featuresTitle": "Why Choose DekuSMS?",
+    "featuresIntro": "A powerful set of features built for reliability, privacy, and simplicity.",
+      "feature": {
+      "feature1Title": "Private & Encrypted Messaging",
+      "feature1Desc": "You can send and receive E2EE encrypted SMS messages with fellow peers using Deku SMS. The messages have support for forward secrecy and SMS accessible technologies are used in making the encrypted payloads suitable for SMS messaging",
+      "feature2Title": "Cloud SMS Forwarding",
+      "feature2Desc": "Incoming SMS messages can be forwarded to your cloud server! The protocols used to forward messages to the cloud include; HTTP(s), SMTP and sFTP. Messages can be queued on the device till an internet connection is detected, thanks to Android studio advance work features.",
+      "feature3Title": "Remote SMS Sending via RabbitMQ",
+      "feature3Desc": "You can send SMS messages from your phone by allowing your phone to communicate with a RabbitMQ server. Android specific features have been integrated to allow the communication with the server longlasting and efficient.",
+      "feature4Title": "Familiar & Seamless UX Design",
+      "feature4Desc": "Used Google Messages and enjoyed the look and feel? Deku SMS works with the same design, bringing in the seamless nature of the SMS app you are already used to."
+    }
+  },
+
+  "download": {
+    "title": "Download DekuSMS",
+    "subtitle": "Secure, private, and open-source messaging at your fingertips. Get DekuSMS today on your favorite platform.",
+    "googlePlay": {
+      "title": "Google Play",
+      "desc": "Download from Play Store"
+    },
+    "fdroid": {
+      "title": "F-Droid",
+      "desc": "Get the open-source version"
+    },
+    "github": {
+      "title": "GitHub",
+      "desc": "View source & contribute"
+    }
+  },
+  "footer": {
+    "branding": {
+      "logo": "DekuSMS",
+      "tagline": "Secure. Private. Seamless."
+    },
+    "navigation": {
+      "title": "Navigation",
+      "about": "About",
+      "features": "Features",
+      "download": "Download",
+      "contact": "Contact"
+    },
+    "resources": {
+      "title": "Resources",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "support": "Support",
+      "faq": "FAQ"
+    },
+    "donate": {
+    "title": "Support Our Mission",
+    "message": "Help us keep DekuSMS free, secure, and open source for everyone.",
+    "donate": "Donate",
+    "documentation": "Documentation"
+  },
+    "copyright": "© {{year}} Afkanerd."
+  },
+  "downloadpage": {
+    "title": "Download DekuSMS",
+    "subtitle": "Get DekuSMS from your favorite source below. Open-source, privacy-respecting, and easy to install.",
+    "playstore_desc": "Download DekuSMS directly from the Google Play Store for the easiest installation and updates.",
+    "fdroid_desc": "Prefer open-source platforms? Install DekuSMS from F-Droid, a trusted repository of free and open-source apps.",
+    "opensource": "View and download DekuSMS directly from GitHub. Access the latest releases and source code."
+  }
+}
+
+

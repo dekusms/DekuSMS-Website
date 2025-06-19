@@ -1,0 +1,95 @@
+{
+  "navbar": {
+    "home": "Home",
+    "enterprise": "Enterprise",
+    "blog": "Blog",
+    "download": "Download",
+    "documentation": "Documentatie",
+    "support":  "Doneer",
+    "language": "Nederlands"
+  },
+  "landing": {
+    "title": "SMS maar Veilig",
+    "title2": "DekuSMS is een SMS-app. Je kunt het gebruiken als een zelfstandige app of als een gateway-client om je inkomende berichten naar je cloudserver te sturen! Je kunt het ook configureren als een listener voor je RabbitMQ-server en je apparaat veranderen in een SMS-verzendmachine.",
+    "description": "Gebruik jij of iemand anders Deku? Schakel E2EE-berichten in en verzend SMS-berichten via het Signal-protocol.",
+    "credits": "Credits voor het logo:",
+    "join": "Word lid van onze",
+    "forUpdates": "community voor aankondigingen of discussies.",
+    "download": "Download App",
+    "donate": "Doneer",
+
+    "features": {
+      "featuresTitle": "Functies",
+      "feature1": " SMS doorsturen naar de Cloud – Zelfs Offline",
+      "feature2": " Verstuur SMS via RabbitMQ met Betrouwbare Servercommunicatie",
+      "feature3": " End-to-End Versleutelde SMS met Forward Secrecy",
+      "feature4": " Vertrouwd Google Berichten Ontwerp, Naadloos Geïntegreerd"
+    },
+
+    "featuresTitle": "Waarom kiezen voor DekuSMS?",
+    "featuresIntro": "Een krachtig pakket aan functies, ontworpen voor betrouwbaarheid, privacy en eenvoud.",
+    "feature": {
+      "feature1Title": "Privé & Versleutelde Berichten",
+      "feature1Desc": "Je kunt versleutelde E2EE SMS-berichten verzenden en ontvangen met andere gebruikers via Deku SMS. Berichten ondersteunen forward secrecy en gebruiken SMS-compatibele technologieën om versleutelde inhoud geschikt te maken voor SMS-verzending.",
+      "feature2Title": "Cloud SMS Doorsturen",
+      "feature2Desc": "Binnenkomende SMS-berichten kunnen worden doorgestuurd naar je cloudserver! Ondersteunde protocollen zijn onder meer HTTP(s), SMTP en sFTP. Berichten worden lokaal opgeslagen totdat er een internetverbinding beschikbaar is, dankzij geavanceerde Android Studio-functies.",
+      "feature3Title": "SMS Verzenden via RabbitMQ",
+      "feature3Desc": "Je kunt SMS-berichten verzenden via je telefoon door deze te verbinden met een RabbitMQ-server. Android-specifieke functies zijn geïntegreerd om de communicatie langdurig en efficiënt te maken.",
+      "feature4Title": "Vertrouwde & Naadloze Gebruikerservaring",
+      "feature4Desc": "Heb je Google Berichten gebruikt en vond je het prettig? Deku SMS gebruikt hetzelfde ontwerp voor een vertrouwde en soepele ervaring."
+    }
+  },
+
+  "download": {
+    "title": "Download DekuSMS",
+    "subtitle": "Veilig, privé en open-source berichtenverkeer binnen handbereik. Download vandaag nog DekuSMS op je favoriete platform.",
+    "googlePlay": {
+      "title": "Google Play",
+      "desc": "Download van Play Store"
+    },
+    "fdroid": {
+      "title": "F-Droid",
+      "desc": "Download de open-source versie"
+    },
+    "github": {
+      "title": "GitHub",
+      "desc": "Bekijk de broncode & draag bij"
+    }
+  },
+
+  "footer": {
+    "branding": {
+      "logo": "DekuSMS",
+      "tagline": "Veilig. Privé. Naadloos."
+    },
+    "navigation": {
+      "title": "Navigatie",
+      "about": "Over",
+      "features": "Functies",
+      "download": "Download",
+      "contact": "Contact"
+    },
+    "resources": {
+      "title": "Bronnen",
+      "privacy": "Privacybeleid",
+      "terms": "Servicevoorwaarden",
+      "support": "Ondersteuning",
+      "faq": "FAQ"
+    },
+    "donate": {
+      "title": "Steun Onze Missie",
+      "message": "Help ons DekuSMS gratis, veilig en open-source te houden voor iedereen.",
+      "donate": "Doneer",
+      "documentation": "Documentatie"
+    },
+    "copyright": "© {{year}} Afkanerd."
+  },
+
+  "downloadpage": {
+    "title": "Download DekuSMS",
+    "subtitle": "Download DekuSMS van je favoriete bron hieronder. Open-source, privacygericht en eenvoudig te installeren.",
+    "playstore_desc": "Download DekuSMS direct uit de Google Play Store voor de eenvoudigste installatie en updates.",
+    "fdroid_desc": "Liever open-source platforms? Installeer DekuSMS via F-Droid, een vertrouwde bron voor gratis en open-source apps.",
+    "opensource": "Bekijk en download DekuSMS rechtstreeks vanaf GitHub. Toegang tot de nieuwste releases en broncode."
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "enterprise": "Entreprise",
+    "blog": "Blog",
+    "download": "Télécharger",
+    "documentation": "Documentation",
+    "support":  "Faire un don",
+    "language": "Français"
+  },
+  "landing": {
+    "title": "SMS mais Sécurisés",
+    "title2": "DekuSMS est une application SMS. Vous pouvez l'utiliser comme application autonome ou en tant que client passerelle pour envoyer vos messages entrants vers votre serveur cloud ! Vous pouvez également la configurer comme auditeur sur votre serveur RabbitMQ et transformer votre appareil en machine d’envoi SMS.",
+    "description": "Vous et toute autre personne utilisant Deku ? Activez la messagerie E2EE et envoyez des SMS en utilisant le protocole Signal.",
+    "credits": "Crédits pour le logo :",
+    "join": "Rejoignez notre",
+    "forUpdates": "communauté pour les annonces de version ou des discussions.",
+    "download": "Télécharger l'application",
+    "donate": "Faire un don",
+
+    "features": {
+      "featuresTitle": "Fonctionnalités",
+      "feature1": " Transférer les SMS vers le cloud – Même hors ligne",
+      "feature2": " Envoyer des SMS via RabbitMQ avec une communication serveur fiable",
+      "feature3": " SMS chiffrés de bout en bout avec secret d’expédition",
+      "feature4": " Design familier de Google Messages, parfaitement intégré"
+    },
+
+    "featuresTitle": "Pourquoi choisir DekuSMS ?",
+    "featuresIntro": "Un ensemble puissant de fonctionnalités conçu pour la fiabilité, la confidentialité et la simplicité.",
+    "feature": {
+      "feature1Title": "Messagerie privée & chiffrée",
+      "feature1Desc": "Vous pouvez envoyer et recevoir des SMS E2EE chiffrés avec vos contacts via Deku SMS. Les messages supportent le secret d’expédition et des technologies compatibles SMS sont employées pour rendre les données chiffrées adaptées à l'envoi par SMS.",
+      "feature2Title": "Transfert SMS vers le cloud",
+      "feature2Desc": "Les SMS entrants peuvent être transférés vers votre serveur cloud ! Les protocoles utilisés incluent HTTP(s), SMTP et sFTP. Les messages peuvent être mis en file d’attente sur l’appareil tant qu’aucune connexion internet n’est détectée, grâce aux fonctionnalités avancées d’Android Studio.",
+      "feature3Title": "Envoi de SMS à distance via RabbitMQ",
+      "feature3Desc": "Vous pouvez envoyer des SMS depuis votre téléphone en autorisant sa communication avec un serveur RabbitMQ. Des fonctionnalités spécifiques Android ont été intégrées pour assurer une communication durable et efficace avec le serveur.",
+      "feature4Title": "Design UX familier & fluide",
+      "feature4Desc": "Vous aimez l’interface de Google Messages ? Deku SMS utilise le même design, offrant l’expérience familière de votre application SMS habituelle."
+    }
+  },
+
+  "download": {
+    "title": "Téléchargez DekuSMS",
+    "subtitle": "Messagerie sécurisée, privée et open‑source à portée de main. Obtenez DekuSMS dès aujourd’hui sur votre plateforme préférée.",
+    "googlePlay": {
+      "title": "Google Play",
+      "desc": "Télécharger depuis le Play Store"
+    },
+    "fdroid": {
+      "title": "F‑Droid",
+      "desc": "Obtenez la version open‑source"
+    },
+    "github": {
+      "title": "GitHub",
+      "desc": "Voir le code source & contribuer"
+    }
+  },
+
+  "footer": {
+    "branding": {
+      "logo": "DekuSMS",
+      "tagline": "Sécurisé. Privé. Fluide."
+    },
+    "navigation": {
+      "title": "Navigation",
+      "about": "À propos",
+      "features": "Fonctionnalités",
+      "download": "Téléchargement",
+      "contact": "Contact"
+    },
+    "resources": {
+      "title": "Ressources",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d’utilisation",
+      "support": "Assistance",
+      "faq": "FAQ"
+    },
+    "donate": {
+      "title": "Soutenez notre mission",
+      "message": "Aidez-nous à maintenir DekuSMS gratuit, sécurisé et open‑source pour tous.",
+      "donate": "Faire un don",
+      "documentation": "Documentation"
+    },
+    "copyright": "© {{year}} Afkanerd."
+  },
+
+  "downloadpage": {
+    "title": "Télécharger DekuSMS",
+    "subtitle": "Obtenez DekuSMS depuis votre source préférée ci‑dessous. Open‑source, respectueux de la vie privée et facile à installer.",
+    "playstore_desc": "Téléchargez DekuSMS directement depuis le Google Play Store pour l’installation la plus simple et les mises à jour.",
+    "fdroid_desc": "Vous préférez les plateformes open‑source ? Installez DekuSMS depuis F‑Droid, un dépôt fiable d’applications libres.",
+    "opensource": "Consultez et téléchargez DekuSMS directement sur GitHub. Accédez aux dernières versions et au code source."
+  }
+}
