@@ -14,9 +14,9 @@ const FeaturesSection = () => {
       desc: t("landing.feature.feature3Desc"),
     },
     {
-      image: "CloudForwarding.png",
-      title: t("landing.feature.feature4Title"),
-      desc: t("landing.feature.feature4Desc"),
+      image: "Cloud-forwarding.png",
+       title: t("landing.feature.feature2Title"),
+      desc: t("landing.feature.feature2Desc")
     },
     {
       image: "e2ee.png",
@@ -25,10 +25,11 @@ const FeaturesSection = () => {
     },
     {
       image: "UX.png",
-      title: t("landing.feature.feature2Title"),
-      desc: t("landing.feature.feature2Desc"),
+      title: t("landing.feature.feature4Title"),
+      desc: t("landing.feature.feature4Desc")
     },
   ];
+
 
   return (
     <section className="features-section" dir={isRTL ? "rtl" : "ltr"}>
