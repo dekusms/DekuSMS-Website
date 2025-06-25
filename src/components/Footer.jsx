@@ -17,9 +17,14 @@ const Footer = () => {
     >
       <div className="container">
         <div className="row">
+          {/* Branding */}
           <div className="col-12 col-md-3 mb-4">
-            <h2 className="footer-logo text-light">{t("footer.branding.logo")}</h2>
-            <p className="footer-tagline">{t("footer.branding.tagline")}</p>
+            <h2 className="footer-logo text-light">
+              {t("footer.branding.logo", { defaultValue: "DekuSMS" })}
+            </h2>
+            <p className="footer-tagline">
+              {t("footer.branding.tagline", { defaultValue: "Secure. Private. Seamless." })}
+            </p>
             <div className="footer-socials d-flex gap-3 mt-3">
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-light">
                 <FontAwesomeIcon icon={faTwitter} className="social-icon" />
@@ -33,8 +38,11 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Navigation */}
           <div className="col-12 col-md-3 mb-4">
-            <h3 className="footer-title text-light">{t("footer.navigation.title")}</h3>
+            <h3 className="footer-title text-light">
+              {t("footer.navigation.title", { defaultValue: "Navigation" })}
+            </h3>
             <ul className="list-unstyled">
               <li>
                 <a
@@ -42,7 +50,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t("footer.navigation.about")}
+                  {t("footer.navigation.about", { defaultValue: "About" })}
                 </a>
               </li>
               <li>
@@ -51,18 +59,21 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t("footer.navigation.download")}
+                  {t("footer.navigation.download", { defaultValue: "Download" })}
                 </a>
               </li>
             </ul>
           </div>
 
+          {/* Resources */}
           <div className="col-12 col-md-3 mb-4">
-            <h3 className="footer-title text-light">{t("footer.resources.title")}</h3>
+            <h3 className="footer-title text-light">
+              {t("footer.resources.title", { defaultValue: "Resources" })}
+            </h3>
             <ul className="list-unstyled">
               <li>
                 <a href="mailto:developers@smswithoutborders.com">
-                  {t("footer.navigation.contact")}
+                  {t("footer.navigation.contact", { defaultValue: "Contact" })}
                 </a>
               </li>
               <li>
@@ -71,15 +82,22 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t("footer.donate.documentation")}
+                  {t("footer.donate.documentation", { defaultValue: "Documentation" })}
                 </a>
               </li>
             </ul>
           </div>
 
+          {/* Donate Section */}
           <div className="col-12 col-md-3 mb-4">
-            <h3 className="footer-title text-light">{t("footer.donate.title") || "Support Our Mission"}</h3>
-            <p className="text-light small">{t("footer.donate.message") || "Help us keep DekuSMS free, secure, and open source for everyone."}</p>
+            <h3 className="footer-title text-light">
+              {t("footer.donate.title", { defaultValue: "Support Our Mission" })}
+            </h3>
+            <p className="text-light small">
+              {t("footer.donate.message", {
+                defaultValue: "Help us keep DekuSMS free, secure, and open source for everyone."
+              })}
+            </p>
             <a
               href="https://www.buymeacoffee.com/dekusms"
               target="_blank"
@@ -87,13 +105,19 @@ const Footer = () => {
               className="btn btn-outline-light"
               style={{ fontWeight: "600", padding: "6px 18px", borderRadius: "25px" }}
             >
-              {t("footer.donate.donate") || "Donate"}
+              {t("footer.donate.donate", { defaultValue: "Donate" })}
             </a>
           </div>
         </div>
 
+        {/* Footer Bottom */}
         <div className="footer-bottom text-center mt-4">
-          <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
+          <p>
+            {t("footer.copyright", {
+              year: new Date().getFullYear(),
+              defaultValue: "© {{year}} Afkanerd."
+            })}
+          </p>
         </div>
       </div>
     </footer>
@@ -101,3 +125,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

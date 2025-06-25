@@ -7,36 +7,53 @@ const FeaturesSection = () => {
   const { t, i18n } = useTranslation("dekusms");
   const isRTL = ["fa", "ar"].includes(i18n.language);
 
+
   const feature = [
-    {
-      image: "CloudForwarding.png",
-      title: t("landing.feature.feature3Title"),
-      desc: t("landing.feature.feature3Desc"),
-    },
-    {
-      image: "Cloud-forwarding.png",
-       title: t("landing.feature.feature2Title"),
-      desc: t("landing.feature.feature2Desc")
-    },
-    {
-      image: "e2ee.png",
-      title: t("landing.feature.feature1Title"),
-      desc: t("landing.feature.feature1Desc"),
-    },
-    {
-      image: "UX.png",
-      title: t("landing.feature.feature4Title"),
-      desc: t("landing.feature.feature4Desc")
-    },
-  ];
+  {
+    image: "CloudForwarding.png",
+    title: t("landing.feature.feature3Title", {
+      defaultValue: "Remote SMS Sending via RabbitMQ"
+    }),
+    desc: t("landing.feature.feature3Desc", {
+      defaultValue: "You can send SMS messages from your phone by allowing your phone to communicate with a RabbitMQ server. Android specific features have been integrated to allow the communication with the server longlasting and efficient."
+    })
+  },
+  {
+    image: "Cloud-forwarding.png",
+    title: t("landing.feature.feature2Title", {
+      defaultValue: "Cloud SMS Forwarding"
+    }),
+    desc: t("landing.feature.feature2Desc", {
+      defaultValue: "Incoming SMS messages can be forwarded to your cloud server! The protocols used to forward messages to the cloud include; HTTP(s), SMTP and sFTP. Messages can be queued on the device till an internet connection is detected, thanks to Android studio advance work features."
+    })
+  },
+  {
+    image: "e2ee.png",
+    title: t("landing.feature.feature1Title", {
+      defaultValue: "Private & Encrypted Messaging"
+    }),
+    desc: t("landing.feature.feature1Desc", {
+      defaultValue: "You can send and receive E2EE encrypted SMS messages with fellow peers using Deku SMS. The messages have support for forward secrecy and SMS accessible technologies are used in making the encrypted payloads suitable for SMS messaging."
+    })
+  },
+  {
+    image: "UX.png",
+    title: t("landing.feature.feature4Title", {
+      defaultValue: "Familiar & Seamless UX Design"
+    }),
+    desc: t("landing.feature.feature4Desc", {
+      defaultValue: "Used Google Messages and enjoyed the look and feel? Deku SMS works with the same design, bringing in the seamless nature of the SMS app you are already used to."
+    })
+  }
+];
 
 
   return (
     <section className="features-section" dir={isRTL ? "rtl" : "ltr"}>
       <Container>
         <div className="text-center mb-5">
-          <h2 className="fw-bold">{t("landing.featuresTitle")}</h2>
-          <p className="text-light fs-5">{t("landing.featuresIntro")}</p>
+          <h2 className="fw-bold">{t("landing.featuresTitle", {defaultValue: "Why Choose DekuSMS?"} )}</h2>
+          <p className="text-light fs-5">{t("landing.featuresIntro", {defaultValue: "A powerful set of features built for reliability, privacy, and simplicity."})}</p>
         </div>
 
         <div className="timeline">
