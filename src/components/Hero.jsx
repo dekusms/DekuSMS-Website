@@ -10,12 +10,14 @@ const HeroSection = () => {
   const { t } = useTranslation('dekusms');
   const [hover, setHover] = useState(false);
 
-const features = [
-  t('landing.features.feature1'),
-  t('landing.features.feature2'),
-  t('landing.features.feature3'),
-  t('landing.features.feature4'),
+
+  const features = [
+  t('landing.features.feature1', { defaultValue: "Forward SMS to the Cloud – Even When Offline" }),
+  t('landing.features.feature2', { defaultValue: "Send SMS via RabbitMQ with Reliable Server Communication" }),
+  t('landing.features.feature3', { defaultValue: "End-to-End Encrypted SMS with Forward Secrecy" }),
+  t('landing.features.feature4', { defaultValue: "Familiar Google Messages Design, Seamlessly Integrated" })
 ];
+
 
   return (
     <div
@@ -38,15 +40,16 @@ const features = [
             className="px-4 text-md-start text-center d-flex flex-column justify-content-center"
           >
             <h1 className="fw-bold text-white mb-3 display-4 display-md-2">
-              {t('landing.title')}
-            </h1>
+  {t('landing.title', { defaultValue: "SMS but Secure" })}
+</h1>
+
 
             <p className="fs-5 text-light mb-2">
-              {t('landing.title2')}
+              {t('landing.title2', { defaultValue: "DekuSMS is an SMS app. You can use it as a standalone app or as a Gateway client to send your incoming messages to your cloud server! You can also configure it as a listener to your RabbitMQ server and transform your device into an SMS sending machine." })}
             </p>
 
             <p className="text-light fs-5 lh-lg mb-4" style={{ textAlign: "justify" }}>
-              {t('landing.description')}
+              {t('landing.description', {defaultValue: "You and anyone else using Deku? Turn on E2EE messaging and send SMS messages using the Signal protocol." })}
             </p>
 
 <div className="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 mt-3 mb-5">
@@ -65,7 +68,8 @@ const features = [
     transform: hover ? 'translateY(-2px)' : 'none',
   }}
 >
-  <FaDownload className="me-2" /> {t('landing.download')}
+  <FaDownload className="me-2" /> {t('landing.download', {
+    defaultValue: "Download App"})}
 </Link>
 
 
@@ -76,11 +80,11 @@ const features = [
     className="btn btn-outline-light px-4 py-2"
     style={{ minWidth: '140px', fontWeight: '600', color:'#2ED3B7'  }}
   >
-    {t('landing.donate')}
+    {t('landing.donate', {defaultValue: "Donate"})}
   </a>
 </div>
             <p className="mb-2">
-              {t('landing.join')}{" "}
+              {t('landing.join', {defaultValue: "Join our"})}{" "}
               <a
                 href="https://t.me/dekusms"
                 target="_blank"
@@ -104,7 +108,7 @@ const features = [
               >
                 Reddit
               </a>{" "}
-              {t('landing.forUpdates')}{" "}
+              {t('landing.forUpdates',  {defaultValue: "community for release announcements or discussions."})}{" "}
             </p>
           </Col>
 

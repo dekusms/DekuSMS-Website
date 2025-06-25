@@ -62,15 +62,26 @@ const Download = () => {
       </Button>
 
       <div style={styles.header}>
-        <h1 style={styles.title}>{t("downloadpage.title")}</h1>
-        <p style={styles.subtitle}>{t("downloadpage.subtitle")}</p>
+       <h1 style={styles.title}>
+  {t("downloadpage.title", { defaultValue: "Download DekuSMS" })}
+</h1>
+<p style={styles.subtitle}>
+  {t("downloadpage.subtitle", {
+    defaultValue:
+      "Get DekuSMS from your favorite source below. Open-source, privacy-respecting, and easy to install.",
+  })}
+</p>
+
       </div>
 
       <Container style={styles.container}>
         <Row className="justify-content-center">
           <DownloadCard
-            title="Google Play"
-            description={t("downloadpage.playstore_desc")}
+  title="Google Play"
+  description={t("downloadpage.playstore_desc", {
+    defaultValue:
+      "Download DekuSMS directly from the Google Play Store for the easiest installation and updates.",
+  })}
             icon={
               <FontAwesomeIcon
                 icon={faAndroid}
@@ -83,8 +94,11 @@ const Download = () => {
             buttonLabel="Get on Play Store"
           />
           <DownloadCard
-            title="F-Droid"
-            description={t("downloadpage.fdroid_desc")}
+          title="F-Droid"
+  description={t("downloadpage.fdroid_desc", {
+    defaultValue:
+      "Prefer open-source platforms? Install DekuSMS from F-Droid, a trusted repository of free and open-source apps.",
+  })}
             icon={
               <img
                 src="/fdroid.png"
@@ -96,8 +110,11 @@ const Download = () => {
             buttonLabel="Get on F-Droid"
           />
           <DownloadCard
-            title="GitHub"
-            description={t("downloadpage.opensource")}
+           title="GitHub"
+  description={t("downloadpage.opensource", {
+    defaultValue:
+      "View and download DekuSMS directly from GitHub. Access the latest releases and source code.",
+  })}
             icon={
               <FontAwesomeIcon
                 icon={faGithub}

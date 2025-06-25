@@ -245,8 +245,6 @@
 }
 
 /* ============== download =====================_*/
-
-
 .download-card {
   text-decoration: none;
   color: #111;
@@ -291,7 +289,7 @@
 }
 
  .download-section {
-  background: linear-gradient(135deg, #dcecf3, #cdfcf0, #dcecf3);
+  background: linear-gradient(125deg, #74bcc5, #b9f6fa, #74bcc5);
   box-shadow: 0 8px 24px rgba(156, 245, 215, 0.5);
   display: flex;
   align-items: center;
