@@ -18,7 +18,6 @@ const HeroSection = () => {
   t('landing.features.feature4', { defaultValue: "Familiar Google Messages Design, Seamlessly Integrated" })
 ];
 
-
   return (
     <div
       style={{
