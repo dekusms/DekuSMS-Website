@@ -9,6 +9,7 @@ import Loading from './components/Loading';
 import './i18n';
 import Download from "./pages/Download";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
+import PageNavigator from "./components/PageNavigator";
 
 const Home = lazy(() => import('./pages/Home'));
 
@@ -37,7 +38,7 @@ function MainLayout() {
     <div className="App">
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<PageNavigator />} />
           <Route path="/download" element={<Download />} />
         </Routes>
       </Suspense>

@@ -71,7 +71,6 @@ const Navigation = ({ scrollToSection, activeSection }) => {
             </Button>
           ))}
 
-          {/* GitHub Icon */}
           <IconButton
             color="inherit"
             href="https://github.com/your-repo"
@@ -82,7 +81,6 @@ const Navigation = ({ scrollToSection, activeSection }) => {
             <GitHubIcon />
           </IconButton>
 
-          {/* Language Selector */}
           <IconButton
             color="inherit"
             onClick={handleLanguageMenu}
@@ -97,7 +95,7 @@ const Navigation = ({ scrollToSection, activeSection }) => {
             <MenuItem onClick={() => changeLanguage("es")}>Español</MenuItem>
           </Menu>
 
-          {/* Mobile Menu Icon */}
+    
           <IconButton
             color="inherit"
             edge="end"
@@ -109,7 +107,7 @@ const Navigation = ({ scrollToSection, activeSection }) => {
         </Box>
       </Toolbar>
 
-      {/* Drawer for Mobile */}
+  
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
         <List sx={{ width: 200, bgcolor: "#222", height: "100%", color: "white" }}>
           {navItems.map((title, idx) => (
