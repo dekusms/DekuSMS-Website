@@ -1,82 +1,119 @@
 import React from "react";
-import { Box, Container, Stack, Typography, Button } from "@mui/material";
+import { Box, Stack, Typography, Button } from "@mui/material";
 
 export default function Hero() {
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        bgcolor: "#0F2027",
-        color: "#fff",
-        py: 8,
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      <Box sx={{ width: "100%", px: { xs: 2, sm: 4, md: 6 } }}>
-        <Stack
-          direction={{ xs: "column-reverse", md: "row" }}
-          spacing={6}
+<Box
+  sx={{
+    minHeight: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    bgcolor: "#0F2027",
+    color: "#fff",
+    py: 8,
+    px: { xs: 2, sm: 4, md: 6 },
+    pt: { xs: 'calc(64px + 2rem)', sm: 'calc(64px + 2rem)', md: 'calc(64px + 4rem)' },
+    position: "relative",
+    overflow: "hidden",
+     fontFamily: "'Unbounded'"
+  }}
+>
+
+  <Stack
+  direction={{ xs: "column", md: "row" }}
+  spacing={{ xs: 4, md: 6 }}
+  alignItems="flex-start"
+  justifyContent="space-between"
+  sx={{ width: "100%" }}
+>
+
+        <Box flex={1}>
+          <Typography variant="h3" sx={{
+     fontFamily: "'Unbounded'"}} fontWeight={800} mb={2}>
+            Secure SMS Messaging
+          </Typography>
+          <Typography sx={{fontFamily: "'Ubuntu'", fontSize: "1.2rem"}} color="#ccc" mb={4}>
+            DekuSMS is an SMS app. You can use it as a standalone app or as a Gateway client 
+            to send your incoming messages to your cloud server! You can also configure it 
+            as a listener to your RabbitMQ server and transform your device into an SMS sending machine.
+          </Typography>
+
+          <Typography sx={{fontFamily: "'Ubuntu'", fontSize: "1.2rem"}}  color="#ccc" mb={4}>
+            You and anyone else using Deku? Turn on E2EE messaging and send SMS messages using the Signal protocol.
+          </Typography>
+
+<Stack direction="row" spacing={4}>
+  <Button
+    variant="contained"
+    sx={{
+      bgcolor: "#2ED3B7",
+      color: "#092c20ff",
+      borderRadius: "50px",
+      width: 170,        
+      height: 40,       
+      textTransform: "none", 
+      fontFamily: "'Ubuntu'",
+      fontWeight: 700,
+      fontSize: "1rem",
+    }}
+  >
+    Download
+  </Button>
+
+  <Button
+    variant="outlined"
+    sx={{
+      borderRadius: "50px",
+      borderColor: "#2ED3B7",
+      color: "#2ED3B7",
+      width: 170,        
+      height: 40,        
+      textTransform: "none", 
+ fontFamily: "'Ubuntu',",
+      fontWeight: 700,
+      fontSize: "1rem",
+    }}
+  >
+    Donate
+  </Button>
+</Stack>
+
+        </Box>
+
+        <Box
+          flex={1}
+          display="flex"
+          justifyContent={{ xs: "center", md: "flex-start" }}
           alignItems="center"
-          justifyContent="space-between"
         >
-  
-          <Box flex={1}>
-            <Typography variant="h3" fontWeight={700} mb={2}>
-              Secure SMS Messaging
-            </Typography>
-            <Typography color="#ccc" mb={4}>
-              DekuSMS is an SMS app. You can use it as a standalone app or 
-              as a Gateway client to send your incoming messages to your cloud server! 
-              You can also configure it as a listener to your RabbitMQ server and 
-              transform your device into an SMS sending machine.
-            </Typography>
+          <Box
+            component="img"
+            src="/deku.png"
+            alt="Dekusms"
+            sx={{
+              width: "100%",
+              maxWidth: { xs: 120, sm: 150, md: 180, lg: 240 }, 
+              height: "auto",
+              flexShrink: 1, 
+              boxShadow: "0 8px 24px rgba(5, 98, 85, 0.5)",
+              transform: "rotate(15deg)",
+              transformOrigin: "bottom right",
+              mt: { xs: 2, sm: 0 }, 
+            }}
+          />
+        </Box>
+      </Stack>
 
-            <Typography color="#ccc" mb={4}>
-              You and anyone else using Deku? Turn on E2EE messaging and send SMS messages 
-              using the Signal protocol.
-            </Typography>
-
-            <Stack direction="row" spacing={2}>
-              <Button variant="contained" sx={{ bgcolor: "#1976d2" }}>
-                Download
-              </Button>
-              <Button
-                variant="outlined"
-                sx={{ borderColor: "#1976d2", color: "#1976d2" }}
-              >
-                Donate
-              </Button>
-            </Stack>
-          </Box>
-
-          <Box flex={1} display="flex" justifyContent="center">
-            <img
-              src="/Home.png"
-              alt="Hero visual"
-              style={{
-                width: "100%",
-                maxWidth: "200px",
-                borderRadius: "16px",
-                boxShadow: "0 8px 24px rgba(0,0,0,0.5)",
-              }}
-            />
-          </Box>
-        </Stack>
-      </Box>
-
-
+ 
       <Typography
         variant="h1"
         sx={{
           position: "absolute",
-          bottom: "20px", 
+          bottom: "40px",
           left: "50%",
           transform: "translateX(-50%)",
-          fontSize: { xs: "5rem", sm: "10rem", md: "10rem" },
+          fontSize: { xs: "3rem", sm: "4rem", md: "5.5rem" },
           fontWeight: 900,
           letterSpacing: "10px",
           color: "rgba(255, 255, 255, 0.02)",
@@ -84,9 +121,10 @@ export default function Hero() {
           whiteSpace: "nowrap",
           userSelect: "none",
           pointerEvents: "none",
+          fontFamily: "'Unbounded'" 
         }}
       >
-        Secure SMS Messaging with DekuSMS
+        Secure SMS Messaging
       </Typography>
     </Box>
   );
