@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Box, Stack, IconButton, Tooltip } from "@mui/material";
+import { Box, Stack, IconButton, Typography } from "@mui/material";
 import {
   Home as HomeIcon,
   Star as FeatureIcon,
@@ -14,14 +14,14 @@ import Navigation from "../components/Navigation";
 
 export default function PageNavigator() {
   const [active, setActive] = useState(0);
-  const pages = [
-    { id: "landing", icon: <HomeIcon fontSize="inherit" />, component: <Hero /> },
-    { id: "features", icon: <FeatureIcon fontSize="inherit" />, component: <Features /> },
-    { id: "download", icon: <DownloadIcon fontSize="inherit" />, component: <Download /> },
-    { id: "faq", icon: <FaqIcon fontSize="inherit" />, component: <Faq /> },
-  ];
+  const [hovered, setHovered] = useState(false);
 
-  const tooltipLabels = ["Home", "Feature", "Download", "FAQ"];
+  const pages = [
+    { id: "landing", icon: <HomeIcon fontSize="inherit" />, label: "Home", component: <Hero /> },
+    { id: "features", icon: <FeatureIcon fontSize="inherit" />, label: "Features", component: <Features /> },
+    { id: "download", icon: <DownloadIcon fontSize="inherit" />, label: "Download", component: <Download /> },
+    { id: "faq", icon: <FaqIcon fontSize="inherit" />, label: "FAQ", component: <Faq /> },
+  ];
 
   const handleScroll = useCallback(
     (event) => {
@@ -36,16 +36,11 @@ export default function PageNavigator() {
 
   useEffect(() => {
     let startY = 0;
-    const handleTouchStart = (e) => {
-      startY = e.touches[0].clientY;
-    };
+    const handleTouchStart = (e) => (startY = e.touches[0].clientY);
     const handleTouchEnd = (e) => {
       const endY = e.changedTouches[0].clientY;
-      if (startY - endY > 50) {
-        setActive((prev) => (prev < pages.length - 1 ? prev + 1 : prev));
-      } else if (endY - startY > 50) {
-        setActive((prev) => (prev > 0 ? prev - 1 : prev));
-      }
+      if (startY - endY > 50) setActive((prev) => (prev < pages.length - 1 ? prev + 1 : prev));
+      else if (endY - startY > 50) setActive((prev) => (prev > 0 ? prev - 1 : prev));
     };
     window.addEventListener("touchstart", handleTouchStart);
     window.addEventListener("touchend", handleTouchEnd);
@@ -79,50 +74,72 @@ export default function PageNavigator() {
       <Navigation scrollToSection={(index) => setActive(index)} activeSection={active} />
 
       <Stack
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         sx={{
           position: "fixed",
           top: "50%",
           right: 16,
           transform: "translateY(-50%)",
-          width: 65,
-          height: 500,
+          width: hovered ? 180 : 65,
+          height: { xs: 220, sm: 280, md: 350 },
           py: 2,
+          px: hovered ? 1 : 0,
           justifyContent: "space-around",
-          alignItems: "center",
+          alignItems: hovered ? "flex-start" : "center",
           zIndex: 10,
           borderRadius: "50px",
           background: "#142C36",
           border: "1px solid #2ED3B7",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+          transition: "all 0.35s ease",
+          overflow: "hidden",
         }}
         spacing={2}
       >
         {pages.map((page, index) => (
-          <Tooltip
+          <Box
             key={page.id}
-            title={tooltipLabels[index]}
-            placement="left"
-            arrow
+            onClick={() => setActive(index)}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: hovered ? "flex-start" : "center",
+              cursor: "pointer",
+              gap: hovered ? 1.5 : 0,
+              pl: hovered ? 2 : 0,
+              width: "100%",
+              transition: "all 0.3s ease",
+            }}
           >
             <IconButton
-              onClick={() => setActive(index)}
               sx={{
                 color: active === index ? "#142C36" : "#2ED3B7",
                 backgroundColor: active === index ? "#2ED3B7" : "#142C36",
                 transition: "all 0.3s ease-out",
-                transform: active === index ? "scale(1.2)" : "scale(0.9)",
-                opacity: 1,
-                "&:hover": {
-                  opacity: 0.8,
-                  backgroundColor: active === index ? "#2ED3B7" : "#0f1b23",
-                },
-                fontSize: 25,
+                transform: active === index ? "scale(1.2)" : "scale(1)",
+                fontSize: { xs: 18, sm: 20, md: 22 },
                 borderRadius: "25px",
               }}
             >
               {page.icon}
             </IconButton>
-          </Tooltip>
+
+            {hovered && (
+              <Typography
+                sx={{
+                  color: active === index ? "#2ED3B7" : "#dceff7ff",
+                  fontWeight: 600,
+                  fontSize: { xs: "0.8rem", sm: "0.9rem" },
+                  opacity: hovered ? 1 : 0,
+                  transition: "opacity 0.3s ease, color 0.3s ease",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {page.label}
+              </Typography>
+            )}
+          </Box>
         ))}
       </Stack>
 

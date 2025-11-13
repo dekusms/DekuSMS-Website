@@ -50,7 +50,7 @@ export default function Download() {
         sx={{
           fontSize: { xs: "3rem", sm: "4rem", md: "5rem" },
           letterSpacing: "6px",
-          color: "rgba(233, 253, 245, 0.15)",
+         color: "#142C36",
           textTransform: "uppercase",
           textAlign: "start",
           fontFamily: "Unbounded",

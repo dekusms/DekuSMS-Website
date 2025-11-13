@@ -116,7 +116,7 @@ export default function Hero() {
           fontSize: { xs: "3rem", sm: "4rem", md: "5.5rem" },
           fontWeight: 900,
           letterSpacing: "10px",
-          color: "rgba(255, 255, 255, 0.02)",
+          color: "#142C36",
           textTransform: "uppercase",
           whiteSpace: "nowrap",
           userSelect: "none",

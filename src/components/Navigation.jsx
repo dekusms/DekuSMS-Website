@@ -56,55 +56,83 @@ const Navigation = ({ scrollToSection, activeSection }) => {
           />
         </Box>
 
-        <Box sx={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          {navItems.map((title, idx) => (
-            <Button
-              key={idx}
-              onClick={() => scrollToSection(idx)}
-              sx={{
-                color: activeSection === idx ? "#35fdbaff" : "white",
-                display: { xs: "none", sm: "inline-flex" },
-                fontSize: { sm: "0.9rem", md: "1rem" },
-                textTransform: "none",
-                fontFamily: "'Ubuntu'",
-              }}
-            >
-              {t(title)}
-            </Button>
-          ))}
-          <IconButton
-            color="inherit"
-            href="https://github.com/your-repo"
-            target="_blank"
-            rel="noopener"
-            sx={{ display: { xs: "none", sm: "inline-flex" } }}
-          >
-            <GitHubIcon />
-          </IconButton>
+     <Box sx={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+  {navItems.map((title, idx) => (
+    <Button
+      key={idx}
+      onClick={() => scrollToSection(idx)}
+      sx={{
+        color: "white",
+        display: { xs: "none", sm: "inline-flex" },
+        fontSize: { sm: "0.9rem", md: "1rem" },
+        textTransform: "none",
+        fontFamily: "'Ubuntu'",
+        transition: "all 0.3s ease",
+        position: "relative",
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: 0,
+          height: "2px",
+          backgroundColor: "#2ED3B7",
+          transition: "width 0.3s ease",
+        },
+        "&:hover": {
+          color: "#2ED3B7",
+          transform: "scale(1.05)",
+          "&::after": {
+            width: "100%",
+          },
+        },
+      }}
+    >
+      {t(title)}
+    </Button>
+  ))}
 
-          <IconButton
-            color="inherit"
-            onClick={handleLanguageMenu}
-            sx={{ display: { xs: "none", sm: "inline-flex" } }}
-          >
-            <TranslateIcon />
-          </IconButton>
+  <IconButton
+    color="inherit"
+    href="https://github.com/your-repo"
+    target="_blank"
+    rel="noopener"
+    sx={{
+      display: { xs: "none", sm: "inline-flex" },
+      transition: "all 0.3s ease",
+      "&:hover": { color: "#2ED3B7", transform: "scale(1.1)" },
+    }}
+  >
+    <GitHubIcon />
+  </IconButton>
 
-          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}>
-            <MenuItem onClick={() => changeLanguage("en")}>English</MenuItem>
-            <MenuItem onClick={() => changeLanguage("fr")}>Français</MenuItem>
-            <MenuItem onClick={() => changeLanguage("es")}>Español</MenuItem>
-          </Menu>
+  <IconButton
+    color="inherit"
+    onClick={handleLanguageMenu}
+    sx={{
+      display: { xs: "none", sm: "inline-flex" },
+      transition: "all 0.3s ease",
+      "&:hover": { color: "#2ED3B7", transform: "scale(1.1)" },
+    }}
+  >
+    <TranslateIcon />
+  </IconButton>
 
-          <IconButton
-            color="inherit"
-            edge="end"
-            sx={{ display: { xs: "inline-flex", sm: "none" } }}
-            onClick={toggleDrawer(true)}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Box>
+  <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}>
+    <MenuItem onClick={() => changeLanguage("en")}>English</MenuItem>
+    <MenuItem onClick={() => changeLanguage("fr")}>Français</MenuItem>
+    <MenuItem onClick={() => changeLanguage("es")}>Español</MenuItem>
+  </Menu>
+
+  <IconButton
+    color="inherit"
+    edge="end"
+    sx={{ display: { xs: "inline-flex", sm: "none" } }}
+    onClick={toggleDrawer(true)}
+  >
+    <MenuIcon />
+  </IconButton>
+</Box>
       </Toolbar>
 
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
