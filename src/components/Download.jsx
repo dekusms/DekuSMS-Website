@@ -1,96 +1,128 @@
-
 import React from "react";
-import { useTranslation } from "react-i18next";
-import "../App.css";
+import { Box, Typography, Stack, Button } from "@mui/material";
+import { Container, Row, Col } from "react-bootstrap";
+import GoogleIcon from "@mui/icons-material/Google";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import AndroidIcon from "@mui/icons-material/Android";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-const Download = () => {
-  const { t, i18n } = useTranslation("dekusms");
-  const isRTL = i18n.dir() === "rtl";
-
-  const downloadOptions = [
+export default function Download() {
+  const downloads = [
     {
-      href: "https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share",
-      img: "/playstore.webp",
-      alt: "Google Play Store",
-      title: t("download.googlePlay.title", { defaultValue: "Google Play" }),
-      desc: t("download.googlePlay.desc", { defaultValue: "Download from Play Store" }),
-      bg: "#e9f8f0",
+      name: "Google Play Store",
+      icon: "./playstore.webp",
+      description: "Get the app from Google Play Store.",
+      link: "#",
     },
     {
-      href: "https://f-droid.org/docs/Reproducible_Builds/",
-      img: "/fdroid.png",
-      alt: "F-Droid",
-      title: t("download.fdroid.title", { defaultValue: "F-Droid" }),
-      desc: t("download.fdroid.desc", { defaultValue: "Get the open-source version" }),
-      bg: "#ecf2fd",
+      name: "F-Droid",
+      icon: "./fdroid.png",
+      description: "Get the app from F-Droid.",
+      link: "#",
     },
     {
-      href: "https://github.com/dekusms/DekuSMS-Android?tab=readme-ov-file",
-      img: "/github.png",
-      alt: "GitHub",
-      title: t("download.github.title", { defaultValue: "GitHub" }),
-      desc: t("download.github.desc", { defaultValue: "View source & contribute" }),
-      bg: "#f4f4f4",
+      name: "GitHub",
+     icon: "/github.png",
+      description: "Download the source code and install manually.",
+      link: "#",
     },
   ];
 
   return (
-    <section
-      id="download"
-      dir={i18n.dir()}
-      className="download-section"
+    <Box
+      sx={{
+        bgcolor: "#0F2027",
+        color: "#fff",
+        minHeight: "100vh",
+        fontFamily: "'Unbounded', sans-serif",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "start",
+        justifyContent: "center",
+        px: { xs: 2, sm: 4, md: 8 },
+        py: { xs: 6, md: 10 },
+      }}
     >
-      <div className="container text-center">
-        <h2 className="fw-bold mb-3 display-6 download-title">
-          {t("download.title", { defaultValue: "Download DekuSMS" })}
-        </h2>
-        <p className="text-muted mb-5">
-          {t("download.subtitle", {
-            defaultValue: "Secure, private, and open-source messaging at your fingertips. Get DekuSMS today on your favorite platform.",
-          })}
-        </p>
+      <Typography
+        variant="h2"
+        fontWeight="bold"
+        gutterBottom
+        sx={{
+          fontSize: { xs: "3rem", sm: "4rem", md: "5rem" },
+          letterSpacing: "6px",
+         color: "#142C36",
+          textTransform: "uppercase",
+          textAlign: "start",
+          fontFamily: "Unbounded",
+          mb: 6,
+        }}
+      >
+        Downloads
+      </Typography>
 
-        <div className="row justify-content-center g-4">
-          {downloadOptions.map((opt, index) => (
-            <div className="col-md-6 col-lg-4" key={index}>
-              <a
-                href={opt.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`download-card d-flex ${isRTL ? "flex-row-reverse text-end" : "text-start"} align-items-center h-100 shadow-sm`}
-                style={{
-                  background: opt.bg,
-                  borderRadius: "1.5rem",
-                  padding: "1.5rem",
-                  gap: "1rem",
-                  height: "100%",
-                  textDecoration: "none",
-                  color: "#111",
-                  transition: "all 0.3s ease-in-out",
-                }}
-              >
-                <img
-                  src={opt.img}
-                  alt={opt.alt}
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    objectFit: "contain",
-                    borderRadius: "12px",
-                    flexShrink: 0,
+      <Container fluid="md">
+        <Row>
+          <Col md={4} sm={12} className="mb-4 mb-md-0">
+            <Typography variant="body1" sx={{ mb: 3, color: "#ccc" }}>
+              DekuSMS app is available on several platforms. Choose your preferred platform below to start sending secure messages.
+            </Typography>
+          </Col>
+
+          <Col md={8} sm={12}>
+            <Stack spacing={3}>
+              {downloads.map((item) => (
+                <Button
+                  key={item.name}
+                  variant="contained"
+                  href={item.link}
+                  target="_blank"
+                  sx={{
+                    background: "#030908ff",
+                    border: "1px solid #2fd7aaff",
+                    color: "#fff",
+                    "&:hover": { background: "#1AA893" },
+                    color: "#142C36",
+                    fontFamily: "'Unbounded', sans-serif",
+                    fontWeight: 700,
+                    width: "70%",
+                    textTransform: "none",
+                    borderRadius: "10px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    px: 3,
+                    py: 1.5,
+                    minHeight: 70,
                   }}
-                />
-                <div className="flex-grow-1">
-                  <h5 className="fw-semibold mb-1">{opt.title}</h5>
-                  <p className="text-muted small mb-0">{opt.desc}</p>
-                </div>
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+                >
+                  {/* Left side: Icon */}
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Box
+                      component="img"
+                      src={item.icon}
+                      alt={item.name}
+                      sx={{ width: 40, height: 40, objectFit: "contain" }}
+                    />
+                  </Box>
 
-export default Download;
+                  {/* Middle: Text (title + description) */}
+                  <Box sx={{ flex: 1, ml: 2, textAlign: "left" }}>
+                    <Typography sx={{ fontWeight: 700, fontSize: "1rem",  color: "#dceff7ff" }}>
+                      {item.name}
+                    </Typography>
+                    <Typography sx={{ fontSize: "0.8rem", color: "#dceff7ff" }}>
+                      {item.description}
+                    </Typography>
+                  </Box>
+
+                  {/* Right side: arrow */}
+                  <ArrowForwardIcon />
+                </Button>
+              ))}
+            </Stack>
+          </Col>
+        </Row>
+      </Container>
+    </Box>
+  );
+}

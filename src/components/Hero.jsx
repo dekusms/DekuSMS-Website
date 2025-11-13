@@ -1,156 +1,131 @@
-import React, {useState}from 'react';
-import { Container, Row, Col, Image, ListGroup } from 'react-bootstrap';
-import { FaCheckCircle } from "react-icons/fa";
-import { Trans, useTranslation } from "react-i18next";
-import { FaDownload, FaHeart } from "react-icons/fa";
-import { Link } from 'react-router-dom';
-import "../App.css";
+import React from "react";
+import { Box, Stack, Typography, Button } from "@mui/material";
 
-const HeroSection = () => {
-  const { t } = useTranslation('dekusms');
-  const [hover, setHover] = useState(false);
-
-
-  const features = [
-  t('landing.features.feature1', { defaultValue: "Forward SMS to the Cloud – Even When Offline" }),
-  t('landing.features.feature2', { defaultValue: "Send SMS via RabbitMQ with Reliable Server Communication" }),
-  t('landing.features.feature3', { defaultValue: "End-to-End Encrypted SMS with Forward Secrecy" }),
-  t('landing.features.feature4', { defaultValue: "Familiar Google Messages Design, Seamlessly Integrated" })
-];
-
+export default function Hero() {
   return (
-    <div
-      style={{
-        background: "linear-gradient(135deg, #0f2027, #203a43, #0f2027)",
-        boxShadow: "0 8px 24px #203a43",
-        color: 'white',
-        paddingTop: '80px',
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <Container fluid>
-        <Row className="align-items-center text-center text-md-start flex-wrap">
-
-          <Col
-            xs={12}
-            md={5}
-            className="px-4 text-md-start text-center d-flex flex-column justify-content-center"
-          >
-            <h1 className="fw-bold text-white mb-3 display-4 display-md-2">
-  {t('landing.title', { defaultValue: "SMS but Secure" })}
-</h1>
-
-
-            <p className="fs-5 text-light mb-2">
-              {t('landing.title2', { defaultValue: "DekuSMS is an SMS app. You can use it as a standalone app or as a Gateway client to send your incoming messages to your cloud server! You can also configure it as a listener to your RabbitMQ server and transform your device into an SMS sending machine." })}
-            </p>
-
-            <p className="text-light fs-5 lh-lg mb-4" style={{ textAlign: "justify" }}>
-              {t('landing.description', {defaultValue: "You and anyone else using Deku? Turn on E2EE messaging and send SMS messages using the Signal protocol." })}
-            </p>
-
-<div className="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 mt-3 mb-5">
-<Link
-  to="/download"
-  onMouseEnter={() => setHover(true)}
-  onMouseLeave={() => setHover(false)}
-  className="btn d-flex align-items-center justify-content-center px-4 py-2"
-  style={{
-    minWidth: '140px',
-    fontWeight: 600,
-    background: hover ? '#20b7a0' : '#2ED3B7',
-    color: hover ? '#ffffff' : '#203a43',
-    transition: 'all 0.3s ease',
-    boxShadow: hover ? '0 4px 12px rgba(0, 0, 0, 0.15)' : 'none',
-    transform: hover ? 'translateY(-2px)' : 'none',
+<Box
+  sx={{
+    minHeight: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    bgcolor: "#0F2027",
+    color: "#fff",
+    py: 8,
+    px: { xs: 2, sm: 4, md: 6 },
+    pt: { xs: 'calc(64px + 2rem)', sm: 'calc(64px + 2rem)', md: 'calc(64px + 4rem)' },
+    position: "relative",
+    overflow: "hidden",
+     fontFamily: "'Unbounded'"
   }}
 >
-  <FaDownload className="me-2" /> {t('landing.download', {
-    defaultValue: "Download App"})}
-</Link>
 
+  <Stack
+  direction={{ xs: "column", md: "row" }}
+  spacing={{ xs: 4, md: 6 }}
+  alignItems="flex-start"
+  justifyContent="space-between"
+  sx={{ width: "100%" }}
+>
 
-  <a
-    href="https://opencollective.com/dekusms"
-    target="_blank"
-    rel="noreferrer"
-    className="btn btn-outline-light px-4 py-2"
-    style={{ minWidth: '140px', fontWeight: '600', color:'#2ED3B7'  }}
+        <Box flex={1}>
+          <Typography variant="h3" sx={{
+     fontFamily: "'Unbounded'"}} fontWeight={800} mb={2}>
+            Secure SMS Messaging
+          </Typography>
+          <Typography sx={{fontFamily: "'Ubuntu'", fontSize: "1.2rem"}} color="#ccc" mb={4}>
+            DekuSMS is an SMS app. You can use it as a standalone app or as a Gateway client 
+            to send your incoming messages to your cloud server! You can also configure it 
+            as a listener to your RabbitMQ server and transform your device into an SMS sending machine.
+          </Typography>
+
+          <Typography sx={{fontFamily: "'Ubuntu'", fontSize: "1.2rem"}}  color="#ccc" mb={4}>
+            You and anyone else using Deku? Turn on E2EE messaging and send SMS messages using the Signal protocol.
+          </Typography>
+
+<Stack direction="row" spacing={4}>
+  <Button
+    variant="contained"
+    sx={{
+      bgcolor: "#2ED3B7",
+      color: "#092c20ff",
+      borderRadius: "50px",
+      width: 170,        
+      height: 40,       
+      textTransform: "none", 
+      fontFamily: "'Ubuntu'",
+      fontWeight: 700,
+      fontSize: "1rem",
+    }}
   >
-    {t('landing.donate', {defaultValue: "Donate"})}
-  </a>
-</div>
-            <p className="mb-2">
-              {t('landing.join', {defaultValue: "Join our"})}{" "}
-              <a
-                href="https://t.me/dekusms"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Telegram"
-                style={{ color: "#2ED3B7", textDecoration: "none", fontWeight: "500" }}
-                onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
-                onMouseOut={(e) => (e.target.style.textDecoration = "none")}
-              >
-                Telegram
-              </a>{" "}
-              &{" "}
-              <a
-                href="https://t.me/dekusms"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Reddit"
-                style={{ color: "#2ED3B7", textDecoration: "none", fontWeight: "500" }}
-                onMouseOver={(e) => (e.target.style.textDecoration = "underline")}
-                onMouseOut={(e) => (e.target.style.textDecoration = "none")}
-              >
-                Reddit
-              </a>{" "}
-              {t('landing.forUpdates',  {defaultValue: "community for release announcements or discussions."})}{" "}
-            </p>
-          </Col>
+    Download
+  </Button>
 
-          <Col xs={12} md={4} className="d-flex justify-content-center mb-4 mb-md-0 mt-md-0 mt-4">
-            <Image
-              src="/Home.png"
-              alt="Illustration of DekuSMS mobile interface"
-              fluid
-              className="img-responsive"
-              style={{
-                width: '100%',
-                maxWidth: '300px',
-                height: 'auto',
-                maxHeight: '65vh',
-                objectFit: 'contain',
-                transform: 'rotate(-10deg)',
-                pointerEvents: 'none',
-              }}
-            />
-          </Col>
+  <Button
+    variant="outlined"
+    sx={{
+      borderRadius: "50px",
+      borderColor: "#2ED3B7",
+      color: "#2ED3B7",
+      width: 170,        
+      height: 40,        
+      textTransform: "none", 
+ fontFamily: "'Ubuntu',",
+      fontWeight: 700,
+      fontSize: "1rem",
+    }}
+  >
+    Donate
+  </Button>
+</Stack>
 
-          <Col xs={12} md={3} className="pt-md-5 px-4">
-            <h5 className="text-uppercase fw-semibold text-light mb-3">
-              {t('landing.features.featuresTitle')}
-            </h5>
+        </Box>
 
-      <ListGroup variant="flush" className="text-white">
-  {features.map((feature, idx) => (
-    <ListGroup.Item
-      key={idx}
-      className="bg-transparent border-0 d-flex align-items-center text-white px-0 py-2"
-    >
-      <FaCheckCircle className="me-2" style={{ color: '#2ED3B7' }} />
-      {feature}
-    </ListGroup.Item>
-  ))}
-</ListGroup>
-          </Col>
+        <Box
+          flex={1}
+          display="flex"
+          justifyContent={{ xs: "center", md: "flex-start" }}
+          alignItems="center"
+        >
+          <Box
+            component="img"
+            src="/deku.png"
+            alt="Dekusms"
+            sx={{
+              width: "100%",
+              maxWidth: { xs: 120, sm: 150, md: 180, lg: 240 }, 
+              height: "auto",
+              flexShrink: 1, 
+              boxShadow: "0 8px 24px rgba(5, 98, 85, 0.5)",
+              transform: "rotate(15deg)",
+              transformOrigin: "bottom right",
+              mt: { xs: 2, sm: 0 }, 
+            }}
+          />
+        </Box>
+      </Stack>
 
-        </Row>
-      </Container>
-    </div>
+ 
+      <Typography
+        variant="h1"
+        sx={{
+          position: "absolute",
+          bottom: "40px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          fontSize: { xs: "3rem", sm: "4rem", md: "5.5rem" },
+          fontWeight: 900,
+          letterSpacing: "10px",
+          color: "#142C36",
+          textTransform: "uppercase",
+          whiteSpace: "nowrap",
+          userSelect: "none",
+          pointerEvents: "none",
+          fontFamily: "'Unbounded'" 
+        }}
+      >
+        Secure SMS Messaging
+      </Typography>
+    </Box>
   );
-};
-
-export default HeroSection;
+}
