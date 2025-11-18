@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, lazy, Suspense } from "react";
 import { Box, Stack, IconButton, Typography } from "@mui/material";
 import {
   Home as HomeIcon,
@@ -6,11 +6,13 @@ import {
   Download as DownloadIcon,
   HelpOutline as FaqIcon,
 } from "@mui/icons-material";
-import Hero from "../components/Hero";
-import Features from "../components/Features";
-import Download from "../components/Download";
-import Faq from "../components/Faq";
 import Navigation from "../components/Navigation";
+
+// Lazy load page components
+const Hero = lazy(() => import("../components/Hero"));
+const Features = lazy(() => import("../components/Features"));
+const Download = lazy(() => import("../components/Download"));
+const Faq = lazy(() => import("../components/Faq"));
 
 export default function PageNavigator() {
   const [active, setActive] = useState(0);
@@ -34,6 +36,7 @@ export default function PageNavigator() {
     [pages.length]
   );
 
+  // Touch swipe support
   useEffect(() => {
     let startY = 0;
     const handleTouchStart = (e) => (startY = e.touches[0].clientY);
@@ -50,6 +53,7 @@ export default function PageNavigator() {
     };
   }, [pages.length]);
 
+  // Mouse wheel navigation
   useEffect(() => {
     const handleWheel = (e) => {
       e.preventDefault();
@@ -71,8 +75,10 @@ export default function PageNavigator() {
         color: "#fff",
       }}
     >
+      {/* Navigation bar */}
       <Navigation scrollToSection={(index) => setActive(index)} activeSection={active} />
 
+      {/* Floating side nav */}
       <Stack
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -142,34 +148,21 @@ export default function PageNavigator() {
           </Box>
         ))}
       </Stack>
-
-      {pages.map((page, index) => (
-        <Box
-          key={page.id}
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            transform:
-              active === index
-                ? "translateY(0)"
-                : index < active
-                ? "translateY(-100%)"
-                : "translateY(100%)",
-            transition:
-              "transform 0.8s cubic-bezier(0.54, 0.35, 0.29, 0.99), opacity 0.6s ease",
-            opacity: active === index ? 1 : 0,
-            paddingTop: "64px",
-          }}
-        >
-          {page.component}
-        </Box>
-      ))}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop: "64px",
+        }}
+      >
+        <Suspense fallback={null}>{pages[active].component}</Suspense>
+      </Box>
     </Box>
   );
 }

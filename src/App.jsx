@@ -1,16 +1,20 @@
 import React, { Suspense, lazy, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Loading from "./components/Loading";
 import "./i18n";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
 
-
+// Lazy load PageNavigator
 const PageNavigator = lazy(() => import("./components/PageNavigator"));
+
+// Lightweight fallback for faster first paint
+const LoadingFallback = () => (
+  <div style={{
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "#0F2027",
+  }} />
+);
 
 function App() {
   const { i18n } = useTranslation();
@@ -27,20 +31,17 @@ function App() {
 
   return (
     <Router>
-      <Suspense fallback={<Loading />}>
-        <MainLayout />
-      </Suspense>
-    </Router>
-  );
-}
-
-function MainLayout() {
-  return (
-    <div className="App" style={{ overflowX: "hidden" }}>
       <Routes>
-        <Route path="/" element={<PageNavigator />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<LoadingFallback />}>
+              <PageNavigator />
+            </Suspense>
+          }
+        />
       </Routes>
-    </div>
+    </Router>
   );
 }
 
