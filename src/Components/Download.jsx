@@ -81,7 +81,6 @@ export default function Download() {
                     border: "1px solid #2fd7aaff",
                     color: "#fff",
                     "&:hover": { background: "#1AA893" },
-                    color: "#142C36",
                     fontFamily: "'Unbounded', sans-serif",
                     fontWeight: 700,
                     width: "70%",
@@ -95,7 +94,7 @@ export default function Download() {
                     minHeight: 70,
                   }}
                 >
-                  {/* Left side: Icon */}
+
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Box
                       component="img"
@@ -105,7 +104,6 @@ export default function Download() {
                     />
                   </Box>
 
-                  {/* Middle: Text (title + description) */}
                   <Box sx={{ flex: 1, ml: 2, textAlign: "left" }}>
                     <Typography sx={{ fontWeight: 700, fontSize: "1rem",  color: "#dceff7ff" }}>
                       {item.name}
@@ -115,7 +113,6 @@ export default function Download() {
                     </Typography>
                   </Box>
 
-                  {/* Right side: arrow */}
                   <ArrowForwardIcon />
                 </Button>
               ))}

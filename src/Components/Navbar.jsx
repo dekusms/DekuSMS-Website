@@ -93,7 +93,6 @@ const Navigation = ({ scrollToSection, activeSection }) => {
   ))}
 
   <IconButton
-    color="inherit"
     href="https://github.com/your-repo"
     target="_blank"
     rel="noopener"
