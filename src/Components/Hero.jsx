@@ -33,13 +33,13 @@ export default function Hero() {
                variant="h6"
                fontWeight="middium"
                sx={{
-                 fontSize: { xs: "1rem", sm: "2rem", md: "2.2rem" },
-                 letterSpacing: "4px",
+                fontSize: { xs: "1rem", sm: "2rem", md: "2.2rem" },
+                letterSpacing: "4px",
                 color: "white",
-                 textTransform: "uppercase",
-                 textAlign: "start",
-                 fontFamily: "Unbounded",
-                 mb: 3,
+                textTransform: "uppercase",
+                textAlign: "start",
+                fontFamily: "Unbounded",
+                mb: 3,
                }}
              >
         Secure SMS Messaging
@@ -115,7 +115,6 @@ export default function Hero() {
         </Box>
       </Stack>
 
-      {/* Background Typography */}
       <Typography
         variant="h1"
         sx={{

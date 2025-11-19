@@ -1,45 +1,23 @@
-import React, { Suspense, lazy, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import "./i18n";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
-
-// Lazy load PageNavigator
-const PageNavigator = lazy(() => import("./components/PageNavigator"));
-
-// Lightweight fallback for faster first paint
-const LoadingFallback = () => (
-  <div style={{
-    width: "100vw",
-    height: "100vh",
-    backgroundColor: "#0F2027",
-  }} />
-);
+import Navbar from './Components/Navbar'
+import Navigator from "./Components/Navigator";
+import Hero from "./Components/Hero";
+import Features from "./Components/Features";
+import Download from "./Components/Download";
+import Faq from "./Components/Faq";
 
 function App() {
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    const rtlLangs = ["fa", "ar"];
-    const isRTL = rtlLangs.includes(i18n.language);
-
-    document.documentElement.setAttribute("dir", isRTL ? "rtl" : "ltr");
-    document.body.setAttribute("dir", isRTL ? "rtl" : "ltr");
-    document.documentElement.classList.toggle("rtl", isRTL);
-    document.documentElement.classList.toggle("ltr", !isRTL);
-  }, [i18n.language]);
-
   return (
     <Router>
+      <Navbar />
+      <Navigator />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Suspense fallback={<LoadingFallback />}>
-              <PageNavigator />
-            </Suspense>
-          }
-        />
+        <Route path="/" element={<Hero />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/download" element={<Download />} />
+        <Route path="/faq" element={<Faq />} />
       </Routes>
     </Router>
   );
