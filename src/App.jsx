@@ -1,26 +1,43 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.rtl.min.css";
-import Navbar from './Components/Navbar'
-import Navigator from "./Components/Navigator";
-import Hero from "./Components/Hero";
-import Features from "./Components/Features";
-import Download from "./Components/Download";
-import Faq from "./Components/Faq";
+import React, { useState } from "react";
+import { Box } from "@mui/material";
 
-function App() {
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Navigator";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import Download from "./components/Download";
+import Help from "./components/Faq";
+
+export default function App() {
+  const [activeSection, setActiveSection] = useState("hero");
+  const [sideOpen, setSideOpen] = useState(false);
+
+  const toggleSide = () => setSideOpen(!sideOpen);
+
+  const sections = [
+    { label: "Hero", id: "hero" },
+    { label: "Features", id: "features" },
+    { label: "Download", id: "download" },
+    { label: "Help", id: "help" },
+  ];
+
   return (
-    <Router>
-      <Navbar />
-      <Navigator />
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/features" element={<Features />} />
-        <Route path="/download" element={<Download />} />
-        <Route path="/faq" element={<Faq />} />
-      </Routes>
-    </Router>
+    <Box sx={{ }}>
+      <Navbar sections={sections} setActiveSection={setActiveSection} toggleSide={toggleSide} />
+      <Sidebar
+        sections={sections}
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        sideOpen={sideOpen}
+        toggleSide={toggleSide}
+      />
+
+      <Box sx={{ flexGrow: 1 }}>
+        <Hero show={activeSection === "hero"} />
+        <Features show={activeSection === "features"} />
+        <Download show={activeSection === "download"} />
+        <Help show={activeSection === "help"} />
+      </Box>
+    </Box>
   );
 }
-
-export default App;
