@@ -1,140 +1,115 @@
 import React from "react";
-import { Box, Typography, Button, Stack } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import {
+  Box,
+  Typography,
+  Stack,
+  Card,
+  CardContent,
+  Avatar,
+  IconButton,
+} from "@mui/material";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
-export default function Download({ show }) {
-  if (!show) return null;
-
-  const downloads = [
-    {
-      name: "Google Play Store",
-      icon: "./playstore.webp",
-      description: "Get the app from Google Play Store.",
-      link: "#",
-    },
-    {
-      name: "F-Droid",
-      icon: "./fdroid.png",
-      description: "Get the app from F-Droid.",
-      link: "#",
-    },
-    {
-      name: "GitHub",
-      icon: "/github.png",
-      description: "Download the source code and install manually.",
-      link: "#",
-    },
-  ];
-
+export default function DownloadSection() {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
         bgcolor: "#0F2027",
-        color: "#fff",
-        p: { xs: 3, sm: 5, md: 8 },
-        py: { xs: 6, md: 10 },
+        color: "white",
+        py: { xs: 8, md: 12 },
+        px: { xs: 3, md: 8 },
+        minHeight: "100vh",
+        position: "relative",
+        overflowX: "hidden",
       }}
     >
-      {/* Section Title */}
-      <Typography
-        variant="h1"
-        sx={{
-          mt: 10,
-          fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem", lg: "5rem" },
-          fontWeight: 900,
-          letterSpacing: "8px",
-          color: "#142C36",
-          textTransform: "uppercase",
-          userSelect: "none",
-          pointerEvents: "none",
-          zIndex: 0,
-          fontFamily: "'Unbounded', sans-serif",
-        }}
-      >
-        Downloads
-      </Typography>
-
       <Box
         sx={{
-          display: "flex",
           flexDirection: { xs: "column", md: "row" },
-          gap: { xs: 4, md: 6 },
-          mt: 6,
+          alignItems: "center",
+          gap: 6,
         }}
       >
-
-        <Box
+        <Typography
+          variant="h1"
           sx={{
-            flex: 1,
-            p: { xs: 3, md: 8 }
+            fontWeight: 700,
+            fontFamily: "'Unbounded'",
+            opacity: 0.05,
+            mb: 4,
+            letterSpacing: 2,
+            textAlign: { xs: "center", md: "left" },
+            fontSize: { xs: "3rem", md: "8rem" },
           }}
         >
-          <Typography variant="body1" sx={{ fontFamily: "'Ubuntu', sans-serif" }}>
-            DekuSMS app is available on several platforms. You can download it and use it as your default SMS app.
-          </Typography>
-        </Box>
+          DOWNLOAD
+        </Typography>
 
-        <Box
-          sx={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            gap: { xs: 3, md: 10 },
-            alignItems: { xs: "center", md: "flex-start" },
-          }}
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={10}
+          sx={{ width: "100%", alignItems: { xs: "center", md: "flex-start" } }}
         >
-          <Stack spacing={3} sx={{ width: "100%" }}>
-            {downloads.map((item) => (
-              <Button
-                key={item.name}
-                variant="contained"
-                href={item.link}
-                target="_blank"
-                sx={{
-                  background: "#030908ff",
-                  border: "1px solid #2fd7aaff",
-                  color: "#fff",
-                  "&:hover": { background: "#1AA893" },
-                  fontFamily: "'Unbounded', sans-serif",
-                  fontWeight: 700,
-                  width: { xs: "100%", sm: "90%", md: "100%" },
-                  textTransform: "none",
-                  borderRadius: "10px",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  px: 3,
-                  py: 1.5,
-                  minHeight: 70,
-                }}
-              >
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Box
-                    component="img"
-                    src={item.icon}
-                    alt={item.name}
-                    sx={{ width: 40, height: 40, objectFit: "contain" }}
-                  />
-                </Box>
+          <Box flex={1} mt={4} sx={{ textAlign: { xs: "center", md: "left" }, maxWidth: { xs: "100%", md: "80%" } }}>
+            <Typography variant="body1" sx={{ opacity: 0.8, lineHeight: 1.8 }}>
+              DekuSMS app is available on several platforms, you can download it
+              and use as your default SMS app.
+            </Typography>
+          </Box>
 
-                <Box sx={{ flex: 1, ml: 2, textAlign: "left" }}>
-                  <Typography
-                    sx={{ fontWeight: 700, fontSize: "1rem", color: "#dceff7ff" }}
-                  >
-                    {item.name}
-                  </Typography>
-                  <Typography sx={{ fontSize: "0.85rem", color: "#dceff7ff" }}>
-                    {item.description}
-                  </Typography>
-                </Box>
-
-                <ArrowForwardIcon />
-              </Button>
-            ))}
-          </Stack>
-        </Box>
+          <Box
+            flex={1.5}
+            sx={{ color: "white", width: { xs: "100%", md: "auto" }, display: "flex", justifyContent: { xs: "center", md: "flex-start" } }}
+          >
+            <Stack spacing={4} sx={{ width: { xs: "100%", sm: "80%", md: "70%" } }}>
+              <DownloadCard logo="/playstore.webp" title="Google Play Store" subtitle="Get it on Play Store" />
+              <DownloadCard logo="/fdroid.png" title="F-Droid" subtitle="Get it on F-Droid" />
+              <DownloadCard logo="/github.png" title="GitHub" subtitle="Get it on GitHub" />
+            </Stack>
+          </Box>
+        </Stack>
       </Box>
     </Box>
+  );
+}
+
+function DownloadCard({ logo, title, subtitle }) {
+  return (
+    <Card
+      sx={{
+        bgcolor: "black",
+        borderRadius: "14px",
+        border: "2px solid #00d6b4",
+        px: 2,
+        py: 1,
+        width: { xs: "100%", sm: "90%", md: "80%" },
+      }}
+    >
+      <CardContent
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          color: "white",
+        }}
+      >
+        <Stack direction="row" spacing={2} alignItems="center">
+          <img src={logo} alt="logo" style={{ width: 40, height: 40 }} />
+
+          <Box>
+            <Typography variant="h6" fontWeight={600}>
+              {title}
+            </Typography>
+            <Typography variant="body2" sx={{ opacity: 0.6 }}>
+              {subtitle}
+            </Typography>
+          </Box>
+        </Stack>
+
+        <IconButton sx={{ color: "white" }}>
+          <OpenInNewIcon />
+        </IconButton>
+      </CardContent>
+    </Card>
   );
 }

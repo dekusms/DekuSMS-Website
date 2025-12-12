@@ -1,85 +1,109 @@
 import React from "react";
-import { Box, Typography, Card, CardContent } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Stack
+} from "@mui/material";
 
-export default function Features({ show }) {
-  if (!show) return null;
-
-
-   const features = [
-    { title: "Forward SMS to the Cloud – Even When Offline", desc: "Incoming SMS messages can be forwarded to your cloud server! The  protocols used to forward messages to the cloud include; HTTP(s), SMTP  and sFTP. Messages can be queued on the device till an internet  connection is detected, thanks to Android studio advance work features." },
-    { title: "Familiar Google Messages Design, Seamlessly Integrated", desc: "Used Google Messages and enjoyed the look and feel? Deku SMS works with the same design, bringing in the seamless nature of the SMS app you are already used to." },
-    { title: "End-to-End Encrypted SMS with Forward Secrecy", desc: "You can send and receive E2EE encrypted SMS messages with fellow peers using Deku SMS. The messages have support for forward secrecy and SMS accessible technologies are used in making the encrypted payloads suitable for SMS messaging" },
-    { title: "Send SMS via RabbitMQ with Reliable Server Communication", desc: "You can send SMS messages from your phone by allowing your phone to communicate with a RabbitMQ server. Android specific features have been integrated to allow the communication with the server longlasting and efficient." },
-  ];
-
+export default function FeaturesSection() {
   return (
     <Box
-      sx={{
-        minHeight: "100vh",
-        bgcolor: "#0F2027",
-        color: "#fff",
-        p: { xs: 3, sm: 5, md: 8 },
-        py: { xs: 6, md: 10 }, 
-      }}
-    >
-
-        <Typography variant="h1"
-         sx={{
-               mt: 10,
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem", lg:"5rem" },
-            fontWeight: 900,
-            letterSpacing: "8px", 
-            color: "#142C36", 
-            textTransform: "uppercase",
-             userSelect: "none",
-              pointerEvents: "none",
-              zIndex: 0,
-              fontFamily: "'Unbounded'" }} >  
-                  Features </Typography>
-
-
-   <Box
-  sx={{
-    display: "grid",
-    mt: 10,
-    gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-    gap: { xs: 4, md: 6 },
-  }}
->
-  {features.map((f, i) => (
-    <Card
-      key={i}
-      sx={{
-        p: 3,
-        bgcolor: "#0F2027",
-      }}
-    >
-      <CardContent>
-        <Typography
-          variant="h5"
-          mb={1}
-          sx={{ color: "#2ED3B7", fontFamily: "'Unbounded'" }}
-        >
-          {f.title}
-        </Typography>
-        <Typography
-          variant="body2"
+        sx={{
+          bgcolor: "#0F2027",
+          color: "white",
+          py: { xs: 8, md: 12 },
+          px: { xs: 3, md: 8 },
+          minHeight: "100vh",
+          position: "relative",
+          overflowX: "hidden",  
+        }}
+      >
+    
+        <Box
           sx={{
-            fontFamily: "'Ubuntu'",
-            fontSize: { xs: "1rem", md: "1.2rem" },
-            letterSpacing: "1px", 
-            color: "#ccc",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "center",
+            gap: 6,
           }}
-          mb={2}
         >
-          {f.desc}
-        </Typography>
-      </CardContent>
-    </Card>
-  ))}
-</Box>
-
       
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: 500,
+         color: "#142C36",
+            mb: 6,
+            letterSpacing: 2,
+            fontFamily: "'Unbounded'",
+              fontSize: {xs: "3rem", md: "8rem"}
+          }}
+        >
+          FEATURES
+        </Typography>
+
+
+        <Box mt={6}>
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            spacing={6}
+            sx={{ mb: 6 }}
+          >
+            <FeatureItem
+              title="Forward SMS to the Cloud – Even When Offline"
+              text={`Incoming SMS messages can be forwarded to your cloud server!
+The protocols used to forward messages to the cloud include; HTTP(s), SMTP and sFTP.
+
+Messages can be queued on the device till an internet connection is detected,
+thanks to Android studio advance work features.`}
+            />
+
+            <FeatureItem
+              title="Familiar Google Messages Design, Seamlessly Integrated"
+              text={`Used Google Messages and enjoyed the look and feel? Deku SMS works with the same design,
+bringing in the seamless nature of the SMS app you are already used to.`}
+            />
+          </Stack>
+
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            spacing={6}
+          >
+            <FeatureItem
+              title="Send SMS via RabbitMQ with Reliable Server Communication"
+              text={`You can send SMS messages from your phone by allowing your phone to communicate with a RabbitMQ server.
+Android specific features have been integrated to allow the communication with the server longlasting and efficient.`}
+            />
+
+            <FeatureItem
+              title="End-to-End Encrypted SMS with Forward Secrecy"
+              text={`You can send and receive E2EE encrypted SMS messages with fellow peers using Deku SMS.
+The messages have support for forward secrecy and SMS accessible technologies
+are used in making the encrypted payloads suitable for SMS messaging.`}
+            />
+          </Stack>
         </Box>
+    </Box>
+    </Box>
+  );
+}
+
+
+function FeatureItem({ title, text }) {
+  return (
+    <Box flex={1}>
+      <Typography
+        variant="h6"
+        sx={{ color: "#2ED3B7", fontWeight: 600, mb: 2 }}
+      >
+        {title}
+      </Typography>
+
+      <Typography
+        variant="body1"
+        sx={{ opacity: 0.75, lineHeight: 1.8, whiteSpace: "pre-line" }}
+      >
+        {text}
+      </Typography>
+    </Box>
   );
 }

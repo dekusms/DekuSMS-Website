@@ -1,43 +1,42 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box } from "@mui/material";
-
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Navigator";
-import Hero from "./components/Hero";
+import TopNav from "./components/TopNav";
+import FloaterNav from "./components/FloaterNav";
+import Landing from "./components/Landing";
 import Features from "./components/Features";
-import Download from "./components/Download";
-import Help from "./components/Faq";
+import Downloads from "./components/Download";
+import FAQ from "./components/Faq";
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState("hero");
-  const [sideOpen, setSideOpen] = useState(false);
-
-  const toggleSide = () => setSideOpen(!sideOpen);
-
-  const sections = [
-    { label: "Hero", id: "hero" },
-    { label: "Features", id: "features" },
-    { label: "Download", id: "download" },
-    { label: "Help", id: "help" },
-  ];
+  const [activeSection, setActiveSection] = useState("landing");
+  const [navExpanded, setNavExpanded] = useState(false);
 
   return (
-    <Box sx={{ }}>
-      <Navbar sections={sections} setActiveSection={setActiveSection} toggleSide={toggleSide} />
-      <Sidebar
-        sections={sections}
+    <>
+      <TopNav
         activeSection={activeSection}
         setActiveSection={setActiveSection}
-        sideOpen={sideOpen}
-        toggleSide={toggleSide}
       />
 
-      <Box sx={{ flexGrow: 1 }}>
-        <Hero show={activeSection === "hero"} />
-        <Features show={activeSection === "features"} />
-        <Download show={activeSection === "download"} />
-        <Help show={activeSection === "help"} />
+      <FloaterNav
+        current={activeSection}
+        setActiveSection={setActiveSection}
+        onExpandChange={setNavExpanded}
+      />
+
+      <Box
+        sx={{
+          transition: "padding-right 330ms cubic-bezier(.2,.9,.2,1)",
+          pr: { md: navExpanded ? "220px" : "0px", xs: 0 },
+          bgcolor: "#0F2027",
+          minHeight: "100vh",
+        }}
+      >
+        {activeSection === "landing" && <Landing />}
+        {activeSection === "features" && <Features />}
+        {activeSection === "downloads" && <Downloads />}
+        {activeSection === "faq" && <FAQ />}
       </Box>
-    </Box>
+    </>
   );
 }
