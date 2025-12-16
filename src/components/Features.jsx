@@ -11,11 +11,12 @@ export default function FeaturesSection() {
         sx={{
           bgcolor: "#0F2027",
           color: "white",
-          py: { xs: 8, md: 12 },
-          px: { xs: 3, md: 8 },
+           py: { xs: 8, md: 20 },
+        px: { xs: 3, md: 10 },
           minHeight: "100vh",
           position: "relative",
           overflowX: "hidden",  
+          bgcolor: "#0F2027"
         }}
       >
     
@@ -26,18 +27,18 @@ export default function FeaturesSection() {
             gap: 6,
           }}
         >
-      
         <Typography
-          variant="h2"
-          sx={{
-            fontWeight: 500,
-         color: "#142C36",
-            mb: 6,
-            letterSpacing: 2,
-            fontFamily: "'Unbounded'",
-              fontSize: {xs: "3rem", md: "8rem"}
-          }}
-        >
+                variant="h3"
+                sx={{
+                  fontWeight: 800,
+                  fontFamily: "'Unbounded'",
+                  opacity: 0.05,
+                  mb: 4,
+                  letterSpacing: 2,
+                  textAlign: { xs: "left", md: "left" },
+                  fontSize: { xs: "3rem", md: "6rem" },
+                }}
+              >
           FEATURES
         </Typography>
 

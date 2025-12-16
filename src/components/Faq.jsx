@@ -45,16 +45,16 @@ export default function HelpGuideSection() {
 
   return (
     <Box
-      sx={{
-        bgcolor: "#0F2027",
-        color: "white",
-        py: { xs: 8, md: 12 },
-        px: { xs: 3, md: 8 },
-        minHeight: "100vh",
-        position: "relative",
-        overflowX: "hidden",
-      }}
-    >
+        sx={{
+          color: "white",
+          py: { xs: 8, md: 20 },
+          px: { xs: 3, md: 10 },
+          minHeight: "100vh",
+          position: "relative",
+          overflowX: "hidden",  
+          bgcolor: "#0F2027"
+        }}
+      >
       <Box
         sx={{
           flexDirection: { xs: "column", md: "row" },
@@ -62,16 +62,18 @@ export default function HelpGuideSection() {
           gap: 6,
         }}
       >
-        <Typography
-          sx={{
-            fontSize: { xs: "3rem", md: "8rem" },
-            fontWeight: 700,
-            opacity: 0.08,
-            mb: 8,
-            textAlign: { xs: "center", md: "left" },
-            fontFamily: "'Unbounded'",
-          }}
-        >
+         <Typography
+                    variant="h3"
+                    sx={{
+                      fontWeight: 500,
+                      fontFamily: "'Unbounded'",
+                      opacity: 0.05,
+                      mb: 4,
+                      letterSpacing: 2,
+                      textAlign: { xs: "left", md: "left" },
+                      fontSize: { xs: "3rem", md: "6rem" },
+                    }}
+                  >
           HELP & GUIDE
         </Typography>
 
@@ -80,7 +82,7 @@ export default function HelpGuideSection() {
           spacing={8}
           alignItems="flex-start"
         >
-          {/* LEFT SIDE – QUESTIONS */}
+      
           <Box flex={1} sx={{ width: { xs: "100%", md: "auto" } }}>
             {faqList.map((item, i) => (
               <Box key={i} sx={{ mb: 6 }}>
@@ -100,7 +102,7 @@ export default function HelpGuideSection() {
 
                 <Box
                   sx={{
-                    width: "100%",
+                    width: "80%",
                     height: "1px",
                     bgcolor: "rgba(255,255,255,0.1)",
                     mt: 3,
@@ -110,7 +112,7 @@ export default function HelpGuideSection() {
             ))}
           </Box>
 
-          {/* RIGHT SIDE – CARDS */}
+        
           <Box
             flex={1}
             sx={{

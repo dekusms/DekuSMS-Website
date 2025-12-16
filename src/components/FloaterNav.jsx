@@ -76,9 +76,9 @@ export default function FloaterNav({ current, setActiveSection, onExpandChange }
             >
               <Avatar
                 sx={{
-                  width: 40,
-                  height: 40,
-                  minWidth: 42,
+                  width: 30,
+                  height: 30,
+                  minWidth: 32,
                   bgcolor: isActive ? ACTIVE_COLOR : "#0F2027",
                   color: isActive ? "#0F2027" : "#fff",
                   marginLeft: expanded ? 0 : "auto",
@@ -97,6 +97,7 @@ export default function FloaterNav({ current, setActiveSection, onExpandChange }
                   transition: "opacity 240ms ease, transform 240ms ease",
                   color: "white",
                   whiteSpace: "nowrap",
+                  fontSize:  "1rem",
                 }}
               >
                 {item.label}

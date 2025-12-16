@@ -5,7 +5,6 @@ import {
   Stack,
   Card,
   CardContent,
-  Avatar,
   IconButton,
 } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -16,11 +15,9 @@ export default function DownloadSection() {
       sx={{
         bgcolor: "#0F2027",
         color: "white",
-        py: { xs: 8, md: 12 },
-        px: { xs: 3, md: 8 },
         minHeight: "100vh",
-        position: "relative",
-        overflowX: "hidden",
+        py: { xs: 8, md: 20 },
+        px: { xs: 3, md: 10 },
       }}
     >
       <Box
@@ -31,15 +28,15 @@ export default function DownloadSection() {
         }}
       >
         <Typography
-          variant="h1"
+          variant="h3"
           sx={{
-            fontWeight: 700,
+            fontWeight: 500,
             fontFamily: "'Unbounded'",
             opacity: 0.05,
             mb: 4,
             letterSpacing: 2,
             textAlign: { xs: "center", md: "left" },
-            fontSize: { xs: "3rem", md: "8rem" },
+            fontSize: { xs: "3rem", md: "6rem" },
           }}
         >
           DOWNLOAD
@@ -61,7 +58,7 @@ export default function DownloadSection() {
             flex={1.5}
             sx={{ color: "white", width: { xs: "100%", md: "auto" }, display: "flex", justifyContent: { xs: "center", md: "flex-start" } }}
           >
-            <Stack spacing={4} sx={{ width: { xs: "100%", sm: "80%", md: "70%" } }}>
+            <Stack spacing={4} sx={{ width: { xs: "100%", sm: "90%", md: "100%" } }}>
               <DownloadCard logo="/playstore.webp" title="Google Play Store" subtitle="Get it on Play Store" />
               <DownloadCard logo="/fdroid.png" title="F-Droid" subtitle="Get it on F-Droid" />
               <DownloadCard logo="/github.png" title="GitHub" subtitle="Get it on GitHub" />

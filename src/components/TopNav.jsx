@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import GTranslateIcon from "@mui/icons-material/GTranslate";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -16,10 +18,22 @@ export default function TopNav({ setActiveSection }) {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const menuItems = [
-    { label: "Home", value: "landing" },
-    { label: "Features", value: "features" },
-    { label: "Download", value: "downloads" },
-    { label: "FAQ", value: "faq" },
+    { label: "Blog", href: "https://blog.smswithoutborders.com/" },
+    { label: "Documentation", href: "https://docs.smswithoutborders.com/" },
+    { label: "Donate", href: "https://opencollective.com/dekusms" },
+  ];
+
+  const externalLinks = [
+    {
+      icon: <GitHubIcon />,
+      url: "https://github.com/dekusms/DekuSMS-Android",
+      label: "GitHub",
+    },
+    {
+      icon: <GTranslateIcon />,
+      url: "",
+      label: "translation",
+    },
   ];
 
   return (
@@ -29,41 +43,47 @@ export default function TopNav({ setActiveSection }) {
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            px: { xs: 1.5, md: 10 },  
+            px: { xs: 1.5, md: 10 },
           }}
         >
-      
           <Box
             component="img"
             src="./logo/DekuSMS-Dark.png"
             alt="Logo"
             sx={{
-              height: { xs: 32, md: 40 },
+              height: { xs: 25, md: 30 },
               width: "auto",
               cursor: "pointer",
             }}
           />
 
-     
           {!isMobile && (
-            <Box sx={{ display: "flex", gap: 2 }}>
+            <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
               {menuItems.map((item) => (
                 <Button
-                  key={item.value}
+                  key={item.label}
                   color="inherit"
-                  onClick={() => setActiveSection(item.value)}
-                  sx={{
-                    fontSize: "16px",
-                    textTransform: "none",   
-                  }}
+                  href={item.href}
+                  target="_blank"
+                  sx={{ fontSize: "16px", textTransform: "none" }}
                 >
                   {item.label}
                 </Button>
               ))}
+
+              {externalLinks.map((link) => (
+                <IconButton
+                  key={link.label}
+                  color="inherit"
+                  href={link.url}
+                  target="_blank"
+                >
+                  {link.icon}
+                </IconButton>
+              ))}
             </Box>
           )}
 
-    
           {isMobile && (
             <IconButton color="inherit" onClick={() => setOpen(!open)}>
               <MenuIcon />
@@ -72,6 +92,7 @@ export default function TopNav({ setActiveSection }) {
         </Toolbar>
       </AppBar>
 
+
       {isMobile && open && (
         <Paper
           elevation={6}
@@ -79,31 +100,53 @@ export default function TopNav({ setActiveSection }) {
             position: "fixed",
             top: 64,
             right: 10,
-            width: 180,
+            width: 200,
             borderRadius: 2,
             backgroundColor: "#0F2027",
             padding: "10px 0",
             zIndex: 2000,
           }}
         >
+    
           {menuItems.map((item) => (
             <Box
-              key={item.value}
+              key={item.label}
               onClick={() => {
-                setActiveSection(item.value);
+                window.open(item.href, "_blank");
                 setOpen(false);
               }}
               sx={{
                 padding: "10px 15px",
                 color: "white",
                 cursor: "pointer",
-                textTransform: "none",
-                "&:hover": {
-                  backgroundColor: "rgba(255,255,255,0.1)",
-                },
+                "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
               }}
             >
               {item.label}
+            </Box>
+          ))}
+
+          <Box sx={{ height: 8 }} />
+
+          {externalLinks.map((link) => (
+            <Box
+              key={link.label}
+              onClick={() => {
+                window.open(link.url, "_blank");
+                setOpen(false);
+              }}
+              sx={{
+                padding: "10px 15px",
+                display: "flex",
+                alignItems: "center",
+                gap: 1.5,
+                color: "white",
+                cursor: "pointer",
+                "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
+              }}
+            >
+              {link.icon}
+              {link.label}
             </Box>
           ))}
         </Paper>

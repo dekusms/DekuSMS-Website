@@ -2,20 +2,20 @@ import React from "react";
 import { Box, Typography, Stack, Button } from "@mui/material";
 
 export default function Landing() {
-
   return (
     <Box
       sx={{
         bgcolor: "#0F2027",
         color: "white",
-        py: { xs: 8, md: 12 },
-        px: { xs: 3, md: 8 },
+        py: { xs: 5, sm: 7, md: 10 },
+        px: { xs: 2, sm: 3, md: 8 },
+        pt: { xs: 13, sm: 7, md: 10 },
         minHeight: "100vh",
         position: "relative",
         overflowX: "hidden",
+        overflowY: "hidden",
       }}
     >
-    
       <Box
         sx={{
           position: "absolute",
@@ -25,19 +25,24 @@ export default function Landing() {
           justifyContent: "center",
           pointerEvents: "none",
           userSelect: "none",
-          zIndex: 0, // BEHIND EVERYTHING
-          pb: { xs: 3, md: 6 },
+          zIndex: 0,
+          pb: { xs: 1, sm: 3, md: 6 },
         }}
       >
         <Typography
-          variant="h1"
+          variant="h3"
           sx={{
             fontWeight: 400,
-            color: "#142C36", // watermark tone
+            color: "#142C36",
             letterSpacing: 2,
             fontFamily: "'Unbounded'",
-            fontSize: { xs: "3rem", md: "8rem" },
-            opacity: 0.6, // watermark effect
+            fontSize: {
+              xs: "1.8rem",
+              sm: "2.5rem",
+              md: "5rem",
+              lg: "7rem",
+            },
+            opacity: 0.4,
             textTransform: "uppercase",
             whiteSpace: "nowrap",
           }}
@@ -46,45 +51,44 @@ export default function Landing() {
         </Typography>
       </Box>
 
-      {/* MAIN CONTENT — in front */}
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
-          gap: 6,
+          gap: { xs: 4, sm: 5, md: 6 },
           position: "relative",
-          zIndex: 2, // ABOVE THE WATERMARK
+          zIndex: 2,
         }}
       >
+    
         <Box flex={1.2}>
           <Typography
-            variant="h2"
-            fontWeight={600}
+            variant="h1"
+            fontWeight={400}
             gutterBottom
             sx={{
               fontFamily: "'Unbounded'",
               lineHeight: 1.1,
               fontSize: {
-                xs: "2rem",
-                sm: "2.6rem",
-                md: "3.2rem",
-                lg: "3.8rem",
+                xs: "1.6rem",
+                sm: "2rem",
+                md: "2.5rem",
+                lg: "3rem",
               },
-              mb: 3,
+              mb: 3
             }}
           >
             SECURE SMS MESSAGING
           </Typography>
 
-          {/* Paragraph 1 */}
           <Typography
             variant="body1"
             sx={{
               opacity: 0.8,
-              lineHeight: 1.7,
+              lineHeight: 1.6,
               fontFamily: "'Ubuntu'",
-              fontSize: { xs: "0.95rem", md: "1.05rem" },
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.05rem" },
             }}
           >
             DekuSMS is an SMS app. You can use it as a standalone app or as a
@@ -95,21 +99,20 @@ export default function Landing() {
 
           <br />
 
-          {/* Paragraph 2 */}
           <Typography
             variant="body1"
             sx={{
               opacity: 0.8,
-              lineHeight: 1.7,
+              lineHeight: 1.6,
               fontFamily: "'Ubuntu'",
-              fontSize: { xs: "0.95rem", md: "1.05rem" },
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.05rem" },
             }}
           >
             You and anyone else using Deku? Turn on E2EE messaging and send SMS
             messages using the Signal protocol.
           </Typography>
 
-          {/* Buttons */}
+          {/* BUTTONS */}
           <Stack
             direction={{ xs: "column", sm: "row" }}
             spacing={3}
@@ -117,13 +120,14 @@ export default function Landing() {
             sx={{ width: { xs: "100%", sm: "auto" } }}
           >
             <Button
+              href="https://play.google.com/store/apps/details?id=com.afkanerd.deku&pli=1"
               variant="contained"
               sx={{
                 bgcolor: "#00d6b4",
                 color: "black",
                 px: { xs: 3, md: 4 },
-                py: { xs: 1.2, md: 1.4 },
-                fontSize: { xs: "0.9rem", md: "1rem" },
+                py: { xs: 1.1, md: 1.3 },
+                fontSize: { xs: "0.85rem", md: "1rem" },
                 width: { xs: "100%", sm: "auto" },
                 borderRadius: 20,
               }}
@@ -132,13 +136,14 @@ export default function Landing() {
             </Button>
 
             <Button
+              href="https://opencollective.com/dekusms"
               variant="outlined"
               sx={{
                 borderColor: "#00d6b4",
                 color: "white",
                 px: { xs: 3, md: 4 },
-                py: { xs: 1.2, md: 1.4 },
-                fontSize: { xs: "0.9rem", md: "1rem" },
+                py: { xs: 1.1, md: 1.3 },
+                fontSize: { xs: "0.85rem", md: "1rem" },
                 width: { xs: "100%", sm: "auto" },
                 borderRadius: 20,
               }}
@@ -148,30 +153,30 @@ export default function Landing() {
           </Stack>
         </Box>
 
-        {/* RIGHT SIDE IMAGE */}
- <Box
-  flex={1}
-  display="flex"
-  justifyContent="center"
-  sx={{ position: "relative", zIndex: 2 }}
->
-  <Box
-    component="img"
-    src="/deku.png"
-    srcSet="/deku.png 300w, /deku.png 768w, /deku.png 1280w"
-    sizes="(max-width: 300px) 300px, (max-width: 768px) 768px, 1280px"
-    alt="App screenshot"
-    sx={{
-      width: "100%",
-      maxWidth: "360px",
-      borderRadius: "20px",
-      transform: "rotate(12deg)",
-      display: "block",
-    }}
-  />
-</Box>
-
-
+        <Box
+          flex={1}
+          display="flex"
+          justifyContent="center"
+          padding={{ xs: 2, sm: 4, md: 6 }}
+          sx={{ position: "relative", zIndex: 2 }}
+        >
+          <Box
+            component="img"
+            src="/deku.png"
+            alt="App screenshot"
+            sx={{
+              width: "100%",
+              maxWidth: {
+                xs: "180px",
+                sm: "220px",
+                md: "280px",
+                lg: "330px",
+              },
+              transform: "rotate(12deg)",
+              display: "block",
+            }}
+          />
+        </Box>
       </Box>
     </Box>
   );
