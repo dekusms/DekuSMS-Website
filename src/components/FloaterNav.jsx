@@ -24,33 +24,34 @@ export default function FloaterNav({ current, setActiveSection, onExpandChange }
 
   return (
     <>
-      <Box
-        onMouseEnter={() => handleExpand(true)}
-        onMouseLeave={() => handleExpand(false)}
-        sx={{
-          position: "fixed",
-          top: "26%",
-          right: 0,                    
-          display: { xs: "none", md: "flex" },
-          flexDirection: "column",
-          alignItems: expanded ? "flex-start" : "center",
-          gap: 4,
-          px: expanded ? 2 : 0,
-          py: 10,
-          width: expanded ? 200 : 50,   
-          borderRadius: "50px 0 0 50px",
-          borderLeft: "1px solid rgba(0,214,180,0.9)",
-          background: "#0F2027",
-          backdropFilter: "blur(10px)",
-          transition:
-            "width 300ms cubic-bezier(.2,.9,.2,1), padding 300ms, background 280ms",
-          boxShadow: expanded
-            ? "inset 0 0 0 1px rgba(0,214,180,0.12)"
-            : "inset 0 0 0 1px rgba(0,214,180,0.05)",
-          zIndex: 110,
-          overflow: "hidden",         
-        }}
-      >
+<Box
+  onMouseEnter={() => handleExpand(true)}
+  onMouseLeave={() => handleExpand(false)}
+  sx={{
+    position: "fixed",
+    top: "26%",
+    right: 16,
+    display: { xs: "none", md: "flex" },
+    flexDirection: "column",
+    alignItems: expanded ? "flex-start" : "center",
+    gap: 4,
+    px: expanded ? 2 : 0,
+    py: 10,
+    width: expanded ? 200 : 50,
+    borderRadius: "50px",
+    border: "1px solid rgba(0,214,180,0.9)",
+    background: "#0F2027",
+    backdropFilter: "blur(10px)",
+    transition:
+      "width 300ms cubic-bezier(.2,.9,.2,1), padding 300ms, background 280ms",
+    boxShadow: expanded
+      ? "0 10px 30px rgba(0,0,0,0.35)"
+      : "0 6px 18px rgba(0,0,0,0.25)",
+    zIndex: 110,
+    overflow: "hidden",
+  }}
+>
+
         {items.map((item) => {
           const isActive = current === item.id;
 
