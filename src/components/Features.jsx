@@ -9,7 +9,6 @@ export default function FeaturesSection() {
   return (
     <Box
         sx={{
-          bgcolor: "#0F2027",
           color: "white",
            py: { xs: 8, md: 20 },
         px: { xs: 3, md: 10 },
