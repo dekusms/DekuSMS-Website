@@ -1,16 +1,32 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Stack,
-  Card,
-  CardContent,
-  CardActionArea,
-  IconButton,
-} from "@mui/material";
+import { Box, Typography, Stack, Card, CardContent, CardActionArea, IconButton } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 export default function DownloadSection() {
+  const { t } = useTranslation();
+
+  const downloads = [
+    {
+      logo: "/playstore.webp",
+      title: t("downloads.playstore.title"),
+      subtitle: t("downloads.playstore.subtitle"),
+      link: "https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share"
+    },
+    {
+      logo: "/fdroid.png",
+      title: t("downloads.fdroid.title"),
+      subtitle: t("downloads.fdroid.subtitle"),
+      link: "https://f-droid.org/docs/Reproducible_Builds/"
+    },
+    {
+      logo: "/github.png",
+      title: t("downloads.github.title"),
+      subtitle: t("downloads.github.subtitle"),
+      link: "https://github.com/dekusms/DekuSMS-Android?tab=readme-ov-file"
+    }
+  ];
+
   return (
     <Box
       sx={{
@@ -33,7 +49,7 @@ export default function DownloadSection() {
           fontSize: { xs: "3rem", md: "6rem" },
         }}
       >
-        DOWNLOAD
+        {t("downloads.heading")}
       </Typography>
 
       <Stack
@@ -49,33 +65,21 @@ export default function DownloadSection() {
           }}
         >
           <Typography variant="body1" sx={{ opacity: 0.8, lineHeight: 1.8 }}>
-            DekuSMS app is available on several platforms. Download it and use it
-            as your default SMS app.
+            {t("downloads.description")}
           </Typography>
         </Box>
 
         <Box flex={1.5} sx={{ width: "100%" }}>
           <Stack spacing={4}>
-            <DownloadCard
-              logo="/playstore.webp"
-              title="Google Play Store"
-              subtitle="Get it on Play Store"
-              link="https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share"
-            />
-
-            <DownloadCard
-              logo="/fdroid.png"
-              title="F-Droid"
-              subtitle="Get it on F-Droid"
-              link="https://f-droid.org/docs/Reproducible_Builds/"
-            />
-
-            <DownloadCard
-              logo="/github.png"
-              title="GitHub"
-              subtitle="Get it on GitHub"
-              link="https://github.com/dekusms/DekuSMS-Android?tab=readme-ov-file"
-            />
+            {downloads.map((d, i) => (
+              <DownloadCard
+                key={i}
+                logo={d.logo}
+                title={d.title}
+                subtitle={d.subtitle}
+                link={d.link}
+              />
+            ))}
           </Stack>
         </Box>
       </Stack>
@@ -99,7 +103,6 @@ function DownloadCard({ logo, title, subtitle, link }) {
         },
       }}
     >
-      {/* 🔗 Whole card is clickable */}
       <CardActionArea
         component="a"
         href={link}
@@ -132,7 +135,6 @@ function DownloadCard({ logo, title, subtitle, link }) {
             </Box>
           </Stack>
 
-          {/* Arrow still visible & clickable */}
           <IconButton
             sx={{
               color: "white",

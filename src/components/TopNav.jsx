@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
@@ -7,34 +8,38 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GTranslateIcon from "@mui/icons-material/GTranslate";
+import Paper from "@mui/material/Paper";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 
-export default function TopNav({ setActiveSection }) {
+export default function TopNav() {
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const menuItems = [
-    { label: "Blog", href: "https://blog.smswithoutborders.com/" },
-    { label: "Documentation", href: "https://docs.smswithoutborders.com/" },
-    { label: "Donate", href: "https://opencollective.com/dekusms" },
+    { label: t("topNav.blog"), href: "https://blog.smswithoutborders.com/" },
+    { label: t("topNav.documentation"), href: "https://docs.smswithoutborders.com/" },
+    { label: t("topNav.donate"), href: "https://opencollective.com/dekusms" },
   ];
 
-  const externalLinks = [
-    {
-      icon: <GitHubIcon />,
-      url: "https://github.com/dekusms/DekuSMS-Android",
-      label: "GitHub",
-    },
-    {
-      icon: <GTranslateIcon />,
-      url: "",
-      label: "translation",
-    },
+  const languages = [
+    { code: "en", label: t("topNav.languages.en") },
+    { code: "fr", label: t("topNav.languages.fr") },
+    { code: "es", label: t("topNav.languages.es") },
+    { code: "fa", label: t("topNav.languages.fa") },
   ];
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setLangOpen(false);
+    setOpen(false);
+    // RTL support
+    document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
+  };
 
   return (
     <>
@@ -50,13 +55,10 @@ export default function TopNav({ setActiveSection }) {
             component="img"
             src="./logo/DekuSMS-Dark.png"
             alt="Logo"
-            sx={{
-              height: { xs: 25, md: 30 },
-              width: "auto",
-              cursor: "pointer",
-            }}
+            sx={{ height: { xs: 25, md: 30 } }}
           />
 
+          {/* DESKTOP NAV */}
           {!isMobile && (
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
               {menuItems.map((item) => (
@@ -65,25 +67,62 @@ export default function TopNav({ setActiveSection }) {
                   color="inherit"
                   href={item.href}
                   target="_blank"
-                  sx={{ fontSize: "16px", textTransform: "none" }}
+                  sx={{ textTransform: "none" }}
                 >
                   {item.label}
                 </Button>
               ))}
 
-              {externalLinks.map((link) => (
+              <IconButton color="inherit">
+                <GitHubIcon />
+              </IconButton>
+
+              {/* TRANSLATE BUTTON */}
+              <Box sx={{ position: "relative" }}>
                 <IconButton
-                  key={link.label}
                   color="inherit"
-                  href={link.url}
-                  target="_blank"
+                  onClick={() => setLangOpen(!langOpen)}
                 >
-                  {link.icon}
+                  <GTranslateIcon />
                 </IconButton>
-              ))}
+
+                {langOpen && (
+                  <Paper
+                    sx={{
+                      position: "absolute",
+                      top: 40,
+                      right: 0,
+                      bgcolor: "#0F2027",
+                      borderRadius: 2,
+                      minWidth: 160,
+                      zIndex: 3000,
+                    }}
+                  >
+                    {languages.map((lng) => (
+                      <Box
+                        key={lng.code}
+                        onClick={() => changeLanguage(lng.code)}
+                        sx={{
+                          px: 2,
+                          py: 1.2,
+                          cursor: "pointer",
+                          color:
+                            i18n.language === lng.code
+                              ? "#2ED3B7"
+                              : "white",
+                          "&:hover": { background: "rgba(255,255,255,0.08)" },
+                        }}
+                      >
+                        {lng.label}
+                      </Box>
+                    ))}
+                  </Paper>
+                )}
+              </Box>
             </Box>
           )}
 
+          {/* MOBILE MENU */}
           {isMobile && (
             <IconButton color="inherit" onClick={() => setOpen(!open)}>
               <MenuIcon />
@@ -92,34 +131,29 @@ export default function TopNav({ setActiveSection }) {
         </Toolbar>
       </AppBar>
 
-
+      {/* MOBILE DROPDOWN */}
       {isMobile && open && (
         <Paper
-          elevation={6}
           sx={{
             position: "fixed",
             top: 64,
             right: 10,
-            width: 200,
+            width: 220,
+            bgcolor: "#0F2027",
             borderRadius: 2,
-            backgroundColor: "#0F2027",
-            padding: "10px 0",
-            zIndex: 2000,
+            zIndex: 3000,
           }}
         >
-    
           {menuItems.map((item) => (
             <Box
               key={item.label}
-              onClick={() => {
-                window.open(item.href, "_blank");
-                setOpen(false);
-              }}
+              onClick={() => window.open(item.href, "_blank")}
               sx={{
-                padding: "10px 15px",
+                px: 2,
+                py: 1.4,
                 color: "white",
                 cursor: "pointer",
-                "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
+                "&:hover": { background: "rgba(255,255,255,0.08)" },
               }}
             >
               {item.label}
@@ -128,25 +162,19 @@ export default function TopNav({ setActiveSection }) {
 
           <Box sx={{ height: 8 }} />
 
-          {externalLinks.map((link) => (
+          {languages.map((lng) => (
             <Box
-              key={link.label}
-              onClick={() => {
-                window.open(link.url, "_blank");
-                setOpen(false);
-              }}
+              key={lng.code}
+              onClick={() => changeLanguage(lng.code)}
               sx={{
-                padding: "10px 15px",
-                display: "flex",
-                alignItems: "center",
-                gap: 1.5,
-                color: "white",
+                px: 2,
+                py: 1.2,
+                color: i18n.language === lng.code ? "#2ED3B7" : "white",
                 cursor: "pointer",
-                "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
+                "&:hover": { background: "rgba(255,255,255,0.08)" },
               }}
             >
-              {link.icon}
-              {link.label}
+              {lng.label}
             </Box>
           ))}
         </Paper>

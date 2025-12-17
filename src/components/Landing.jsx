@@ -1,7 +1,10 @@
 import React from "react";
 import { Box, Typography, Stack, Button } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export default function Landing() {
+  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -16,6 +19,7 @@ export default function Landing() {
         overflowY: "hidden",
       }}
     >
+      {/* BACKGROUND TEXT */}
       <Box
         sx={{
           position: "absolute",
@@ -47,7 +51,7 @@ export default function Landing() {
             whiteSpace: "nowrap",
           }}
         >
-          Secure sms messaging
+          {t("landing.backgroundTitle")}
         </Typography>
       </Box>
 
@@ -61,7 +65,7 @@ export default function Landing() {
           zIndex: 2,
         }}
       >
-    
+        {/* LEFT CONTENT */}
         <Box flex={1.2}>
           <Typography
             variant="h1"
@@ -76,10 +80,10 @@ export default function Landing() {
                 md: "2.5rem",
                 lg: "3rem",
               },
-              mb: 3
+              mb: 3,
             }}
           >
-            SECURE SMS MESSAGING
+            {t("landing.title")}
           </Typography>
 
           <Typography
@@ -91,10 +95,7 @@ export default function Landing() {
               fontSize: { xs: "0.9rem", sm: "1rem", md: "1.05rem" },
             }}
           >
-            DekuSMS is an SMS app. You can use it as a standalone app or as a
-            Gateway client to send your incoming messages to your cloud server!
-            You can also configure it as a listener to your RabbitMQ server and
-            transform your device into an SMS sending machine.
+            {t("landing.description1")}
           </Typography>
 
           <br />
@@ -108,8 +109,7 @@ export default function Landing() {
               fontSize: { xs: "0.9rem", sm: "1rem", md: "1.05rem" },
             }}
           >
-            You and anyone else using Deku? Turn on E2EE messaging and send SMS
-            messages using the Signal protocol.
+            {t("landing.description2")}
           </Typography>
 
           {/* BUTTONS */}
@@ -132,7 +132,7 @@ export default function Landing() {
                 borderRadius: 20,
               }}
             >
-              Download App
+              {t("landing.download")}
             </Button>
 
             <Button
@@ -148,11 +148,12 @@ export default function Landing() {
                 borderRadius: 20,
               }}
             >
-              Donate
+              {t("landing.donate")}
             </Button>
           </Stack>
         </Box>
 
+        {/* IMAGE */}
         <Box
           flex={1}
           display="flex"
@@ -163,7 +164,7 @@ export default function Landing() {
           <Box
             component="img"
             src="/deku.png"
-            alt="App screenshot"
+            alt={t("landing.imageAlt")}
             sx={{
               width: "100%",
               maxWidth: {
