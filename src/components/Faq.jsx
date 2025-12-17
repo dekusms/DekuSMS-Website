@@ -4,7 +4,8 @@ import {
   Typography,
   Stack,
   Card,
-  CardContent
+  CardContent,
+  CardActionArea,
 } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
@@ -32,15 +33,18 @@ export default function HelpGuideSection() {
     {
       title: "Trouble Shooting Guide",
       subtitle: "Get answers to your questions",
+      link: "https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ",
     },
     {
       title: "Contribution",
       subtitle: "DekuSMS welcomes contributions",
+      link: "https://github.com/dekusms/DekuSMS-Android/edit/master/README.md",
     },
     {
-      title: "Contact US",
+      title: "Contact Us",
       subtitle: "developers@smswithoutborders.com",
-    }
+      link: "mailto:developers@smswithoutborders.com",
+    },
   ];
 
   return (
@@ -122,25 +126,38 @@ export default function HelpGuideSection() {
               alignItems: { xs: "center", md: "flex-start" },
             }}
           >
-            {cards.map((item, index) => (
-              <Card
-                key={index}
-                sx={{
-                  bgcolor: "black",
-                  border: "1px solid #00d6b4",
-                  borderRadius: 3,
-                  mb: 4,
-                  color: "white",
-                  width: { xs: "100%", sm: "90%", md: "80%" },
-                }}
+           {cards.map((item, index) => (
+            <Card
+              key={index}
+              sx={{
+                color: "white",
+                bgcolor: "black",
+                border: "1px solid #00d6b4",
+                borderRadius: 3,
+                mb: 4,
+                width: { xs: "100%", sm: "90%", md: "80%" },
+                transition: "all 280ms cubic-bezier(.16,1,.3,1)",
+                "&:hover": {
+                  transform: "translateY(-4px)",
+                  boxShadow: "0 18px 40px rgba(0,214,180,0.25)",
+                },
+              }}
+            >
+
+              <CardActionArea
+                component="a"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ px: 3, py: 3 }}
               >
                 <CardContent
                   sx={{
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    px: 3,
-                    py: 3,
+                    p: 0,
+                    color: "white"
                   }}
                 >
                   <Box>
@@ -152,10 +169,16 @@ export default function HelpGuideSection() {
                     </Typography>
                   </Box>
 
-                  <ArrowOutwardIcon sx={{ color: "white" }} />
+                  <ArrowOutwardIcon
+                    sx={{
+                      color: "white",
+                      transition: "transform 200ms ease",
+                    }}
+                  />
                 </CardContent>
-              </Card>
-            ))}
+              </CardActionArea>
+            </Card>
+          ))}
           </Box>
         </Stack>
       </Box>
