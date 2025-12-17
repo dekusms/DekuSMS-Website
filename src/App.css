@@ -1,22 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Unbounded:wght@400;600;700&display=swap');
 
 * {
-  font-family: 'Unbounded';
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  }
+}
 
-  html[dir="rtl"] body {
-    font-family:'Unbounded';
-  }
-  
-  html.rtl .some-class {
-    text-align: right;
-    direction: rtl;
-  }
-  
-  html.ltr .some-class {
-    text-align: left;
-    direction: ltr;
-  }
+body {
+  background-color: #0F2027;
+  color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.unbounded {
+  font-family: 'Unbounded';
+}
+
+a, button {
+  transition: 0.3s ease;
+}
