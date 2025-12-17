@@ -65,7 +65,7 @@ export default function FloaterNav({ current, setActiveSection, onExpandChange }
                 gap: 2,
                 width: "100%",
                 py: 0.7,
-                px: expanded ? 1.5 : 0,
+                px: expanded ? 1.5 : 1,
                 borderRadius: "999px",
                 cursor: "pointer",
                 transition: "0.25s ease",

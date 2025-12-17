@@ -1,93 +1,76 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Stack
-} from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export default function FeaturesSection() {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      title: t("features.forwardTitle"),
+      text: t("features.forwardText"),
+    },
+    {
+      title: t("features.googleDesignTitle"),
+      text: t("features.googleDesignText"),
+    },
+    {
+      title: t("features.rabbitMQTitle"),
+      text: t("features.rabbitMQText"),
+    },
+    {
+      title: t("features.e2eeTitle"),
+      text: t("features.e2eeText"),
+    },
+  ];
+
   return (
     <Box
-        sx={{
-          bgcolor: "#0F2027",
-          color: "white",
-           py: { xs: 8, md: 20 },
+      sx={{
+        color: "white",
+        py: { xs: 8, md: 20 },
         px: { xs: 3, md: 10 },
-          minHeight: "100vh",
-          position: "relative",
-          overflowX: "hidden",  
-          bgcolor: "#0F2027"
+        minHeight: "100vh",
+        position: "relative",
+        overflowX: "hidden",
+        bgcolor: "#0F2027",
+      }}
+    >
+      <Typography
+        variant="h3"
+        sx={{
+          fontWeight: 800,
+          fontFamily: "'Unbounded'",
+          opacity: 0.05,
+          mb: 4,
+          letterSpacing: 2,
+          textAlign: { xs: "left", md: "left" },
+          fontSize: { xs: "3rem", md: "6rem" },
         }}
       >
-    
-        <Box
-          sx={{
-            flexDirection: { xs: "column", md: "row" },
-            alignItems: "center",
-            gap: 6,
-          }}
+        {t("features.heading")}
+      </Typography>
+
+      <Box mt={6}>
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={6}
+          sx={{ mb: 6 }}
         >
-        <Typography
-                variant="h3"
-                sx={{
-                  fontWeight: 800,
-                  fontFamily: "'Unbounded'",
-                  opacity: 0.05,
-                  mb: 4,
-                  letterSpacing: 2,
-                  textAlign: { xs: "left", md: "left" },
-                  fontSize: { xs: "3rem", md: "6rem" },
-                }}
-              >
-          FEATURES
-        </Typography>
+          {features.slice(0, 2).map((f, i) => (
+            <FeatureItem key={i} title={f.title} text={f.text} />
+          ))}
+        </Stack>
 
-
-        <Box mt={6}>
-          <Stack
-            direction={{ xs: "column", md: "row" }}
-            spacing={6}
-            sx={{ mb: 6 }}
-          >
-            <FeatureItem
-              title="Forward SMS to the Cloud – Even When Offline"
-              text={`Incoming SMS messages can be forwarded to your cloud server!
-The protocols used to forward messages to the cloud include; HTTP(s), SMTP and sFTP.
-
-Messages can be queued on the device till an internet connection is detected,
-thanks to Android studio advance work features.`}
-            />
-
-            <FeatureItem
-              title="Familiar Google Messages Design, Seamlessly Integrated"
-              text={`Used Google Messages and enjoyed the look and feel? Deku SMS works with the same design,
-bringing in the seamless nature of the SMS app you are already used to.`}
-            />
-          </Stack>
-
-          <Stack
-            direction={{ xs: "column", md: "row" }}
-            spacing={6}
-          >
-            <FeatureItem
-              title="Send SMS via RabbitMQ with Reliable Server Communication"
-              text={`You can send SMS messages from your phone by allowing your phone to communicate with a RabbitMQ server.
-Android specific features have been integrated to allow the communication with the server longlasting and efficient.`}
-            />
-
-            <FeatureItem
-              title="End-to-End Encrypted SMS with Forward Secrecy"
-              text={`You can send and receive E2EE encrypted SMS messages with fellow peers using Deku SMS.
-The messages have support for forward secrecy and SMS accessible technologies
-are used in making the encrypted payloads suitable for SMS messaging.`}
-            />
-          </Stack>
-        </Box>
-    </Box>
+        <Stack direction={{ xs: "column", md: "row" }} spacing={6}>
+          {features.slice(2).map((f, i) => (
+            <FeatureItem key={i} title={f.title} text={f.text} />
+          ))}
+        </Stack>
+      </Box>
     </Box>
   );
 }
-
 
 function FeatureItem({ title, text }) {
   return (
@@ -98,7 +81,6 @@ function FeatureItem({ title, text }) {
       >
         {title}
       </Typography>
-
       <Typography
         variant="body1"
         sx={{ opacity: 0.75, lineHeight: 1.8, whiteSpace: "pre-line" }}
