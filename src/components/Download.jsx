@@ -1,105 +1,29 @@
 import React from "react";
-import { Box, Typography, Stack, Card, CardContent, CardActionArea, IconButton } from "@mui/material";
+import {
+  Box, Typography, Stack, Card,
+  CardContent, CardActionArea, IconButton
+} from "@mui/material";
 import { useTranslation } from "react-i18next";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
-export default function DownloadSection() {
-  const { t } = useTranslation();
+const ACCENT = "#2ED3B7";
+const BG = "#0F2027";
 
-  const downloads = [
-    {
-      logo: "/playstore.webp",
-      title: t("downloads.playstore.title"),
-      subtitle: t("downloads.playstore.subtitle"),
-      link: "https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share"
-    },
-    {
-      logo: "/fdroid.png",
-      title: t("downloads.fdroid.title"),
-      subtitle: t("downloads.fdroid.subtitle"),
-      link: "https://f-droid.org/docs/Reproducible_Builds/"
-    },
-    {
-      logo: "/github.png",
-      title: t("downloads.github.title"),
-      subtitle: t("downloads.github.subtitle"),
-      link: "https://github.com/dekusms/DekuSMS-Android?tab=readme-ov-file"
-    }
-  ];
-
-  return (
-    <Box
-      sx={{
-        bgcolor: "#0F2027",
-        color: "white",
-        minHeight: "100vh",
-        py: { xs: 8, md: 20 },
-        px: { xs: 3, md: 10 },
-      }}
-    >
-      <Typography
-        variant="h3"
-        sx={{
-          fontWeight: 500,
-          fontFamily: "'Unbounded'",
-          opacity: 0.05,
-          mb: 4,
-          letterSpacing: 2,
-          textAlign: { xs: "center", md: "left" },
-          fontSize: { xs: "3rem", md: "6rem" },
-        }}
-      >
-        {t("downloads.heading")}
-      </Typography>
-
-      <Stack
-        direction={{ xs: "column", md: "row" }}
-        spacing={10}
-        alignItems="center"
-      >
-        <Box
-          flex={1}
-          sx={{
-            textAlign: { xs: "center", md: "left" },
-            maxWidth: { xs: "100%", md: "80%" },
-          }}
-        >
-          <Typography variant="body1" sx={{ opacity: 0.8, lineHeight: 1.8 }}>
-            {t("downloads.description")}
-          </Typography>
-        </Box>
-
-        <Box flex={1.5} sx={{ width: "100%" }}>
-          <Stack spacing={4}>
-            {downloads.map((d, i) => (
-              <DownloadCard
-                key={i}
-                logo={d.logo}
-                title={d.title}
-                subtitle={d.subtitle}
-                link={d.link}
-              />
-            ))}
-          </Stack>
-        </Box>
-      </Stack>
-    </Box>
-  );
-}
-
-function DownloadCard({ logo, title, subtitle, link }) {
+function DownloadCard({ icon, iconBg, title, subtitle, badge, link }) {
   return (
     <Card
       sx={{
-        bgcolor: "black",
+        bgcolor: "rgba(0,0,0,0.5)",
         borderRadius: "16px",
-        border: "2px solid #00d6b4",
-        width: { xs: "100%", sm: "90%", md: "80%" },
+        border: "1.5px solid rgba(0,214,180,0.25)",
+        width: "100%",
+        maxWidth: { xs: "100%", md: "600px" },
         overflow: "hidden",
-        transition: "all 280ms cubic-bezier(.16,1,.3,1)",
+        transition: "all 0.28s cubic-bezier(.16,1,.3,1)",
         "&:hover": {
           transform: "translateY(-4px)",
-          boxShadow: "0 20px 40px rgba(0,214,180,0.25)",
+          border: "1.5px solid rgba(0,214,180,0.6)",
+          boxShadow: "0 20px 48px rgba(0,214,180,0.15)",
         },
       }}
     >
@@ -108,28 +32,77 @@ function DownloadCard({ logo, title, subtitle, link }) {
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        sx={{ px: 2, py: 1.5 }}
+        sx={{ px: { xs: 2, md: 3 }, py: { xs: 2, md: 2.5 } }}
       >
         <CardContent
           sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            p: 0,
             color: "white",
+            gap: 2,
           }}
         >
-          <Stack direction="row" spacing={2} alignItems="center">
-            <img
-              src={logo}
-              alt={`${title} logo`}
-              style={{ width: 40, height: 40 }}
-            />
+          <Stack direction="row" spacing={2} alignItems="center" sx={{ flex: 1 }}>
+            <Box
+              sx={{
+                width: { xs: 44, md: 52 },
+                height: { xs: 44, md: 52 },
+                borderRadius: "14px",
+                bgcolor: iconBg,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "white",
+                flexShrink: 0,
+              }}
+            >
+              {icon}
+            </Box>
 
-            <Box>
-              <Typography variant="h6" fontWeight={600}>
-                {title}
-              </Typography>
-              <Typography variant="body2" sx={{ opacity: 0.6 }}>
+            <Box sx={{ flex: 1, minWidth: 0 }}>
+              <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    fontFamily: "'Ubuntu', sans-serif",
+                    fontSize: { xs: "0.95rem", md: "1.05rem" },
+                    color: "white",
+                  }}
+                >
+                  {title}
+                </Typography>
+                {badge && (
+                  <Box
+                    sx={{
+                      px: 1,
+                      py: 0.25,
+                      borderRadius: "6px",
+                      bgcolor: "rgba(46,211,183,0.15)",
+                      border: "1px solid rgba(46,211,183,0.3)",
+                      color: ACCENT,
+                      fontSize: "0.65rem",
+                      fontFamily: "'Ubuntu', sans-serif",
+                      letterSpacing: 0.5,
+                      flexShrink: 0,
+                    }}
+                  >
+                    {badge}
+                  </Box>
+                )}
+              </Stack>
+              <Typography
+                sx={{
+                  opacity: 0.55,
+                  fontFamily: "'Ubuntu', sans-serif",
+                  fontSize: { xs: "0.8rem", md: "0.875rem" },
+                  lineHeight: 1.4,
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
                 {subtitle}
               </Typography>
             </Box>
@@ -137,15 +110,202 @@ function DownloadCard({ logo, title, subtitle, link }) {
 
           <IconButton
             sx={{
-              color: "white",
-              transition: "transform 200ms ease",
-              "&:hover": { transform: "translateX(4px)" },
+              color: "rgba(255,255,255,0.5)",
+              flexShrink: 0,
+              transition: "all 0.2s",
+              "&:hover": { color: ACCENT, transform: "translate(2px,-2px)" },
             }}
+            disableRipple
           >
-            <OpenInNewIcon />
+            <OpenInNewIcon fontSize="small" />
           </IconButton>
         </CardContent>
       </CardActionArea>
     </Card>
+  );
+}
+
+export default function DownloadSection() {
+  const { t } = useTranslation();
+
+  const downloads = [
+    {
+      icon: (
+        <img
+          src="/playstore.webp"
+          alt="Google Play"
+          style={{ width: 28, height: 28, objectFit: "contain" }}
+        />
+      ),
+      iconBg: "linear-gradient(135deg, #4285f4, #34a853)",
+      title: t("downloads.playstore.title", "Google Play Store"),
+      subtitle: t("downloads.playstore.subtitle", "Stable release — recommended for most users"),
+      badge: "Recommended",
+      link: "https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share",
+    },
+    {
+      icon: (
+        <img
+          src="/fdroid.png"
+          alt="F-Droid"
+          style={{ width: 28, height: 28, objectFit: "contain" }}
+        />
+      ),
+      iconBg: "linear-gradient(135deg, #1b6ca8, #0d4f7c)",
+      title: t("downloads.fdroid.title", "F-Droid"),
+      subtitle: t("downloads.fdroid.subtitle", "Reproducible builds — for privacy-conscious users"),
+      badge: "Open Source",
+      link: "https://f-droid.org/docs/Reproducible_Builds/",
+    },
+    {
+      icon: (
+        <img
+          src="/github.png"
+          alt="GitHub"
+          style={{ width: 28, height: 28, objectFit: "contain" }}
+        />
+      ),
+      iconBg: "linear-gradient(135deg, #2d333b, #161b22)",
+      title: t("downloads.github.title", "GitHub"),
+      subtitle: t("downloads.github.subtitle", "Build from source — for developers and contributors"),
+      badge: null,
+      link: "https://github.com/dekusms/DekuSMS-Android?tab=readme-ov-file",
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        bgcolor: BG,
+        color: "white",
+        minHeight: "100vh",
+        py: { xs: 10, md: 12 },
+        px: { xs: 2.5, sm: 4, md: 8, lg: 12 },
+        position: "relative",
+        overflowX: "hidden",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      {/* WATERMARK */}
+      <Typography
+        sx={{
+          position: "absolute",
+          bottom: { xs: 8, md: 20 },
+          left: { xs: 16, md: 64 },
+          fontFamily: "'Unbounded', sans-serif",
+          fontWeight: 700,
+          fontSize: { xs: "2.5rem", sm: "4rem", md: "6rem" },
+          opacity: 0.04,
+          letterSpacing: 2,
+          textTransform: "uppercase",
+          whiteSpace: "nowrap",
+          userSelect: "none",
+          pointerEvents: "none",
+        }}
+      >
+        {t("downloads.heading", "Download")}
+      </Typography>
+
+      {/* GLOW */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: "40%",
+          left: "-10%",
+          width: 400,
+          height: 400,
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(46,211,183,0.05) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
+
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        spacing={{ xs: 5, md: 10 }}
+        alignItems={{ xs: "flex-start", md: "center" }}
+        sx={{ width: "100%", position: "relative", zIndex: 2 }}
+      >
+        <Box flex={1} sx={{ maxWidth: { xs: "100%", md: 900 } }}>
+          <Typography
+            sx={{
+              fontFamily: "'Unbounded', sans-serif",
+              fontSize: "0.7rem",
+              color: ACCENT,
+              letterSpacing: 3,
+              textTransform: "uppercase",
+              mb: 2,
+              opacity: 0.8,
+            }}
+          >
+            Get the app
+          </Typography>
+
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: "'Unbounded', sans-serif",
+              fontWeight: 400,
+              fontSize: { xs: "1.4rem", sm: "1.8rem", md: "2.4rem" },
+              color: "white",
+              lineHeight: 1.2,
+              mb: 3,
+            }}
+          >
+            {t("downloads.heading", "Download DekuSMS")}
+          </Typography>
+
+          <Typography
+            sx={{
+              opacity: 0.7,
+              lineHeight: 1.8,
+              fontFamily: "'Ubuntu', sans-serif",
+              fontSize: { xs: "0.9rem", md: "1rem" },
+              mb: 3,
+            }}
+          >
+            {t("downloads.description", "Available on Google Play, F-Droid, and GitHub. All versions are open source and freely available. Choose the platform that works best for you.")}
+          </Typography>
+
+          <Stack direction="row" spacing={3}>
+            {[
+              { value: "5K+", label: "Downloads" },
+              { value: "3.4★", label: "Rating" },
+            ].map((s) => (
+              <Box key={s.label}>
+                <Typography
+                  sx={{
+                    fontFamily: "'Unbounded', sans-serif",
+                    fontSize: "1.3rem",
+                    color: ACCENT,
+                    fontWeight: 500,
+                  }}
+                >
+                  {s.value}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: "'Ubuntu', sans-serif",
+                    fontSize: "0.78rem",
+                    color: "rgba(255,255,255,0.45)",
+                  }}
+                >
+                  {s.label}
+                </Typography>
+              </Box>
+            ))}
+          </Stack>
+        </Box>
+
+        <Box flex={1.5} sx={{ width: "100%", maxWidth: { xs: "100%", md: 900 } }}>
+          <Stack spacing={5}>
+            {downloads.map((d, i) => (
+              <DownloadCard key={i} {...d} />
+            ))}
+          </Stack>
+        </Box>
+      </Stack>
+    </Box>
   );
 }

@@ -1,9 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Box } from "@mui/material";
-
 import TopNav from "./components/TopNav";
 import FloaterNav from "./components/FloaterNav";
-
 import Landing from "./components/Landing";
 import Features from "./components/Features";
 import Downloads from "./components/Download";
@@ -12,7 +10,6 @@ import FAQ from "./components/Faq";
 export default function App() {
   const [activeSection, setActiveSection] = useState("landing");
   const [navExpanded, setNavExpanded] = useState(false);
-
   const scrollRef = useRef(null);
 
   const sectionRefs = {
@@ -22,9 +19,6 @@ export default function App() {
     faq: useRef(null),
   };
 
-  /* -------------------------------
-     SNAP SCROLL ON NAV CLICK
-  -------------------------------- */
   useEffect(() => {
     const section = sectionRefs[activeSection]?.current;
     if (section) {
@@ -32,9 +26,6 @@ export default function App() {
     }
   }, [activeSection]);
 
-  /* -------------------------------
-     OBSERVE ACTIVE SECTION
-  -------------------------------- */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -46,7 +37,7 @@ export default function App() {
       },
       {
         root: scrollRef.current,
-        threshold: 0.6,
+        threshold: 0.5,
       }
     );
 
@@ -76,27 +67,18 @@ export default function App() {
         onExpandChange={setNavExpanded}
       />
 
-      {/* 🔥 SCROLL CONTAINER */}
       <Box
         ref={scrollRef}
         sx={{
           height: "100vh",
           overflowY: "auto",
           scrollBehavior: "smooth",
-
-          /* SNAP */
           scrollSnapType: "y mandatory",
-
-          pr: { md: navExpanded ? "220px" : "0px", xs: 0 },
+          pr: { md: navExpanded ? "200px" : "0px", xs: 0 },
           bgcolor: "#0F2027",
-
-          /* SCROLLBAR */
-          "&::-webkit-scrollbar": {
-            width: "8px",
-          },
-          "&::-webkit-scrollbar-track": {
-            background: "#0F2027",
-          },
+          transition: "padding-right 0.3s ease",
+          "&::-webkit-scrollbar": { width: "6px" },
+          "&::-webkit-scrollbar-track": { background: "#0F2027" },
           "&::-webkit-scrollbar-thumb": {
             background: "#2ED3B7",
             borderRadius: "10px",
