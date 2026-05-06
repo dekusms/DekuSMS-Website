@@ -8,13 +8,23 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GTranslateIcon from "@mui/icons-material/GTranslate";
+import CloseIcon from "@mui/icons-material/Close";
 import Paper from "@mui/material/Paper";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
-export default function TopNav() {
+const ACCENT = "#2ED3B7";
+const BG = "#0F2027";
+
+export default function TopNav({ setActiveSection }) {
   const { t, i18n } = useTranslation();
-  const [open, setOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
 
   const theme = useTheme();
@@ -36,66 +46,93 @@ export default function TopNav() {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setLangOpen(false);
-    setOpen(false);
-    // RTL support
+    setDrawerOpen(false);
     document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
+  };
+
+  const navLinkStyle = {
+    color: "rgba(255,255,255,0.8)",
+    textTransform: "none",
+    fontSize: "0.9rem",
+    fontFamily: "'Ubuntu', sans-serif",
+    "&:hover": { color: ACCENT, backgroundColor: "transparent" },
+    transition: "color 0.2s",
   };
 
   return (
     <>
-      <AppBar position="fixed" sx={{ backgroundColor: "#0F2027" }}>
+      <AppBar
+        position="fixed"
+        elevation={0}
+        sx={{
+          backgroundColor: "rgba(15,32,39,0.95)",
+          backdropFilter: "blur(12px)",
+          borderBottom: "1px solid rgba(46,211,183,0.15)",
+        }}
+      >
         <Toolbar
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            px: { xs: 1.5, md: 10 },
+            px: { xs: 2, md: 8 },
+            minHeight: { xs: "60px", md: "68px" },
           }}
         >
-          <Box
-            component="img"
-            src="./logo/DekuSMS-Dark.png"
-            alt="Logo"
-            sx={{ height: { xs: 25, md: 30 } }}
-          />
-
-          {/* DESKTOP NAV */}
+        <Box
+  component="img"
+  src="/logo/DekuSMS-Dark.png"
+  alt="DekuSMS Logo"
+  loading="lazy"
+  sx={{
+    width: { xs: 90, sm: 110, md: 180 },
+    height: "auto",
+    objectFit: "contain",
+  }}
+/>
+         
           {!isMobile && (
-            <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+            <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
               {menuItems.map((item) => (
                 <Button
                   key={item.label}
-                  color="inherit"
                   href={item.href}
                   target="_blank"
-                  sx={{ textTransform: "none" }}
+                  sx={navLinkStyle}
                 >
                   {item.label}
                 </Button>
               ))}
 
-              <IconButton color="inherit">
-                <GitHubIcon />
+              <IconButton
+                color="inherit"
+                href="https://github.com/dekusms/DekuSMS-Android"
+                target="_blank"
+                sx={{ opacity: 0.7, "&:hover": { opacity: 1, color: ACCENT } }}
+              >
+                <GitHubIcon fontSize="small" />
               </IconButton>
 
-              {/* TRANSLATE BUTTON */}
               <Box sx={{ position: "relative" }}>
                 <IconButton
                   color="inherit"
                   onClick={() => setLangOpen(!langOpen)}
+                  sx={{ opacity: 0.7, "&:hover": { opacity: 1, color: ACCENT } }}
                 >
-                  <GTranslateIcon />
+                  <GTranslateIcon fontSize="small" />
                 </IconButton>
-
                 {langOpen && (
                   <Paper
+                    elevation={8}
                     sx={{
                       position: "absolute",
-                      top: 40,
+                      top: 44,
                       right: 0,
-                      bgcolor: "#0F2027",
+                      bgcolor: "#0d1b22",
+                      border: "1px solid rgba(46,211,183,0.2)",
                       borderRadius: 2,
                       minWidth: 160,
                       zIndex: 3000,
+                      overflow: "hidden",
                     }}
                   >
                     {languages.map((lng) => (
@@ -106,11 +143,11 @@ export default function TopNav() {
                           px: 2,
                           py: 1.2,
                           cursor: "pointer",
-                          color:
-                            i18n.language === lng.code
-                              ? "#2ED3B7"
-                              : "white",
-                          "&:hover": { background: "rgba(255,255,255,0.08)" },
+                          fontFamily: "'Ubuntu', sans-serif",
+                          fontSize: "0.875rem",
+                          color: i18n.language === lng.code ? ACCENT : "rgba(255,255,255,0.8)",
+                          "&:hover": { background: "rgba(46,211,183,0.08)" },
+                          transition: "background 0.15s",
                         }}
                       >
                         {lng.label}
@@ -119,66 +156,114 @@ export default function TopNav() {
                   </Paper>
                 )}
               </Box>
+
+              <Button
+                onClick={() => setActiveSection("downloads")}
+                variant="contained"
+                size="small"
+                sx={{
+                  bgcolor: ACCENT,
+                  color: BG,
+                  fontFamily: "'Ubuntu', sans-serif",
+                  fontWeight: 500,
+                  textTransform: "none",
+                  borderRadius: "20px",
+                  px: 2.5,
+                  ml: 1,
+                  "&:hover": {
+                    bgcolor: "#25b8a0",
+                    boxShadow: "0 4px 16px rgba(46,211,183,0.3)",
+                  },
+                }}
+              >
+                Download
+              </Button>
             </Box>
           )}
 
-          {/* MOBILE MENU */}
+       
           {isMobile && (
-            <IconButton color="inherit" onClick={() => setOpen(!open)}>
+            <IconButton color="inherit" onClick={() => setDrawerOpen(true)}>
               <MenuIcon />
             </IconButton>
           )}
         </Toolbar>
       </AppBar>
 
-      {/* MOBILE DROPDOWN */}
-      {isMobile && open && (
-        <Paper
-          sx={{
-            position: "fixed",
-            top: 64,
-            right: 10,
-            width: 220,
-            bgcolor: "#0F2027",
-            borderRadius: 2,
-            zIndex: 3000,
-          }}
-        >
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        PaperProps={{
+          sx: {
+            bgcolor: "#0d1b22",
+            width: 260,
+            borderLeft: "1px solid rgba(46,211,183,0.2)",
+          },
+        }}
+      >
+        <Box sx={{ p: 2, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <Typography sx={{ fontFamily: "'Unbounded'", color: ACCENT, fontSize: "0.9rem" }}>
+            DekuSMS
+          </Typography>
+          <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: "white" }}>
+            <CloseIcon />
+          </IconButton>
+        </Box>
+        <Divider sx={{ borderColor: "rgba(46,211,183,0.1)" }} />
+        <List>
           {menuItems.map((item) => (
-            <Box
+            <ListItem
               key={item.label}
-              onClick={() => window.open(item.href, "_blank")}
+              component="a"
+              href={item.href}
+              target="_blank"
+              onClick={() => setDrawerOpen(false)}
               sx={{
-                px: 2,
-                py: 1.4,
-                color: "white",
-                cursor: "pointer",
-                "&:hover": { background: "rgba(255,255,255,0.08)" },
+                color: "rgba(255,255,255,0.8)",
+                "&:hover": { bgcolor: "rgba(46,211,183,0.08)", color: ACCENT },
+                transition: "all 0.15s",
               }}
             >
-              {item.label}
-            </Box>
+              <ListItemText
+                primary={item.label}
+                primaryTypographyProps={{ fontFamily: "'Ubuntu'", fontSize: "0.9rem" }}
+              />
+            </ListItem>
           ))}
-
-          <Box sx={{ height: 8 }} />
-
+          <ListItem
+            component="a"
+            href="https://github.com/dekusms/DekuSMS-Android"
+            target="_blank"
+            onClick={() => setDrawerOpen(false)}
+            sx={{ color: "rgba(255,255,255,0.8)", "&:hover": { bgcolor: "rgba(46,211,183,0.08)" } }}
+          >
+            <ListItemText
+              primary="GitHub"
+              primaryTypographyProps={{ fontFamily: "'Ubuntu'", fontSize: "0.9rem" }}
+            />
+          </ListItem>
+        </List>
+        <Divider sx={{ borderColor: "rgba(46,211,183,0.1)" }} />
+        <List>
           {languages.map((lng) => (
-            <Box
+            <ListItem
               key={lng.code}
               onClick={() => changeLanguage(lng.code)}
               sx={{
-                px: 2,
-                py: 1.2,
-                color: i18n.language === lng.code ? "#2ED3B7" : "white",
                 cursor: "pointer",
-                "&:hover": { background: "rgba(255,255,255,0.08)" },
+                color: i18n.language === lng.code ? ACCENT : "rgba(255,255,255,0.6)",
+                "&:hover": { bgcolor: "rgba(46,211,183,0.08)" },
               }}
             >
-              {lng.label}
-            </Box>
+              <ListItemText
+                primary={lng.label}
+                primaryTypographyProps={{ fontFamily: "'Ubuntu'", fontSize: "0.85rem" }}
+              />
+            </ListItem>
           ))}
-        </Paper>
-      )}
+        </List>
+      </Drawer>
     </>
   );
 }

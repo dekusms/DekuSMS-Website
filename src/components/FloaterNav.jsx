@@ -8,7 +8,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 export default function FloaterNav({ current, setActiveSection, onExpandChange }) {
   const [expanded, setExpanded] = useState(false);
 
-  const ACTIVE_COLOR = "#2ED3B7";
+  const ACTIVE_COLOR = "#2ed3b7c4";
 
   const handleExpand = (state) => {
     setExpanded(state);
@@ -24,6 +24,7 @@ export default function FloaterNav({ current, setActiveSection, onExpandChange }
 
   return (
     <>
+        {/* desktop version */}
 <Box
   onMouseEnter={() => handleExpand(true)}
   onMouseLeave={() => handleExpand(false)}
@@ -39,7 +40,7 @@ export default function FloaterNav({ current, setActiveSection, onExpandChange }
     py: 10,
     width: expanded ? 200 : 50,
     borderRadius: "50px",
-    border: "1px solid rgba(0,214,180,0.9)",
+    border: "1px solid rgba(0, 214, 178, 0.36)",
     background: "#0F2027",
     backdropFilter: "blur(10px)",
     transition:
@@ -108,6 +109,7 @@ export default function FloaterNav({ current, setActiveSection, onExpandChange }
         })}
       </Box>
 
+    {/* mobile version */}
       <Box
         sx={{
           position: "fixed",
