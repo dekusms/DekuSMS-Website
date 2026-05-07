@@ -4,12 +4,12 @@ import {
   CardContent, CardActionArea, IconButton
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { ArrowRightOutlined, SendOutlined } from "@ant-design/icons";
 
 const ACCENT = "#2ED3B7";
 const BG = "#0F2027";
 
-function DownloadCard({ icon, iconBg, title, subtitle, badge, link }) {
+function DownloadCard({ icon, iconBg, title, subtitle, link }) {
   return (
     <Card
       sx={{
@@ -62,36 +62,17 @@ function DownloadCard({ icon, iconBg, title, subtitle, badge, link }) {
             </Box>
 
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-                <Typography
-                  sx={{
-                    fontWeight: 600,
-                    fontFamily: "'Ubuntu', sans-serif",
-                    fontSize: { xs: "0.95rem", md: "1.05rem" },
-                    color: "white",
-                  }}
-                >
-                  {title}
-                </Typography>
-                {badge && (
-                  <Box
-                    sx={{
-                      px: 1,
-                      py: 0.25,
-                      borderRadius: "6px",
-                      bgcolor: "rgba(46,211,183,0.15)",
-                      border: "1px solid rgba(46,211,183,0.3)",
-                      color: ACCENT,
-                      fontSize: "0.65rem",
-                      fontFamily: "'Ubuntu', sans-serif",
-                      letterSpacing: 0.5,
-                      flexShrink: 0,
-                    }}
-                  >
-                    {badge}
-                  </Box>
-                )}
-              </Stack>
+              <Typography
+                sx={{
+                  fontWeight: 600,
+                  fontFamily: "'Ubuntu', sans-serif",
+                  fontSize: { xs: "0.95rem", md: "1.05rem" },
+                  color: "white",
+                  mb: 0.5,
+                }}
+              >
+                {title}
+              </Typography>
               <Typography
                 sx={{
                   opacity: 0.55,
@@ -117,7 +98,7 @@ function DownloadCard({ icon, iconBg, title, subtitle, badge, link }) {
             }}
             disableRipple
           >
-            <OpenInNewIcon fontSize="small" />
+            <ArrowRightOutlined style={{ fontSize: 16 }} />
           </IconButton>
         </CardContent>
       </CardActionArea>
@@ -140,7 +121,6 @@ export default function DownloadSection() {
       iconBg: "linear-gradient(135deg, #4285f4, #34a853)",
       title: t("downloads.playstore.title", "Google Play Store"),
       subtitle: t("downloads.playstore.subtitle", "Stable release — recommended for most users"),
-      badge: "Recommended",
       link: "https://play.google.com/store/apps/details?id=com.afkanerd.deku&pcampaignid=web_share",
     },
     {
@@ -154,7 +134,6 @@ export default function DownloadSection() {
       iconBg: "linear-gradient(135deg, #1b6ca8, #0d4f7c)",
       title: t("downloads.fdroid.title", "F-Droid"),
       subtitle: t("downloads.fdroid.subtitle", "Reproducible builds — for privacy-conscious users"),
-      badge: "Open Source",
       link: "https://f-droid.org/docs/Reproducible_Builds/",
     },
     {
@@ -168,8 +147,14 @@ export default function DownloadSection() {
       iconBg: "linear-gradient(135deg, #2d333b, #161b22)",
       title: t("downloads.github.title", "GitHub"),
       subtitle: t("downloads.github.subtitle", "Build from source — for developers and contributors"),
-      badge: null,
       link: "https://github.com/dekusms/DekuSMS-Android?tab=readme-ov-file",
+    },
+    {
+      icon: <SendOutlined style={{ fontSize: 24, color: "white" }} />,
+      iconBg: "linear-gradient(135deg, #229ED9, #1a7fb5)",
+      title: "Join our Telegram",
+      subtitle: "Updates, support and community discussion",
+      link: "https://t.me/deku_sms",
     },
   ];
 
@@ -187,7 +172,6 @@ export default function DownloadSection() {
         alignItems: "center",
       }}
     >
-      {/* WATERMARK */}
       <Typography
         sx={{
           position: "absolute",
@@ -206,8 +190,6 @@ export default function DownloadSection() {
       >
         {t("downloads.heading", "Download")}
       </Typography>
-
-      {/* GLOW */}
       <Box
         sx={{
           position: "absolute",

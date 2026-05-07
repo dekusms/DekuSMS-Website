@@ -18,9 +18,11 @@ import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
+import { SendOutlined } from "@ant-design/icons";
 
 const ACCENT = "#2ED3B7";
 const BG = "#0F2027";
+const TELEGRAM_LINK = "https://t.me/deku_sms"; 
 
 export default function TopNav({ setActiveSection }) {
   const { t, i18n } = useTranslation();
@@ -78,27 +80,22 @@ export default function TopNav({ setActiveSection }) {
             minHeight: { xs: "60px", md: "68px" },
           }}
         >
-        <Box
-  component="img"
-  src="/logo/DekuSMS-Dark.png"
-  alt="DekuSMS Logo"
-  loading="lazy"
-  sx={{
-    width: { xs: 90, sm: 110, md: 180 },
-    height: "auto",
-    objectFit: "contain",
-  }}
-/>
-         
+          <Box
+            component="img"
+            src="/logo/DekuSMS-Dark.png"
+            alt="DekuSMS Logo"
+            loading="lazy"
+            sx={{
+              width: { xs: 90, sm: 110, md: 180 },
+              height: "auto",
+              objectFit: "contain",
+            }}
+          />
+
           {!isMobile && (
             <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
               {menuItems.map((item) => (
-                <Button
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  sx={navLinkStyle}
-                >
+                <Button key={item.label} href={item.href} target="_blank" sx={navLinkStyle}>
                   {item.label}
                 </Button>
               ))}
@@ -111,6 +108,8 @@ export default function TopNav({ setActiveSection }) {
               >
                 <GitHubIcon fontSize="small" />
               </IconButton>
+
+
 
               <Box sx={{ position: "relative" }}>
                 <IconButton
@@ -157,6 +156,7 @@ export default function TopNav({ setActiveSection }) {
                 )}
               </Box>
 
+
               <Button
                 onClick={() => setActiveSection("downloads")}
                 variant="contained"
@@ -178,10 +178,31 @@ export default function TopNav({ setActiveSection }) {
               >
                 Download
               </Button>
+
+
+                         <Button
+  href={TELEGRAM_LINK}
+  target="_blank"
+  rel="noopener noreferrer"
+  startIcon={<SendOutlined />}
+  sx={{
+    ...navLinkStyle,
+    border: "1px solid rgba(46,211,183,0.3)",
+    borderRadius: "20px",
+    px: 2,
+    gap: 0.5,
+    "&:hover": {
+      color: ACCENT,
+      backgroundColor: "rgba(46,211,183,0.08)",
+      borderColor: ACCENT,
+    },
+  }}
+>
+  Join our Telegram
+</Button>
             </Box>
           )}
 
-       
           {isMobile && (
             <IconButton color="inherit" onClick={() => setDrawerOpen(true)}>
               <MenuIcon />
@@ -231,19 +252,49 @@ export default function TopNav({ setActiveSection }) {
               />
             </ListItem>
           ))}
+
           <ListItem
             component="a"
             href="https://github.com/dekusms/DekuSMS-Android"
             target="_blank"
             onClick={() => setDrawerOpen(false)}
-            sx={{ color: "rgba(255,255,255,0.8)", "&:hover": { bgcolor: "rgba(46,211,183,0.08)" } }}
+            sx={{ color: "rgba(255,255,255,0.8)", "&:hover": { bgcolor: "rgba(46,211,183,0.08)", color: ACCENT } }}
           >
             <ListItemText
               primary="GitHub"
               primaryTypographyProps={{ fontFamily: "'Ubuntu'", fontSize: "0.9rem" }}
             />
           </ListItem>
+
+       <ListItem
+  component="a"
+  href={TELEGRAM_LINK}
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => setDrawerOpen(false)}
+  sx={{
+    color: ACCENT,
+    borderTop: "1px solid rgba(46,211,183,0.1)",
+    borderBottom: "1px solid rgba(46,211,183,0.1)",
+    mt: 0.5,
+    "&:hover": { bgcolor: "rgba(46,211,183,0.08)" },
+  }}
+>
+  <Box sx={{ mr: 1.5, display: "flex", alignItems: "center", fontSize: 15 }}>
+    <SendOutlined />
+  </Box>
+  <ListItemText
+    primary="Join our Telegram"
+    primaryTypographyProps={{
+      fontFamily: "'Ubuntu'",
+      fontSize: "0.9rem",
+      fontWeight: 600,
+      color: ACCENT,
+    }}
+  />
+</ListItem>
         </List>
+
         <Divider sx={{ borderColor: "rgba(46,211,183,0.1)" }} />
         <List>
           {languages.map((lng) => (

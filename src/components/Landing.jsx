@@ -1,9 +1,7 @@
 import React from "react";
 import { Box, Typography, Stack, Button, Chip } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import WifiOffIcon from "@mui/icons-material/WifiOff";
-import LockIcon from "@mui/icons-material/Lock";
-import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
+import { WifiOutlined, LockOutlined, MobileOutlined } from "@ant-design/icons";
 
 const ACCENT = "#2ED3B7";
 const BG = "#0F2027";
@@ -140,9 +138,9 @@ export default function Landing() {
             }}
           >
             {[
-              { icon: <WifiOffIcon sx={{ fontSize: 14 }} />, label: "Works offline" },
-              { icon: <LockIcon sx={{ fontSize: 14 }} />, label: "End-to-end encrypted" },
-              { icon: <PhoneAndroidIcon sx={{ fontSize: 14 }} />, label: "Android native" },
+               { icon: <WifiOutlined style={{ fontSize: 14 }} />, label: "Works offline" },
+  { icon: <LockOutlined style={{ fontSize: 14 }} />, label: "End-to-end encrypted" },
+  { icon: <MobileOutlined style={{ fontSize: 14 }} />, label: "Android native" }
             ].map((pill) => (
               <Box
                 key={pill.label}
@@ -249,7 +247,7 @@ export default function Landing() {
           >
             <Box
               component="img"
-              src="/dd.png"
+              src="/Home.png"
               alt={t("landing.imageAlt", "DekuSMS app")}
               sx={{
                 width: "80%",
