@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Stack, Button, Chip } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { WifiOutlined, LockOutlined, MobileOutlined } from "@ant-design/icons";
+import { WifiOutlined, LockOutlined, MobileOutlined, SendOutlined } from "@ant-design/icons";
 
 const ACCENT = "#2ED3B7";
 const BG = "#0F2027";
@@ -131,16 +131,16 @@ export default function Landing() {
             spacing={1.5}
             sx={{
               mt: 3,
-              mb: 4,
+              mb: 3,
               flexWrap: "wrap",
               gap: 1,
               justifyContent: { xs: "center", md: "flex-start" },
             }}
           >
             {[
-               { icon: <WifiOutlined style={{ fontSize: 14 }} />, label: "Works offline" },
-  { icon: <LockOutlined style={{ fontSize: 14 }} />, label: "End-to-end encrypted" },
-  { icon: <MobileOutlined style={{ fontSize: 14 }} />, label: "Android native" }
+              { icon: <WifiOutlined style={{ fontSize: 14 }} />, label: "Works offline" },
+              { icon: <LockOutlined style={{ fontSize: 14 }} />, label: "End-to-end encrypted" },
+              { icon: <MobileOutlined style={{ fontSize: 14 }} />, label: "Android native" },
             ].map((pill) => (
               <Box
                 key={pill.label}
@@ -163,6 +163,55 @@ export default function Landing() {
               </Box>
             ))}
           </Stack>
+
+          <Typography
+            sx={{
+              mb: 3,
+              fontFamily: "'Ubuntu', sans-serif",
+              fontSize: { xs: "0.85rem", md: "0.9rem" },
+              color: "rgba(255,255,255,0.55)",
+              justifyContent: { xs: "center", md: "flex-start" },
+              display: "flex",
+              alignItems: "center",
+              gap: 0.75,
+              flexWrap: "wrap",
+            }}
+          >
+            <SendOutlined style={{ fontSize: 13, color: ACCENT }} />
+            {t("landing.join", "Join the community on")}{" "}
+            <Box
+              component="a"
+              href="https://t.me/dekusms"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: ACCENT,
+                fontWeight: 500,
+                textDecoration: "none",
+                "&:hover": { textDecoration: "underline" },
+                transition: "opacity 0.15s",
+              }}
+            >
+              Telegram
+            </Box>
+            {" "}&amp;{" "}
+            <Box
+              component="a"
+              href="https://reddit.com/r/dekusms"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: ACCENT,
+                fontWeight: 500,
+                textDecoration: "none",
+                "&:hover": { textDecoration: "underline" },
+                transition: "opacity 0.15s",
+              }}
+            >
+              Reddit
+            </Box>
+            {" "}{t("landing.forUpdates", "for updates & support")}
+          </Typography>
 
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -260,7 +309,6 @@ export default function Landing() {
                 e.target.style.display = "none";
               }}
             />
-          
           </Box>
         </Box>
       </Box>
