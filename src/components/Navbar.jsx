@@ -33,10 +33,14 @@ import {
 const ACCENT = "#2ED3B7";
 const BG = "#0F2027";
 const DRAWER_BG = "#0a1a20";
+
 const TELEGRAM_LINK = "https://t.me/deku_sms";
+
+const RTL_LANGUAGES = ["fa", "ar"];
 
 export default function TopNav({ setActiveSection }) {
   const { t, i18n } = useTranslation();
+
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [mobileLangOpen, setMobileLangOpen] = useState(false);
@@ -45,25 +49,47 @@ export default function TopNav({ setActiveSection }) {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const menuItems = [
-    { label: t("topNav.blog", "Blog"), href: "https://blog.smswithoutborders.com/", icon: <FileTextOutlined /> },
-    { label: t("topNav.documentation", "Docs"), href: "https://docs.smswithoutborders.com/", icon: <BookOutlined /> },
-    { label: t("topNav.donate", "Donate"), href: "https://opencollective.com/dekusms", icon: <HeartOutlined /> },
+    {
+      label: t("topNav.blog"),
+      href: "https://blog.smswithoutborders.com/",
+      icon: <FileTextOutlined />,
+    },
+    {
+      label: t("topNav.documentation"),
+      href: "https://docs.smswithoutborders.com/",
+      icon: <BookOutlined />,
+    },
+    {
+      label: t("topNav.donate"),
+      href: "https://opencollective.com/dekusms",
+      icon: <HeartOutlined />,
+    },
   ];
 
   const languages = [
-    { code: "en", label: "English", native: "English" },
-    { code: "fr", label: t("topNav.languages.fr", "Français"), native: "Français" },
-    { code: "es", label: t("topNav.languages.es", "Español"), native: "Español" },
-    { code: "fa", label: t("topNav.languages.fa", "فارسی"), native: "فارسی" },
+    { code: "en", native: "English" },
+    { code: "fr", native: "Français" },
+    { code: "es", native: "Español" },
+    { code: "fa", native: "فارسی" },
+    { code: "ar", native: "العربية" },
+    { code: "de", native: "Deutsch" },
+    { code: "ru", native: "Русский" },
   ];
 
-  const currentLang = languages.find((l) => l.code === i18n.language) || languages[0];
+  const currentLang =
+    languages.find((l) => l.code === i18n.language) || languages[0];
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+
+    localStorage.setItem("lang", lng);
+
+    document.documentElement.dir = RTL_LANGUAGES.includes(lng)
+      ? "rtl"
+      : "ltr";
+
     setLangOpen(false);
     setMobileLangOpen(false);
-    document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
   };
 
   const iconBtnSx = {
@@ -73,7 +99,10 @@ export default function TopNav({ setActiveSection }) {
     height: 36,
     fontSize: 17,
     transition: "all 0.15s",
-    "&:hover": { color: "white", bgcolor: "rgba(255,255,255,0.07)" },
+    "&:hover": {
+      color: "white",
+      bgcolor: "rgba(255,255,255,0.07)",
+    },
   };
 
   const navLinkSx = {
@@ -86,7 +115,10 @@ export default function TopNav({ setActiveSection }) {
     py: 0.75,
     minWidth: "auto",
     transition: "all 0.15s",
-    "&:hover": { color: "white", backgroundColor: "rgba(255,255,255,0.06)" },
+    "&:hover": {
+      color: "white",
+      backgroundColor: "rgba(255,255,255,0.06)",
+    },
   };
 
   return (
@@ -146,13 +178,19 @@ export default function TopNav({ setActiveSection }) {
           )}
 
           {!isMobile && (
-            <Box sx={{ display: "flex", alignItems: "center", gap: 0.75, flexShrink: 0 }}>
-
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 0.75,
+                flexShrink: 0,
+              }}
+            >
               <IconButton
                 href="https://github.com/dekusms/DekuSMS-Android"
                 target="_blank"
                 sx={iconBtnSx}
-                title="GitHub"
+                title={t("topNav.github")}
               >
                 <GithubOutlined />
               </IconButton>
@@ -182,12 +220,16 @@ export default function TopNav({ setActiveSection }) {
                   }}
                 >
                   <GlobalOutlined style={{ fontSize: 14 }} />
+
                   {currentLang.native}
+
                   <DownOutlined
                     style={{
                       fontSize: 10,
                       transition: "transform 0.2s",
-                      transform: langOpen ? "rotate(180deg)" : "rotate(0deg)",
+                      transform: langOpen
+                        ? "rotate(180deg)"
+                        : "rotate(0deg)",
                     }}
                   />
                 </Box>
@@ -196,8 +238,13 @@ export default function TopNav({ setActiveSection }) {
                   <>
                     <Box
                       onClick={() => setLangOpen(false)}
-                      sx={{ position: "fixed", inset: 0, zIndex: 2999 }}
+                      sx={{
+                        position: "fixed",
+                        inset: 0,
+                        zIndex: 2999,
+                      }}
                     />
+
                     <Paper
                       elevation={0}
                       sx={{
@@ -213,13 +260,30 @@ export default function TopNav({ setActiveSection }) {
                         boxShadow: "0 16px 40px rgba(0,0,0,0.5)",
                       }}
                     >
-                      <Box sx={{ px: 1.5, py: 1, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-                        <Typography sx={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.25)", fontFamily: "'Ubuntu'", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                          Language
+                      <Box
+                        sx={{
+                          px: 1.5,
+                          py: 1,
+                          borderBottom:
+                            "1px solid rgba(255,255,255,0.06)",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontSize: "0.7rem",
+                            color: "rgba(255,255,255,0.25)",
+                            fontFamily: "'Ubuntu'",
+                            letterSpacing: "0.08em",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          {t("topNav.language")}
                         </Typography>
                       </Box>
+
                       {languages.map((lng) => {
                         const active = i18n.language === lng.code;
+
                         return (
                           <Box
                             key={lng.code}
@@ -233,15 +297,30 @@ export default function TopNav({ setActiveSection }) {
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "space-between",
-                              color: active ? ACCENT : "rgba(255,255,255,0.7)",
+                              color: active
+                                ? ACCENT
+                                : "rgba(255,255,255,0.7)",
                               fontWeight: active ? 500 : 400,
-                              bgcolor: active ? "rgba(46,211,183,0.06)" : "transparent",
-                              "&:hover": { bgcolor: "rgba(255,255,255,0.05)", color: active ? ACCENT : "white" },
+                              bgcolor: active
+                                ? "rgba(46,211,183,0.06)"
+                                : "transparent",
+                              "&:hover": {
+                                bgcolor: "rgba(255,255,255,0.05)",
+                                color: active ? ACCENT : "white",
+                              },
                               transition: "all 0.12s",
                             }}
                           >
                             {lng.native}
-                            {active && <CheckOutlined style={{ fontSize: 12, color: ACCENT }} />}
+
+                            {active && (
+                              <CheckOutlined
+                                style={{
+                                  fontSize: 12,
+                                  color: ACCENT,
+                                }}
+                              />
+                            )}
                           </Box>
                         );
                       })}
@@ -250,7 +329,14 @@ export default function TopNav({ setActiveSection }) {
                 )}
               </Box>
 
-              <Box sx={{ width: "1px", height: 22, bgcolor: "rgba(255,255,255,0.08)", mx: 0.25 }} />
+              <Box
+                sx={{
+                  width: "1px",
+                  height: 22,
+                  bgcolor: "rgba(255,255,255,0.08)",
+                  mx: 0.25,
+                }}
+              />
 
               <Button
                 href={TELEGRAM_LINK}
@@ -272,10 +358,9 @@ export default function TopNav({ setActiveSection }) {
                     bgcolor: "rgba(46,211,183,0.12)",
                     borderColor: "rgba(46,211,183,0.6)",
                   },
-                  transition: "all 0.15s",
                 }}
               >
-                Join Telegram
+                {t("topNav.joinTelegram")}
               </Button>
 
               <Button
@@ -294,16 +379,21 @@ export default function TopNav({ setActiveSection }) {
                   "&:hover": {
                     bgcolor: "#25b8a0",
                   },
-                  transition: "all 0.15s",
                 }}
               >
-                Download
+                {t("topNav.download")}
               </Button>
             </Box>
           )}
 
           {isMobile && (
-            <Box sx={{ display: "flex", alignItems: "center", gap: 0.75 }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 0.75,
+              }}
+            >
               <Button
                 onClick={() => setActiveSection("downloads")}
                 startIcon={<DownloadOutlined style={{ fontSize: 12 }} />}
@@ -317,14 +407,20 @@ export default function TopNav({ setActiveSection }) {
                   px: 1.5,
                   py: 0.55,
                   fontSize: "0.8rem",
-                  "&:hover": { bgcolor: "#25b8a0" },
+                  "&:hover": {
+                    bgcolor: "#25b8a0",
+                  },
                 }}
               >
-                Download
+                {t("topNav.download")}
               </Button>
+
               <IconButton
                 onClick={() => setDrawerOpen(true)}
-                sx={{ ...iconBtnSx, border: "1px solid rgba(255,255,255,0.08)" }}
+                sx={{
+                  ...iconBtnSx,
+                  border: "1px solid rgba(255,255,255,0.08)",
+                }}
               >
                 <MenuOutlined />
               </IconButton>
@@ -333,6 +429,7 @@ export default function TopNav({ setActiveSection }) {
         </Toolbar>
       </AppBar>
 
+    {/* MOBILE DRAWER */}
       <Drawer
         anchor="right"
         open={drawerOpen}
@@ -342,8 +439,6 @@ export default function TopNav({ setActiveSection }) {
             bgcolor: DRAWER_BG,
             width: 272,
             borderLeft: "1px solid rgba(255,255,255,0.06)",
-            display: "flex",
-            flexDirection: "column",
           },
         }}
       >
@@ -351,186 +446,159 @@ export default function TopNav({ setActiveSection }) {
           sx={{
             px: 2,
             py: 1.5,
+
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
+            justifyContent: "space-between",
+
             borderBottom: "1px solid rgba(255,255,255,0.06)",
-            flexShrink: 0,
           }}
         >
-          <Box
-            component="img"
-            src="/logo/DekuSMS-Dark.png"
-            alt="DekuSMS"
-            sx={{ width: 110, height: "auto", objectFit: "contain" }}
-          />
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "'Ubuntu', sans-serif",
+              fontWeight: 500,
+            }}
+          >
+            Menu
+          </Typography>
+
           <IconButton
             onClick={() => setDrawerOpen(false)}
-            sx={{ color: "rgba(255,255,255,0.35)", borderRadius: "8px", fontSize: 17 }}
+            sx={{
+              color: "rgba(255,255,255,0.6)",
+            }}
           >
             <CloseOutlined />
           </IconButton>
         </Box>
 
-        <List sx={{ py: 1.5, px: 1 }}>
+        <List sx={{ py: 1 }}>
           {menuItems.map((item) => (
             <ListItem
               key={item.label}
               component="a"
               href={item.href}
               target="_blank"
-              onClick={() => setDrawerOpen(false)}
               sx={{
-                py: 1,
-                px: 1.5,
-                borderRadius: "8px",
-                color: "rgba(255,255,255,0.6)",
-                gap: 0,
-                "&:hover": { bgcolor: "rgba(255,255,255,0.05)", color: "white" },
-                transition: "all 0.15s",
+                py: 1.2,
+                px: 2,
+                color: "rgba(255,255,255,0.75)",
               }}
             >
-              <ListItemIcon sx={{ minWidth: 34, fontSize: 15, color: "rgba(255,255,255,0.25)" }}>
+              <ListItemIcon
+                sx={{
+                  color: "rgba(255,255,255,0.5)",
+                  minWidth: 34,
+                }}
+              >
                 {item.icon}
               </ListItemIcon>
+
               <ListItemText
                 primary={item.label}
-                primaryTypographyProps={{ fontFamily: "'Ubuntu'", fontSize: "0.9rem" }}
+                primaryTypographyProps={{
+                  fontFamily: "'Ubuntu', sans-serif",
+                  fontSize: "0.92rem",
+                }}
               />
             </ListItem>
           ))}
-
-          <ListItem
-            component="a"
-            href="https://github.com/dekusms/DekuSMS-Android"
-            target="_blank"
-            onClick={() => setDrawerOpen(false)}
-            sx={{
-              py: 1,
-              px: 1.5,
-              borderRadius: "8px",
-              color: "rgba(255,255,255,0.6)",
-              "&:hover": { bgcolor: "rgba(255,255,255,0.05)", color: "white" },
-              transition: "all 0.15s",
-            }}
-          >
-            <ListItemIcon sx={{ minWidth: 34, fontSize: 15, color: "rgba(255,255,255,0.25)" }}>
-              <GithubOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary="GitHub"
-              primaryTypographyProps={{ fontFamily: "'Ubuntu'", fontSize: "0.9rem" }}
-            />
-          </ListItem>
         </List>
 
-        <Divider sx={{ borderColor: "rgba(255,255,255,0.06)", mx: 2 }} />
+        <Divider sx={{ borderColor: "rgba(255,255,255,0.06)" }} />
 
-        <Box sx={{ px: 2, py: 1.5 }}>
+        {/* MOBILE LANGUAGE */}
+        <Box sx={{ p: 2 }}>
           <Box
             onClick={() => setMobileLangOpen(!mobileLangOpen)}
             sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
+
               px: 1.5,
               py: 1,
+
               borderRadius: "8px",
-              cursor: "pointer",
+
               border: "1px solid rgba(255,255,255,0.08)",
-              color: "rgba(255,255,255,0.6)",
-              transition: "all 0.15s",
-              "&:hover": { bgcolor: "rgba(255,255,255,0.04)", color: "white" },
+
+              color: "rgba(255,255,255,0.75)",
+
+              cursor: "pointer",
             }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, fontSize: "0.875rem", fontFamily: "'Ubuntu'" }}>
-              <GlobalOutlined style={{ fontSize: 15, color: "rgba(255,255,255,0.3)" }} />
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+              }}
+            >
+              <GlobalOutlined />
               {currentLang.native}
             </Box>
+
             <DownOutlined
               style={{
-                fontSize: 11,
-                color: "rgba(255,255,255,0.3)",
-                transition: "transform 0.2s",
-                transform: mobileLangOpen ? "rotate(180deg)" : "rotate(0deg)",
+                fontSize: 10,
+                transform: mobileLangOpen
+                  ? "rotate(180deg)"
+                  : "rotate(0deg)",
+                transition: "0.2s",
               }}
             />
           </Box>
 
           <Collapse in={mobileLangOpen}>
-            <Box
-              sx={{
-                mt: 0.75,
-                border: "1px solid rgba(255,255,255,0.06)",
-                borderRadius: "8px",
-                overflow: "hidden",
-                bgcolor: "rgba(0,0,0,0.2)",
-              }}
-            >
-              {languages.map((lng, i) => {
+            <Box sx={{ mt: 1 }}>
+              {languages.map((lng) => {
                 const active = i18n.language === lng.code;
+
                 return (
                   <Box
                     key={lng.code}
                     onClick={() => changeLanguage(lng.code)}
                     sx={{
                       px: 1.5,
-                      py: 0.9,
+                      py: 1,
+
+                      borderRadius: "8px",
+
+                      color: active
+                        ? ACCENT
+                        : "rgba(255,255,255,0.7)",
+
                       cursor: "pointer",
+
                       fontFamily: "'Ubuntu', sans-serif",
-                      fontSize: "0.875rem",
+
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      color: active ? ACCENT : "rgba(255,255,255,0.6)",
-                      fontWeight: active ? 500 : 400,
-                      bgcolor: active ? "rgba(46,211,183,0.06)" : "transparent",
-                      borderTop: i !== 0 ? "1px solid rgba(255,255,255,0.04)" : "none",
+
                       "&:hover": {
-                        bgcolor: active ? "rgba(46,211,183,0.08)" : "rgba(255,255,255,0.04)",
-                        color: active ? ACCENT : "white",
+                        bgcolor: "rgba(255,255,255,0.05)",
                       },
-                      transition: "all 0.12s",
                     }}
                   >
                     {lng.native}
-                    {active && <CheckOutlined style={{ fontSize: 12, color: ACCENT }} />}
+
+                    {active && (
+                      <CheckOutlined
+                        style={{
+                          fontSize: 12,
+                          color: ACCENT,
+                        }}
+                      />
+                    )}
                   </Box>
                 );
               })}
             </Box>
           </Collapse>
-        </Box>
-
-        <Divider sx={{ borderColor: "rgba(255,255,255,0.06)", mx: 2 }} />
-
-        <Box sx={{ px: 2, py: 1.5 }}>
-          <Button
-            href={TELEGRAM_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            fullWidth
-            startIcon={<SendOutlined style={{ fontSize: 14 }} />}
-            sx={{
-              color: ACCENT,
-              fontFamily: "'Ubuntu', sans-serif",
-              fontWeight: 500,
-              textTransform: "none",
-              borderRadius: "8px",
-              border: "1px solid rgba(46,211,183,0.25)",
-              bgcolor: "rgba(46,211,183,0.06)",
-              py: 1,
-              fontSize: "0.875rem",
-              justifyContent: "center",
-              "&:hover": {
-                bgcolor: "rgba(46,211,183,0.12)",
-                borderColor: "rgba(46,211,183,0.5)",
-              },
-              transition: "all 0.15s",
-            }}
-          >
-            Join our Telegram
-          </Button>
         </Box>
       </Drawer>
     </>
