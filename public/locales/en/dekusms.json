@@ -1,5 +1,5 @@
 {
- "topNav": {
+  "topNav": {
     "blog": "Blog",
     "documentation": "Documentation",
     "donate": "Donate",
@@ -7,82 +7,48 @@
       "en": "English",
       "fr": "Français",
       "es": "Español",
-      "fa": "فارسی"
-    }
+      "fa": "فارسی",
+      "ar": "العربية",
+      "de": "Deutsch",
+      "ru": "Русский"
+    },
+    "download": "Download",
+    "language": "Language",
+    "joinTelegram": "Join Telegram",
+    "joinOurTelegram": "Join our Telegram",
+    "github": "GitHub"
   },
   "landing": {
-    "backgroundTitle": "Secure SMS Messaging",
-    "title": "SECURE SMS MESSAGING",
-    "description1": "DekuSMS is an SMS app. You can use it as a standalone app or as a Gateway client to send your incoming messages to your cloud server! You can also configure it as a listener to your RabbitMQ server and transform your device into an SMS sending machine.",
-    "description2": "You and anyone else using Deku? Turn on E2EE messaging and send SMS messages using the Signal protocol.",
-    "download": "Download App",
-    "donate": "Donate",
-    "imageAlt": "DekuSMS app screenshot"
-  },
-
-   "features": {
-    "heading": "FEATURES",
-    "forwardTitle": "Forward SMS to the Cloud – Even When Offline",
-    "forwardText": "Incoming SMS messages can be forwarded to your cloud server!\nThe protocols used include HTTP(s), SMTP and sFTP.\nMessages can be queued until an internet connection is detected, thanks to Android studio advance work features.",
-    "googleDesignTitle": "Familiar Google Messages Design, Seamlessly Integrated",
-    "googleDesignText": "Used Google Messages and enjoyed the look and feel? Deku SMS works with the same design, bringing in the seamless nature of the SMS app you are already used to.",
-    "rabbitMQTitle": "Send SMS via RabbitMQ with Reliable Server Communication",
-    "rabbitMQText": "You can send SMS messages from your phone by allowing your phone to communicate with a RabbitMQ server. Android-specific features have been integrated to make communication long-lasting and efficient.",
-    "e2eeTitle": "End-to-End Encrypted SMS with Forward Secrecy",
-    "e2eeText": "You can send and receive E2EE encrypted SMS messages with fellow peers using Deku SMS. Messages support forward secrecy and SMS-accessible technologies are used in making the encrypted payloads suitable for SMS messaging."
-  },
-
-   "downloads": {
-    "heading": "DOWNLOAD",
-    "description": "DekuSMS app is available on several platforms. Download it and use it as your default SMS app.",
-    "playstore": {
-      "title": "Google Play Store",
-      "subtitle": "Get it on Play Store"
+    "backgroundTitle": "DekuSMS",
+    "title": "DekuSMS",
+    "description1": "An open source SMS app built for resilience — forward messages to the cloud, connect to messaging brokers, and communicate end-to-end encrypted even without internet.",
+    "description2": "Now part of the SMSWithoutBorders endeavour — offering feature updates and maintenance for core libraries.",
+    "pills": {
+      "cloud": "Cloud forwarding",
+      "encrypted": "End-to-end encrypted",
+      "broker": "Broker ready"
     },
-    "fdroid": {
-      "title": "F-Droid",
-      "subtitle": "Get it on F-Droid"
-    },
-    "github": {
-      "title": "GitHub",
-      "subtitle": "Get it on GitHub"
-    }
+    "join": "Join the community on",
+    "forUpdates": "for updates & support",
+    "moreInfo": "More about SMSWithoutBorders:",
+    "website": "Website",
+    "github": "GitHub",
+    "download": "Download on Play Store",
+    "donate": "Support the project",
+    "imageAlt": "DekuSMS app"
   },
-  "help": {
-    "heading": "HELP & GUIDE",
-    "faq": {
-      "install": {
-        "question": "How do I install DekuSMS?",
-        "answer": "You can download the app from the official website or supported stores depending on your device."
-      },
-      "secure": {
-        "question": "Is DekuSMS secure?",
-        "answer": "Yes, DekuSMS uses encryption to protect your messages."
-      },
-      "multidevice": {
-        "question": "Can I use DekuSMS on more than one device?",
-        "answer": "It currently supports one primary device per account."
-      },
-      "offline": {
-        "question": "Does DekuSMS work offline?",
-        "answer": "Messages are queued and sent automatically when connection is restored."
-      }
+  "cards": {
+    "troubleshooting": {
+      "title": "Trouble Shooting Guide",
+      "subtitle": "Get answers to your questions"
     },
-    "cards": {
-      "troubleshooting": {
-        "title": "Trouble Shooting Guide",
-        "subtitle": "Get answers to your questions"
-      },
-      "contribution": {
-        "title": "Contribution",
-        "subtitle": "DekuSMS welcomes contributions"
-      },
-      "contact": {
-        "title": "Contact Us",
-        "subtitle": "developers@smswithoutborders.com"
-      }
+    "contribution": {
+      "title": "Contribution",
+      "subtitle": "DekuSMS welcomes contributions"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "developers@smswithoutborders.com"
     }
   }
 }
-
-

@@ -1,13 +1,19 @@
 import React from "react";
-import { Box, Typography, Stack, Button, Chip } from "@mui/material";
+import { Box, Typography, Stack, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { WifiOutlined, LockOutlined, MobileOutlined, SendOutlined } from "@ant-design/icons";
+import { CloudUploadOutlined, ApiOutlined, LockOutlined, SendOutlined, GithubOutlined } from "@ant-design/icons";
 
 const ACCENT = "#2ED3B7";
 const BG = "#0F2027";
 
 export default function Landing() {
   const { t } = useTranslation();
+
+  const pills = [
+    { icon: <CloudUploadOutlined style={{ fontSize: 14 }} />, label: t("landing.pills.cloud", "Cloud forwarding") },
+    { icon: <LockOutlined style={{ fontSize: 14 }} />, label: t("landing.pills.encrypted", "End-to-end encrypted") },
+    { icon: <ApiOutlined style={{ fontSize: 14 }} />, label: t("landing.pills.broker", "Broker ready") },
+  ];
 
   return (
     <Box
@@ -29,11 +35,11 @@ export default function Landing() {
       <Typography
         sx={{
           position: "absolute",
-          bottom: { xs: 8, md: 20 },
+          bottom: { xs: -20, md: -50 },
           left: { xs: 16, md: 64 },
           fontFamily: "'Unbounded', sans-serif",
           fontWeight: 700,
-          fontSize: { xs: "2.5rem", sm: "4rem", md: "7rem" },
+          fontSize: { xs: "5.5rem", sm: "8rem", md: "15rem" },
           opacity: 0.04,
           letterSpacing: 2,
           textTransform: "uppercase",
@@ -48,19 +54,6 @@ export default function Landing() {
 
       <Box
         sx={{
-          position: "absolute",
-          top: "30%",
-          right: { xs: "-20%", md: "5%" },
-          width: { xs: 300, md: 500 },
-          height: { xs: 300, md: 500 },
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(46,211,183,0.06) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-
-      <Box
-        sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
@@ -70,33 +63,27 @@ export default function Landing() {
           width: "100%",
         }}
       >
-        <Box flex={1.3} sx={{ textAlign: { xs: "center", md: "left" } }}>
-          <Chip
-            label="Open Source · Privacy First"
-            size="small"
-            sx={{
-              mb: 3,
-              bgcolor: "rgba(46,211,183,0.1)",
-              color: ACCENT,
-              border: "1px solid rgba(46,211,183,0.25)",
-              fontFamily: "'Ubuntu', sans-serif",
-              fontSize: "0.75rem",
-              letterSpacing: 0.5,
-            }}
-          />
+     
+          <Box
+  flex={{ xs: 1, md: 1.7, lg: 2 }}
+  sx={{
+    textAlign: { xs: "center", md: "left" },
+    maxWidth: { md: "65%" },
+  }}
+>  
 
           <Typography
             variant="h1"
             sx={{
               fontFamily: "'Unbounded', sans-serif",
-              fontWeight: 400,
+              fontWeight: 700,
               lineHeight: 1.1,
               fontSize: { xs: "1.6rem", sm: "2rem", md: "2.6rem", lg: "3.2rem" },
               mb: 3,
               color: "white",
             }}
           >
-            {t("landing.title", "Send messages when the internet fails you")}
+            {t("landing.title", "DekuSMS")}
           </Typography>
 
           <Typography
@@ -106,24 +93,24 @@ export default function Landing() {
               fontFamily: "'Ubuntu', sans-serif",
               fontSize: { xs: "0.9rem", md: "1rem" },
               mb: 1.5,
-              maxWidth: 520,
+              maxWidth: 720,
               mx: { xs: "auto", md: 0 },
             }}
           >
-            {t("landing.description1", "DekuSMS lets you communicate through SMS-based relaying — no internet needed. Your messages reach Telegram, Gmail, and X even when you're completely offline.")}
+            {t("landing.description1", "An open source SMS app built for resilience — forward messages to the cloud, connect to messaging brokers, and communicate end-to-end encrypted even without internet.")}
           </Typography>
 
           <Typography
             sx={{
-              opacity: 0.65,
+              opacity: 0.55,
               lineHeight: 1.75,
               fontFamily: "'Ubuntu', sans-serif",
               fontSize: { xs: "0.875rem", md: "0.95rem" },
-              maxWidth: 480,
+              maxWidth: 680,
               mx: { xs: "auto", md: 0 },
             }}
           >
-            {t("landing.description2", "Built for resilience. Designed for everyone.")}
+            {t("landing.description2", "Now part of the SMSWithoutBorders endeavour — offering feature updates and maintenance for core libraries.")}
           </Typography>
 
           <Stack
@@ -137,11 +124,7 @@ export default function Landing() {
               justifyContent: { xs: "center", md: "flex-start" },
             }}
           >
-            {[
-              { icon: <WifiOutlined style={{ fontSize: 14 }} />, label: "Works offline" },
-              { icon: <LockOutlined style={{ fontSize: 14 }} />, label: "End-to-end encrypted" },
-              { icon: <MobileOutlined style={{ fontSize: 14 }} />, label: "Android native" },
-            ].map((pill) => (
+            {pills.map((pill) => (
               <Box
                 key={pill.label}
                 sx={{
@@ -166,7 +149,7 @@ export default function Landing() {
 
           <Typography
             sx={{
-              mb: 3,
+              mb: 1.5,
               fontFamily: "'Ubuntu', sans-serif",
               fontSize: { xs: "0.85rem", md: "0.9rem" },
               color: "rgba(255,255,255,0.55)",
@@ -181,7 +164,7 @@ export default function Landing() {
             {t("landing.join", "Join the community on")}{" "}
             <Box
               component="a"
-              href="https://t.me/dekusms"
+              href="https://t.me/deku_sms"
               target="_blank"
               rel="noopener noreferrer"
               sx={{
@@ -213,6 +196,54 @@ export default function Landing() {
             {" "}{t("landing.forUpdates", "for updates & support")}
           </Typography>
 
+          <Typography
+            sx={{
+              mb: 3,
+              fontFamily: "'Ubuntu', sans-serif",
+              fontSize: { xs: "0.85rem", md: "0.9rem" },
+              color: "rgba(255,255,255,0.55)",
+              justifyContent: { xs: "center", md: "flex-start" },
+              display: "flex",
+              alignItems: "center",
+              gap: 0.75,
+              flexWrap: "wrap",
+            }}
+          >
+            {t("landing.moreInfo", "More about SMSWithoutBorders:")}{" "}
+            <Box
+              component="a"
+              href="https://smswithoutborders.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: ACCENT,
+                fontWeight: 500,
+                textDecoration: "none",
+                "&:hover": { textDecoration: "underline" },
+              }}
+            >
+              {t("landing.website", "Website")}
+            </Box>
+            {" "}&amp;{" "}
+            <Box
+              component="a"
+              href="https://github.com/smswithoutborders"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: ACCENT,
+                fontWeight: 500,
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 0.4,
+                "&:hover": { textDecoration: "underline" },
+              }}
+            >
+              <GithubOutlined style={{ fontSize: 13 }} /> {t("landing.github", "GitHub")}
+            </Box>
+          </Typography>
+
           <Stack
             direction={{ xs: "column", sm: "row" }}
             spacing={2}
@@ -241,7 +272,7 @@ export default function Landing() {
                 transition: "all 0.2s",
               }}
             >
-              {t("landing.download", "Download on Play Store")}
+              {t("topNav.download", "Download")}
             </Button>
 
             <Button
@@ -267,18 +298,25 @@ export default function Landing() {
                 transition: "all 0.2s",
               }}
             >
-              {t("landing.donate", "Support the project")}
+              {t("topNav.donate", "Donate")}
             </Button>
           </Stack>
         </Box>
 
-        <Box
-          flex={1}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          sx={{ position: "relative", zIndex: 2, py: { xs: 2, md: 0 } }}
-        >
+{/* images section */}
+
+<Box
+  flex={{ xs: 1, md: 0.8, lg: 0.7 }}
+  display="flex"
+  justifyContent="center"
+  alignItems="center"
+  sx={{
+    position: "relative",
+    zIndex: 2,
+    py: { xs: 2, md: 0 },
+  }}
+>
+
           <Box
             sx={{
               width: { xs: 160, sm: 200, md: 240, lg: 390 },
