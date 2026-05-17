@@ -428,53 +428,56 @@ export default function Landing() {
         </Box>
 
         {/* Right side*/}
-        <Box
-          flex={{ xs: 1, md: 1 }}
-          sx={{
-            width: "100%",
-            position: "relative",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: {
-              xs: 340,
-              md: 600,
-            },
-          }}
-        >
 
+        {/* Right side */}
+<Box
+  flex={{ md: 1 }}
+  sx={{
+    width: "100%",
+    position: "relative",
+    display: {
+      xs: "none", // hide on phones
+      md: "flex", // show on tablets/desktops
+    },
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: {
+      md: 600,
+    },
+  }}
+>
+  <Box
+    sx={{
+      width: { md: 240, lg: 390 },
+      height: { md: 460, lg: 620 },
+      borderRadius: "26px",
+      transform: "rotate(10deg)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+      gap: 2,
+      position: "relative",
+      overflow: "visible",
+    }}
+  >
     <Box
-            sx={{
-              width: { xs: 160, sm: 200, md: 240, lg: 390 },
-              height: { xs: 300, sm: 380, md: 460, lg: 620 },
-              borderRadius: "26px",
-              transform: "rotate(10deg)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-              gap: 2,
-              position: "relative",
-              overflow: "visible",
-            }}
-          >
-            <Box
-              component="img"
-              src="/Home.png"
-              alt={t("landing.imageAlt", "DekuSMS app")}
-              sx={{
-                width: "80%",
-                display: "block",
-                position: "relative",
-                zIndex: 2,
-                filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.5))",
-              }}
-              onError={(e) => {
-                e.target.style.display = "none";
-              }}
-            />
-          </Box>
-        </Box>
+      component="img"
+      src="/Home.png"
+      alt={t("landing.imageAlt", "DekuSMS app")}
+      sx={{
+        width: "80%",
+        display: "block",
+        position: "relative",
+        zIndex: 2,
+        filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.5))",
+      }}
+      onError={(e) => {
+        e.target.style.display = "none";
+      }}
+    />
+  </Box>
+</Box>
       </Box>
     </Box>
   );
