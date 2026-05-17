@@ -22,7 +22,7 @@ export default function Landing() {
           style={{ fontSize: 16, color: ACCENT }}
         />
       ),
-      text: t("landing.pills.cloud"),
+      text: t("landing.pills.cloud", "Forward incoming messages to the cloud"),
     },
     {
       icon: (
@@ -30,7 +30,7 @@ export default function Landing() {
           style={{ fontSize: 16, color: ACCENT }}
         />
       ),
-      text: t("landing.pills.encrypted"),
+      text: t("landing.pills.encrypted", "Connect to messaging brokers like RMQ to turn your device into an SMS sending machine"),
     },
     {
       icon: (
@@ -38,7 +38,7 @@ export default function Landing() {
           style={{ fontSize: 16, color: ACCENT }}
         />
       ),
-      text: t("landing.pills.broker"),
+      text: t("landing.pills.broker", "Provide end-to-end encrypted SMS messaging between DekuSMS users"),
     },
   ];
 

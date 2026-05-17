@@ -28,11 +28,6 @@
         "encrypted": "Mit Messaging-Brokern wie RMQ verbinden, um dein Gerät in eine SMS-Sendemaschine zu verwandeln",
         "broker": "Ende-zu-Ende-verschlüsselte SMS-Kommunikation zwischen DekuSMS-Benutzern bereitstellen"
       },
-      "pill": {
-        "one": "Cloud-Weiterleitung",
-        "two": "Ende-zu-Ende verschlüsselt",
-        "three": "Broker-fähig"
-      },
       "join": "Tritt der Community bei auf",
       "forUpdates": "für Updates",
       "moreInfo": "Weitere Informationen über SMSWithoutBorder:",
