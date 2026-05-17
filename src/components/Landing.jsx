@@ -101,8 +101,8 @@ export default function Landing() {
           flex={{ xs: 1, md: 1.7, lg: 2 }}
           sx={{
             textAlign: {
-              xs: "center",
-              md: "left",
+              xs: "flex-start",
+              md: "flex-start",
             },
             maxWidth: { md: "65%" },
           }}
@@ -223,7 +223,7 @@ export default function Landing() {
               },
               color: "rgba(255,255,255,0.55)",
               justifyContent: {
-                xs: "center",
+                xs: "flex-start",
                 md: "flex-start",
               },
               display: "flex",
@@ -284,7 +284,7 @@ export default function Landing() {
               },
               color: "rgba(255,255,255,0.55)",
               justifyContent: {
-                xs: "center",
+                xs: "flex-start",
                 md: "flex-start",
               },
               display: "flex",
