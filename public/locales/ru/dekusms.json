@@ -1,54 +1,45 @@
 {
-  "topNav": {
-    "blog": "Блог",
-    "documentation": "Документация",
-    "donate": "Пожертвовать",
-    "languages": {
-      "en": "Английский",
-      "fr": "Французский",
-      "es": "Испанский",
-      "fa": "Персидский",
-      "ar": "Арабский",
-      "de": "Немецкий",
-      "ru": "Русский"
+    "topNav": {
+      "blog": "Блог",
+      "documentation": "Документация",
+      "donate": "Пожертвовать",
+      "languages": {
+        "en": "Английский",
+        "fr": "Французский",
+        "es": "Испанский",
+        "fa": "Персидский",
+        "ar": "Арабский",
+        "de": "Немецкий",
+        "ru": "Русский"
+      },
+      "download": "Скачать",
+      "language": "Язык",
+      "joinTelegram": "Присоединиться к Telegram",
+      "joinOurTelegram": "Присоединяйтесь к нашему Telegram",
+      "github": "GitHub"
     },
-    "download": "Скачать",
-    "language": "Язык",
-    "joinTelegram": "Присоединиться к Telegram",
-    "joinOurTelegram": "Присоединяйтесь к нашему Telegram",
-    "github": "GitHub"
-  },
-  "landing": {
-    "backgroundTitle": "DekuSMS",
-    "title": "DekuSMS",
-    "description1": "Приложение для SMS с открытым исходным кодом, созданное для надёжности — пересылайте сообщения в облако, подключайтесь к брокерам сообщений и общайтесь с сквозным шифрованием даже без интернета.",
-    "description2": "Теперь часть инициативы SMSWithoutBorders — с обновлениями функций и поддержкой основных библиотек.",
-    "pills": {
-      "cloud": "Облачная пересылка",
-      "encrypted": "Сквозное шифрование",
-      "broker": "Поддержка брокеров"
-    },
-    "join": "Присоединяйтесь к сообществу в",
-    "forUpdates": "для обновлений и поддержки",
-    "moreInfo": "Подробнее о SMSWithoutBorders:",
-    "website": "Сайт",
-    "github": "GitHub",
-    "download": "Скачать в Play Store",
-    "donate": "Поддержать проект",
-    "imageAlt": "Приложение DekuSMS"
-  },
-  "cards": {
-    "troubleshooting": {
-      "title": "Руководство по устранению неполадок",
-      "subtitle": "Получите ответы на свои вопросы"
-    },
-    "contribution": {
-      "title": "Вклад",
-      "subtitle": "DekuSMS приветствует вклад"
-    },
-    "contact": {
-      "title": "Связаться с нами",
-      "subtitle": "developers@smswithoutborders.com"
+    "landing": {
+      "backgroundTitle": "DekuSMS",
+      "title": "DekuSMS",
+      "description1": "DekuSMS — это SMS-приложение с открытым исходным кодом, которое может выполнять следующее",
+      "description2": "DekuSMS теперь является частью инициативы SMSWithoutBorders. Команда SMSWithoutBorders предоставляет обновления функций и поддержку основных библиотек.",
+      "pills": {
+        "cloud": "Пересылка входящих сообщений в облако",
+        "encrypted": "Подключение к брокерам сообщений, таким как RMQ, чтобы превратить ваше устройство в машину для отправки SMS",
+        "broker": "Предоставление сквозного шифрования SMS-сообщений между пользователями DekuSMS"
+      },
+      "pill": {
+        "one": "Облачная пересылка",
+        "two": "Сквозное шифрование",
+        "three": "Готово к брокерам"
+      },
+      "join": "Присоединяйтесь к сообществу в",
+      "forUpdates": "для обновлений",
+      "moreInfo": "Для получения дополнительной информации о SMSWithoutBorder:",
+      "website": "Веб-сайт",
+      "github": "GitHub",
+      "download": "Скачать",
+      "donate": "Пожертвовать",
+      "imageAlt": "Приложение DekuSMS"
     }
   }
-}

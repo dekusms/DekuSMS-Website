@@ -1,54 +1,45 @@
 {
-  "topNav": {
-    "blog": "بلاگ",
-    "documentation": "مستندات",
-    "donate": "حمایت مالی",
-    "languages": {
-      "en": "انگلیسی",
-      "fr": "فرانسوی",
-      "es": "اسپانیایی",
-      "fa": "فارسی",
-      "ar": "عربی",
-      "de": "آلمانی",
-      "ru": "روسی"
+    "topNav": {
+      "blog": "وبلاگ",
+      "documentation": "مستندات",
+      "donate": "حمایت مالی",
+      "languages": {
+        "en": "انگلیسی",
+        "fr": "فرانسوی",
+        "es": "اسپانیایی",
+        "fa": "فارسی",
+        "ar": "عربی",
+        "de": "آلمانی",
+        "ru": "روسی"
+      },
+      "download": "دانلود",
+      "language": "زبان",
+      "joinTelegram": "پیوستن به تلگرام",
+      "joinOurTelegram": "به تلگرام ما بپیوندید",
+      "github": "گیت‌هاب"
     },
-    "download": "دانلود",
-    "language": "زبان",
-    "joinTelegram": "پیوستن به تلگرام",
-    "joinOurTelegram": "به تلگرام ما بپیوندید",
-    "github": "گیت‌هاب"
-  },
-  "landing": {
-    "backgroundTitle": "DekuSMS",
-    "title": "DekuSMS",
-    "description1": "یک اپلیکیشن پیامک متن‌باز برای استحکام — پیام‌ها را به ابر ارسال کنید، به کارگزارهای پیام‌رسانی متصل شوید و حتی بدون اینترنت با رمزگذاری سرتاسر ارتباط برقرار کنید.",
-    "description2": "اکنون بخشی از ابتکار SMSWithoutBorders — ارائه به‌روزرسانی‌های ویژگی و نگهداری کتابخانه‌های اصلی.",
-    "pills": {
-      "cloud": "ارسال به ابر",
-      "encrypted": "رمزگذاری سرتاسر",
-      "broker": "آماده کارگزار"
-    },
-    "join": "به جامعه بپیوندید در",
-    "forUpdates": "برای به‌روزرسانی‌ها و پشتیبانی",
-    "moreInfo": "اطلاعات بیشتر درباره SMSWithoutBorders:",
-    "website": "وب‌سایت",
-    "github": "GitHub",
-    "download": "دانلود از Play Store",
-    "donate": "حمایت از پروژه",
-    "imageAlt": "اپلیکیشن DekuSMS"
-  },
-  "cards": {
-    "troubleshooting": {
-      "title": "راهنمای عیب‌یابی",
-      "subtitle": "پاسخ سوالات خود را بیابید"
-    },
-    "contribution": {
-      "title": "مشارکت",
-      "subtitle": "DekuSMS از مشارکت‌ها استقبال می‌کند"
-    },
-    "contact": {
-      "title": "تماس با ما",
-      "subtitle": "developers@smswithoutborders.com"
+    "landing": {
+      "backgroundTitle": "DekuSMS",
+      "title": "DekuSMS",
+      "description1": "DekuSMS یک برنامه متن‌باز پیامک است که قابلیت‌های زیر را دارد",
+      "description2": "DekuSMS اکنون بخشی از پروژه SMSWithoutBorders است. تیم SMSWithoutBorders به‌روزرسانی ویژگی‌ها و نگهداری کتابخانه‌های اصلی را ارائه می‌دهد.",
+      "pills": {
+        "cloud": "ارسال پیام‌های دریافتی به فضای ابری",
+        "encrypted": "اتصال به کارگزارهای پیام‌رسانی مانند RMQ برای تبدیل دستگاه شما به یک ماشین ارسال پیامک",
+        "broker": "ارائه پیام‌رسانی پیامکی رمزگذاری‌شده سرتاسری بین کاربران DekuSMS"
+      },
+      "pill": {
+        "one": "ارسال ابری",
+        "two": "رمزگذاری سرتاسری",
+        "three": "آماده برای بروکر"
+      },
+      "join": "به جامعه بپیوندید در",
+      "forUpdates": "برای دریافت به‌روزرسانی‌ها",
+      "moreInfo": "برای اطلاعات بیشتر درباره SMSWithoutBorder:",
+      "website": "وب‌سایت",
+      "github": "گیت‌هاب",
+      "download": "دانلود",
+      "donate": "حمایت مالی",
+      "imageAlt": "برنامه DekuSMS"
     }
   }
-}

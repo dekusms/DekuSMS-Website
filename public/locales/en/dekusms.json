@@ -21,34 +21,20 @@
   "landing": {
     "backgroundTitle": "DekuSMS",
     "title": "DekuSMS",
-    "description1": "An open source SMS app built for resilience — forward messages to the cloud, connect to messaging brokers, and communicate end-to-end encrypted even without internet.",
-    "description2": "Now part of the SMSWithoutBorders endeavour — offering feature updates and maintenance for core libraries.",
+    "description1": "DekuSMS is an open source SMS app with the ability to do the following",
+    "description2": "DekuSMS is now part of the SMSWithoutBorders endeavour. The team at SMSWithoutBorders is offering feature updates and maintenance for core libraries. ",
     "pills": {
-      "cloud": "Cloud forwarding",
-      "encrypted": "End-to-end encrypted",
-      "broker": "Broker ready"
+      "cloud": "Forward incoming messages to the cloud",
+      "encrypted": "Connect to messaging brokers like RMQ to turn your device into an SMS sending machine",
+      "broker":  "Provide end-to-end encrypted SMS messaging between DekuSMS users"
     },
     "join": "Join the community on",
-    "forUpdates": "for updates & support",
-    "moreInfo": "More about SMSWithoutBorders:",
+    "forUpdates": "for updates",
+    "moreInfo": "For more information about SMSWithoutBorder:",
     "website": "Website",
     "github": "GitHub",
-    "download": "Download on Play Store",
-    "donate": "Support the project",
+    "download": "Download",
+    "donate": "Donate",
     "imageAlt": "DekuSMS app"
-  },
-  "cards": {
-    "troubleshooting": {
-      "title": "Trouble Shooting Guide",
-      "subtitle": "Get answers to your questions"
-    },
-    "contribution": {
-      "title": "Contribution",
-      "subtitle": "DekuSMS welcomes contributions"
-    },
-    "contact": {
-      "title": "Contact Us",
-      "subtitle": "developers@smswithoutborders.com"
-    }
   }
 }
