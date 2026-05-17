@@ -428,16 +428,14 @@ export default function Landing() {
         </Box>
 
         {/* Right side*/}
-
-        {/* Right side */}
 <Box
   flex={{ md: 1 }}
   sx={{
     width: "100%",
     position: "relative",
     display: {
-      xs: "none", // hide on phones
-      md: "flex", // show on tablets/desktops
+      xs: "none", 
+      md: "flex", 
     },
     justifyContent: "center",
     alignItems: "center",
