@@ -122,6 +122,10 @@ export default function Landing() {
               },
               mb: 2,
               color: "white",
+                  textAlign: {
+              xs: "center",
+              md: "flex-start",
+            },
             }}
           >
             {t("landing.title")}
@@ -136,6 +140,10 @@ export default function Landing() {
                 xs: "0.9rem",
                 md: "1rem",
               },
+                      textAlign: {
+              xs: "center",
+              md: "flex-start",
+            },
               mb: 2,
               maxWidth: 720,
               mx: { xs: "auto", md: 0 },
