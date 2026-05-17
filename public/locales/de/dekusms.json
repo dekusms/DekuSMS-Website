@@ -1,54 +1,45 @@
 {
-  "topNav": {
-    "blog": "Blog",
-    "documentation": "Dokumentation",
-    "donate": "Spenden",
-    "languages": {
-      "en": "Englisch",
-      "fr": "Französisch",
-      "es": "Spanisch",
-      "fa": "Persisch",
-      "ar": "Arabisch",
-      "de": "Deutsch",
-      "ru": "Russisch"
+    "topNav": {
+      "blog": "Blog",
+      "documentation": "Dokumentation",
+      "donate": "Spenden",
+      "languages": {
+        "en": "Englisch",
+        "fr": "Französisch",
+        "es": "Spanisch",
+        "fa": "Persisch",
+        "ar": "Arabisch",
+        "de": "Deutsch",
+        "ru": "Russisch"
+      },
+      "download": "Herunterladen",
+      "language": "Sprache",
+      "joinTelegram": "Telegram beitreten",
+      "joinOurTelegram": "Tritt unserem Telegram bei",
+      "github": "GitHub"
     },
-    "download": "Herunterladen",
-    "language": "Sprache",
-    "joinTelegram": "Telegram beitreten",
-    "joinOurTelegram": "Tritt unserem Telegram bei",
-    "github": "GitHub"
-  },
-  "landing": {
-    "backgroundTitle": "DekuSMS",
-    "title": "DekuSMS",
-    "description1": "Eine quelloffene SMS-App für Widerstandsfähigkeit — leite Nachrichten in die Cloud weiter, verbinde dich mit Nachrichten-Brokern und kommuniziere Ende-zu-Ende-verschlüsselt auch ohne Internet.",
-    "description2": "Jetzt Teil des SMSWithoutBorders-Projekts — mit Feature-Updates und Wartung der Kernbibliotheken.",
-    "pills": {
-      "cloud": "Cloud-Weiterleitung",
-      "encrypted": "Ende-zu-Ende-verschlüsselt",
-      "broker": "Broker-bereit"
-    },
-    "join": "Tritt der Community bei auf",
-    "forUpdates": "für Updates und Support",
-    "moreInfo": "Mehr über SMSWithoutBorders:",
-    "website": "Webseite",
-    "github": "GitHub",
-    "download": "Im Play Store herunterladen",
-    "donate": "Projekt unterstützen",
-    "imageAlt": "DekuSMS App"
-  },
-  "cards": {
-    "troubleshooting": {
-      "title": "Fehlerbehebungsanleitung",
-      "subtitle": "Erhalte Antworten auf deine Fragen"
-    },
-    "contribution": {
-      "title": "Beitrag leisten",
-      "subtitle": "DekuSMS heißt Beiträge willkommen"
-    },
-    "contact": {
-      "title": "Kontaktiere uns",
-      "subtitle": "developers@smswithoutborders.com"
+    "landing": {
+      "backgroundTitle": "DekuSMS",
+      "title": "DekuSMS",
+      "description1": "DekuSMS ist eine Open-Source-SMS-App mit den folgenden Funktionen",
+      "description2": "DekuSMS ist jetzt Teil der SMSWithoutBorders-Initiative. Das Team von SMSWithoutBorders bietet Funktionsupdates und Wartung für die Kernbibliotheken an.",
+      "pills": {
+        "cloud": "Eingehende Nachrichten in die Cloud weiterleiten",
+        "encrypted": "Mit Messaging-Brokern wie RMQ verbinden, um dein Gerät in eine SMS-Sendemaschine zu verwandeln",
+        "broker": "Ende-zu-Ende-verschlüsselte SMS-Kommunikation zwischen DekuSMS-Benutzern bereitstellen"
+      },
+      "pill": {
+        "one": "Cloud-Weiterleitung",
+        "two": "Ende-zu-Ende verschlüsselt",
+        "three": "Broker-fähig"
+      },
+      "join": "Tritt der Community bei auf",
+      "forUpdates": "für Updates",
+      "moreInfo": "Weitere Informationen über SMSWithoutBorder:",
+      "website": "Webseite",
+      "github": "GitHub",
+      "download": "Herunterladen",
+      "donate": "Spenden",
+      "imageAlt": "DekuSMS-App"
     }
   }
-}

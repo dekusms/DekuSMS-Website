@@ -1,54 +1,40 @@
-{
- "topNav": {
-    "blog": "Blog",
-    "documentation": "Documentación",
-    "donate": "Donar",
-    "languages": {
-      "en": "Inglés",
-      "fr": "Francés",
-      "es": "Español",
-      "fa": "Persa",
-      "ar": "Árabe",
-      "de": "Alemán",
-      "ru": "Ruso"
+ {
+    "topNav": {
+      "blog": "Blog",
+      "documentation": "Documentación",
+      "donate": "Donar",
+      "languages": {
+        "en": "Inglés",
+        "fr": "Francés",
+        "es": "Español",
+        "fa": "Persa",
+        "ar": "Árabe",
+        "de": "Alemán",
+        "ru": "Ruso"
+      },
+      "download": "Descargar",
+      "language": "Idioma",
+      "joinTelegram": "Unirse a Telegram",
+      "joinOurTelegram": "Únete a nuestro Telegram",
+      "github": "GitHub"
     },
-    "download": "Descargar",
-    "language": "Idioma",
-    "joinTelegram": "Unirse a Telegram",
-    "joinOurTelegram": "Únete a nuestro Telegram",
-    "github": "GitHub"
-  },
-  "landing": {
-    "backgroundTitle": "DekuSMS",
-    "title": "DekuSMS",
-    "description1": "Una aplicación SMS de código abierto diseñada para la resiliencia — reenvía mensajes a la nube, conéctate a intermediarios de mensajería y comunícate con cifrado de extremo a extremo incluso sin internet.",
-    "description2": "Ahora parte de la iniciativa SMSWithoutBorders — ofreciendo actualizaciones de funciones y mantenimiento de bibliotecas principales.",
-    "pills": {
-      "cloud": "Reenvío a la nube",
-      "encrypted": "Cifrado de extremo a extremo",
-      "broker": "Listo para intermediarios"
-    },
-    "join": "Únete a la comunidad en",
-    "forUpdates": "para actualizaciones y soporte",
-    "moreInfo": "Más sobre SMSWithoutBorders:",
-    "website": "Sitio web",
-    "github": "GitHub",
-    "download": "Descargar en Play Store",
-    "donate": "Apoyar el proyecto",
-    "imageAlt": "Aplicación DekuSMS"
-  },
-  "cards": {
-    "troubleshooting": {
-      "title": "Guía de solución de problemas",
-      "subtitle": "Obtén respuestas a tus preguntas"
-    },
-    "contribution": {
-      "title": "Contribución",
-      "subtitle": "DekuSMS acepta contribuciones"
-    },
-    "contact": {
-      "title": "Contáctanos",
-      "subtitle": "developers@smswithoutborders.com"
+    "landing": {
+      "backgroundTitle": "DekuSMS",
+      "title": "DekuSMS",
+      "description1": "DekuSMS es una aplicación SMS de código abierto con la capacidad de hacer lo siguiente",
+      "description2": "DekuSMS ahora forma parte de la iniciativa SMSWithoutBorders. El equipo de SMSWithoutBorders ofrece actualizaciones de funciones y mantenimiento para las bibliotecas principales.",
+      "pills": {
+        "cloud": "Reenviar mensajes entrantes a la nube",
+        "encrypted": "Conectarse a intermediarios de mensajería como RMQ para convertir tu dispositivo en una máquina de envío de SMS",
+        "broker": "Proporcionar mensajería SMS cifrada de extremo a extremo entre usuarios de DekuSMS"
+      },
+      "join": "Únete a la comunidad en",
+      "forUpdates": "para actualizaciones",
+      "moreInfo": "Para más información sobre SMSWithoutBorder:",
+      "website": "Sitio web",
+      "github": "GitHub",
+      "download": "Descargar",
+      "donate": "Donar",
+      "imageAlt": "Aplicación DekuSMS"
     }
   }
-}

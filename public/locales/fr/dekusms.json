@@ -1,55 +1,42 @@
 {
-
-  "topNav": {
-    "blog": "Blog",
-    "documentation": "Documentation",
-    "donate": "Faire un don",
-    "languages": {
-      "en": "Anglais",
-      "fr": "Français",
-      "es": "Espagnol",
-      "fa": "Persan",
-      "ar": "Arabe",
-      "de": "Allemand",
-      "ru": "Russe"
+  "fr": {
+    "topNav": {
+      "blog": "Blog",
+      "documentation": "Documentation",
+      "donate": "Faire un don",
+      "languages": {
+        "en": "Anglais",
+        "fr": "Français",
+        "es": "Espagnol",
+        "fa": "Persan",
+        "ar": "Arabe",
+        "de": "Allemand",
+        "ru": "Russe"
+      },
+      "download": "Télécharger",
+      "language": "Langue",
+      "joinTelegram": "Rejoindre Telegram",
+      "joinOurTelegram": "Rejoignez notre Telegram",
+      "github": "GitHub"
     },
-    "download": "Télécharger",
-    "language": "Langue",
-    "joinTelegram": "Rejoindre Telegram",
-    "joinOurTelegram": "Rejoindre notre Telegram",
-    "github": "GitHub"
-  },
-  "landing": {
-    "backgroundTitle": "DekuSMS",
-    "title": "DekuSMS",
-    "description1": "Une application SMS open source conçue pour la résilience — transférez des messages vers le cloud, connectez-vous à des courtiers de messagerie et communiquez avec un chiffrement de bout en bout même sans internet.",
-    "description2": "Désormais intégré à l'initiative SMSWithoutBorders — offrant des mises à jour de fonctionnalités et la maintenance des bibliothèques principales.",
-    "pills": {
-      "cloud": "Transfert cloud",
-      "encrypted": "Chiffrement de bout en bout",
-      "broker": "Prêt pour les courtiers"
-    },
-    "join": "Rejoignez la communauté sur",
-    "forUpdates": "pour les mises à jour et le support",
-    "moreInfo": "En savoir plus sur SMSWithoutBorders :",
-    "website": "Site web",
-    "github": "GitHub",
-    "download": "Télécharger sur Play Store",
-    "donate": "Soutenir le projet",
-    "imageAlt": "Application DekuSMS"
-  },
-  "cards": {
-    "troubleshooting": {
-      "title": "Guide de dépannage",
-      "subtitle": "Obtenez des réponses à vos questions"
-    },
-    "contribution": {
-      "title": "Contribution",
-      "subtitle": "DekuSMS accueille les contributions"
-    },
-    "contact": {
-      "title": "Contactez-nous",
-      "subtitle": "developers@smswithoutborders.com"
+    "landing": {
+      "backgroundTitle": "DekuSMS",
+      "title": "DekuSMS",
+      "description1": "DekuSMS est une application SMS open source capable de faire ce qui suit",
+      "description2": "DekuSMS fait désormais partie de l’initiative SMSWithoutBorders. L’équipe de SMSWithoutBorders propose des mises à jour de fonctionnalités et la maintenance des bibliothèques principales.",
+      "pills": {
+        "cloud": "Transférer les messages entrants vers le cloud",
+        "encrypted": "Se connecter à des courtiers de messagerie comme RMQ pour transformer votre appareil en machine d’envoi de SMS",
+        "broker": "Fournir une messagerie SMS chiffrée de bout en bout entre les utilisateurs de DekuSMS"
+      },
+      "join": "Rejoignez la communauté sur",
+      "forUpdates": "pour les mises à jour",
+      "moreInfo": "Pour plus d’informations sur SMSWithoutBorder :",
+      "website": "Site web",
+      "github": "GitHub",
+      "download": "Télécharger",
+      "donate": "Faire un don",
+      "imageAlt": "Application DekuSMS"
     }
   }
 }

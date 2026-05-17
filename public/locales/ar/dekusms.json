@@ -1,54 +1,45 @@
 {
- "topNav": {
-    "blog": "المدونة",
-    "documentation": "التوثيق",
-    "donate": "تبرع",
-    "languages": {
-      "en": "الإنجليزية",
-      "fr": "الفرنسية",
-      "es": "الإسبانية",
-      "fa": "الفارسية",
-      "ar": "العربية",
-      "de": "الألمانية",
-      "ru": "الروسية"
+    "topNav": {
+      "blog": "المدونة",
+      "documentation": "التوثيق",
+      "donate": "تبرع",
+      "languages": {
+        "en": "الإنجليزية",
+        "fr": "الفرنسية",
+        "es": "الإسبانية",
+        "fa": "الفارسية",
+        "ar": "العربية",
+        "de": "الألمانية",
+        "ru": "الروسية"
+      },
+      "download": "تنزيل",
+      "language": "اللغة",
+      "joinTelegram": "انضم إلى تيليجرام",
+      "joinOurTelegram": "انضم إلى تيليجرام الخاص بنا",
+      "github": "جيت هب"
     },
-    "download": "تحميل",
-    "language": "اللغة",
-    "joinTelegram": "انضم إلى تيليجرام",
-    "joinOurTelegram": "انضم إلى تيليجرام الخاص بنا",
-    "github": "جيت هب"
-  },
-  "landing": {
-    "backgroundTitle": "DekuSMS",
-    "title": "DekuSMS",
-    "description1": "تطبيق رسائل نصية مفتوح المصدر مصمم للصمود — أعد توجيه الرسائل إلى السحابة، وتواصل مع وسطاء الرسائل، وتواصل بتشفير كامل حتى بدون إنترنت.",
-    "description2": "أصبح الآن جزءاً من مبادرة SMSWithoutBorders — تقديم تحديثات للميزات وصيانة المكتبات الأساسية.",
-    "pills": {
-      "cloud": "إعادة توجيه سحابية",
-      "encrypted": "تشفير كامل",
-      "broker": "جاهز للوسيط"
-    },
-    "join": "انضم إلى المجتمع على",
-    "forUpdates": "للتحديثات والدعم",
-    "moreInfo": "مزيد من المعلومات حول SMSWithoutBorders:",
-    "website": "الموقع الإلكتروني",
-    "github": "GitHub",
-    "download": "تحميل من Play Store",
-    "donate": "دعم المشروع",
-    "imageAlt": "تطبيق DekuSMS"
-  },
-  "cards": {
-    "troubleshooting": {
-      "title": "دليل استكشاف الأخطاء",
-      "subtitle": "احصل على إجابات لأسئلتك"
-    },
-    "contribution": {
-      "title": "المساهمة",
-      "subtitle": "DekuSMS يرحب بالمساهمات"
-    },
-    "contact": {
-      "title": "اتصل بنا",
-      "subtitle": "developers@smswithoutborders.com"
+    "landing": {
+      "backgroundTitle": "DekuSMS",
+      "title": "DekuSMS",
+      "description1": "DekuSMS هو تطبيق رسائل SMS مفتوح المصدر مع القدرة على القيام بما يلي",
+      "description2": "أصبح DekuSMS الآن جزءًا من مبادرة SMSWithoutBorders. يقدم فريق SMSWithoutBorders تحديثات للميزات وصيانة للمكتبات الأساسية.",
+      "pills": {
+        "cloud": "إعادة توجيه الرسائل الواردة إلى السحابة",
+        "encrypted": "الاتصال بوسطاء المراسلة مثل RMQ لتحويل جهازك إلى آلة لإرسال الرسائل القصيرة",
+        "broker": "توفير رسائل SMS مشفرة من طرف إلى طرف بين مستخدمي DekuSMS"
+      },
+      "pill": {
+        "one": "إعادة التوجيه السحابي",
+        "two": "تشفير من طرف إلى طرف",
+        "three": "جاهز للوسطاء"
+      },
+      "join": "انضم إلى المجتمع على",
+      "forUpdates": "للتحديثات",
+      "moreInfo": "لمزيد من المعلومات حول SMSWithoutBorder:",
+      "website": "الموقع الإلكتروني",
+      "github": "جيت هب",
+      "download": "تنزيل",
+      "donate": "تبرع",
+      "imageAlt": "تطبيق DekuSMS"
     }
   }
-}
