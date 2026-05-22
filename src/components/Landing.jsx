@@ -1,5 +1,10 @@
 import React from "react";
-import { Box, Typography, Stack, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Stack,
+  Button,
+} from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
   CloudUploadOutlined,
@@ -10,122 +15,131 @@ import {
 } from "@ant-design/icons";
 
 const ACCENT = "#2ED3B7";
-const BG = "#0F2027";
+const BG = "#07141A";
 
 export default function Landing() {
   const { t } = useTranslation();
 
   const features = [
     {
-      icon: (
-        <CloudUploadOutlined
-          style={{ fontSize: 16, color: ACCENT }}
-        />
+      icon: <CloudUploadOutlined />,
+      text: t(
+        "landing.pills.cloud",
+        "Forward incoming messages to the cloud"
       ),
-      text: t("landing.pills.cloud", "Forward incoming messages to the cloud"),
     },
     {
-      icon: (
-        <ApiOutlined
-          style={{ fontSize: 16, color: ACCENT }}
-        />
+      icon: <ApiOutlined />,
+      text: t(
+        "landing.pills.encrypted",
+        "Connect to messaging brokers like RMQ to turn your device into an SMS sending machine"
       ),
-      text: t("landing.pills.encrypted", "Connect to messaging brokers like RMQ to turn your device into an SMS sending machine"),
     },
     {
-      icon: (
-        <LockOutlined
-          style={{ fontSize: 16, color: ACCENT }}
-        />
+      icon: <LockOutlined />,
+      text: t(
+        "landing.pills.broker",
+        "Provide end-to-end encrypted SMS messaging between DekuSMS users"
       ),
-      text: t("landing.pills.broker", "Provide end-to-end encrypted SMS messaging between DekuSMS users"),
     },
   ];
 
   return (
     <Box
       sx={{
+        minHeight: "100vh",
         bgcolor: BG,
         color: "white",
-        minHeight: "100vh",
-        py: { xs: 10, md: 0 },
-        px: { xs: 2.5, sm: 4, md: 8, lg: 12 },
-        pt: { xs: 10, md: 0 },
-        pb: { xs: 10, md: 0 },
+        overflow: "hidden",
+        position: "relative",
         display: "flex",
         alignItems: "center",
-        position: "relative",
-        overflowX: "hidden",
-        overflowY: "hidden",
       }}
     >
-      <Typography
-        sx={{
-          position: "absolute",
-          bottom: { xs: -20, md: -50 },
-          left: { xs: 16, md: 64 },
-          fontFamily: "'Unbounded', sans-serif",
-          fontWeight: 700,
-          fontSize: {
-            xs: "5.5rem",
-            sm: "8rem",
-            md: "15rem",
-          },
-          opacity: 0.04,
-          letterSpacing: 2,
-          textTransform: "uppercase",
-          whiteSpace: "nowrap",
-          userSelect: "none",
-          pointerEvents: "none",
-          color: "white",
-        }}
-      >
-        {t("landing.backgroundTitle")}
-      </Typography>
+ 
+ <Typography
+  sx={{
+    position: "absolute",
+    bottom: {
+      xs: 0,
+      md: -70,
+    },
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "100%",
+    maxWidth: "2000px",
+    textAlign: "center",
+    fontSize: {
+      xs: "7rem",
+      sm: "13rem",
+      md: "15rem",
+      lg: "20rem",
+    },
+    fontWeight: 500,
+    lineHeight: 1,
+    opacity: 0.04,
+    fontFamily: "'Unbounded', sans-serif",
+    whiteSpace: "nowrap",
+    pointerEvents: "none",
+    userSelect: "none",
+  }}
+>
+  {t("landing.backgroundTitle")}
+</Typography>
+
 
       <Box
         sx={{
-          display: "flex",
-          flexDirection: {
-            xs: "column",
-            md: "row",
+          width: "100%",
+          maxWidth: "1900px",
+          mx: "auto",
+          px: {
+            xs: 2.5,
+            sm: 4,
+            md: 6,
+            lg: 8,
+          },
+          py: {
+            xs: 8,
+            md: 6,
+          },
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "1fr",
+            md: "1.1fr 0.9fr",
           },
           alignItems: "center",
-          gap: { xs: 5, md: 8 },
+          gap: {
+            xs: 6,
+            md: 4,
+            lg: 6,
+          },
           position: "relative",
           zIndex: 2,
-          width: "100%",
         }}
       >
+     
         <Box
-          flex={{ xs: 1, md: 1.7, lg: 2 }}
           sx={{
-            textAlign: {
-              xs: "flex-start",
-              md: "flex-start",
-            },
-            maxWidth: { md: "65%" },
+            width: "100%",
           }}
         >
           <Typography
-            variant="h1"
             sx={{
-              fontFamily:
-                "'Unbounded', sans-serif",
+              fontFamily: "'Unbounded', sans-serif",
               fontWeight: 700,
               lineHeight: 1.1,
               fontSize: {
-                xs: "1.6rem",
-                sm: "2rem",
-                md: "2.6rem",
-                lg: "3.2rem",
+                xs: "2rem",
+                sm: "2.7rem",
+                md: "3.2rem",
+                lg: "4rem",
               },
-              mb: 2,
-              color: "white",
-                  textAlign: {
-              xs: "center",
-              md: "flex-start",
-            },
+              mb: 3,
+              textAlign: {
+                xs: "center",
+                md: "left",
+              },
             }}
           >
             {t("landing.title")}
@@ -133,57 +147,72 @@ export default function Landing() {
 
           <Typography
             sx={{
-              opacity: 0.75,
-              lineHeight: 1.75,
               fontFamily: "'Ubuntu', sans-serif",
               fontSize: {
-                xs: "0.9rem",
+                xs: "0.95rem",
                 md: "1rem",
               },
-                      textAlign: {
-              xs: "center",
-              md: "flex-start",
-            },
-              mb: 2,
+              lineHeight: 1.9,
+              color: "rgba(255,255,255,0.72)",
+              mb: 4,
               maxWidth: 720,
-              mx: { xs: "auto", md: 0 },
+              mx: {
+                xs: "auto",
+                md: 0,
+              },
+              textAlign: {
+                xs: "center",
+                md: "left",
+              },
             }}
           >
             {t("landing.description1")}
           </Typography>
 
           <Stack
-            spacing={1.5}
+            spacing={2}
             sx={{
-              mb: 3,
-              maxWidth: 600,
-              mx: { xs: "auto", md: 0 },
+              mb: 4,
             }}
           >
-            {features.map((f, i) => (
+            {features.map((feature, i) => (
               <Box
                 key={i}
                 sx={{
                   display: "flex",
                   alignItems: "flex-start",
-                  gap: 1.5,
-                  px: 2,
-                  py: 1.25,
-                  borderRadius: "10px",
+                  gap: 2,
+                  p: 2,
+                  borderRadius: "20px",
                   border:
-                    "1px solid rgba(46,211,183,0.12)",
-                  bgcolor:
-                    "rgba(46,211,183,0.03)",
-                  textAlign: "left",
+                    "1px solid rgba(255,255,255,0.08)",
+                  background:
+                    "rgba(255,255,255,0.03)",
+                  backdropFilter: "blur(10px)",
+                  transition: "0.25s ease",
+                  "&:hover": {
+                    border:
+                      "1px solid rgba(46,211,183,0.2)",
+                    transform: "translateY(-2px)",
+                  },
                 }}
               >
                 <Box
                   sx={{
-                    mt: 0.3,
+                    width: 42,
+                    height: 42,
+                    borderRadius: "12px",
+                    bgcolor:
+                      "rgba(46,211,183,0.12)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: ACCENT,
+                    fontSize: 18,
                     flexShrink: 0,
                   }}
                 >
-                  {f.icon}
+                  {feature.icon}
                 </Box>
 
                 <Typography
@@ -191,14 +220,15 @@ export default function Landing() {
                     fontFamily:
                       "'Ubuntu', sans-serif",
                     fontSize: {
-                      xs: "0.85rem",
-                      md: "0.9rem",
+                      xs: "0.9rem",
+                      md: "0.95rem",
                     },
-                    opacity: 0.8,
-                    lineHeight: 1.6,
+                    lineHeight: 1.7,
+                    color:
+                      "rgba(255,255,255,0.82)",
                   }}
                 >
-                  {f.text}
+                  {feature.text}
                 </Typography>
               </Box>
             ))}
@@ -206,16 +236,19 @@ export default function Landing() {
 
           <Typography
             sx={{
-              opacity: 0.55,
-              lineHeight: 1.75,
               fontFamily: "'Ubuntu', sans-serif",
               fontSize: {
-                xs: "0.875rem",
+                xs: "0.9rem",
                 md: "0.95rem",
               },
+              lineHeight: 1.8,
+              color: "rgba(255,255,255,0.55)",
+              mb: 2,
               maxWidth: 680,
-              mx: { xs: "auto", md: 0 },
-              mb: 1.5,
+              textAlign: {
+                xs: "center",
+                md: "left",
+              },
             }}
           >
             {t("landing.description2")}
@@ -223,24 +256,23 @@ export default function Landing() {
 
           <Typography
             sx={{
-              mb: 2,
-              fontFamily: "'Ubuntu', sans-serif",
-              fontSize: {
-                xs: "0.85rem",
-                md: "0.9rem",
-              },
-              color: "rgba(255,255,255,0.55)",
+              display: "flex",
+              flexWrap: "wrap",
               justifyContent: {
-                xs: "flex-start",
+                xs: "center",
                 md: "flex-start",
               },
-              display: "flex",
+              gap: 1,
               alignItems: "center",
-              gap: 0.75,
-              flexWrap: "wrap",
+              fontSize: "0.9rem",
+              color: "rgba(255,255,255,0.55)",
+              fontFamily: "'Ubuntu', sans-serif",
+              mb: 2,
+              lineHeight: 1.8,
             }}
           >
-            {t("landing.moreInfo")}{" "}
+            {t("landing.moreInfo")}
+
             <Box
               component="a"
               href="https://smswithoutborders.com/"
@@ -248,16 +280,15 @@ export default function Landing() {
               rel="noopener noreferrer"
               sx={{
                 color: ACCENT,
-                fontWeight: 500,
                 textDecoration: "none",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
+                fontWeight: 500,
               }}
             >
               {t("landing.website")}
             </Box>
-        &amp;
+
+            &amp;
+
             <Box
               component="a"
               href="https://github.com/smswithoutborders"
@@ -265,45 +296,37 @@ export default function Landing() {
               rel="noopener noreferrer"
               sx={{
                 color: ACCENT,
-                fontWeight: 500,
                 textDecoration: "none",
                 display: "inline-flex",
                 alignItems: "center",
-                gap: 0.4,
-                "&:hover": {
-                  textDecoration: "underline",
-                },
+                gap: 0.5,
+                fontWeight: 500,
               }}
             >
-              <GithubOutlined
-                style={{ fontSize: 13 }}
-              />
+              <GithubOutlined />
               {t("landing.github")}
             </Box>
           </Typography>
 
           <Typography
             sx={{
-              mb: 3,
-              fontFamily: "'Ubuntu', sans-serif",
-              fontSize: {
-                xs: "0.85rem",
-                md: "0.9rem",
-              },
-              color: "rgba(255,255,255,0.55)",
+              display: "flex",
+              flexWrap: "wrap",
               justifyContent: {
-                xs: "flex-start",
+                xs: "center",
                 md: "flex-start",
               },
-              display: "flex",
+              gap: 1,
               alignItems: "center",
-              gap: 0.75,
-              flexWrap: "wrap",
+              fontSize: "0.9rem",
+              color: "rgba(255,255,255,0.55)",
+              fontFamily: "'Ubuntu', sans-serif",
+              mb: 4,
+              lineHeight: 1.8,
             }}
           >
             <SendOutlined
               style={{
-                fontSize: 13,
                 color: ACCENT,
               }}
             />
@@ -317,17 +340,15 @@ export default function Landing() {
               rel="noopener noreferrer"
               sx={{
                 color: ACCENT,
-                fontWeight: 500,
                 textDecoration: "none",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-                transition: "opacity 0.15s",
+                fontWeight: 500,
               }}
             >
               Telegram
             </Box>
-          &amp;
+
+            &amp;
+
             <Box
               component="a"
               href="https://reddit.com/r/dekusms"
@@ -335,20 +356,16 @@ export default function Landing() {
               rel="noopener noreferrer"
               sx={{
                 color: ACCENT,
-                fontWeight: 500,
                 textDecoration: "none",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-                transition: "opacity 0.15s",
+                fontWeight: 500,
               }}
             >
               Reddit
             </Box>
+
             {t("landing.forUpdates")}
           </Typography>
 
-        
           <Stack
             direction={{
               xs: "column",
@@ -356,9 +373,9 @@ export default function Landing() {
             }}
             spacing={2}
             sx={{
-              justifyContent: {
-                xs: "center",
-                md: "flex-start",
+              width: {
+                xs: "100%",
+                sm: "auto",
               },
             }}
           >
@@ -369,29 +386,21 @@ export default function Landing() {
               sx={{
                 bgcolor: ACCENT,
                 color: BG,
-                px: { xs: 3, md: 4 },
-                py: 1.3,
-                fontSize: {
-                  xs: "0.875rem",
-                  md: "0.95rem",
-                },
+                px: 4,
+                py: 1.4,
+                borderRadius: "16px",
+                textTransform: "none",
+                fontSize: "0.95rem",
+                fontWeight: 700,
                 fontFamily:
                   "'Ubuntu', sans-serif",
-                fontWeight: 500,
-                borderRadius: "24px",
-                textTransform: "none",
                 width: {
                   xs: "100%",
                   sm: "auto",
                 },
                 "&:hover": {
-                  bgcolor: "#25b8a0",
-                  boxShadow:
-                    "0 6px 24px rgba(46,211,183,0.35)",
-                  transform:
-                    "translateY(-1px)",
+                  bgcolor: "#22bda2",
                 },
-                transition: "all 0.2s",
               }}
             >
               {t("topNav.download")}
@@ -402,32 +411,27 @@ export default function Landing() {
               target="_blank"
               variant="outlined"
               sx={{
-                borderColor:
-                  "rgba(46,211,183,0.5)",
+                border:
+                  "1px solid rgba(255,255,255,0.12)",
                 color: "white",
-                px: { xs: 3, md: 4 },
-                py: 1.3,
-                fontSize: {
-                  xs: "0.875rem",
-                  md: "0.95rem",
-                },
+                px: 4,
+                py: 1.4,
+                borderRadius: "16px",
+                textTransform: "none",
+                fontSize: "0.95rem",
+                fontWeight: 500,
                 fontFamily:
                   "'Ubuntu', sans-serif",
-                fontWeight: 400,
-                borderRadius: "24px",
-                textTransform: "none",
                 width: {
                   xs: "100%",
                   sm: "auto",
                 },
                 "&:hover": {
-                  borderColor: ACCENT,
+                  border:
+                    "1px solid rgba(46,211,183,0.3)",
                   bgcolor:
-                    "rgba(46,211,183,0.08)",
-                  transform:
-                    "translateY(-1px)",
+                    "rgba(255,255,255,0.03)",
                 },
-                transition: "all 0.2s",
               }}
             >
               {t("topNav.donate")}
@@ -435,8 +439,7 @@ export default function Landing() {
           </Stack>
         </Box>
 
-        {/* Right side*/}
-<Box
+     <Box
   flex={{ md: 1 }}
   sx={{
     width: "100%",
@@ -484,6 +487,7 @@ export default function Landing() {
     />
   </Box>
 </Box>
+      
       </Box>
     </Box>
   );
