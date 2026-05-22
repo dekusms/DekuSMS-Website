@@ -6,6 +6,7 @@ import React, {
   useMemo,
 } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const ThemeContext = createContext();
 
@@ -15,6 +16,7 @@ const THEMES = {
     text: "#FFFFFF",
     secondary: "rgba(255,255,255,0.72)",
     surface: "rgba(255,255,255,0.04)",
+    border: "rgba(255,255,255,0.08)",
   },
 
   ocean: {
@@ -22,6 +24,7 @@ const THEMES = {
     text: "#FFFFFF",
     secondary: "rgba(255,255,255,0.75)",
     surface: "rgba(255,255,255,0.05)",
+    border: "rgba(255,255,255,0.1)",
   },
 
   sunset: {
@@ -29,6 +32,7 @@ const THEMES = {
     text: "#FFFFFF",
     secondary: "rgba(255,255,255,0.78)",
     surface: "rgba(255,255,255,0.06)",
+    border: "rgba(255,255,255,0.12)",
   },
 
   forest: {
@@ -36,27 +40,16 @@ const THEMES = {
     text: "#FFFFFF",
     secondary: "rgba(255,255,255,0.75)",
     surface: "rgba(255,255,255,0.05)",
+    border: "rgba(255,255,255,0.1)",
   },
 };
 
 export const ColorThemeProvider = ({ children }) => {
-  const [mode, setMode] = useState(() => {
-    if (typeof window === "undefined") return "system";
-    return localStorage.getItem("theme-mode") || "system";
-  });
+  const [mode, setMode] = useState(
+    () => localStorage.getItem("theme-mode") || "system"
+  );
 
-  const [systemDark, setSystemDark] = useState(false);
-
-  // SAFE system detection (no MUI hook)
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    setSystemDark(media.matches);
-
-    const handler = (e) => setSystemDark(e.matches);
-    media.addEventListener("change", handler);
-
-    return () => media.removeEventListener("change", handler);
-  }, []);
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   useEffect(() => {
     localStorage.setItem("theme-mode", mode);
@@ -64,16 +57,12 @@ export const ColorThemeProvider = ({ children }) => {
 
   const activeThemeKey = useMemo(() => {
     if (mode === "system") {
-      return systemDark ? "midnight" : "sunset";
+      return prefersDarkMode ? "midnight" : "sunset";
     }
-
-    // fallback protection
-    if (!THEMES[mode]) return "midnight";
-
     return mode;
-  }, [mode, systemDark]);
+  }, [mode, prefersDarkMode]);
 
-  const activeTheme = THEMES[activeThemeKey] || THEMES.midnight;
+  const activeTheme = THEMES[activeThemeKey];
 
   const theme = useMemo(
     () =>
