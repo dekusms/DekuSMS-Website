@@ -20,12 +20,12 @@ export default function App() {
           mode,
           primary: { main: "#07141A" },
           background: {
-            default: mode === "light" ? "#f8fafc" : "#020617",
-            paper: mode === "light" ? "#ffffff" : "#0f172a"
+            default: mode === "light" ?"#020617" : "#f8fafc",
+            paper: mode === "light" ?   "#0f172a" : "#ffffff"
           },
           text: {
-            primary: mode === "light" ? "#0f172a" : "#f8fafc",
-            secondary: mode === "light" ? "#475569" : "#94a3b8"
+            primary: mode === "light" ? "#f8fafc" : "#0f172a" ,
+            secondary: mode === "light" ?  "#94a3b8" : "#475569" 
           }
         }
       }),
@@ -33,7 +33,7 @@ export default function App() {
   );
 
   const toggleTheme = () => {
-    const next = mode === "light" ? "dark" : "light";
+    const next = mode === "dark" ? "light" : "dark" ;
     setMode(next);
     localStorage.setItem("theme-pref", next);
   };
