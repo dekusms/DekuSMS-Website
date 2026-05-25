@@ -348,8 +348,6 @@ export default function Landing() {
                 px: 4,
                 py: 1.4,
                 color: BG,
-                px: 4,
-                py: 1.4,
                 borderRadius: "16px",
                 textTransform: "none",
                 fontSize: "0.95rem",

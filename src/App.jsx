@@ -18,7 +18,7 @@ export default function App() {
       createTheme({
         palette: {
           mode,
-          primary: { main: "#2563eb" },
+          primary: { main: "#07141A" },
           background: {
             default: mode === "light" ? "#f8fafc" : "#020617",
             paper: mode === "light" ? "#ffffff" : "#0f172a"
