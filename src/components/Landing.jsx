@@ -62,7 +62,6 @@ export default function Landing() {
         alignItems: "center",
       }}
     >
-      {/* ================= BACKGROUND TITLE ================= */}
       <Typography
         sx={{
           position: "absolute",
@@ -90,7 +89,6 @@ export default function Landing() {
         {t("landing.backgroundTitle")}
       </Typography>
 
-      {/* ================= GRID ================= */}
       <Box
         sx={{
           width: "100%",
@@ -106,7 +104,6 @@ export default function Landing() {
           zIndex: 2,
         }}
       >
-        {/* ================= LEFT ================= */}
         <Box>
           <Typography
             sx={{
@@ -143,7 +140,6 @@ export default function Landing() {
             {t("landing.description1")}
           </Typography>
 
-          {/* ================= FEATURES ================= */}
           <Stack spacing={2} sx={{ mb: 4 }}>
             {features.map((feature, i) => (
               <Box
@@ -336,7 +332,6 @@ export default function Landing() {
                       {t("landing.forUpdates")}
                     </Typography>
 
-          {/* ================= CTA ================= */}
           <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
             <Button
                href="https://play.google.com/store/apps/details?id=com.afkanerd.deku&pli=1"
@@ -392,7 +387,6 @@ export default function Landing() {
           </Stack>
         </Box>
 
-        {/* ================= IMAGE ================= */}
         <Box
           sx={{
             display: { xs: "none", md: "flex" },
