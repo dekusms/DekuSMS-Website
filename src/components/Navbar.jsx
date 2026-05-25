@@ -1,20 +1,23 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import Divider from "@mui/material/Divider";
-import Paper from "@mui/material/Paper";
-import Collapse from "@mui/material/Collapse";
-import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  Box,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  Divider,
+  Paper,
+  Collapse,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+
 import { useTheme } from "@mui/material/styles";
 import {
   GithubOutlined,
@@ -28,25 +31,36 @@ import {
   HeartOutlined,
   CheckOutlined,
   DownOutlined,
+  SunOutlined,
+  MoonOutlined,
 } from "@ant-design/icons";
 
 const ACCENT = "#2ED3B7";
-const BG = "#0F2027";
 const DRAWER_BG = "#0a1a20";
-
 const TELEGRAM_LINK = "https://t.me/deku_sms";
-
 const RTL_LANGUAGES = ["fa", "ar"];
 
-export default function TopNav({ setActiveSection }) {
+export default function TopNav({ setActiveSection, mode, toggleTheme }) {
   const { t, i18n } = useTranslation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const isDark = theme.palette.mode === "dark";
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [mobileLangOpen, setMobileLangOpen] = useState(false);
 
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const textColor = isDark ? "#ffffff" : "#0f172a";
+
+  const subtleText = isDark
+    ? "rgba(255,255,255,0.55)"
+    : "rgba(15,23,42,0.6)";
+
+  const borderColor = isDark
+    ? "rgba(255,255,255,0.06)"
+    : "rgba(15,23,42,0.08)";
 
   const menuItems = [
     {
@@ -81,7 +95,6 @@ export default function TopNav({ setActiveSection }) {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-
     localStorage.setItem("lang", lng);
 
     document.documentElement.dir = RTL_LANGUAGES.includes(lng)
@@ -93,31 +106,31 @@ export default function TopNav({ setActiveSection }) {
   };
 
   const iconBtnSx = {
-    color: "rgba(255,255,255,0.45)",
+    color: subtleText,
     borderRadius: "8px",
     width: 36,
     height: 36,
-    fontSize: 17,
-    transition: "all 0.15s",
     "&:hover": {
-      color: "white",
-      bgcolor: "rgba(255,255,255,0.07)",
+      color: textColor,
+      bgcolor: isDark
+        ? "rgba(255,255,255,0.07)"
+        : "rgba(15,23,42,0.05)",
     },
   };
 
   const navLinkSx = {
-    color: "rgba(255,255,255,0.55)",
+    color: subtleText,
     textTransform: "none",
     fontSize: "0.875rem",
     fontFamily: "'Ubuntu', sans-serif",
     borderRadius: "8px",
     px: 1.5,
     py: 0.75,
-    minWidth: "auto",
-    transition: "all 0.15s",
     "&:hover": {
-      color: "white",
-      backgroundColor: "rgba(255,255,255,0.06)",
+      color: textColor,
+      backgroundColor: isDark
+        ? "rgba(255,255,255,0.06)"
+        : "rgba(15,23,42,0.05)",
     },
   };
 
@@ -127,9 +140,11 @@ export default function TopNav({ setActiveSection }) {
         position="fixed"
         elevation={0}
         sx={{
-          backgroundColor: "rgba(15,32,39,0.98)",
+           backgroundColor: isDark
+        ? "#07141A"
+        : "#f5f7fa",
           backdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          borderBottom: `1px solid ${borderColor}`,
         }}
       >
         <Toolbar
@@ -144,12 +159,8 @@ export default function TopNav({ setActiveSection }) {
             component="img"
             src="/logo/DekuSMS-Dark.png"
             alt="DekuSMS"
-            loading="lazy"
             sx={{
               width: { xs: 100, sm: 120, md: 160 },
-              height: "auto",
-              objectFit: "contain",
-              flexShrink: 0,
             }}
           />
 
@@ -157,8 +168,7 @@ export default function TopNav({ setActiveSection }) {
             <Box
               sx={{
                 display: "flex",
-                alignItems: "center",
-                gap: 0.25,
+                gap: 0.5,
                 position: "absolute",
                 left: "50%",
                 transform: "translateX(-50%)",
@@ -178,22 +188,32 @@ export default function TopNav({ setActiveSection }) {
           )}
 
           {!isMobile && (
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 0.75,
-                flexShrink: 0,
-              }}
-            >
-              <IconButton
-                href="https://github.com/dekusms/DekuSMS-Android"
-                target="_blank"
-                sx={iconBtnSx}
-                title={t("topNav.github")}
-              >
-                <GithubOutlined />
-              </IconButton>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+
+<IconButton
+  component="a"
+  href="https://github.com/dekusms/DekuSMS-Android"
+  target="_blank"
+  rel="noopener noreferrer"
+  sx={iconBtnSx}
+  aria-label="GitHub"
+>
+  <GithubOutlined />
+</IconButton>
+
+<IconButton
+  onClick={toggleTheme}
+  sx={iconBtnSx}
+  title={mode === "dark" ? "Light mode" : "Dark mode"}
+  aria-label="Toggle theme"
+>
+  {mode === "dark" ? (
+    <SunOutlined />
+  ) : (
+    <MoonOutlined />
+  )}
+</IconButton>
+
 
               <Box sx={{ position: "relative" }}>
                 <Box
@@ -206,27 +226,22 @@ export default function TopNav({ setActiveSection }) {
                     py: 0.6,
                     borderRadius: "8px",
                     cursor: "pointer",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    color: "rgba(255,255,255,0.55)",
+                    border: `1px solid ${borderColor}`,
+                    color: subtleText,
                     fontSize: "0.8rem",
-                    fontFamily: "'Ubuntu', sans-serif",
-                    transition: "all 0.15s",
-                    userSelect: "none",
                     "&:hover": {
-                      color: "white",
-                      border: "1px solid rgba(255,255,255,0.15)",
-                      bgcolor: "rgba(255,255,255,0.05)",
+                      color: textColor,
+                      bgcolor: isDark
+                        ? "rgba(255,255,255,0.05)"
+                        : "rgba(15,23,42,0.03)",
                     },
                   }}
                 >
-                  <GlobalOutlined style={{ fontSize: 14 }} />
-
+                  <GlobalOutlined />
                   {currentLang.native}
-
                   <DownOutlined
                     style={{
                       fontSize: 10,
-                      transition: "transform 0.2s",
                       transform: langOpen
                         ? "rotate(180deg)"
                         : "rotate(0deg)",
@@ -238,49 +253,20 @@ export default function TopNav({ setActiveSection }) {
                   <>
                     <Box
                       onClick={() => setLangOpen(false)}
-                      sx={{
-                        position: "fixed",
-                        inset: 0,
-                        zIndex: 2999,
-                      }}
+                      sx={{ position: "fixed", inset: 0 }}
                     />
 
                     <Paper
-                      elevation={0}
                       sx={{
                         position: "absolute",
-                        top: "calc(100% + 8px)",
+                        top: "100%",
                         right: 0,
-                        bgcolor: "#0d1b22",
-                        border: "1px solid rgba(255,255,255,0.08)",
-                        borderRadius: "10px",
+                        mt: 1,
                         minWidth: 170,
-                        zIndex: 3000,
-                        overflow: "hidden",
-                        boxShadow: "0 16px 40px rgba(0,0,0,0.5)",
+                        bgcolor: isDark ? "#0d1b22" : "#fff",
+                        border: `1px solid ${borderColor}`,
                       }}
                     >
-                      <Box
-                        sx={{
-                          px: 1.5,
-                          py: 1,
-                          borderBottom:
-                            "1px solid rgba(255,255,255,0.06)",
-                        }}
-                      >
-                        <Typography
-                          sx={{
-                            fontSize: "0.7rem",
-                            color: "rgba(255,255,255,0.25)",
-                            fontFamily: "'Ubuntu'",
-                            letterSpacing: "0.08em",
-                            textTransform: "uppercase",
-                          }}
-                        >
-                          {t("topNav.language")}
-                        </Typography>
-                      </Box>
-
                       {languages.map((lng) => {
                         const active = i18n.language === lng.code;
 
@@ -292,35 +278,13 @@ export default function TopNav({ setActiveSection }) {
                               px: 1.5,
                               py: 1,
                               cursor: "pointer",
-                              fontFamily: "'Ubuntu', sans-serif",
-                              fontSize: "0.875rem",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "space-between",
-                              color: active
-                                ? ACCENT
-                                : "rgba(255,255,255,0.7)",
-                              fontWeight: active ? 500 : 400,
+                              color: active ? ACCENT : textColor,
                               bgcolor: active
-                                ? "rgba(46,211,183,0.06)"
+                                ? `${ACCENT}10`
                                 : "transparent",
-                              "&:hover": {
-                                bgcolor: "rgba(255,255,255,0.05)",
-                                color: active ? ACCENT : "white",
-                              },
-                              transition: "all 0.12s",
                             }}
                           >
                             {lng.native}
-
-                            {active && (
-                              <CheckOutlined
-                                style={{
-                                  fontSize: 12,
-                                  color: ACCENT,
-                                }}
-                              />
-                            )}
                           </Box>
                         );
                       })}
@@ -329,99 +293,78 @@ export default function TopNav({ setActiveSection }) {
                 )}
               </Box>
 
-              <Box
-                sx={{
-                  width: "1px",
-                  height: 22,
-                  bgcolor: "rgba(255,255,255,0.08)",
-                  mx: 0.25,
-                }}
-              />
-
               <Button
                 href={TELEGRAM_LINK}
                 target="_blank"
-                rel="noopener noreferrer"
-                startIcon={<SendOutlined style={{ fontSize: 12 }} />}
                 sx={{
                   color: ACCENT,
-                  fontFamily: "'Ubuntu', sans-serif",
-                  fontWeight: 500,
+                  border: `1px solid ${ACCENT}55`,
                   textTransform: "none",
-                  borderRadius: "8px",
-                  border: "1px solid rgba(46,211,183,0.3)",
-                  bgcolor: "rgba(46,211,183,0.06)",
-                  px: 1.75,
-                  py: 0.65,
-                  fontSize: "0.85rem",
-                  "&:hover": {
-                    bgcolor: "rgba(46,211,183,0.12)",
-                    borderColor: "rgba(46,211,183,0.6)",
-                  },
+                   "&:hover": {
+      bgcolor: "#09746286",
+      transform: "translateY(-2px)",
+      boxShadow: "0 12px 20px rgba(46, 211, 183, 0.11)",
+    },
                 }}
               >
                 {t("topNav.joinTelegram")}
               </Button>
 
-              <Button
-                onClick={() => setActiveSection("downloads")}
-                startIcon={<DownloadOutlined style={{ fontSize: 12 }} />}
-                sx={{
-                  bgcolor: ACCENT,
-                  color: BG,
-                  fontFamily: "'Ubuntu', sans-serif",
-                  fontWeight: 600,
-                  textTransform: "none",
-                  borderRadius: "8px",
-                  px: 1.75,
-                  py: 0.65,
-                  fontSize: "0.85rem",
-                  "&:hover": {
-                    bgcolor: "#25b8a0",
-                  },
-                }}
-              >
-                {t("topNav.download")}
-              </Button>
+<Button
+  component="a"
+  href="https://play.google.com/store/apps/details?id=com.afkanerd.deku&pli=1"
+  target="_blank"
+  rel="noopener noreferrer"
+  endIcon={<DownloadOutlined />}
+  sx={{
+    bgcolor: ACCENT,
+    color: "#07141A",
+    fontWeight: 700,
+    textTransform: "none",
+    borderRadius: "14px",
+    px: 2.5,
+    py: 1,
+    fontSize: "0.92rem",
+    fontFamily: "'Ubuntu', sans-serif",
+    boxShadow: "0 8px 24px rgba(46,211,183,0.25)",
+    transition: "all 0.25s ease",
+
+    "&:hover": {
+      Color:"#FFFS",
+      bgcolor: "#00a88c77",
+      transform: "translateY(-2px)",
+      boxShadow: "0 12px 30px rgba(46,211,183,0.35)",
+    },
+  }}
+>
+  {t("topNav.download")}
+</Button>
             </Box>
           )}
 
           {isMobile && (
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 0.75,
-              }}
-            >
+            <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+
+              <IconButton onClick={toggleTheme}>
+                {mode === "dark" ? (
+                  <SunOutlined style={{ color: "white" }} />
+                ) : (
+                  <MoonOutlined style={{ color: "#0f172a" }} />
+                )}
+              </IconButton>
+
               <Button
                 onClick={() => setActiveSection("downloads")}
-                startIcon={<DownloadOutlined style={{ fontSize: 12 }} />}
                 sx={{
                   bgcolor: ACCENT,
-                  color: BG,
-                  fontFamily: "'Ubuntu', sans-serif",
-                  fontWeight: 600,
-                  textTransform: "none",
-                  borderRadius: "8px",
-                  px: 1.5,
-                  py: 0.55,
+                  color: "#07141A",
                   fontSize: "0.8rem",
-                  "&:hover": {
-                    bgcolor: "#25b8a0",
-                  },
                 }}
               >
                 {t("topNav.download")}
               </Button>
 
-              <IconButton
-                onClick={() => setDrawerOpen(true)}
-                sx={{
-                  ...iconBtnSx,
-                  border: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
+              <IconButton onClick={() => setDrawerOpen(true)}>
                 <MenuOutlined />
               </IconButton>
             </Box>
@@ -429,7 +372,6 @@ export default function TopNav({ setActiveSection }) {
         </Toolbar>
       </AppBar>
 
-    {/* MOBILE DRAWER */}
       <Drawer
         anchor="right"
         open={drawerOpen}
@@ -437,169 +379,25 @@ export default function TopNav({ setActiveSection }) {
         PaperProps={{
           sx: {
             bgcolor: DRAWER_BG,
-            width: 272,
-            borderLeft: "1px solid rgba(255,255,255,0.06)",
+            width: 280,
           },
         }}
       >
-        <Box
-          sx={{
-            px: 2,
-            py: 1.5,
-
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
-          }}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "'Ubuntu', sans-serif",
-              fontWeight: 500,
-            }}
-          >
-            Menu
-          </Typography>
-
-          <IconButton
-            onClick={() => setDrawerOpen(false)}
-            sx={{
-              color: "rgba(255,255,255,0.6)",
-            }}
-          >
-            <CloseOutlined />
-          </IconButton>
-        </Box>
-
-        <List sx={{ py: 1 }}>
+        <List>
           {menuItems.map((item) => (
             <ListItem
               key={item.label}
               component="a"
               href={item.href}
-              target="_blank"
-              sx={{
-                py: 1.2,
-                px: 2,
-                color: "rgba(255,255,255,0.75)",
-              }}
+              sx={{ color: "white" }}
             >
-              <ListItemIcon
-                sx={{
-                  color: "rgba(255,255,255,0.5)",
-                  minWidth: 34,
-                }}
-              >
+              <ListItemIcon sx={{ color: "rgba(255,255,255,0.5)" }}>
                 {item.icon}
               </ListItemIcon>
-
-              <ListItemText
-                primary={item.label}
-                primaryTypographyProps={{
-                  fontFamily: "'Ubuntu', sans-serif",
-                  fontSize: "0.92rem",
-                }}
-              />
+              <ListItemText primary={item.label} />
             </ListItem>
           ))}
         </List>
-
-        <Divider sx={{ borderColor: "rgba(255,255,255,0.06)" }} />
-
-        {/* MOBILE LANGUAGE */}
-        <Box sx={{ p: 2 }}>
-          <Box
-            onClick={() => setMobileLangOpen(!mobileLangOpen)}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-
-              px: 1.5,
-              py: 1,
-
-              borderRadius: "8px",
-
-              border: "1px solid rgba(255,255,255,0.08)",
-
-              color: "rgba(255,255,255,0.75)",
-
-              cursor: "pointer",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1,
-              }}
-            >
-              <GlobalOutlined />
-              {currentLang.native}
-            </Box>
-
-            <DownOutlined
-              style={{
-                fontSize: 10,
-                transform: mobileLangOpen
-                  ? "rotate(180deg)"
-                  : "rotate(0deg)",
-                transition: "0.2s",
-              }}
-            />
-          </Box>
-
-          <Collapse in={mobileLangOpen}>
-            <Box sx={{ mt: 1 }}>
-              {languages.map((lng) => {
-                const active = i18n.language === lng.code;
-
-                return (
-                  <Box
-                    key={lng.code}
-                    onClick={() => changeLanguage(lng.code)}
-                    sx={{
-                      px: 1.5,
-                      py: 1,
-
-                      borderRadius: "8px",
-
-                      color: active
-                        ? ACCENT
-                        : "rgba(255,255,255,0.7)",
-
-                      cursor: "pointer",
-
-                      fontFamily: "'Ubuntu', sans-serif",
-
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-
-                      "&:hover": {
-                        bgcolor: "rgba(255,255,255,0.05)",
-                      },
-                    }}
-                  >
-                    {lng.native}
-
-                    {active && (
-                      <CheckOutlined
-                        style={{
-                          fontSize: 12,
-                          color: ACCENT,
-                        }}
-                      />
-                    )}
-                  </Box>
-                );
-              })}
-            </Box>
-          </Collapse>
-        </Box>
       </Drawer>
     </>
   );

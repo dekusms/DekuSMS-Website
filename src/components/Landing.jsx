@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Typography, Stack, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Stack,
+  Button,
+  useTheme,
+} from "@mui/material";
+
 import { useTranslation } from "react-i18next";
 import {
   CloudUploadOutlined,
@@ -10,122 +17,110 @@ import {
 } from "@ant-design/icons";
 
 const ACCENT = "#2ED3B7";
-const BG = "#0F2027";
 
 export default function Landing() {
   const { t } = useTranslation();
+  const theme = useTheme();
+
+  const BG =
+    theme.palette.mode === "dark"
+      ? "#07141A"
+      : "#f5f7fa";
+
+  const isDark = theme.palette.mode === "dark";
 
   const features = [
     {
-      icon: (
-        <CloudUploadOutlined
-          style={{ fontSize: 16, color: ACCENT }}
-        />
-      ),
+      icon: <CloudUploadOutlined />,
       text: t("landing.pills.cloud", "Forward incoming messages to the cloud"),
     },
     {
-      icon: (
-        <ApiOutlined
-          style={{ fontSize: 16, color: ACCENT }}
-        />
+      icon: <ApiOutlined />,
+      text: t(
+        "landing.pills.encrypted",
+        "Connect to messaging brokers like RMQ to turn your device into an SMS sending machine"
       ),
-      text: t("landing.pills.encrypted", "Connect to messaging brokers like RMQ to turn your device into an SMS sending machine"),
     },
     {
-      icon: (
-        <LockOutlined
-          style={{ fontSize: 16, color: ACCENT }}
-        />
+      icon: <LockOutlined />,
+      text: t(
+        "landing.pills.broker",
+        "Provide end-to-end encrypted SMS messaging between DekuSMS users"
       ),
-      text: t("landing.pills.broker", "Provide end-to-end encrypted SMS messaging between DekuSMS users"),
     },
   ];
 
   return (
     <Box
       sx={{
-        bgcolor: BG,
-        color: "white",
         minHeight: "100vh",
-        py: { xs: 10, md: 0 },
-        px: { xs: 2.5, sm: 4, md: 8, lg: 12 },
-        pt: { xs: 10, md: 0 },
-        pb: { xs: 10, md: 0 },
+        bgcolor: BG,
+        color: isDark ? "white" : "#0f172a",
+        overflow: "hidden",
+        position: "relative",
         display: "flex",
         alignItems: "center",
-        position: "relative",
-        overflowX: "hidden",
-        overflowY: "hidden",
       }}
     >
+      {/* ================= BACKGROUND TITLE ================= */}
       <Typography
         sx={{
           position: "absolute",
-          bottom: { xs: -20, md: -50 },
-          left: { xs: 16, md: 64 },
-          fontFamily: "'Unbounded', sans-serif",
-          fontWeight: 700,
+          bottom: { xs: 0, md: -70 },
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "100%",
+          maxWidth: "2000px",
+          textAlign: "center",
           fontSize: {
-            xs: "5.5rem",
-            sm: "8rem",
+            xs: "7rem",
+            sm: "13rem",
             md: "15rem",
+            lg: "20rem",
           },
+          fontWeight: 500,
+          lineHeight: 1,
           opacity: 0.04,
-          letterSpacing: 2,
-          textTransform: "uppercase",
+          fontFamily: "'Unbounded', sans-serif",
           whiteSpace: "nowrap",
-          userSelect: "none",
           pointerEvents: "none",
-          color: "white",
+          userSelect: "none",
         }}
       >
         {t("landing.backgroundTitle")}
       </Typography>
 
+      {/* ================= GRID ================= */}
       <Box
         sx={{
-          display: "flex",
-          flexDirection: {
-            xs: "column",
-            md: "row",
-          },
+          width: "100%",
+          maxWidth: "1900px",
+          mx: "auto",
+          px: { xs: 2.5, sm: 4, md: 6, lg: 8 },
+          py: { xs: 8, md: 6 },
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1.1fr 0.9fr" },
           alignItems: "center",
-          gap: { xs: 5, md: 8 },
+          gap: { xs: 6, md: 4, lg: 6 },
           position: "relative",
           zIndex: 2,
-          width: "100%",
         }}
       >
-        <Box
-          flex={{ xs: 1, md: 1.7, lg: 2 }}
-          sx={{
-            textAlign: {
-              xs: "flex-start",
-              md: "flex-start",
-            },
-            maxWidth: { md: "65%" },
-          }}
-        >
+        {/* ================= LEFT ================= */}
+        <Box>
           <Typography
-            variant="h1"
             sx={{
-              fontFamily:
-                "'Unbounded', sans-serif",
+              fontFamily: "'Unbounded', sans-serif",
               fontWeight: 700,
               lineHeight: 1.1,
               fontSize: {
-                xs: "1.6rem",
-                sm: "2rem",
-                md: "2.6rem",
-                lg: "3.2rem",
+                xs: "2rem",
+                sm: "2.7rem",
+                md: "3.2rem",
+                lg: "4rem",
               },
-              mb: 2,
-              color: "white",
-                  textAlign: {
-              xs: "center",
-              md: "flex-start",
-            },
+              mb: 3,
+              textAlign: { xs: "center", md: "left" },
             }}
           >
             {t("landing.title")}
@@ -133,301 +128,263 @@ export default function Landing() {
 
           <Typography
             sx={{
-              opacity: 0.75,
-              lineHeight: 1.75,
               fontFamily: "'Ubuntu', sans-serif",
-              fontSize: {
-                xs: "0.9rem",
-                md: "1rem",
-              },
-                      textAlign: {
-              xs: "center",
-              md: "flex-start",
-            },
-              mb: 2,
+              fontSize: { xs: "0.95rem", md: "1rem" },
+              lineHeight: 1.9,
+              color: isDark
+                ? "rgba(255,255,255,0.72)"
+                : "rgba(15,23,42,0.75)",
+              mb: 4,
               maxWidth: 720,
               mx: { xs: "auto", md: 0 },
+              textAlign: { xs: "center", md: "left" },
             }}
           >
             {t("landing.description1")}
           </Typography>
 
-          <Stack
-            spacing={1.5}
-            sx={{
-              mb: 3,
-              maxWidth: 600,
-              mx: { xs: "auto", md: 0 },
-            }}
-          >
-            {features.map((f, i) => (
+          {/* ================= FEATURES ================= */}
+          <Stack spacing={2} sx={{ mb: 4 }}>
+            {features.map((feature, i) => (
               <Box
                 key={i}
                 sx={{
                   display: "flex",
-                  alignItems: "flex-start",
-                  gap: 1.5,
-                  px: 2,
-                  py: 1.25,
-                  borderRadius: "10px",
-                  border:
-                    "1px solid rgba(46,211,183,0.12)",
-                  bgcolor:
-                    "rgba(46,211,183,0.03)",
-                  textAlign: "left",
+                  gap: 2,
+                  p: 2,
+                  borderRadius: "20px",
+                  border: isDark
+                    ? "1px solid rgba(255,255,255,0.08)"
+                    : "1px solid rgba(15,23,42,0.08)",
+                  background: isDark
+                    ? "rgba(255,255,255,0.03)"
+                    : "rgba(15,23,42,0.03)",
+                  backdropFilter: "blur(10px)",
+                  transition: "0.25s ease",
+                  "&:hover": {
+                    border: `1px solid ${ACCENT}55`,
+                    transform: "translateY(-2px)",
+                  },
                 }}
               >
                 <Box
                   sx={{
-                    mt: 0.3,
-                    flexShrink: 0,
+                    width: 42,
+                    height: 42,
+                    borderRadius: "12px",
+                    bgcolor: `${ACCENT}22`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: ACCENT,
                   }}
                 >
-                  {f.icon}
+                  {feature.icon}
                 </Box>
 
                 <Typography
                   sx={{
-                    fontFamily:
-                      "'Ubuntu', sans-serif",
-                    fontSize: {
-                      xs: "0.85rem",
-                      md: "0.9rem",
-                    },
-                    opacity: 0.8,
-                    lineHeight: 1.6,
+                    fontFamily: "'Ubuntu', sans-serif",
+                    fontSize: "0.95rem",
+                    lineHeight: 1.7,
+                    color: isDark
+                      ? "rgba(255,255,255,0.82)"
+                      : "rgba(15,23,42,0.75)",
                   }}
                 >
-                  {f.text}
+                  {feature.text}
                 </Typography>
               </Box>
             ))}
           </Stack>
 
-          <Typography
-            sx={{
-              opacity: 0.55,
-              lineHeight: 1.75,
-              fontFamily: "'Ubuntu', sans-serif",
-              fontSize: {
-                xs: "0.875rem",
-                md: "0.95rem",
-              },
-              maxWidth: 680,
-              mx: { xs: "auto", md: 0 },
-              mb: 1.5,
-            }}
-          >
-            {t("landing.description2")}
-          </Typography>
+         <Typography
+  sx={{
+    fontFamily: "'Ubuntu', sans-serif",
+    fontSize: {
+      xs: "0.9rem",
+      md: "0.95rem",
+    },
+    lineHeight: 1.8,
+    color: isDark
+      ? "rgba(255,255,255,0.55)"
+      : "rgba(15,23,42,0.65)",
+    mb: 2,
+    maxWidth: 680,
+    textAlign: {
+      xs: "center",
+      md: "left",
+    },
+  }}
+>
+  {t("landing.description2")}
+</Typography>
+          
+                 <Typography
+  sx={{
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: {
+      xs: "center",
+      md: "flex-start",
+    },
+    gap: 1,
+    alignItems: "center",
+    fontSize: "0.9rem",
+    color: isDark
+      ? "rgba(255,255,255,0.55)"
+      : "rgba(15,23,42,0.65)",
+    fontFamily: "'Ubuntu', sans-serif",
+    mb: 2,
+    lineHeight: 1.8,
+  }}
+>
+                      {t("landing.moreInfo")}
+          
+                      <Box
+                        component="a"
+                        href="https://smswithoutborders.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          color: ACCENT,
+                          textDecoration: "none",
+                          fontWeight: 500,
+                        }}
+                      >
+                        {t("landing.website")}
+                      </Box>
+          
+                      &amp;
+          
+                      <Box
+                        component="a"
+                        href="https://github.com/smswithoutborders"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          color: ACCENT,
+                          textDecoration: "none",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: 0.5,
+                          fontWeight: 500,
+                        }}
+                      >
+                        <GithubOutlined />
+                        {t("landing.github")}
+                      </Box>
+                    </Typography>
+          
+                   <Typography
+  sx={{
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: {
+      xs: "center",
+      md: "flex-start",
+    },
+    gap: 1,
+    alignItems: "center",
+    fontSize: "0.9rem",
+    color: isDark
+      ? "rgba(255,255,255,0.55)"
+      : "rgba(15,23,42,0.65)",
+    fontFamily: "'Ubuntu', sans-serif",
+    mb: 4,
+    lineHeight: 1.8,
+  }}
+>
+                      <SendOutlined
+                        style={{
+                          color: ACCENT,
+                        }}
+                      />
+          
+                      {t("landing.join")}
+          
+                      <Box
+                        component="a"
+                        href="https://t.me/deku_sms"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          color: ACCENT,
+                          textDecoration: "none",
+                          fontWeight: 500,
+                        }}
+                      >
+                        Telegram
+                      </Box>
+          
+                      &amp;
+          
+                      <Box
+                        component="a"
+                        href="https://reddit.com/r/dekusms"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          color: ACCENT,
+                          textDecoration: "none",
+                          fontWeight: 500,
+                        }}
+                      >
+                        Reddit
+                      </Box>
+          
+                      {t("landing.forUpdates")}
+                    </Typography>
 
-          <Typography
-            sx={{
-              mb: 2,
-              fontFamily: "'Ubuntu', sans-serif",
-              fontSize: {
-                xs: "0.85rem",
-                md: "0.9rem",
-              },
-              color: "rgba(255,255,255,0.55)",
-              justifyContent: {
-                xs: "flex-start",
-                md: "flex-start",
-              },
-              display: "flex",
-              alignItems: "center",
-              gap: 0.75,
-              flexWrap: "wrap",
-            }}
-          >
-            {t("landing.moreInfo")}{" "}
-            <Box
-              component="a"
-              href="https://smswithoutborders.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: ACCENT,
-                fontWeight: 500,
-                textDecoration: "none",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              {t("landing.website")}
-            </Box>
-        &amp;
-            <Box
-              component="a"
-              href="https://github.com/smswithoutborders"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: ACCENT,
-                fontWeight: 500,
-                textDecoration: "none",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 0.4,
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              <GithubOutlined
-                style={{ fontSize: 13 }}
-              />
-              {t("landing.github")}
-            </Box>
-          </Typography>
-
-          <Typography
-            sx={{
-              mb: 3,
-              fontFamily: "'Ubuntu', sans-serif",
-              fontSize: {
-                xs: "0.85rem",
-                md: "0.9rem",
-              },
-              color: "rgba(255,255,255,0.55)",
-              justifyContent: {
-                xs: "flex-start",
-                md: "flex-start",
-              },
-              display: "flex",
-              alignItems: "center",
-              gap: 0.75,
-              flexWrap: "wrap",
-            }}
-          >
-            <SendOutlined
-              style={{
-                fontSize: 13,
-                color: ACCENT,
-              }}
-            />
-
-            {t("landing.join")}
-
-            <Box
-              component="a"
-              href="https://t.me/deku_sms"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: ACCENT,
-                fontWeight: 500,
-                textDecoration: "none",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-                transition: "opacity 0.15s",
-              }}
-            >
-              Telegram
-            </Box>
-          &amp;
-            <Box
-              component="a"
-              href="https://reddit.com/r/dekusms"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: ACCENT,
-                fontWeight: 500,
-                textDecoration: "none",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-                transition: "opacity 0.15s",
-              }}
-            >
-              Reddit
-            </Box>
-            {t("landing.forUpdates")}
-          </Typography>
-
-        
-          <Stack
-            direction={{
-              xs: "column",
-              sm: "row",
-            }}
-            spacing={2}
-            sx={{
-              justifyContent: {
-                xs: "center",
-                md: "flex-start",
-              },
-            }}
-          >
+          {/* ================= CTA ================= */}
+          <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
             <Button
-              href="https://play.google.com/store/apps/details?id=com.afkanerd.deku&pli=1"
+               href="https://play.google.com/store/apps/details?id=com.afkanerd.deku&pli=1"
               target="_blank"
               variant="contained"
               sx={{
                 bgcolor: ACCENT,
+                fontWeight: 700,
+                px: 4,
+                py: 1.4,
                 color: BG,
-                px: { xs: 3, md: 4 },
-                py: 1.3,
-                fontSize: {
-                  xs: "0.875rem",
-                  md: "0.95rem",
-                },
+                borderRadius: "16px",
+                textTransform: "none",
+                fontSize: "0.95rem",
                 fontFamily:
                   "'Ubuntu', sans-serif",
-                fontWeight: 500,
-                borderRadius: "24px",
-                textTransform: "none",
-                width: {
-                  xs: "100%",
-                  sm: "auto",
-                },
-                "&:hover": {
-                  bgcolor: "#25b8a0",
-                  boxShadow:
-                    "0 6px 24px rgba(46,211,183,0.35)",
-                  transform:
-                    "translateY(-1px)",
-                },
-                transition: "all 0.2s",
               }}
             >
               {t("topNav.download")}
             </Button>
 
             <Button
-              href="https://opencollective.com/dekusms"
+             href="https://opencollective.com/dekusms"
               target="_blank"
               variant="outlined"
               sx={{
-                borderColor:
-                  "rgba(46,211,183,0.5)",
-                color: "white",
-                px: { xs: 3, md: 4 },
-                py: 1.3,
-                fontSize: {
-                  xs: "0.875rem",
-                  md: "0.95rem",
-                },
+                border: isDark
+                  ? "1px solid rgba(255,255,255,0.12)"
+                  : "1px solid rgba(15,23,42,0.15)",
+                color: isDark ? "white" : "#0f172a",
+                px: 4,
+                py: 1.4,
+                borderRadius: "16px",
+                textTransform: "none",
+                fontSize: "0.95rem",
+                fontWeight: 500,
                 fontFamily:
                   "'Ubuntu', sans-serif",
-                fontWeight: 400,
-                borderRadius: "24px",
-                textTransform: "none",
-                width: {
+                    width: {
                   xs: "100%",
                   sm: "auto",
                 },
-                "&:hover": {
-                  borderColor: ACCENT,
+                    "&:hover": {
+                  border:
+                    "1px solid rgba(46,211,183,0.3)",
                   bgcolor:
-                    "rgba(46,211,183,0.08)",
-                  transform:
-                    "translateY(-1px)",
-                },
-                transition: "all 0.2s",
+                    "rgba(255,255,255,0.03)",
+                }
               }}
             >
               {t("topNav.donate")}
@@ -435,55 +392,33 @@ export default function Landing() {
           </Stack>
         </Box>
 
-        {/* Right side*/}
-<Box
-  flex={{ md: 1 }}
-  sx={{
-    width: "100%",
-    position: "relative",
-    display: {
-      xs: "none", 
-      md: "flex", 
-    },
-    justifyContent: "center",
-    alignItems: "center",
-    minHeight: {
-      md: 600,
-    },
-  }}
->
-  <Box
-    sx={{
-      width: { md: 240, lg: 390 },
-      height: { md: 460, lg: 620 },
-      borderRadius: "26px",
-      transform: "rotate(10deg)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      flexDirection: "column",
-      gap: 2,
-      position: "relative",
-      overflow: "visible",
-    }}
-  >
-    <Box
-      component="img"
-      src="/Home.png"
-      alt={t("landing.imageAlt", "DekuSMS app")}
-      sx={{
-        width: "80%",
-        display: "block",
-        position: "relative",
-        zIndex: 2,
-        filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.5))",
-      }}
-      onError={(e) => {
-        e.target.style.display = "none";
-      }}
-    />
-  </Box>
-</Box>
+        {/* ================= IMAGE ================= */}
+        <Box
+          sx={{
+            display: { xs: "none", md: "flex" },
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: 600,
+          }}
+        >
+          <Box
+            sx={{
+              width: { md: 240, lg: 390 },
+              height: { md: 460, lg: 620 },
+              transform: "rotate(10deg)",
+            }}
+          >
+            <Box
+              component="img"
+              src="/Home.png"
+              alt="app"
+              sx={{
+                width: "80%",
+                filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.5))",
+              }}
+            />
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
