@@ -6,12 +6,11 @@ import React, {
   useMemo,
 } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
 const ThemeContext = createContext();
 
 const THEMES = {
-  midnight: {
+  dark: {
     gradient: "linear-gradient(135deg, #07141A 0%, #020B12 100%)",
     text: "#FFFFFF",
     secondary: "rgba(255,255,255,0.72)",
@@ -19,72 +18,55 @@ const THEMES = {
     border: "rgba(255,255,255,0.08)",
   },
 
-  ocean: {
-    gradient: "linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%)",
-    text: "#FFFFFF",
-    secondary: "rgba(255,255,255,0.75)",
-    surface: "rgba(255,255,255,0.05)",
-    border: "rgba(255,255,255,0.1)",
-  },
-
-  sunset: {
-    gradient: "linear-gradient(135deg, #2b1055 0%, #7597de 100%)",
-    text: "#FFFFFF",
-    secondary: "rgba(255,255,255,0.78)",
-    surface: "rgba(255,255,255,0.06)",
-    border: "rgba(255,255,255,0.12)",
-  },
-
-  forest: {
-    gradient: "linear-gradient(135deg, #0B3D2E 0%, #14532D 100%)",
-    text: "#FFFFFF",
-    secondary: "rgba(255,255,255,0.75)",
-    surface: "rgba(255,255,255,0.05)",
-    border: "rgba(255,255,255,0.1)",
+  light: {
+    gradient: "linear-gradient(135deg, #EEF2F7 0%, #FFFFFF 100%)",
+    text: "#0F172A",
+    secondary: "rgba(15,23,42,0.65)",
+    surface: "#FFFFFF",
+    border: "rgba(15,23,42,0.08)",
   },
 };
 
 export const ColorThemeProvider = ({ children }) => {
   const [mode, setMode] = useState(
-    () => localStorage.getItem("theme-mode") || "system"
+    () => localStorage.getItem("theme-pref") || "dark"
   );
 
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
   useEffect(() => {
-    localStorage.setItem("theme-mode", mode);
+    localStorage.setItem("theme-pref", mode);
   }, [mode]);
 
-  const activeThemeKey = useMemo(() => {
-    if (mode === "system") {
-      return prefersDarkMode ? "midnight" : "sunset";
-    }
-    return mode;
-  }, [mode, prefersDarkMode]);
-
-  const activeTheme = THEMES[activeThemeKey];
+  const activeTheme = THEMES[mode] || THEMES.dark;
 
   const theme = useMemo(
     () =>
       createTheme({
         palette: {
-          mode: "dark",
+          mode: mode === "dark" ? "dark" : "light",
           primary: { main: "#2ED3B7" },
+
           background: {
             default: activeTheme.gradient,
             paper: activeTheme.surface,
           },
+
           text: {
             primary: activeTheme.text,
             secondary: activeTheme.secondary,
           },
+
+          divider: activeTheme.border,
         },
       }),
-    [activeTheme]
+    [mode, activeTheme]
   );
 
+  const toggleMode = () => {
+    setMode((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
   return (
-    <ThemeContext.Provider value={{ mode, setMode, activeThemeKey }}>
+    <ThemeContext.Provider value={{ mode, setMode, toggleMode }}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );
