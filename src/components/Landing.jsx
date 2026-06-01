@@ -377,7 +377,7 @@ export default function Landing() {
             {t("landing.forUpdates")}
           </Typography>
 
-\          <Stack
+          <Stack
             direction={{
               xs: "column",
               sm: "row",
