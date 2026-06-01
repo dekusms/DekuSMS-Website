@@ -1,84 +1,64 @@
 import { useState } from "react";
+import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   AppBar,
   Toolbar,
-  Button,
   Box,
+  Button,
   IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
-  Divider,
-  Paper,
-  Collapse,
-  Typography,
-  useMediaQuery,
+  Menu,
+  MenuItem,
+  Fade,
 } from "@mui/material";
 
-import { useTheme } from "@mui/material/styles";
 import {
-  GithubOutlined,
-  GlobalOutlined,
-  SendOutlined,
-  DownloadOutlined,
   MenuOutlined,
-  CloseOutlined,
-  FileTextOutlined,
-  BookOutlined,
-  HeartOutlined,
-  CheckOutlined,
-  DownOutlined,
-  SunOutlined,
   MoonOutlined,
+  SunOutlined,
+  GithubOutlined,
+  DownloadOutlined,
+  SendOutlined,
 } from "@ant-design/icons";
 
-const ACCENT = "#2ED3B7";
-const DRAWER_BG = "#0a1a20";
-const TELEGRAM_LINK = "https://t.me/deku_sms";
-const RTL_LANGUAGES = ["fa", "ar"];
+import LanguageIcon from "@mui/icons-material/Language";
+import { Telegram } from "react-bootstrap-icons";
 
-export default function TopNav({ setActiveSection, mode, toggleTheme }) {
-  const { t, i18n } = useTranslation();
+export default function Navbar({ toggleTheme }) {
   const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const isDark = theme.palette.mode === "dark";
+  const { i18n, t } = useTranslation();
 
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const [mobileLangOpen, setMobileLangOpen] = useState(false);
+  const iconStyle = { fontSize: 18 };
 
-
-  const textColor = isDark ? "#ffffff" : "#0f172a";
-
-  const subtleText = isDark
-    ? "rgba(255,255,255,0.55)"
-    : "rgba(15,23,42,0.6)";
-
-  const borderColor = isDark
-    ? "rgba(255,255,255,0.06)"
-    : "rgba(15,23,42,0.08)";
-
-  const menuItems = [
+  const navLinks = [
     {
       label: t("topNav.blog"),
       href: "https://blog.smswithoutborders.com/",
-      icon: <FileTextOutlined />,
     },
     {
       label: t("topNav.documentation"),
       href: "https://docs.smswithoutborders.com/",
-      icon: <BookOutlined />,
     },
     {
       label: t("topNav.donate"),
       href: "https://opencollective.com/dekusms",
-      icon: <HeartOutlined />,
     },
   ];
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleOpen = (e) => setAnchorEl(e.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
+  const [langAnchor, setLangAnchor] = useState(null);
+  const langOpen = Boolean(langAnchor);
+
+  const RTL_LANGUAGES = ["ar", "fa"];
 
   const languages = [
     { code: "en", native: "English" },
@@ -101,85 +81,59 @@ export default function TopNav({ setActiveSection, mode, toggleTheme }) {
       ? "rtl"
       : "ltr";
 
-    setLangOpen(false);
-    setMobileLangOpen(false);
-  };
-
-  const iconBtnSx = {
-    color: subtleText,
-    borderRadius: "8px",
-    width: 36,
-    height: 36,
-    "&:hover": {
-      color: textColor,
-      bgcolor: isDark
-        ? "rgba(255,255,255,0.07)"
-        : "rgba(15,23,42,0.05)",
-    },
-  };
-
-  const navLinkSx = {
-    color: subtleText,
-    textTransform: "none",
-    fontSize: "0.875rem",
-    fontFamily: "'Ubuntu', sans-serif",
-    borderRadius: "8px",
-    px: 1.5,
-    py: 0.75,
-    "&:hover": {
-      color: textColor,
-      backgroundColor: isDark
-        ? "rgba(255,255,255,0.06)"
-        : "rgba(15,23,42,0.05)",
-    },
+    setLangAnchor(null);
   };
 
   return (
     <>
       <AppBar
-        position="fixed"
+        position="sticky"
         elevation={0}
         sx={{
-           backgroundColor: isDark
-        ? "#07141A"
-        : "#f5f7fa",
-          backdropFilter: "blur(20px)",
-          borderBottom: `1px solid ${borderColor}`,
+          backdropFilter: "blur(15px)",
+          background:
+            theme.palette.mode === "dark"
+              ? "rgba(7,20,26,0.65)"
+              : "rgba(255,255,255,0.65)",
+          borderBottom: `1px solid ${theme.palette.divider}`,
         }}
       >
         <Toolbar
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            px: { xs: 2, sm: 3, md: 6 },
-            minHeight: { xs: "58px", md: "66px" },
+            px: 3,
           }}
         >
-          <Box
-            component="img"
-            src="/logo/DekuSMS-Dark.png"
-            alt="DekuSMS"
-            sx={{
-              width: { xs: 100, sm: 120, md: 160 },
-            }}
-          />
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box
+              component="img"
+              src={
+                isDark
+                  ? "/logo/DekuSMS-Dark.png"
+                  : "/logo/DekuSMS-Default.png"
+              }
+              alt="DekuSMS"
+              sx={{ width: { xs: 95, md: 120 } }}
+            />
+          </Box>
 
           {!isMobile && (
-            <Box
-              sx={{
-                display: "flex",
-                gap: 0.5,
-                position: "absolute",
-                left: "50%",
-                transform: "translateX(-50%)",
-              }}
-            >
-              {menuItems.map((item) => (
+            <Box sx={{ display: "flex", gap: 2.5 }}>
+              {navLinks.map((item) => (
                 <Button
                   key={item.label}
                   href={item.href}
                   target="_blank"
-                  sx={navLinkSx}
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 500,
+                    color: theme.palette.text.primary,
+                    fontSize: "0.85rem",
+                    "&:hover": {
+                      color: theme.palette.primary.main,
+                    },
+                  }}
                 >
                   {item.label}
                 </Button>
@@ -187,218 +141,119 @@ export default function TopNav({ setActiveSection, mode, toggleTheme }) {
             </Box>
           )}
 
-          {!isMobile && (
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.8 }}>
+            
+            {!isMobile && (
+              <IconButton sx={{ color: theme.palette.text.primary }}>
+                <GithubOutlined style={iconStyle} />
+              </IconButton>
+            )}
 
-<IconButton
-  component="a"
-  href="https://github.com/dekusms/DekuSMS-Android"
-  target="_blank"
-  rel="noopener noreferrer"
-  sx={iconBtnSx}
-  aria-label="GitHub"
->
-  <GithubOutlined />
-</IconButton>
+            <IconButton onClick={toggleTheme}>
+              {isDark ? (
+                <SunOutlined style={iconStyle} />
+              ) : (
+                <MoonOutlined style={iconStyle} />
+              )}
+            </IconButton>
 
-<IconButton
-  onClick={toggleTheme}
-  sx={iconBtnSx}
-  title={mode === "dark" ? "Light mode" : "Dark mode"}
-  aria-label="Toggle theme"
->
-  {mode === "dark" ? (
-    <SunOutlined />
-  ) : (
-    <MoonOutlined />
-  )}
-</IconButton>
+            <IconButton onClick={(e) => setLangAnchor(e.currentTarget)}>
+              <LanguageIcon style={{ fontSize: 20 }} />
+            </IconButton>
 
-
-              <Box sx={{ position: "relative" }}>
-                <Box
-                  onClick={() => setLangOpen(!langOpen)}
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 0.75,
-                    px: 1.25,
-                    py: 0.6,
-                    borderRadius: "8px",
-                    cursor: "pointer",
-                    border: `1px solid ${borderColor}`,
-                    color: subtleText,
-                    fontSize: "0.8rem",
-                    "&:hover": {
-                      color: textColor,
-                      bgcolor: isDark
-                        ? "rgba(255,255,255,0.05)"
-                        : "rgba(15,23,42,0.03)",
-                    },
-                  }}
-                >
-                  <GlobalOutlined />
-                  {currentLang.native}
-                  <DownOutlined
-                    style={{
-                      fontSize: 10,
-                      transform: langOpen
-                        ? "rotate(180deg)"
-                        : "rotate(0deg)",
-                    }}
-                  />
-                </Box>
-
-                {langOpen && (
-                  <>
-                    <Box
-                      onClick={() => setLangOpen(false)}
-                      sx={{ position: "fixed", inset: 0 }}
-                    />
-
-                    <Paper
-                      sx={{
-                        position: "absolute",
-                        top: "100%",
-                        right: 0,
-                        mt: 1,
-                        minWidth: 170,
-                        bgcolor: isDark ? "#0d1b22" : "#fff",
-                        border: `1px solid ${borderColor}`,
-                      }}
-                    >
-                      {languages.map((lng) => {
-                        const active = i18n.language === lng.code;
-
-                        return (
-                          <Box
-                            key={lng.code}
-                            onClick={() => changeLanguage(lng.code)}
-                            sx={{
-                              px: 1.5,
-                              py: 1,
-                              cursor: "pointer",
-                              color: active ? ACCENT : textColor,
-                              bgcolor: active
-                                ? `${ACCENT}10`
-                                : "transparent",
-                            }}
-                          >
-                            {lng.native}
-                          </Box>
-                        );
-                      })}
-                    </Paper>
-                  </>
-                )}
-              </Box>
-
+            {!isMobile && (
               <Button
-                href={TELEGRAM_LINK}
-                target="_blank"
+                endIcon={<Telegram size={16} />}
                 sx={{
-                  color: ACCENT,
-                  border: `1px solid ${ACCENT}55`,
                   textTransform: "none",
-                   "&:hover": {
-      bgcolor: "#09746286",
-      transform: "translateY(-2px)",
-      boxShadow: "0 12px 20px rgba(46, 211, 183, 0.11)",
-    },
-                }}
-              >
-                {t("topNav.joinTelegram")}
-              </Button>
-
-<Button
-  component="a"
-  href="https://play.google.com/store/apps/details?id=com.afkanerd.deku&pli=1"
-  target="_blank"
-  rel="noopener noreferrer"
-  endIcon={<DownloadOutlined />}
-  sx={{
-    bgcolor: ACCENT,
-    color: "#07141A",
-    fontWeight: 700,
-    textTransform: "none",
-    borderRadius: "14px",
-    px: 2.5,
-    py: 1,
-    fontSize: "0.92rem",
-    fontFamily: "'Ubuntu', sans-serif",
-    boxShadow: "0 8px 24px rgba(46,211,183,0.25)",
-    transition: "all 0.25s ease",
-
-    "&:hover": {
-      Color:"#FFFS",
-      bgcolor: "#00a88c77",
-      transform: "translateY(-2px)",
-      boxShadow: "0 12px 30px rgba(46,211,183,0.35)",
-    },
-  }}
->
-  {t("topNav.download")}
-</Button>
-            </Box>
-          )}
-
-          {isMobile && (
-            <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-
-              <IconButton onClick={toggleTheme}>
-                {mode === "dark" ? (
-                  <SunOutlined style={{ color: "white" }} />
-                ) : (
-                  <MoonOutlined style={{ color: "#0f172a" }} />
-                )}
-              </IconButton>
-
-              <Button
-                onClick={() => setActiveSection("downloads")}
-                sx={{
-                  bgcolor: ACCENT,
+                  fontSize: "0.75rem",
+                  fontWeight: 700,
+                  borderRadius: "10px",
+                  px: 1.5,
+                  py: 0.6,
+                  background: theme.palette.primary.main,
                   color: "#07141A",
-                  fontSize: "0.8rem",
                 }}
               >
-                {t("topNav.download")}
+                Telegram
               </Button>
+            )}
 
-              <IconButton onClick={() => setDrawerOpen(true)}>
-                <MenuOutlined />
+            {!isMobile && (
+              <Button
+                endIcon={<DownloadOutlined style={iconStyle} />}
+                sx={{
+                  textTransform: "none",
+                  fontSize: "0.75rem",
+                  fontWeight: 700,
+                  borderRadius: "10px",
+                  px: 1.5,
+                  py: 0.6,
+                  background: theme.palette.primary.main,
+                  color: "#07141A",
+                }}
+              >
+                Download
+              </Button>
+            )}
+
+            {isMobile && (
+              <IconButton onClick={handleOpen}>
+                <MenuOutlined style={{ fontSize: 20 }} />
               </IconButton>
-            </Box>
-          )}
+            )}
+          </Box>
         </Toolbar>
       </AppBar>
 
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+        {navLinks.map((item) => (
+          <MenuItem
+            key={item.label}
+            component="a"
+            href={item.href}
+            onClick={handleClose}
+          >
+            {item.label}
+          </MenuItem>
+        ))}
+      </Menu>
+
+      <Menu
+        anchorEl={langAnchor}
+        open={langOpen}
+        onClose={() => setLangAnchor(null)}
+        TransitionComponent={Fade}
         PaperProps={{
           sx: {
-            bgcolor: DRAWER_BG,
-            width: 280,
+            mt: 1,
+            minWidth: 160,
+            borderRadius: "12px",
+            background: theme.palette.background.paper,
+            border: `1px solid ${theme.palette.divider}`,
           },
         }}
       >
-        <List>
-          {menuItems.map((item) => (
-            <ListItem
-              key={item.label}
-              component="a"
-              href={item.href}
-              sx={{ color: "white" }}
-            >
-              <ListItemIcon sx={{ color: "rgba(255,255,255,0.5)" }}>
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText primary={item.label} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+        {languages.map((lang) => (
+          <MenuItem
+            key={lang.code}
+            onClick={() => changeLanguage(lang.code)}
+            selected={i18n.language === lang.code}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            {lang.native}
+            {i18n.language === lang.code && "✓"}
+          </MenuItem>
+        ))}
+      </Menu>
     </>
   );
 }
