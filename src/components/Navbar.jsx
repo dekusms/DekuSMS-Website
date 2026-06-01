@@ -23,17 +23,22 @@ import LanguageIcon from "@mui/icons-material/Language";
 import { Telegram } from "react-bootstrap-icons";
 import { languages } from "../i18n/languages";
 
+
 export default function Navbar({ toggleTheme }) {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
+
   const iconStyle = { fontSize: 18 };
+
   const GITHUB_URL = "https://github.com/dekusms";
   const TELEGRAM_URL = "https://t.me/deku_sms";
   const PLAYSTORE_URL =
     "https://play.google.com/store/apps/details?id=com.afkanerd.deku";
+
   const navLinks = [
     {
       label: t("topNav.blog"),
@@ -48,17 +53,22 @@ export default function Navbar({ toggleTheme }) {
       href: "https://opencollective.com/dekusms",
     },
   ];
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
   const handleOpen = (e) => setAnchorEl(e.currentTarget);
   const handleClose = () => setAnchorEl(null);
+
   const [langAnchor, setLangAnchor] = useState(null);
   const langOpen = Boolean(langAnchor);
+
   const changeLanguage = (code) => {
     i18n.changeLanguage(code);
     localStorage.setItem("lang", code);
     setLangAnchor(null);
   };
+
   const currentLang =
     languages.find((l) => l.code === lang) || languages[0];
 
@@ -143,24 +153,12 @@ export default function Navbar({ toggleTheme }) {
 
             <IconButton
               onClick={(e) => setLangAnchor(e.currentTarget)}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 0.8,
-                px: 1,
-                borderRadius: "10px",
-              }}
+              sx={{ display: "flex", alignItems: "center", gap: 0.8 }}
             >
               <LanguageIcon style={{ fontSize: 20 }} />
-
-              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                <span style={{ fontSize: "13px", fontWeight: 500 }}>
-                  {currentLang.flag}
-                </span>
-                <span style={{ fontSize: "13px", fontWeight: 500 }}>
-                  {currentLang.label}
-                </span>
-              </Box>
+              <span style={{ fontSize: "13px" }}>
+                {currentLang.label}
+              </span>
             </IconButton>
 
             {!isMobile && (
@@ -234,6 +232,33 @@ export default function Navbar({ toggleTheme }) {
             {item.label}
           </MenuItem>
         ))}
+
+        <MenuItem
+          component="a"
+          href={GITHUB_URL}
+          target="_blank"
+          onClick={handleClose}
+        >
+          GitHub
+        </MenuItem>
+
+        <MenuItem
+          component="a"
+          href={TELEGRAM_URL}
+          target="_blank"
+          onClick={handleClose}
+        >
+          Telegram
+        </MenuItem>
+
+        <MenuItem
+          component="a"
+          href={PLAYSTORE_URL}
+          target="_blank"
+          onClick={handleClose}
+        >
+          Download App
+        </MenuItem>
       </Menu>
 
       <Menu
@@ -262,7 +287,6 @@ export default function Navbar({ toggleTheme }) {
               gap: 1.5,
             }}
           >
-            <span>{l.flag}</span>
             <span>{l.label}</span>
           </MenuItem>
         ))}
