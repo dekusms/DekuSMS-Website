@@ -12,28 +12,28 @@ import {
   MenuItem,
   Fade,
 } from "@mui/material";
-
 import {
   MenuOutlined,
   MoonOutlined,
   SunOutlined,
   GithubOutlined,
   DownloadOutlined,
-  SendOutlined,
 } from "@ant-design/icons";
-
 import LanguageIcon from "@mui/icons-material/Language";
 import { Telegram } from "react-bootstrap-icons";
+import { languages } from "../i18n/languages";
 
 export default function Navbar({ toggleTheme }) {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
-  const { i18n, t } = useTranslation();
-
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
   const iconStyle = { fontSize: 18 };
-
+  const GITHUB_URL = "https://github.com/dekusms";
+  const TELEGRAM_URL = "https://t.me/deku_sms";
+  const PLAYSTORE_URL =
+    "https://play.google.com/store/apps/details?id=com.afkanerd.deku";
   const navLinks = [
     {
       label: t("topNav.blog"),
@@ -48,41 +48,19 @@ export default function Navbar({ toggleTheme }) {
       href: "https://opencollective.com/dekusms",
     },
   ];
-
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-
   const handleOpen = (e) => setAnchorEl(e.currentTarget);
   const handleClose = () => setAnchorEl(null);
-
   const [langAnchor, setLangAnchor] = useState(null);
   const langOpen = Boolean(langAnchor);
-
-  const RTL_LANGUAGES = ["ar", "fa"];
-
-  const languages = [
-    { code: "en", native: "English" },
-    { code: "fr", native: "Français" },
-    { code: "es", native: "Español" },
-    { code: "fa", native: "فارسی" },
-    { code: "ar", native: "العربية" },
-    { code: "de", native: "Deutsch" },
-    { code: "ru", native: "Русский" },
-  ];
-
-  const currentLang =
-    languages.find((l) => l.code === i18n.language) || languages[0];
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    localStorage.setItem("lang", lng);
-
-    document.documentElement.dir = RTL_LANGUAGES.includes(lng)
-      ? "rtl"
-      : "ltr";
-
+  const changeLanguage = (code) => {
+    i18n.changeLanguage(code);
+    localStorage.setItem("lang", code);
     setLangAnchor(null);
   };
+  const currentLang =
+    languages.find((l) => l.code === lang) || languages[0];
 
   return (
     <>
@@ -125,6 +103,7 @@ export default function Navbar({ toggleTheme }) {
                   key={item.label}
                   href={item.href}
                   target="_blank"
+                  rel="noopener noreferrer"
                   sx={{
                     textTransform: "none",
                     fontWeight: 500,
@@ -142,9 +121,14 @@ export default function Navbar({ toggleTheme }) {
           )}
 
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.8 }}>
-            
             {!isMobile && (
-              <IconButton sx={{ color: theme.palette.text.primary }}>
+              <IconButton
+                component="a"
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ color: theme.palette.text.primary }}
+              >
                 <GithubOutlined style={iconStyle} />
               </IconButton>
             )}
@@ -157,12 +141,34 @@ export default function Navbar({ toggleTheme }) {
               )}
             </IconButton>
 
-            <IconButton onClick={(e) => setLangAnchor(e.currentTarget)}>
+            <IconButton
+              onClick={(e) => setLangAnchor(e.currentTarget)}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 0.8,
+                px: 1,
+                borderRadius: "10px",
+              }}
+            >
               <LanguageIcon style={{ fontSize: 20 }} />
+
+              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                <span style={{ fontSize: "13px", fontWeight: 500 }}>
+                  {currentLang.flag}
+                </span>
+                <span style={{ fontSize: "13px", fontWeight: 500 }}>
+                  {currentLang.label}
+                </span>
+              </Box>
             </IconButton>
 
             {!isMobile && (
               <Button
+                component="a"
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 endIcon={<Telegram size={16} />}
                 sx={{
                   textTransform: "none",
@@ -181,6 +187,10 @@ export default function Navbar({ toggleTheme }) {
 
             {!isMobile && (
               <Button
+                component="a"
+                href={PLAYSTORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 endIcon={<DownloadOutlined style={iconStyle} />}
                 sx={{
                   textTransform: "none",
@@ -217,6 +227,8 @@ export default function Navbar({ toggleTheme }) {
             key={item.label}
             component="a"
             href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={handleClose}
           >
             {item.label}
@@ -232,25 +244,26 @@ export default function Navbar({ toggleTheme }) {
         PaperProps={{
           sx: {
             mt: 1,
-            minWidth: 160,
+            minWidth: 180,
             borderRadius: "12px",
-            background: theme.palette.background.paper,
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
             border: `1px solid ${theme.palette.divider}`,
           },
         }}
       >
-        {languages.map((lang) => (
+        {languages.map((l) => (
           <MenuItem
-            key={lang.code}
-            onClick={() => changeLanguage(lang.code)}
-            selected={i18n.language === lang.code}
+            key={l.code}
+            onClick={() => changeLanguage(l.code)}
+            selected={lang === l.code}
             sx={{
               display: "flex",
-              justifyContent: "space-between",
+              gap: 1.5,
             }}
           >
-            {lang.native}
-            {i18n.language === lang.code && "✓"}
+            <span>{l.flag}</span>
+            <span>{l.label}</span>
           </MenuItem>
         ))}
       </Menu>

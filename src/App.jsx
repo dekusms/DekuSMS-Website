@@ -1,88 +1,61 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
-import { dictionary } from "./i18n/dictionary";
+import { useTranslation } from "react-i18next";
 
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
+import { isRTL } from "./i18n/rtl";
 
 export default function App() {
   const [mode, setMode] = useState(
     () => localStorage.getItem("theme-pref") || "dark"
   );
-  const [lang, setLang] = useState("en");
 
-  const t = useMemo(() => dictionary[lang], [lang]);
+  const { i18n } = useTranslation();
 
+  useEffect(() => {
+    const handleDirection = (lng) => {
+      document.documentElement.dir = isRTL(lng) ? "rtl" : "ltr";
+      document.documentElement.lang = lng;
+    };
 
-const theme = useMemo(
-  () =>
-    createTheme({
-      palette: {
-        mode,
+    handleDirection(i18n.language);
 
-        primary: {
-          main: "#2ED3B7",
+    i18n.on("languageChanged", handleDirection);
+
+    return () => {
+      i18n.off("languageChanged", handleDirection);
+    };
+  }, [i18n]);
+
+  useEffect(() => {
+    const syncLanguage = (event) => {
+      if (event.key === "i18nextLng" && event.newValue) {
+        i18n.changeLanguage(event.newValue);
+      }
+    };
+
+    window.addEventListener("storage", syncLanguage);
+    return () => window.removeEventListener("storage", syncLanguage);
+  }, [i18n]);
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+          primary: { main: "#2ED3B7" },
+          background: {
+            default: mode === "dark" ? "#07141A" : "#EEF2F7",
+            paper: mode === "dark" ? "#0D1117" : "#F8FAFC",
+          },
         },
-
-        background: {
-          default:
-            mode === "dark"
-              ? "#07141A"
-              : "#EEF2F7",
-
-          paper:
-            mode === "dark"
-              ? "#0D1117"
-              : "#F8FAFC",
-        },
-
-        text: {
-          primary:
-            mode === "dark"
-              ? "#F8FAFC"
-              : "#0D1B8E",
-
-          secondary:
-            mode === "dark"
-              ? "#94A3B8"
-              : "#3D4E7A",
-        },
-
-        divider:
-          mode === "dark"
-            ? "rgba(255,255,255,0.08)"
-            : "rgba(13,27,142,0.10)",
-      },
-
-      typography: {
-        fontFamily: "'Ubuntu', sans-serif",
-
-        h1: {
-          fontFamily: "'Unbounded', sans-serif",
-          fontWeight: 700,
-        },
-
-        h2: {
-          fontFamily: "'Unbounded', sans-serif",
-          fontWeight: 700,
-        },
-
-        h3: {
-          fontFamily: "'Unbounded', sans-serif",
-          fontWeight: 700,
-        },
-      },
-
-      shape: {
-        borderRadius: 16,
-      },
-    }),
-  [mode]
-);
-
+      }),
+    [mode]
+  );
 
   const toggleTheme = () => {
-    const next = mode === "dark" ? "light" : "dark" ;
+    const next = mode === "dark" ? "light" : "dark";
     setMode(next);
     localStorage.setItem("theme-pref", next);
   };
@@ -90,19 +63,8 @@ const theme = useMemo(
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-
-      <Navbar
-        t={t}
-        lang={lang}
-        setLang={setLang}
-        mode={mode}
-        toggleTheme={toggleTheme}
-      />
-
-      <Landing t={t} />
-
+      <Navbar toggleTheme={toggleTheme} />
+      <Landing />
     </ThemeProvider>
   );
 }
-
-
