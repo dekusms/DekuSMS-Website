@@ -1,16 +1,38 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useEffect } from "react";
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
+import BrandResources from "./components/BrandResources";
 import { isRTL } from "./i18n/rtl";
 
-export default function App() {
-  const [mode, setMode] = useState(
-    () => localStorage.getItem("theme-pref") || "dark"
-  );
+const BODY_FONT = "var(--font-body)";
+const HEADING_FONT = "var(--font-heading)";
 
+const heading = { fontFamily: HEADING_FONT, letterSpacing: "normal" };
+
+const theme = createTheme({
+  typography: {
+    fontFamily: BODY_FONT,
+    h1: heading,
+    h2: heading,
+    h3: heading,
+    h4: heading,
+    h5: heading,
+    h6: heading,
+  },
+  palette: {
+    mode: "dark",
+    primary: { main: "#2ED3B7" },
+    background: {
+      default: "#07141A",
+      paper: "#0D1117",
+    },
+  },
+});
+
+export default function App() {
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -39,32 +61,16 @@ export default function App() {
     return () => window.removeEventListener("storage", syncLanguage);
   }, [i18n]);
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-          primary: { main: "#2ED3B7" },
-          background: {
-            default: mode === "dark" ? "#07141A" : "#EEF2F7",
-            paper: mode === "dark" ? "#0D1117" : "#F8FAFC",
-          },
-        },
-      }),
-    [mode]
-  );
-
-  const toggleTheme = () => {
-    const next = mode === "dark" ? "light" : "dark";
-    setMode(next);
-    localStorage.setItem("theme-pref", next);
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Navbar toggleTheme={toggleTheme} />
-      <Landing />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/brand-resources" element={<BrandResources />} />
+          <Route path="*" element={<Landing />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
